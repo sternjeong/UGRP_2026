@@ -1,0 +1,5 @@
+{
+  "name": "UGRP_2026",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "postCreateCommand": "npm install -g @anthropic-ai/claude-code"
+}
