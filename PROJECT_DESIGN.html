@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3분커리 — 설계 진행 현황</title>
+<style>
+  :root {
+    --paper: #f5f6f5;
+    --paper-raised: #ffffff;
+    --ink: #17212b;
+    --ink-soft: #57626f;
+    --ink-faint: #8992a0;
+    --line: #dfe3e2;
+    --line-soft: #ebeeec;
+    --accent: #1f6f6b;
+    --accent-soft: #e4efee;
+    --decided: #2f7a4f;
+    --decided-bg: #e6f2ea;
+    --open: #a8721f;
+    --open-bg: #f6ecd9;
+    --hold: #6c5c9c;
+    --hold-bg: #ece7f5;
+    --memo: #2a5f8f;
+    --memo-bg: #e4edf5;
+    --code-bg: #eef1f0;
+    --shadow: 0 1px 2px rgba(23,33,43,.05), 0 8px 24px -12px rgba(23,33,43,.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #12171c;
+      --paper-raised: #1a2129;
+      --ink: #e8ecef;
+      --ink-soft: #a7b1bb;
+      --ink-faint: #6d7883;
+      --line: #2a333c;
+      --line-soft: #212a31;
+      --accent: #4fb3ac;
+      --accent-soft: #16302e;
+      --decided: #5cb583;
+      --decided-bg: #17301f;
+      --open: #d9a552;
+      --open-bg: #332711;
+      --hold: #a996de;
+      --hold-bg: #241f38;
+      --memo: #7bb0e0;
+      --memo-bg: #16232f;
+      --code-bg: #202a31;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #12171c; --paper-raised: #1a2129; --ink: #e8ecef; --ink-soft: #a7b1bb; --ink-faint: #6d7883;
+    --line: #2a333c; --line-soft: #212a31; --accent: #4fb3ac; --accent-soft: #16302e;
+    --decided: #5cb583; --decided-bg: #17301f; --open: #d9a552; --open-bg: #332711;
+    --hold: #a996de; --hold-bg: #241f38; --memo: #7bb0e0; --memo-bg: #16232f; --code-bg: #202a31;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
+  }
+  :root[data-theme="light"] {
+    --paper: #f5f6f5; --paper-raised: #ffffff; --ink: #17212b; --ink-soft: #57626f; --ink-faint: #8992a0;
+    --line: #dfe3e2; --line-soft: #ebeeec; --accent: #1f6f6b; --accent-soft: #e4efee;
+    --decided: #2f7a4f; --decided-bg: #e6f2ea; --open: #a8721f; --open-bg: #f6ecd9;
+    --hold: #6c5c9c; --hold-bg: #ece7f5; --memo: #2a5f8f; --memo-bg: #e4edf5; --code-bg: #eef1f0;
+    --shadow: 0 1px 2px rgba(23,33,43,.05), 0 8px 24px -12px rgba(23,33,43,.12);
+  }
+
+  * { box-sizing: border-box; }
+  html { color-scheme: light dark; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+      "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+    font-size: 15.5px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .mono {
+    font-family: ui-monospace, "SF Mono", "Cascadia Mono", "JetBrains Mono", Consolas, monospace;
+  }
+  h1, h2, h3, h4 { text-wrap: balance; font-weight: 700; letter-spacing: -0.01em; }
+  a { color: var(--accent); }
+  code {
+    font-family: ui-monospace, "SF Mono", "Cascadia Mono", "JetBrains Mono", Consolas, monospace;
+    background: var(--code-bg);
+    padding: 0.1em 0.4em;
+    border-radius: 4px;
+    font-size: 0.88em;
+  }
+
+  /* ---------- shell layout ---------- */
+  .shell {
+    display: grid;
+    grid-template-columns: 248px minmax(0, 1fr);
+    max-width: 1180px;
+    margin: 0 auto;
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .shell { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- route rail ---------- */
+  .rail {
+    position: sticky;
+    top: 0;
+    align-self: start;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 28px 12px 28px 20px;
+    border-right: 1px solid var(--line);
+  }
+  @media (max-width: 900px) {
+    .rail {
+      position: static;
+      height: auto;
+      border-right: none;
+      border-bottom: 1px solid var(--line);
+      padding: 14px 16px;
+      overflow-x: auto;
+    }
+    .rail-track { flex-direction: row !important; gap: 4px !important; }
+    .rail-track::before { display: none; }
+    .waypoint { flex: 0 0 auto; padding: 6px 10px !important; }
+    .waypoint .wp-sub { display: none; }
+  }
+  .rail-brand {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 18px 4px;
+  }
+  .rail-track {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    position: relative;
+  }
+  .rail-track::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background: repeating-linear-gradient(to bottom, var(--line) 0 4px, transparent 4px 8px);
+  }
+  .waypoint {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 7px 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--ink-soft);
+    position: relative;
+  }
+  .waypoint:hover { background: var(--paper-raised); color: var(--ink); }
+  .waypoint:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .waypoint.active { color: var(--ink); background: var(--accent-soft); }
+  .wp-num {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 12px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--paper-raised);
+    border: 1.5px solid var(--line);
+    flex: none;
+    z-index: 1;
+  }
+  .waypoint.active .wp-num { border-color: var(--accent); color: var(--accent); }
+  .wp-body { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+  .wp-title { font-size: 13.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .wp-sub { display: flex; gap: 4px; }
+  .wp-dot { width: 6px; height: 6px; border-radius: 50%; }
+  .wp-dot.decided { background: var(--decided); }
+  .wp-dot.open { background: var(--open); }
+  .wp-dot.hold { background: var(--hold); }
+
+  /* ---------- main ---------- */
+  main { padding: 40px 32px 80px; min-width: 0; }
+  @media (max-width: 640px) { main { padding: 28px 18px 60px; } }
+
+  .masthead { margin-bottom: 28px; }
+  .masthead .eyebrow {
+    font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent); font-weight: 700; margin: 0 0 8px;
+  }
+  .masthead h1 { font-size: clamp(26px, 4vw, 34px); margin: 0 0 6px; }
+  .masthead .tagline { color: var(--ink-soft); font-size: 15.5px; margin: 0 0 4px; }
+  .masthead .meta { color: var(--ink-faint); font-size: 12.5px; }
+
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 22px 0 26px;
+  }
+  .kpi {
+    background: var(--paper-raised);
+    padding: 14px 16px;
+  }
+  .kpi .n { font-family: ui-monospace, monospace; font-variant-numeric: tabular-nums; font-size: 22px; font-weight: 700; }
+  .kpi.decided .n { color: var(--decided); }
+  .kpi.open .n { color: var(--open); }
+  .kpi.hold .n { color: var(--hold); }
+  .kpi .l { font-size: 12px; color: var(--ink-faint); margin-top: 2px; }
+
+  .session-log {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow);
+  }
+  .session-log h2 {
+    font-size: 14px; margin: 0 0 12px; display: flex; align-items: center; gap: 8px;
+  }
+  .session-log h2 .date { font-family: ui-monospace, monospace; font-size: 12px; color: var(--ink-faint); font-weight: 500; }
+  .session-log ol { margin: 0; padding-left: 0; list-style: none; counter-reset: step; }
+  .session-log li {
+    counter-increment: step;
+    display: flex; gap: 10px;
+    padding: 6px 0;
+    font-size: 14px;
+    border-top: 1px solid var(--line-soft);
+  }
+  .session-log li:first-child { border-top: none; }
+  .session-log li::before {
+    content: counter(step);
+    font-family: ui-monospace, monospace;
+    font-size: 11px;
+    color: var(--ink-faint);
+    background: var(--code-bg);
+    width: 18px; height: 18px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex: none; margin-top: 1px;
+  }
+  .session-log a { text-decoration: none; }
+  .session-log a:hover { text-decoration: underline; }
+
+  section.doc-section {
+    padding: 34px 0;
+    border-top: 1px solid var(--line);
+    scroll-margin-top: 16px;
+  }
+  section.doc-section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+  .sec-num { font-family: ui-monospace, monospace; color: var(--ink-faint); font-size: 14px; }
+  .sec-head h2 { font-size: 21px; margin: 0; }
+
+  .chip {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-family: ui-monospace, monospace;
+    font-size: 11px; letter-spacing: 0.02em;
+    padding: 2px 8px; border-radius: 999px;
+    white-space: nowrap;
+  }
+  .chip.decided { background: var(--decided-bg); color: var(--decided); }
+  .chip.open { background: var(--open-bg); color: var(--open); }
+  .chip.hold { background: var(--hold-bg); color: var(--hold); }
+  .chip.memo { background: var(--memo-bg); color: var(--memo); }
+
+  p { margin: 0 0 12px; }
+  ul, ol.plain { margin: 0 0 14px; padding-left: 20px; }
+  li { margin-bottom: 6px; }
+
+  .card {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin: 12px 0;
+  }
+  .card > :last-child { margin-bottom: 0; }
+  .card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+  .card-head strong { font-size: 14.5px; }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+  }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; margin: 14px 0; }
+  th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line-soft); vertical-align: top; }
+  thead th {
+    background: var(--paper-raised);
+    font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-faint);
+    font-weight: 600;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: var(--accent-soft); }
+  td.num, th.num { font-family: ui-monospace, monospace; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  .axis-block { margin: 18px 0; padding: 16px 18px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper-raised); }
+  .axis-block .axis-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+  .axis-block .axis-head h3 { margin: 0; font-size: 15.5px; }
+  .axis-block .axis-tag { font-size: 12px; color: var(--ink-faint); }
+
+  .route-diagram {
+    font-family: ui-monospace, monospace;
+    font-size: 13px;
+    background: var(--code-bg);
+    border-radius: 8px;
+    padding: 14px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .route-diagram .node { padding: 3px 9px; background: var(--paper-raised); border: 1px solid var(--line); border-radius: 6px; }
+  .route-diagram .node.tip { border-color: var(--accent); color: var(--accent); font-weight: 600; }
+  .route-diagram .arrow { color: var(--ink-faint); }
+
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin: 14px 0;
+  }
+  .opt-card { border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; background: var(--paper-raised); }
+  .opt-card.winner { border-color: var(--decided); box-shadow: 0 0 0 1px var(--decided) inset; }
+  .opt-card h4 { margin: 0 0 8px; font-size: 14px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .opt-card .pro, .opt-card .con { font-size: 13px; margin-bottom: 6px; }
+  .opt-card .pro b, .opt-card .con b { font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-faint); display: block; margin-bottom: 2px; }
+
+  .status-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 640px) { .status-cols { grid-template-columns: 1fr; } }
+  .status-cols h3 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; margin: 0 0 10px; display: flex; align-items: center; gap: 6px; }
+  .status-cols ul { padding-left: 18px; }
+  .status-cols li { font-size: 13.5px; }
+
+  .callout {
+    border-left: 3px solid var(--memo);
+    background: var(--memo-bg);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    font-size: 13.5px;
+    margin: 12px 0;
+  }
+
+  .footline { margin-top: 50px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--ink-faint); font-size: 12.5px; }
+</style>
+</head>
+<body>
+
+<div class="shell">
+  <nav class="rail" aria-label="문서 목차">
+    <p class="rail-brand">3분커리 · 설계 경로</p>
+    <div class="rail-track" id="railTrack">
+      <a class="waypoint" href="#s1" data-n="1"><span class="wp-num">1</span><span class="wp-body"><span class="wp-title">미션</span></span></a>
+      <a class="waypoint" href="#s2" data-n="2"><span class="wp-num">2</span><span class="wp-body"><span class="wp-title">팀</span></span></a>
+      <a class="waypoint" href="#s3" data-n="3"><span class="wp-num">3</span><span class="wp-body"><span class="wp-title">문제의식</span></span></a>
+      <a class="waypoint" href="#s4" data-n="4"><span class="wp-num">4</span><span class="wp-body"><span class="wp-title">가치 제안</span></span></a>
+      <a class="waypoint" href="#s5" data-n="5"><span class="wp-num">5</span><span class="wp-body"><span class="wp-title">데이터 소스</span><span class="wp-sub"><span class="wp-dot decided"></span></span></span></a>
+      <a class="waypoint" href="#s6" data-n="6"><span class="wp-num">6</span><span class="wp-body"><span class="wp-title">핵심 기능</span><span class="wp-sub"><span class="wp-dot decided"></span></span></span></a>
+      <a class="waypoint" href="#s7" data-n="7"><span class="wp-num">7</span><span class="wp-body"><span class="wp-title">기술 아키텍처</span><span class="wp-sub"><span class="wp-dot decided"></span><span class="wp-dot open"></span></span></span></a>
+      <a class="waypoint" href="#s8" data-n="8"><span class="wp-num">8</span><span class="wp-body"><span class="wp-title">로드맵</span></span></a>
+      <a class="waypoint" href="#s9" data-n="9"><span class="wp-num">9</span><span class="wp-body"><span class="wp-title">결정 vs 미정</span><span class="wp-sub"><span class="wp-dot decided"></span><span class="wp-dot open"></span></span></span></a>
+      <a class="waypoint" href="#s10" data-n="10"><span class="wp-num">10</span><span class="wp-body"><span class="wp-title">태그 vs 온톨로지</span><span class="wp-sub"><span class="wp-dot decided"></span></span></span></a>
+      <a class="waypoint" href="#s11" data-n="11"><span class="wp-num">11</span><span class="wp-body"><span class="wp-title">열린 질문</span><span class="wp-sub"><span class="wp-dot open"></span></span></span></a>
+    </div>
+  </nav>
+
+  <main>
+    <header class="masthead">
+      <p class="eyebrow">POSTECH UGRP · 기술창업트랙 · 오뚜기 부대</p>
+      <h1>3분커리 <span style="color:var(--ink-faint); font-weight:500;">(3-min Curri)</span></h1>
+      <p class="tagline">"3분 만에 찾는 나만의 학술 경주로" — 대화를 통해 누적 기록되는 설계 문서의 스냅샷.</p>
+      <p class="meta">최종 갱신 2026-07-22 · 원본 <code>PROJECT_DESIGN.md</code></p>
+    </header>
+
+    <div class="kpi-row">
+      <div class="kpi decided"><div class="n">19</div><div class="l">결정된 사항</div></div>
+      <div class="kpi open"><div class="n">4</div><div class="l">미정 · 확인 필요</div></div>
+      <div class="kpi hold"><div class="n">3</div><div class="l">보류 항목</div></div>
+      <div class="kpi"><div class="n">3</div><div class="l">§11 열린 질문</div></div>
+    </div>
+
+    <div class="session-log">
+      <h2>오늘 세션에서 결정된 것 <span class="date">2026-07-22</span></h2>
+      <ol>
+        <li><a href="#s10">태그 vs 온톨로지 — 옵션3(결합) 풀스케일 채택, 별도 flat 태그 체계는 두지 않음</a></li>
+        <li><a href="#s7">통신/전자공학(EECE) 서브도메인을 팀 전공 지식으로 먼저 깊게 모델링 확정</a></li>
+        <li><a href="#s7">온톨로지 툴스택(Protégé/HermiT/Neo4j) 확정은 아직 이르다고 판단, 보류</a></li>
+        <li><a href="#s7">온톨로지 Competency Questions 8개 전부 확정</a></li>
+        <li><a href="#s6">MVP #5 "동료 궤적 비교" 폐기 — 필요한 데이터를 합법적으로 확보할 수 없음이 드러나 "온톨로지 기반 전형적 경로 제시"로 대체</a></li>
+        <li><a href="#s5">§5.0 데이터 원칙 신설 — 팀이 쓸 수 있는 건 공개 정형/텍스트 데이터뿐, 설문·비공개 학생기록 불가</a></li>
+        <li><a href="#s7">축A supervision 보강: 가중결합 / hard negative mining / PU-learning 주의 / 과목코드 피처화 + 최신 논문 반영</a></li>
+        <li><a href="#s7">축C: offline RL 검토했으나 로그 데이터 부재로 기각, planning(MCTS/MPC) 우선 유지</a></li>
+        <li><a href="#s7">옵션3 baseline에 OWL2Vec4OA(2024) 반영</a></li>
+        <li><a href="#s7">축E에 "GraphRAG를 온톨로지 대체가 아닌 설명생성 레이어로 결합" 메모 추가</a></li>
+      </ol>
+    </div>
+
+    <section class="doc-section" id="s1">
+      <div class="sec-head"><span class="sec-num">§1</span><h2>미션</h2></div>
+      <p>파편화된 대학 내 교육 자원(교과목, 연구실, 학사 제도)을 데이터화하여, 학생 개개인의 성향과 관심사에 최적화된 맞춤형 학술/진로 로드맵을 제공하는 AI 기반 진로 설계 및 추천 플랫폼.</p>
+    </section>
+
+    <section class="doc-section" id="s2">
+      <div class="sec-head"><span class="sec-num">§2</span><h2>팀 — 오뚜기 부대</h2></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>이름</th><th>직책</th><th>역할</th></tr></thead>
+          <tbody>
+            <tr><td>최선우</td><td>CEO</td><td>소프트웨어 개발 총괄</td></tr>
+            <tr><td>박서진</td><td>CTO</td><td>기술적 구현 및 AI 모델링</td></tr>
+            <tr><td>정우철</td><td>CSO</td><td>현실적 구현 자문, 전략 기획</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>군 복무 중(육군 신호정보/전자전운용병) 동일 부대에서 병행 개발.</p>
+      <div class="callout">팀의 시간·여력 문제는 2026-07-22 세션에서 사용자가 명시적으로 재검토 보류를 지시함 — 향후 별도 요청 전까지 다루지 않는다.</div>
+    </section>
+
+    <section class="doc-section" id="s3">
+      <div class="sec-head"><span class="sec-num">§3</span><h2>문제의식 — 포스텍의 역설</h2></div>
+      <ul>
+        <li>무은재학부 제도(2학년 1학기까지 무전공), 자유로운 타과 수강, 탄력적 진로 설계 → <strong>자유도는 최고 수준</strong></li>
+        <li>정보는 강의계획서·에브리타임·학과 홈페이지에 파편화, 가이드 부재 → 학생들은 결국 선배의 경로를 무비판적으로 답습</li>
+        <li>핵심 문제: "자유는 있는데 실행 가이드가 없다"</li>
+      </ul>
+    </section>
+
+    <section class="doc-section" id="s4">
+      <div class="sec-head"><span class="sec-num">§4</span><h2>핵심 가치 제안</h2></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>대상</th><th>제공 가치</th></tr></thead>
+          <tbody>
+            <tr><td>학생</td><td>탐색 비용 절감, 성향에 맞는 전공/연구 발견</td></tr>
+            <tr><td>학교</td><td>특정 분야 쏠림 없는 고른 자원 배분, 교육 만족도 향상</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="doc-section" id="s5">
+      <div class="sec-head"><span class="sec-num">§5</span><h2>데이터 소스</h2><span class="chip decided">확정 · 07-22</span></div>
+
+      <div class="card">
+        <div class="card-head"><strong>5.0 데이터 원칙</strong><span class="chip decided">확정</span></div>
+        <p><strong>팀이 실제로 확보 가능한 데이터는 인터넷에 이미 공개된 정형/텍스트 데이터뿐이다.</strong> 설문 등 별도 수집 캠페인 불가, 재학생 개인 수강기록 같은 비공개 학사 데이터 접근 불가.</p>
+        <ul>
+          <li>MVP 기능은 전부 공개 데이터(실라버스·권장이수체계도·연구실 키워드/논문)만으로 구현 가능해야 함</li>
+          <li>축B "학생 수강 이력"은 <strong>제품 출시 후 자사 사용자의 opt-in 1st-party 데이터</strong>만을 가리킴 — 제3자 스크래핑/설문 아님</li>
+          <li>부수 효과: IRB 등 개인정보 수집 절차 불필요 → "프라이버시-바이-디자인" 서사로 활용</li>
+        </ul>
+      </div>
+
+      <h3 style="font-size:14px; margin: 18px 0 8px;">5.1 확보 가능한 원천 데이터</h3>
+      <ul>
+        <li><strong>교과목</strong>: 과목명 / 과목코드(ticker) / 선수과목(자유서술, 대부분 부실) / 실라버스 텍스트</li>
+        <li><strong>학과 권장이수체계도</strong>: 학년별·학기별 권장 수강 순서 — 선수과목 필드보다 신뢰도 높은 그래프 구조 소스로 채택</li>
+        <li><strong>연구실</strong>: 교수별 대표 키워드 + 최근 논문 제목</li>
+        <li><strong>(Phase 2 보류) 졸업생 진로 데이터</strong>: 별도 수집(설문 등)이 필요한 유일한 항목</li>
+      </ul>
+
+      <h3 style="font-size:14px; margin: 18px 0 8px;">5.2 현재 저장소 상태</h3>
+      <ul>
+        <li><code>syllabus_raw.jsonl</code>(353건, EECE/CSED/MATH/IMEN)과 <code>DATA_ANALYSIS.md</code>는 <strong>참고용 프로토타입</strong>일 뿐 — 실제 개발은 재크롤링 데이터(+초기 더미 데이터)로 진행</li>
+        <li>재크롤링 시 실라버스뿐 아니라 권장이수체계도·연구실 키워드/논문을 1순위로 확보</li>
+      </ul>
+    </section>
+
+    <section class="doc-section" id="s6">
+      <div class="sec-head"><span class="sec-num">§6</span><h2>핵심 기능 (우선순위)</h2></div>
+
+      <h3 style="font-size:14px; margin: 4px 0 8px;">MVP (6개월 스코프)</h3>
+      <ol class="plain">
+        <li>관심사 기반 교과목/연구실 추천 (임베딩 매칭)</li>
+        <li>맞춤형 선수과목 테크트리 생성 — 저학년: 기초과목 우선 / 고학년: 수강 이력 기반 방향성 트래킹</li>
+        <li>연구실 논문 키워드 트렌드 갱신 파이프라인 (최근 2~3개년 크롤링 → 주기 갱신)</li>
+        <li>타과 융합 연구실 추천 — 임베딩 공간을 학과로 분리하지 않는 설계로 자연히 확보</li>
+        <li>
+          <strong>(보조 참고정보) 온톨로지 기반 전형적 경로 제시</strong> <span class="chip decided">확정 · 07-22</span>
+          <p style="margin-top:6px;">실제 "동료들이 걸은 길"이 아니라, 권장이수체계도+온톨로지 그래프(<code>hasPrerequisite</code> 체인, 이수구분 가중치)에서 도출한 "이 관심사라면 논리적으로 자연스러운 전형적 순서"를 보여준다. 개인 수강기록이 필요 없어 §5.0과 정합적이며 1개월차 데이터로 바로 구현 가능.</p>
+          <div class="callout">이전 초안 "동료 궤적 비교"(재학생 실제 수강경로 익명화)는 폐기됨 — 필요한 데이터(제3자 학생의 실제 수강기록)를 팀이 합법적으로 확보할 방법이 없다는 게 §5.0 정리 과정에서 드러나 되돌림.</div>
+        </li>
+      </ol>
+
+      <h3 style="font-size:14px; margin: 18px 0 8px;">Phase 2 보류</h3>
+      <ul>
+        <li>졸업생 커리어 패스 역추적 (Career Path Mapping) — 신뢰할 데이터 소스 부재로 6개월 내 구축 어려움. 소규모 파일럿(팀 지인 설문) 여지는 있으나 MVP 정식 기능에서는 제외.</li>
+      </ul>
+    </section>
+
+    <section class="doc-section" id="s7">
+      <div class="sec-head"><span class="sec-num">§7</span><h2>기술 아키텍처</h2></div>
+      <p>핵심 관점: 학생의 연구 방향성은 시간에 따라 진화하는 <strong>상태(state)</strong>, 매 학기 수강 선택은 그 상태에 가하는 <strong>제어입력</strong>, 관측 가능한 건 노이즈 낀 신호(수강 과목, 관심 키워드)뿐이다. 통신/제어/신호처리/딥러닝/강화학습 배경이 하나의 시스템으로 통합된다.</p>
+
+      <div class="axis-block">
+        <div class="axis-head"><h3>축 A — 상태 표현 학습 (Deep Learning)</h3><span class="axis-tag">현재 최우선 축</span></div>
+        <p>기성 SBERT 그대로 쓰지 않고 도메인 특화 임베딩을 직접 학습(연구 실적화 목적).</p>
+        <p><strong>학습 신호</strong>: <code>PREREQUISITE</code> 필드는 결측 90%로 미채택. 대신 (a) 권장이수체계도 순서, (b) 이수구분+과목코드 기반 레벨 신호, (c) 연구실 키워드-과목 어휘 중첩, (d) 팀 라벨링 소규모 골드셋(평가 전용)을 positive pair 소스로 사용.</p>
+        <div class="card">
+          <div class="card-head"><strong>Supervision 보강</strong><span class="chip decided">확정 · 07-22</span></div>
+          <ul>
+            <li><strong>가중 결합</strong>: (a)~(c)를 신호별 신뢰도로 확률적 결합 (Snorkel류 weak-supervision aggregation 검토) — (a) 고신뢰, (c) 저신뢰로 차등</li>
+            <li><strong>Hard negative mining</strong>: "같은 학과·비슷한 레벨이지만 그래프상 미연결" 과목을 negative로 구성</li>
+            <li><strong>PU-learning 주의</strong>: 미관찰 쌍을 곧바로 negative로 취급하지 않음 — 평가 프로토콜에도 동일 적용</li>
+            <li><strong>과목코드 피처화 확장</strong>: 레벨 신호를 과목코드 숫자 패턴까지 세밀화</li>
+          </ul>
+          <p style="font-size:13px; color:var(--ink-soft);">근거: Liang et al. AAAI'17 · Pan et al. ACL'17 · <em>최신 대체 참고</em> — "A Bayesian approach to inferring prerequisite structures and topic difficulty" (BEA 2025)</p>
+        </div>
+        <p><strong>모델</strong>: 한국어/다국어 인코더(KoSimCSE, KLUE-RoBERTa, multilingual-e5 등) 백본 + <code>MultipleNegativesRankingLoss</code> contrastive fine-tuning. 여유 시 얕은 GAT/GraphSAGE로 그래프 구조 명시 반영.
+          <span class="chip memo">2024~25</span> 참고: "Toward General and Robust LLM-enhanced Text-attributed Graph Learning"(2025), "GraphRAG-Induced Dual Knowledge Structure Graphs for Personalized Learning Path Recommendation"(2025)</p>
+        <p><strong>베이스라인</strong>: 옵션3(온톨로지+앵커문장) 구현 시 <strong>OWL2Vec4OA</strong>(2024.12, OWL2Vec* 후속작)를 평가 baseline으로 추가. <span class="chip decided">확정</span></p>
+        <p><strong>평가</strong>: (1) 권장이수그래프 엣지 hide 후 링크예측 비교, (2) text-only vs text+graph ablation, (3) 골드셋/소규모 학생 휴먼평가(NDCG@k, Precision@k)</p>
+      </div>
+
+      <div class="axis-block">
+        <div class="axis-head"><h3>축 B — 상태 추적 (Signal Processing)</h3></div>
+        <p>학생의 수강 이력을 시계열 신호로 보고, 노이즈 낀 관측(수강 과목, 자기보고 키워드)으로부터 잠재 연구방향 상태를 추정. 칼만 필터 또는 지수가중 이동평균 후보. 최근 관심 변화를 과거 이력에 덜 휘둘리며 반영하는 게 목적.</p>
+      </div>
+
+      <div class="axis-block">
+        <div class="axis-head"><h3>축 C — 경로 계획 (Control / RL)</h3><span class="axis-tag">스트레치 목표</span></div>
+        <p>테크트리 생성 기능의 알고리즘 백엔드. 목표 임베딩까지 상태를 유도하는 문제를 유한구간 MPC 또는 선수과목 DAG 위 MCTS 플래닝으로 정식화. 선수과목 순서·학점 상한·잔여 학기는 하드 제약.</p>
+        <p>알고리즘 최종 선택(MPC vs MCTS) <span class="chip open">미정</span></p>
+        <div class="card">
+          <div class="card-head"><strong>offline RL 검토 후 기각</strong><span class="chip decided">확정 · 07-22</span></div>
+          <p>"Doubly Constrained Offline RL for Learning Path Recommendation", "Privileged Knowledge State Distillation for RL-based Educational Path Recommendation"(KDD 2024) 등 최신 offline RL 계열은 "상호작용 로그가 적을 때 RL 하는 법"을 다뤄 이 축의 제약과 정면으로 관련 있으나, 클로즈베타 이전 로그 데이터가 사실상 0이라 학습이 어려울 것으로 판단해 <strong>planning(MCTS/MPC) 우선</strong> 결정 유지.</p>
+          <p style="font-size:13px; color:var(--ink-soft);">참고: "On Conceptualisation and Overview of Learning Path Recommender Systems in e-Learning" (2024 서베이)</p>
+        </div>
+      </div>
+
+      <div class="axis-block">
+        <div class="axis-head"><h3>축 D — 온톨로지 (Formal Ontology)</h3><span class="axis-tag">학습 목적 포함</span></div>
+        <p><strong>결정</strong>: formal(OWL 기반)로 간다. 절차: Competency Questions 정의 → 개념화(클래스/관계/공리) → OWL 2 DL 형식화 → reasoner 일관성 검증/추론.</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th class="num">#</th><th>Competency Question</th><th>관련 관계 · 기능</th></tr></thead>
+            <tbody>
+              <tr><td class="num">1</td><td>학생이 목표 과목 X를 듣기 위해 거쳐야 할 최소 선수과목 체인은?</td><td><code>hasPrerequisite</code> · MVP#2</td></tr>
+              <tr><td class="num">2</td><td>학점 상한·잔여 학기 제약 하 목표 과목까지 도달 가능한 순서가 존재하는가?</td><td><code>hasPrerequisite</code> · MVP#2, 축C</td></tr>
+              <tr><td class="num">3</td><td>두 과목이 서로를 선수과목으로 삼는 순환 관계가 존재하는가?</td><td>일관성 검증</td></tr>
+              <tr><td class="num">4</td><td>관심 ResearchTopic을 다루는 Lab/Professor는 어디인가?</td><td><code>coversTopic</code> · MVP#1</td></tr>
+              <tr><td class="num">5</td><td>Lab이 요구하는 Skill과 이를 제공하는 Course는?</td><td><code>requiresSkill</code> · MVP#1</td></tr>
+              <tr><td class="num">6</td><td>타 학과 두 Course가 인접 ResearchTopic을 다루는가? (depth ≤ k)</td><td><code>isSubfieldOf</code> · MVP#4</td></tr>
+              <tr><td class="num">7</td><td>깊은 노드 관련 모든 Course를 depth 무관하게 찾을 수 있는가?</td><td>깊이 어필 실증</td></tr>
+              <tr><td class="num">8</td><td>Lab 논문 키워드 변화를 <code>coversTopic</code>에 어떻게 반영/갱신하는가?</td><td>MVP#3, 변경관리</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:13px; color: var(--ink-faint);">8개 전체 <span class="chip decided">확정 · 07-22</span></p>
+
+        <p><strong>스키마 초안</strong> — 클래스: <code>Course</code> <code>Lab</code> <code>Professor</code> <code>ResearchTopic</code>(계층형) <code>Skill</code> <code>Department</code> · 관계: <code>hasPrerequisite</code>(transitive) <code>isSubfieldOf</code>(transitive) <code>partOfDepartment</code> <code>coversTopic</code> <code>specializesIn</code> <code>requiresSkill</code></p>
+
+        <p><strong>깊이 설계 원칙</strong>: transitive 체인이 충분히 깊어야 "LLM beam search는 얕고 우리는 깊이 무관하게 완전하다"는 어필이 성립한다. 예시(통신 서브도메인, depth 5):</p>
+        <div class="route-diagram">
+          <span class="node">ElectricalEngineering</span><span class="arrow">→</span>
+          <span class="node">Communications</span><span class="arrow">→</span>
+          <span class="node">InformationTheory</span><span class="arrow">→</span>
+          <span class="node">SemanticCommunication</span><span class="arrow">→</span>
+          <span class="node tip">JointSourceChannelCoding</span>
+        </div>
+
+        <p><strong>툴스택</strong>: Protégé(저작) + HermiT/Pellet(reasoner) + Neo4j(런타임 materialize) <span class="chip hold">확정 보류</span> — 스키마가 더 무르익은 뒤 재검토(§11)</p>
+        <p><strong>모델링 우선순위</strong>: 통신/전자공학(EECE)을 팀 전공 지식으로 먼저 깊게, 타 학과는 이후 얕게 확장 <span class="chip decided">확정 · 07-22</span></p>
+      </div>
+
+      <div class="axis-block">
+        <div class="axis-head"><h3>축 E — 생성/설명 계층 & LLM 벤치마크</h3><span class="axis-tag">보류</span></div>
+        <p>"자체 LLM engine이 Gemini보다 낫다"는 범용 성능이 아니라 <strong>이 특정 과제(커리큘럼/연구실 추천 + 근거 생성)에서의 우위</strong>로 해석. 온톨로지+검색으로 확정된 사실만 다듬는 경량 로컬 모델이 현실적 형태. 벤치마크 설계는 사용자가 추후 직접 설계 — 현재 미정.</p>
+        <div class="card">
+          <div class="card-head"><strong>메모 — GraphRAG를 설명생성 기법으로 편입</strong><span class="chip memo">메모 · 07-22</span></div>
+          <p>축D가 만든 reasoner 검증 완료 그래프(Neo4j materialize)를 검색 대상으로 삼아 "서브그래프 검색 → LLM 자연어 설명 생성" 구조를 GraphRAG 방식으로 구현. 그래프가 LLM 추출이 아니라 reasoner 산출물이라 일반 GraphRAG의 "그래프 노이즈" 문제가 없음. <strong>온톨로지(추론)와 GraphRAG(설명생성)는 경쟁이 아니라 파이프라인의 다른 단계</strong> — 대체가 아닌 결합으로만 고려. 축E 재개 시 검토.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section" id="s8">
+      <div class="sec-head"><span class="sec-num">§8</span><h2>대략적 로드맵 (6개월 가정)</h2></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th class="num">월</th><th>작업</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1</td><td>크롤링(실라버스+권장이수체계도+연구실 키워드/논문), 그래프/온톨로지 초안 구축</td></tr>
+            <tr><td class="num">2</td><td>베이스라인 임베딩(기성 인코더) + 평가 프로토콜 확정</td></tr>
+            <tr><td class="num">3</td><td>Contrastive fine-tuning, 베이스라인 대비 비교</td></tr>
+            <tr><td class="num">4</td><td>(스트레치) 그래프 정제 레이어 + 경로계획 알고리즘 프로토타입</td></tr>
+            <tr><td class="num">5</td><td>시스템 통합 + 클로즈베타(무은재학부·고학년 50~100명)</td></tr>
+            <tr><td class="num">6</td><td>정리, 대회/논문 제출 준비</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">현재 위치: <strong>1개월차</strong> — 크롤링 및 온톨로지 초안 구축 단계.</div>
+    </section>
+
+    <section class="doc-section" id="s9">
+      <div class="sec-head"><span class="sec-num">§9</span><h2>결정된 사항 vs 미정 사항</h2></div>
+      <div class="status-cols">
+        <div>
+          <h3><span class="wp-dot decided"></span> 결정됨 (19)</h3>
+          <ul>
+            <li>데이터 원칙(§5.0): 공개 정형/텍스트 데이터만 사용</li>
+            <li>MVP #5 = "온톨로지 기반 전형적 경로 제시"로 확정</li>
+            <li>축A supervision 가중결합/hard negative/PU-learning/과목코드 피처화 보강</li>
+            <li>옵션3 baseline에 OWL2Vec4OA 반영</li>
+            <li>축C: offline RL 기각, planning 우선 유지</li>
+            <li>팀 시간/여력 재검토는 보류(사용자 지시)</li>
+            <li><code>syllabus_raw.jsonl</code>/<code>DATA_ANALYSIS.md</code>는 참고용, 실 데이터는 재크롤링</li>
+            <li>SBERT 그대로 미사용, 도메인 특화 임베딩 직접 학습</li>
+            <li>연구 기여 우선순위: 축A 최우선, 축C 스트레치</li>
+            <li>MVP 기능: 임베딩 매칭 추천·테크트리·트렌드 파이프라인·타과 융합 검색</li>
+            <li>커리어 패스 매핑은 Phase 2 보류</li>
+            <li>온톨로지 formal(OWL) 진행, 학습 목적 포함</li>
+            <li>온톨로지 깊이(transitive 체인) 의도적으로 깊게 설계</li>
+            <li>Gemini 벤치마크 설계는 사용자가 추후 별도 진행</li>
+            <li>코드 작성은 명시적 개발 지시 전까지 보류</li>
+            <li>더미 데이터: 필요 시점에 즉석으로 정의(사전 전체 스키마 설계 안 함)</li>
+            <li>MCP 서버 연계는 현재 논의 스킵</li>
+            <li>태그 vs 온톨로지: 옵션3 풀스케일 채택</li>
+            <li>통신/전자공학 서브도메인 우선 모델링</li>
+          </ul>
+        </div>
+        <div>
+          <h3><span class="wp-dot open"></span> 미정 · 확인 필요 (4)</h3>
+          <ul>
+            <li>온톨로지 툴스택 확정 여부 — 아직 이르다고 판단, 보류</li>
+            <li>경로계획 알고리즘 최종 선택(MPC vs MCTS vs 기타)</li>
+            <li>대시보드/UX 설계</li>
+            <li>Gemini 벤치마크 과제 정의 (보류 상태 유지)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section" id="s10">
+      <div class="sec-head"><span class="sec-num">§10</span><h2>태그 vs 온톨로지 전략 비교</h2><span class="chip decided">결론 · 07-22</span></div>
+      <p>원래 기획서의 "Custom Tag Score Vector"(태그별 앵커문장 → 문서 유사도 스코어링)와, 이후 도입한 formal 온톨로지 <code>ResearchTopic</code> 계층의 관계를 정리한 논의.</p>
+
+      <div class="options-grid">
+        <div class="opt-card">
+          <h4>옵션 1 — 태그만 유지</h4>
+          <div class="pro"><b>장점</b>구현 단순, dense 임베딩과 자연 결합, 태그 추가 쉬움</div>
+          <div class="con"><b>단점</b>태그 간 관계 없어 깊은 추론 서사와 단절, 두 체계 정합성 문제</div>
+        </div>
+        <div class="opt-card">
+          <h4>옵션 2 — 온톨로지만</h4>
+          <div class="pro"><b>장점</b>체계 단순화, 다단계 추론 깊이 어필과 완전 일치</div>
+          <div class="con"><b>단점</b>자유서술 텍스트의 미묘한 의미차 못 잡음, 커버리지 갭 취약</div>
+        </div>
+        <div class="opt-card winner">
+          <h4>옵션 3 — 결합 <span class="chip decided">채택</span></h4>
+          <div class="pro"><b>장점</b>연속 스코어링 + 깊은 추론을 모두 확보, 두 근거 동시 제시 가능</div>
+          <div class="con"><b>단점</b>설계/유지 복잡도 최고 — 노드-앵커문장 동기화 부담</div>
+        </div>
+      </div>
+      <div class="callout"><strong>결론(2026-07-22)</strong>: 옵션 3 풀스케일 채택. <code>ResearchTopic</code> 계층 전체에 앵커문장을 부착하고, 노드 추가/수정 시 앵커문장 동기화를 온톨로지 편집 워크플로우의 필수 단계로 취급한다.</div>
+    </section>
+
+    <section class="doc-section" id="s11">
+      <div class="sec-head"><span class="sec-num">§11</span><h2>열린 질문 (다음 논의)</h2><span class="chip open">오픈 · 3</span></div>
+      <ul>
+        <li><strong>경로계획 알고리즘(축C)</strong>: MPC vs MCTS 중 어느 쪽을 프로토타입 우선순위로 둘 것인가?</li>
+        <li><strong>대시보드/UX</strong>: 추천 근거(온톨로지 경로 + 유사도 점수)를 사용자에게 어떻게 시각화할 것인가?</li>
+        <li><strong>온톨로지 툴스택</strong>: 스키마가 무르익으면 Protégé/HermiT/Pellet/Neo4j 조합을 재검토할 시점을 언제로 볼 것인가?</li>
+      </ul>
+    </section>
+
+    <p class="footline">이 페이지는 <code>PROJECT_DESIGN.md</code>의 스냅샷입니다. 원본 문서가 갱신되면 이 페이지도 다시 생성해 반영합니다. 로컬에서는 이 파일을 브라우저로 직접 열면 됩니다.</p>
+  </main>
+</div>
+
+<script>
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.waypoint'));
+    var sections = links.map(function (a) {
+      return document.querySelector(a.getAttribute('href'));
+    });
+    if (!('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var idx = sections.indexOf(entry.target);
+        if (idx === -1) return;
+        if (entry.isIntersecting) {
+          links.forEach(function (l) { l.classList.remove('active'); });
+          links[idx].classList.add('active');
+        }
+      });
+    }, { rootMargin: '-10% 0px -70% 0px', threshold: 0 });
+    sections.forEach(function (s) { if (s) io.observe(s); });
+  })();
+</script>
+</body>
+</html>
