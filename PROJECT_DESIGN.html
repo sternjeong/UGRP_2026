@@ -372,6 +372,7 @@
       <a class="waypoint" href="#s5" data-n="5"><span class="wp-num">5</span><span class="wp-body"><span class="wp-title">데이터 소스</span><span class="wp-sub"><span class="wp-dot decided"></span></span></span></a>
       <a class="waypoint" href="#s6" data-n="6"><span class="wp-num">6</span><span class="wp-body"><span class="wp-title">핵심 기능</span><span class="wp-sub"><span class="wp-dot decided"></span></span></span></a>
       <a class="waypoint" href="#s7" data-n="7"><span class="wp-num">7</span><span class="wp-body"><span class="wp-title">기술 아키텍처</span><span class="wp-sub"><span class="wp-dot decided"></span><span class="wp-dot open"></span></span></span></a>
+      <a class="waypoint" href="#s71" data-n="7.1"><span class="wp-num" style="font-size:10px;">7.1</span><span class="wp-body"><span class="wp-title">문헌 스터디 트래커</span><span class="wp-sub"><span class="wp-dot decided"></span></span></span></a>
       <a class="waypoint" href="#s8" data-n="8"><span class="wp-num">8</span><span class="wp-body"><span class="wp-title">로드맵</span></span></a>
       <a class="waypoint" href="#s9" data-n="9"><span class="wp-num">9</span><span class="wp-body"><span class="wp-title">결정 vs 미정</span><span class="wp-sub"><span class="wp-dot decided"></span><span class="wp-dot open"></span></span></span></a>
       <a class="waypoint" href="#s10" data-n="10"><span class="wp-num">10</span><span class="wp-body"><span class="wp-title">태그 vs 온톨로지</span><span class="wp-sub"><span class="wp-dot decided"></span></span></span></a>
@@ -384,29 +385,23 @@
       <p class="eyebrow">POSTECH UGRP · 기술창업트랙 · 오뚜기 부대</p>
       <h1>3분커리 <span style="color:var(--ink-faint); font-weight:500;">(3-min Curri)</span></h1>
       <p class="tagline">"3분 만에 찾는 나만의 학술 경주로" — 대화를 통해 누적 기록되는 설계 문서의 스냅샷.</p>
-      <p class="meta">최종 갱신 2026-07-22 · 원본 <code>PROJECT_DESIGN.md</code></p>
+      <p class="meta">최종 갱신 2026-07-23 · 원본 <code>PROJECT_DESIGN.md</code></p>
     </header>
 
     <div class="kpi-row">
-      <div class="kpi decided"><div class="n">19</div><div class="l">결정된 사항</div></div>
+      <div class="kpi decided"><div class="n">22</div><div class="l">결정된 사항</div></div>
       <div class="kpi open"><div class="n">4</div><div class="l">미정 · 확인 필요</div></div>
-      <div class="kpi hold"><div class="n">3</div><div class="l">보류 항목</div></div>
+      <div class="kpi hold"><div class="n">2</div><div class="l">보류 항목</div></div>
       <div class="kpi"><div class="n">3</div><div class="l">§11 열린 질문</div></div>
     </div>
 
     <div class="session-log">
-      <h2>오늘 세션에서 결정된 것 <span class="date">2026-07-22</span></h2>
+      <h2>오늘 세션에서 결정된 것 <span class="date">2026-07-23</span></h2>
       <ol>
-        <li><a href="#s10">태그 vs 온톨로지 — 옵션3(결합) 풀스케일 채택, 별도 flat 태그 체계는 두지 않음</a></li>
-        <li><a href="#s7">통신/전자공학(EECE) 서브도메인을 팀 전공 지식으로 먼저 깊게 모델링 확정</a></li>
-        <li><a href="#s7">온톨로지 툴스택(Protégé/HermiT/Neo4j) 확정은 아직 이르다고 판단, 보류</a></li>
-        <li><a href="#s7">온톨로지 Competency Questions 8개 전부 확정</a></li>
-        <li><a href="#s6">MVP #5 "동료 궤적 비교" 폐기 — 필요한 데이터를 합법적으로 확보할 수 없음이 드러나 "온톨로지 기반 전형적 경로 제시"로 대체</a></li>
-        <li><a href="#s5">§5.0 데이터 원칙 신설 — 팀이 쓸 수 있는 건 공개 정형/텍스트 데이터뿐, 설문·비공개 학생기록 불가</a></li>
-        <li><a href="#s7">축A supervision 보강: 가중결합 / hard negative mining / PU-learning 주의 / 과목코드 피처화 + 최신 논문 반영</a></li>
-        <li><a href="#s7">축C: offline RL 검토했으나 로그 데이터 부재로 기각, planning(MCTS/MPC) 우선 유지</a></li>
-        <li><a href="#s7">옵션3 baseline에 OWL2Vec4OA(2024) 반영</a></li>
-        <li><a href="#s7">축E에 "GraphRAG를 온톨로지 대체가 아닌 설명생성 레이어로 결합" 메모 추가</a></li>
+        <li><a href="#s7">연구실적화 플래그십 축: 축A+축D+축E 병행 확정 — 축E "보류" 해제</a></li>
+        <li><a href="#s71">§7.1 문헌 스터디 트래커 신설 — 축A/D/E별 논문을 상태·활용목적과 함께 지속 추적</a></li>
+        <li><a href="#s7">축D 근접 선행연구(Abu-Rasheed et al., arXiv 2501.12300, 2025) 대비 차별점 명시 — formal reasoner 검증 + 정량 링크예측 평가 + 전학과 스케일</a></li>
+        <li><a href="#s7">축E에 ALERT(NAACL 2025) LLM-judge 벤치마크를 향후 벤치마크 설계 착안점으로 등록</a></li>
       </ol>
     </div>
 
@@ -575,17 +570,78 @@
           <span class="node tip">JointSourceChannelCoding</span>
         </div>
 
+        <div class="card">
+          <div class="card-head"><strong>근접 선행연구 대비 차별점</strong><span class="chip decided">확정 · 07-23</span></div>
+          <p>Abu-Rasheed et al., <em>"LLM-Assisted Knowledge Graph Completion for Curriculum and Domain Modelling in Personalized Higher Education Recommendations"</em> (arXiv 2501.12300, 2025) — 문제의식(커리큘럼/도메인 모델링 + 개인화 고등교육 추천 KG)이 축D와 거의 동일한 선행연구.</p>
+          <ul>
+            <li>이 논문: LLM이 그래프 <strong>완성(completion)</strong>을 직접 담당, 평가는 그래프 구조 지표 + 전문가 정성 피드백에 그침(formal reasoner 검증 없음). 스케일도 임베디드시스템/FPGA <strong>2개 모듈</strong>에 국한.</li>
+            <li>우리: OWL 2 DL + reasoner(HermiT/Pellet) 논리적 일관성 검증 + 링크예측 정량평가(축A 평가 프로토콜과 동일 방법론) + EECE 전체·타학과 융합 스케일.</li>
+          </ul>
+        </div>
         <p><strong>툴스택</strong>: Protégé(저작) + HermiT/Pellet(reasoner) + Neo4j(런타임 materialize) <span class="chip hold">확정 보류</span> — 스키마가 더 무르익은 뒤 재검토(§11)</p>
         <p><strong>모델링 우선순위</strong>: 통신/전자공학(EECE)을 팀 전공 지식으로 먼저 깊게, 타 학과는 이후 얕게 확장 <span class="chip decided">확정 · 07-22</span></p>
       </div>
 
       <div class="axis-block">
-        <div class="axis-head"><h3>축 E — 생성/설명 계층 & LLM 벤치마크</h3><span class="axis-tag">보류</span></div>
-        <p>"자체 LLM engine이 Gemini보다 낫다"는 범용 성능이 아니라 <strong>이 특정 과제(커리큘럼/연구실 추천 + 근거 생성)에서의 우위</strong>로 해석. 온톨로지+검색으로 확정된 사실만 다듬는 경량 로컬 모델이 현실적 형태. 벤치마크 설계는 사용자가 추후 직접 설계 — 현재 미정.</p>
+        <div class="axis-head"><h3>축 E — 생성/설명 계층 & LLM 벤치마크</h3><span class="axis-tag">플래그십 · 07-23</span></div>
+        <p>"자체 LLM engine이 Gemini보다 낫다"는 범용 성능이 아니라 <strong>이 특정 과제(커리큘럼/연구실 추천 + 근거 생성)에서의 우위</strong>로 해석. 온톨로지+검색으로 확정된 사실만 다듬는 경량 로컬 모델이 현실적 형태.</p>
+        <div class="card">
+          <div class="card-head"><strong>축A·축D와 함께 연구실적화 플래그십 축으로 확정</strong><span class="chip decided">확정 · 07-23</span></div>
+          <p>벤치마크 세부 과제 정의(비교 지표 등)는 여전히 사용자가 추후 직접 설계 — 미정이나, 착안점으로 <strong>ALERT</strong>(NAACL 2025, LLM-judge 기반 추천 설명생성 평가 벤치마크)를 §7.1 문헌 스터디 트래커에 등록.</p>
+        </div>
         <div class="card">
           <div class="card-head"><strong>메모 — GraphRAG를 설명생성 기법으로 편입</strong><span class="chip memo">메모 · 07-22</span></div>
-          <p>축D가 만든 reasoner 검증 완료 그래프(Neo4j materialize)를 검색 대상으로 삼아 "서브그래프 검색 → LLM 자연어 설명 생성" 구조를 GraphRAG 방식으로 구현. 그래프가 LLM 추출이 아니라 reasoner 산출물이라 일반 GraphRAG의 "그래프 노이즈" 문제가 없음. <strong>온톨로지(추론)와 GraphRAG(설명생성)는 경쟁이 아니라 파이프라인의 다른 단계</strong> — 대체가 아닌 결합으로만 고려. 축E 재개 시 검토.</p>
+          <p>축D가 만든 reasoner 검증 완료 그래프(Neo4j materialize)를 검색 대상으로 삼아 "서브그래프 검색 → LLM 자연어 설명 생성" 구조를 GraphRAG 방식으로 구현. 그래프가 LLM 추출이 아니라 reasoner 산출물이라 일반 GraphRAG의 "그래프 노이즈" 문제가 없음. <strong>온톨로지(추론)와 GraphRAG(설명생성)는 경쟁이 아니라 파이프라인의 다른 단계</strong> — 대체가 아닌 결합으로만 고려.</p>
         </div>
+      </div>
+    </section>
+
+    <section class="doc-section" id="s71">
+      <div class="sec-head"><span class="sec-num">§7.1</span><h2>문헌 스터디 트래커</h2><span class="chip decided">신설 · 07-23</span></div>
+      <p>연구실적화 플래그십 축으로 확정된 <strong>축A·축D·축E</strong> 각각에 대해, 구현 결정을 뒷받침하는 논문을 지속적으로 추적한다. 상태는 <code>미착수 / 읽음 / 적용중 / 구현완료</code>로 관리하며 로드맵(§8) 진행에 맞춰 갱신한다.</p>
+
+      <h3 style="font-size:14px; margin: 18px 0 8px;">축 A — 상태 표현 학습</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>논문</th><th>출처 · 연도</th><th>상태</th><th>활용 목적</th></tr></thead>
+          <tbody>
+            <tr><td>Liang et al., "Recovering Concept Prerequisite Relations from University Course Dependencies"</td><td>AAAI 2017</td><td>적용중</td><td>supervision 가중결합 근거</td></tr>
+            <tr><td>Pan et al., "Prerequisite Relation Learning for Concepts in MOOCs"</td><td>ACL 2017</td><td>적용중</td><td>supervision 가중결합 근거</td></tr>
+            <tr><td>"A Bayesian approach to inferring prerequisite structures and topic difficulty"</td><td>BEA 워크숍 2025</td><td>읽음</td><td>가중결합 방법론의 최신 대체안 검토</td></tr>
+            <tr><td>"GraphRAG-Induced Dual Knowledge Structure Graphs for Personalized Learning Path Recommendation"</td><td>arXiv 2506.22303, 2025</td><td>읽음</td><td>옵션3 설계 직접 비교 대상 — 축E와 공유</td></tr>
+            <tr><td>"Toward General and Robust LLM-enhanced Text-attributed Graph Learning"</td><td>2025</td><td>미착수</td><td>텍스트+그래프 결합 표현학습 참고</td></tr>
+            <tr><td>KaLM-Embedding-V2 / cropping-vs-dropout augmentation</td><td>arXiv 2025</td><td>미착수</td><td>임베딩 학습 테크닉 보조 참고 (필수 아님)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-size:14px; margin: 18px 0 8px;">축 D — 온톨로지</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>논문</th><th>출처 · 연도</th><th>상태</th><th>활용 목적</th></tr></thead>
+          <tbody>
+            <tr><td>Abu-Rasheed et al., "LLM-Assisted Knowledge Graph Completion for Curriculum and Domain Modelling in Personalized Higher Education Recommendations"</td><td>arXiv 2501.12300, 2025</td><td>읽음(초록)</td><td><strong>근접 선행연구 — 차별화 근거</strong></td></tr>
+            <tr><td>OWL2Vec* 후속작 OWL2Vec4OA</td><td>KGSWC 2024/2025</td><td>확정</td><td>평가 baseline</td></tr>
+            <tr><td>"LLM-Powered Construction of Course Knowledge-Competency Graphs"</td><td>ICETAI 2025</td><td>미착수</td><td>온톨로지 반자동 구축(LLM 보조) 방법 검토</td></tr>
+            <tr><td>"Heterogeneous LLM Methods for Ontology Learning"</td><td>arXiv 2508.19428</td><td>미착수</td><td>LLM 보조 온톨로지 학습 일반 방법론</td></tr>
+            <tr><td>"LLM-empowered knowledge graph construction" (survey)</td><td>arXiv 2510.20345</td><td>미착수</td><td>관련연구 섹션 작성용 서베이</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-size:14px; margin: 18px 0 8px;">축 E — 생성/설명 계층</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>논문</th><th>출처 · 연도</th><th>상태</th><th>활용 목적</th></tr></thead>
+          <tbody>
+            <tr><td>"GraphRAG-Induced Dual Knowledge Structure Graphs for Personalized Learning Path Recommendation"</td><td>arXiv 2506.22303, 2025</td><td>읽음</td><td>핵심 방법론 참고 (§7 축E 메모와 연결)</td></tr>
+            <tr><td>"Path-Based Explanations for Knowledge Graph-Driven Course Recommendation"</td><td>Springer 2025</td><td>미착수</td><td>근접 선행연구 가능성 — 원문 확인 후 차별화 여부 재검토</td></tr>
+            <tr><td>LlamaRec-LKG-RAG</td><td>arXiv 2506.07449, 2025</td><td>미착수</td><td>단일패스 학습가능 KG-RAG 랭킹 구조 참고</td></tr>
+            <tr><td>ALERT benchmark</td><td>NAACL 2025</td><td>미착수</td><td>Gemini 벤치마크 설계 시 LLM-judge 평가 방법론 착안점</td></tr>
+            <tr><td>"Can Explanations Improve Recommendations? Evidence from Prediction-Informed Explanations"</td><td>arXiv 2502.16759, 2025</td><td>미착수</td><td>설명생성이 추천 품질을 높인다는 동기부여 근거</td></tr>
+            <tr><td>JuStRank</td><td>ACL 2025</td><td>미착수</td><td>LLM judge 벤치마킹 방법론 참고</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
@@ -611,8 +667,11 @@
       <div class="sec-head"><span class="sec-num">§9</span><h2>결정된 사항 vs 미정 사항</h2></div>
       <div class="status-cols">
         <div>
-          <h3><span class="wp-dot decided"></span> 결정됨 (19)</h3>
+          <h3><span class="wp-dot decided"></span> 결정됨 (22)</h3>
           <ul>
+            <li><a href="#s71">연구실적화 플래그십 축: 축A+축D+축E 병행 확정 (07-23)</a></li>
+            <li><a href="#s71">§7.1 문헌 스터디 트래커 신설 — 축A/D/E 논문 상태·활용목적 지속 추적 (07-23)</a></li>
+            <li><a href="#s7">축D 근접 선행연구(Abu-Rasheed et al. 2025) 대비 차별점 명시 (07-23)</a></li>
             <li>데이터 원칙(§5.0): 공개 정형/텍스트 데이터만 사용</li>
             <li>MVP #5 = "온톨로지 기반 전형적 경로 제시"로 확정</li>
             <li>축A supervision 가중결합/hard negative/PU-learning/과목코드 피처화 보강</li>

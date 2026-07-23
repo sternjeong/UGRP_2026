@@ -131,12 +131,51 @@
   ```
 - **툴스택**: Protégé(저작) + HermiT/Pellet reasoner(추론·일관성 검증) + Neo4j(추론 완료된 그래프를 런타임 쿼리용으로 materialize) — **확정 보류**, 스키마가 더 무르익은 뒤 재검토 (§11).
 - **모델링 우선순위(확정)**: 통신/전자공학 서브도메인을 팀의 전공 지식으로 먼저 깊게 모델링하고, 타 학과는 이후 얕게 확장.
+- **근접 선행연구 대비 차별점(확정, 2026-07-23, 근거: Abu-Rasheed et al., "LLM-Assisted Knowledge Graph Completion for Curriculum and Domain Modelling in Personalized Higher Education Recommendations", arXiv 2501.12300, 2025)**: 문제의식(커리큘럼/도메인 모델링 + 개인화 고등교육 추천을 위한 지식그래프)이 우리 축D와 거의 동일한 선행연구. 항상 명시적으로 비교/차별화할 대상으로 취급한다.
+  - 이 논문: LLM이 그래프 **완성(completion)**을 직접 담당하며, 평가도 그래프 구조 지표 + 전문가 정성 피드백에 그침(formal reasoner에 의한 논리적 일관성 검증 없음). 스케일도 임베디드시스템/FPGA **2개 모듈**에 국한.
+  - 우리: OWL 2 DL + reasoner(HermiT/Pellet)로 논리적 일관성을 검증하고, 링크 예측 기반 정량 평가(§7 축A 평가 프로토콜과 동일 방법론)를 사용하며, EECE 전체 + 타학과 융합까지 스케일을 확장한다. "LLM 추출 그래프의 노이즈/비일관성 vs reasoner 검증된 그래프"가 핵심 차별화 문구.
 
-### 축 E — 생성/설명 계층 & LLM 벤치마크 (보류)
+### 축 E — 생성/설명 계층 & LLM 벤치마크
 
 - "자체 LLM engine이 Gemini API보다 낫다"는 주장은 **범용 성능이 아니라 이 특정 과제(커리큘럼/연구실 추천 + 근거 생성)에서의 우위**로 해석. 온톨로지+검색으로 확정된 사실만 가지고 문장을 다듬는 경량 로컬 모델이 현실적 형태.
-- 벤치마크 설계(과제 정의, 비교 지표 등)는 **사용자가 추후 직접 설계 — 현재 미정으로 보류**.
+- **(2026-07-23) 축E를 축A·축D와 함께 연구실적화 플래그십 축으로 확정.** 벤치마크 세부 과제 정의(비교 지표 등)는 여전히 **사용자가 추후 직접 설계 — 미정**이나, 착안점으로 ALERT(NAACL 2025, LLM-judge 기반 추천 설명생성 평가 벤치마크)를 §7.1 문헌 스터디 트래커에 등록.
 - **메모(2026-07-22, 축E 재개 시 검토): GraphRAG를 설명생성 기법으로 편입.** 축D가 만든 reasoner 검증 완료 그래프(Neo4j materialize)를 축E의 검색 대상으로 삼아, "Neo4j에서 관련 서브그래프 검색 → LLM에 넣어 자연어 설명 생성" 구조를 GraphRAG 방식으로 구현. 그래프 자체가 LLM 추출이 아니라 reasoner가 만든 것이라 일반 GraphRAG의 "그래프 노이즈" 문제가 없음 — 온톨로지(추론)와 GraphRAG(설명생성)는 경쟁 관계가 아니라 파이프라인의 다른 단계를 맡음. GraphRAG로 온톨로지를 대체하면 "LLM보다 깊이 있게 완전하다"는 축D 서사가 스스로 무효화되므로, 대체가 아닌 결합으로만 고려.
+
+### 7.1 문헌 스터디 트래커 (신설, 2026-07-23)
+
+연구실적화 플래그십 축으로 확정된 **축A·축D·축E** 각각에 대해, 구현 결정을 뒷받침하는 논문을 지속적으로 추적한다. 상태는 `미착수 / 읽음 / 적용중 / 구현완료`로 관리하며, 로드맵(§8) 진행에 맞춰 갱신한다. 새 논문을 발견하면 이 표에 먼저 등록한 뒤, 실제 설계 반영 여부는 §9에 결정사항으로 기록한다.
+
+**축 A — 상태 표현 학습**
+
+| 논문 | 출처/연도 | 상태 | 활용 목적 |
+|---|---|---|---|
+| Liang et al., "Recovering Concept Prerequisite Relations from University Course Dependencies" | AAAI 2017 | 적용중 | supervision 가중결합 근거 |
+| Pan et al., "Prerequisite Relation Learning for Concepts in MOOCs" | ACL 2017 | 적용중 | supervision 가중결합 근거 |
+| "A Bayesian approach to inferring prerequisite structures and topic difficulty" | BEA 워크숍 2025 | 읽음 | 가중결합 방법론의 최신 대체안 검토 |
+| "GraphRAG-Induced Dual Knowledge Structure Graphs for Personalized Learning Path Recommendation" | arXiv 2025 (2506.22303) | 읽음 | 옵션3(온톨로지+앵커문장) 설계 직접 비교 대상 — 축E와 공유 |
+| "Toward General and Robust LLM-enhanced Text-attributed Graph Learning" | 2025 | 미착수 | 텍스트+그래프 결합 표현학습 참고 |
+| KaLM-Embedding-V2 / cropping-vs-dropout augmentation | arXiv 2025 | 미착수 | 임베딩 학습 테크닉 보조 참고 (필수 아님) |
+
+**축 D — 온톨로지**
+
+| 논문 | 출처/연도 | 상태 | 활용 목적 |
+|---|---|---|---|
+| Abu-Rasheed et al., "LLM-Assisted Knowledge Graph Completion for Curriculum and Domain Modelling in Personalized Higher Education Recommendations" | arXiv 2501.12300, 2025 | 읽음(초록) | **근접 선행연구 — 차별화 근거** (본문 §7 축D 참고) |
+| OWL2Vec\* 후속작 OWL2Vec4OA | KGSWC 2024/2025 | 확정 | 평가 baseline |
+| "LLM-Powered Construction of Course Knowledge-Competency Graphs" | ICETAI 2025 | 미착수 | 온톨로지 반자동 구축(LLM 보조) 방법 검토 |
+| "Heterogeneous LLM Methods for Ontology Learning" | arXiv 2508.19428 | 미착수 | LLM 보조 온톨로지 학습 일반 방법론 |
+| "LLM-empowered knowledge graph construction" (survey) | arXiv 2510.20345 | 미착수 | 관련연구(Related Work) 섹션 작성용 서베이 |
+
+**축 E — 생성/설명 계층**
+
+| 논문 | 출처/연도 | 상태 | 활용 목적 |
+|---|---|---|---|
+| "GraphRAG-Induced Dual Knowledge Structure Graphs for Personalized Learning Path Recommendation" | arXiv 2025 (2506.22303) | 읽음 | 핵심 방법론 참고 (§7 축E 메모와 연결) |
+| "Path-Based Explanations for Knowledge Graph-Driven Course Recommendation" | Springer 2025 | 미착수 | 근접 선행연구 가능성 — 원문 확인 후 §7 축E에 차별화 여부 재검토 |
+| LlamaRec-LKG-RAG | arXiv 2506.07449, 2025 | 미착수 | 단일패스 학습가능 KG-RAG 랭킹 구조 참고 |
+| ALERT benchmark | NAACL 2025 | 미착수 | Gemini 벤치마크 설계 시 LLM-judge 평가 방법론 착안점 |
+| "Can Explanations Improve Recommendations? Evidence from Prediction-Informed Explanations" | arXiv 2502.16759, 2025 | 미착수 | 설명생성이 추천 품질을 높인다는 동기부여 근거 |
+| JuStRank | ACL 2025 | 미착수 | LLM judge 벤치마킹 방법론 참고 |
 
 ---
 
@@ -175,6 +214,9 @@
 - MCP 서버(Learning Summarizer, Daily Work Summary)와 본 시스템의 관계는 현재 논의에서 스킵 — 별도 요청 전까지 다루지 않는다.
 - 태그 vs 온톨로지: **옵션 3(결합) 풀스케일 채택**. `ResearchTopic` 계층 전체 노드에 처음부터 앵커문장을 부착하며, 별도의 flat 태그 체계는 두지 않는다. (§10 결론)
 - 통신/전자공학(EECE) 서브도메인을 팀 전공 지식으로 먼저 깊게 모델링하고, 타 학과는 이후 얕게 확장한다.
+- **연구실적화 플래그십 축: 축A+축D+축E 병행 확정 (2026-07-23)** — 군복무 병행 리소스 제약상 셋을 동시에 깊게 파는 대신, 축A는 이미 최우선 축이라 자연 포함, 축D/E는 이번 결정으로 활성화(§7 축E "(보류)" 해제).
+- **§7.1 문헌 스터디 트래커 신설(2026-07-23)** — 축A/D/E별 논문을 상태(미착수/읽음/적용중/구현완료)·활용목적과 함께 지속 추적. 새 논문 발견 시 이 표에 먼저 등록 후 실제 설계 반영 여부를 이 섹션에 기록하는 절차로 운영.
+- **축D 근접 선행연구 차별점 명시(2026-07-23)** — Abu-Rasheed et al., arXiv 2501.12300(2025)가 커리큘럼/도메인 모델링+개인화 고등교육 추천 KG라는 거의 동일한 문제의식을 다룸. 우리는 (1) formal reasoner(HermiT/Pellet) 기반 논리적 일관성 검증, (2) 링크예측 정량평가, (3) EECE 전체+타학과 융합 스케일에서 차별화 (§7 축D 참고).
 
 ### 미정 / 확인 필요
 - 온톨로지 툴스택(Protégé + HermiT/Pellet + Neo4j) 확정 여부 — **아직 이르다고 판단, 보류**. 온톨로지 스키마가 더 무르익은 뒤 재논의.
