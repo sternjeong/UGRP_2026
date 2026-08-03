@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>온톨로지 강의노트 — 축D를 위한 Formal Ontology 입문</title>
+<style>
+  :root {
+    --paper: #eef0ea;
+    --paper-raised: #ffffff;
+    --ink: #1a2420;
+    --ink-soft: #4b5750;
+    --ink-faint: #7c8780;
+    --rule: #d7dcd3;
+    --rule-soft: #e3e7de;
+    --accent: #5b3ea6;
+    --accent-soft: #eae4f6;
+    --accent-ink: #422d7d;
+    --verified: #2f7a52;
+    --verified-soft: #e1f0e6;
+    --warn: #a8721f;
+    --warn-soft: #f5ecd9;
+    --code-bg: #e4e7df;
+    --shadow: 0 1px 2px rgba(26,36,32,0.04), 0 8px 24px rgba(26,36,32,0.06);
+    --serif: "Iowan Old Style", "Palatino Linotype", "Noto Serif KR", Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Pretendard", "Apple SD Gothic Neo", sans-serif;
+    --mono: "SFMono-Regular", Menlo, Consolas, "Noto Sans Mono", monospace;
+  }
+  :root[data-theme="dark"] {
+    --paper: #12160f; --paper-raised: #191f17; --ink: #e6ebe3; --ink-soft: #a9b3a5; --ink-faint: #737d70;
+    --rule: #2a332a; --rule-soft: #202920; --accent: #a892e0; --accent-soft: #26203a; --accent-ink: #c3b3ee;
+    --verified: #5ec98a; --verified-soft: #16301f; --warn: #d9a34f; --warn-soft: #362c19; --code-bg: #1e251c;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 28px rgba(0,0,0,.4);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #12160f; --paper-raised: #191f17; --ink: #e6ebe3; --ink-soft: #a9b3a5; --ink-faint: #737d70;
+      --rule: #2a332a; --rule-soft: #202920; --accent: #a892e0; --accent-soft: #26203a; --accent-ink: #c3b3ee;
+      --verified: #5ec98a; --verified-soft: #16301f; --warn: #d9a34f; --warn-soft: #362c19; --code-bg: #1e251c;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 28px rgba(0,0,0,.4);
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--accent-soft); color: var(--accent-ink); }
+  a { color: var(--accent-ink); }
+  code {
+    font-family: var(--mono);
+    font-size: .87em;
+    background: var(--code-bg);
+    padding: .05em .38em;
+    border-radius: 4px;
+  }
+  .skip { position: absolute; left: -9999px; }
+  .skip:focus { left: 1rem; top: 1rem; z-index: 999; background: var(--paper-raised); padding: .5rem 1rem; border-radius: 6px; }
+
+  .shell {
+    display: grid;
+    grid-template-columns: 232px minmax(0, 1fr);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  @media (max-width: 860px) {
+    .shell { grid-template-columns: 1fr; }
+    .toc { display: none; }
+  }
+
+  .toc {
+    position: sticky;
+    top: 0;
+    align-self: start;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 2.5rem 0 2rem 1.75rem;
+    border-right: 1px solid var(--rule);
+  }
+  .toc::-webkit-scrollbar { width: 6px; }
+  .toc::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 3px; }
+  .toc-label {
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 1.1rem;
+  }
+  .toc ol { list-style: none; margin: 0; padding: 0; counter-reset: chapter; }
+  .toc li { counter-increment: chapter; margin-bottom: .15rem; }
+  .toc a {
+    display: flex;
+    gap: .55rem;
+    text-decoration: none;
+    color: var(--ink-soft);
+    font-size: .83rem;
+    padding: .4rem .3rem;
+    border-radius: 6px;
+  }
+  .toc a:hover { background: var(--accent-soft); color: var(--accent-ink); }
+  .toc a::before {
+    content: counter(chapter);
+    font-family: var(--mono);
+    font-size: .72rem;
+    color: var(--ink-faint);
+    width: 1.1rem;
+    flex: none;
+  }
+
+  main { padding: 2.5rem 3rem 7rem; min-width: 0; max-width: 760px; }
+  @media (max-width: 860px) { main { padding: 1.75rem 1.25rem 5rem; } }
+
+  header.hero { margin-bottom: 2.6rem; }
+  .eyebrow {
+    font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--accent-ink); margin: 0 0 .7rem;
+  }
+  h1 {
+    font-family: var(--serif); font-weight: 600; font-size: 2rem; line-height: 1.22;
+    margin: 0 0 .7rem; text-wrap: balance;
+  }
+  .hero-lead { color: var(--ink-soft); font-size: 1.02rem; max-width: 62ch; margin: 0 0 .4rem; }
+  .hero-meta { font-family: var(--mono); font-size: .78rem; color: var(--ink-faint); }
+
+  .chapter { margin-bottom: 3.4rem; scroll-margin-top: 1.5rem; }
+  .chapter-head {
+    display: flex; align-items: baseline; gap: .8rem; margin-bottom: 1rem;
+    padding-bottom: .7rem; border-bottom: 2px solid var(--rule);
+  }
+  .chapter-no {
+    font-family: var(--serif); font-size: 1.7rem; font-weight: 600; color: var(--accent);
+    line-height: 1;
+  }
+  .chapter-head h2 {
+    font-family: var(--serif); font-size: 1.5rem; font-weight: 600; margin: 0; text-wrap: balance;
+  }
+  .chapter > p { margin: 0 0 1rem; max-width: 66ch; }
+  .chapter h3 {
+    font-family: var(--serif); font-size: 1.15rem; font-weight: 600; margin: 1.7rem 0 .6rem;
+  }
+
+  .definition {
+    background: var(--paper-raised);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    padding: 1rem 1.3rem;
+    margin: 1.1rem 0;
+    box-shadow: var(--shadow);
+  }
+  .definition .dt {
+    font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--accent-ink); margin-bottom: .4rem;
+  }
+  .definition p:last-child { margin-bottom: 0; }
+
+  .example {
+    background: var(--code-bg);
+    border-radius: 8px;
+    padding: 1rem 1.3rem;
+    margin: 1.1rem 0;
+    font-size: .92rem;
+  }
+  .example .et {
+    font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--ink-faint); margin-bottom: .5rem;
+  }
+
+  .project-note {
+    background: var(--verified-soft);
+    border: 1px solid var(--verified);
+    border-radius: 10px;
+    padding: 1rem 1.3rem;
+    margin: 1.1rem 0;
+  }
+  .project-note .pt {
+    font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--verified); margin-bottom: .5rem;
+    display: flex; align-items: center; gap: .4rem;
+  }
+  .project-note .pt::before { content: "◆"; font-size: .6rem; }
+
+  .warn-note {
+    background: var(--warn-soft);
+    border-left: 3px solid var(--warn);
+    border-radius: 0 8px 8px 0;
+    padding: .9rem 1.2rem;
+    margin: 1.1rem 0;
+    font-size: .92rem;
+  }
+  .warn-note .wt { font-weight: 700; color: var(--warn); font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; margin-bottom: .35rem; }
+
+  pre {
+    font-family: var(--mono);
+    font-size: .84rem;
+    background: var(--code-bg);
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1rem 0;
+    line-height: 1.6;
+  }
+  pre code { background: none; padding: 0; }
+
+  .tblwrap { overflow-x: auto; margin: 1rem 0; }
+  table { border-collapse: collapse; width: 100%; font-size: .89rem; }
+  th, td { text-align: left; padding: .55rem .75rem; border-bottom: 1px solid var(--rule-soft); vertical-align: top; }
+  th { font-size: .7rem; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-faint); font-weight: 700; }
+  tr:last-child td { border-bottom: none; }
+
+  /* class hierarchy tree diagram */
+  .tree {
+    font-family: var(--mono);
+    font-size: .87rem;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 1.2rem 1.4rem;
+    margin: 1.1rem 0;
+    box-shadow: var(--shadow);
+  }
+  .tree ul { list-style: none; margin: 0; padding-left: 1.3rem; border-left: 1px dotted var(--rule); }
+  .tree > ul { padding-left: 0; border-left: none; }
+  .tree li { position: relative; padding: .28rem 0 .28rem .9rem; }
+  .tree li::before {
+    content: ""; position: absolute; left: 0; top: 1.1rem; width: .8rem; height: 1px; background: var(--rule);
+  }
+  .tree .node { color: var(--ink); }
+  .tree .node.leaf { color: var(--accent-ink); font-weight: 600; }
+
+  /* property chain diagram */
+  .chain-diagram {
+    display: flex; align-items: center; flex-wrap: wrap; gap: .5rem;
+    font-family: var(--mono); font-size: .85rem;
+    background: var(--paper-raised); border: 1px solid var(--rule); border-radius: 10px;
+    padding: 1rem 1.3rem; margin: 1rem 0;
+  }
+  .chain-diagram .box { padding: .35rem .7rem; background: var(--code-bg); border-radius: 6px; }
+  .chain-diagram .box.entail { background: var(--verified-soft); color: var(--verified); font-weight: 700; }
+  .chain-diagram .arrow { color: var(--ink-faint); }
+
+  /* overall/axis workflow diagrams */
+  .flow-diagram {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 1.2rem 1.4rem;
+    margin: 1.1rem 0;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+  .flow-row { display: flex; align-items: center; gap: .6rem; }
+  .fnode {
+    font-family: var(--mono);
+    font-size: .82rem;
+    background: var(--code-bg);
+    border-radius: 8px;
+    padding: .5rem .8rem;
+    line-height: 1.4;
+  }
+  .fnode small { font-family: var(--sans); color: var(--ink-faint); font-size: .8em; }
+  .fnode.accent { background: var(--accent-soft); color: var(--accent-ink); font-weight: 600; }
+  .fnode.warn { background: var(--warn-soft); color: var(--warn); font-weight: 600; }
+  .fnode.branch { flex: 1; }
+  .farrow { color: var(--ink-faint); font-family: var(--mono); font-size: .85rem; white-space: nowrap; }
+  .farrow.down { align-self: center; }
+
+  .glossary dl { margin: 0; }
+  .glossary dt { font-family: var(--mono); font-weight: 700; color: var(--accent-ink); margin-top: 1rem; }
+  .glossary dd { margin: .3rem 0 0; color: var(--ink-soft); }
+
+  footer.doc-foot {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--rule);
+    font-size: .78rem; color: var(--ink-faint);
+  }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+
+<div class="shell">
+  <nav class="toc" aria-label="목차">
+    <p class="toc-label">강의노트 목차</p>
+    <ol>
+      <li><a href="#c1">온톨로지란 무엇인가</a></li>
+      <li><a href="#c2">Description Logic의 기본 어휘</a></li>
+      <li><a href="#c3">OWL 2 DL과 결정가능성</a></li>
+      <li><a href="#c4">Reasoner가 하는 일</a></li>
+      <li><a href="#c5">관계의 성질 — transitive와 property chain</a></li>
+      <li><a href="#c6">Competency Questions 방법론</a></li>
+      <li><a href="#c7">축D 스키마 실제 매핑</a></li>
+      <li><a href="#c8">LLM-assisted, reasoner-gated 워크플로우</a></li>
+      <li><a href="#c9">실습 도구 — Protégé와 owlready2</a></li>
+      <li><a href="#c10">전체 개발 워크플로우</a></li>
+      <li><a href="#c11">용어 정리</a></li>
+    </ol>
+  </nav>
+
+  <main id="main">
+    <header class="hero">
+      <p class="eyebrow">3분커리 축D 준비 · 강의노트</p>
+      <h1>형식 온톨로지 입문 — 왜 우리는 태그 대신 OWL을 쓰는가</h1>
+      <p class="hero-lead">이 노트는 축D(온톨로지) 설계를 진행하기 전에 필요한 배경지식 — description logic, OWL 2 DL, reasoner, competency question 방법론 — 을 정리하고, 그 개념들을 3분커리 프로젝트의 실제 스키마에 바로 대응시킨다.</p>
+      <p class="hero-meta">작성 2026-08-03 · 관련: PROJECT_DESIGN.md §7 축D</p>
+    </header>
+
+    <!-- Chapter 1 -->
+    <section class="chapter" id="c1">
+      <div class="chapter-head"><span class="chapter-no">1</span><h2>온톨로지란 무엇인가</h2></div>
+      <p>일상적으로 "온톨로지"라는 말은 종종 "잘 정리된 태그 체계" 정도로 오해되지만, 형식 온톨로지(formal ontology)는 그보다 훨씬 강한 것이다. 태그는 사람이 읽고 판단하는 라벨이지만, 온톨로지는 <strong>기계가 논리적으로 추론할 수 있는 명제들의 집합</strong>이다.</p>
+
+      <div class="definition">
+        <div class="dt">정의 — 형식 온톨로지</div>
+        <p>어떤 도메인(예: "포스텍의 교과목과 연구실")에 존재하는 개념(Class)·개체(Individual)·관계(Property)를, 컴퓨터가 <strong>모순 없이 자동으로 추론</strong>할 수 있는 형식 논리 언어(대개 OWL)로 기술한 것.</p>
+      </div>
+
+      <p>태그 체계와 형식 온톨로지의 차이는 "관계에 대해 뭘 할 수 있는가"에서 갈린다.</p>
+
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th></th><th>Flat 태그</th><th>형식 온톨로지</th></tr></thead>
+          <tbody>
+            <tr><td>"A는 B다" 표현</td><td>가능 (라벨 부착)</td><td>가능</td></tr>
+            <tr><td>"A가 B면 자동으로 C다" 추론</td><td>불가능 — 사람이 매번 확인</td><td><strong>가능</strong> — reasoner가 자동 도출</td></tr>
+            <tr><td>모순 자동 검출</td><td>불가능</td><td><strong>가능</strong> — "A이면서 not-A"를 reasoner가 잡아냄</td></tr>
+            <tr><td>깊이 무관 탐색</td><td>수동 순회 필요</td><td><strong>공리 하나로 자동 전파</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>3분커리에서 "LLM beam search는 추론 깊이가 얕지만, 우리 온톨로지는 깊이 무관하게 논리적으로 완전한 다단계 추론이 가능하다"고 어필하려는 이유가 바로 이 표의 마지막 두 줄이다 — 태그로는 절대 못 하고, 온톨로지로는 공짜로 되는 일이기 때문이다.</p>
+    </section>
+
+    <!-- Chapter 2 -->
+    <section class="chapter" id="c2">
+      <div class="chapter-head"><span class="chapter-no">2</span><h2>Description Logic의 기본 어휘</h2></div>
+      <p>OWL은 <strong>Description Logic(DL, 기술논리)</strong>이라는 논리 체계 위에 세워져 있다. DL의 어휘 세 가지만 알면 우리 스키마를 전부 읽을 수 있다.</p>
+
+      <h3>Class (개념)</h3>
+      <p>개체들의 집합. 예: <code>Course</code>, <code>Lab</code>, <code>ResearchTopic</code>. 사람이 흔히 말하는 "타입"이나 "카테고리"에 해당한다.</p>
+
+      <h3>Individual (개체)</h3>
+      <p>실제 데이터 한 건. 예: <code>EECE233</code>이라는 개체는 <code>Course</code> 클래스의 인스턴스다.</p>
+
+      <h3>Object Property (관계)</h3>
+      <p>개체와 개체를 잇는 이항 관계. 예: <code>hasPrerequisite(EECE233, MATH110)</code>. 관계 자체에도 <strong>성질(property characteristics)</strong>을 선언할 수 있다는 게 태그 체계와의 결정적 차이다 — 3장에서 자세히 다룬다.</p>
+
+      <div class="example">
+        <div class="et">예시 — 우리 스키마를 DL 어휘로 읽기</div>
+        <pre><code>Class: Course, Lab, Professor, ResearchTopic, Skill, Department
+Individual: EECE233 (a Course), 통신시스템연구실 (a Lab)
+ObjectProperty: hasPrerequisite, isSubfieldOf, coversTopic, requiresSkill, hasSynergyWith</code></pre>
+      </div>
+    </section>
+
+    <!-- Chapter 3 -->
+    <section class="chapter" id="c3">
+      <div class="chapter-head"><span class="chapter-no">3</span><h2>OWL 2 DL과 결정가능성</h2></div>
+      <p>OWL 2에는 표현력이 다른 여러 프로파일(EL, QL, RL, Full, DL)이 있다. 우리가 쓰는 <strong>OWL 2 DL</strong>은 "표현력과 계산 가능성 사이의 최적 지점"으로 설계된 버전이다.</p>
+
+      <div class="definition">
+        <div class="dt">정의 — 결정가능성(decidability)</div>
+        <p>어떤 질문(예: "이 온톨로지에 모순이 있는가?")에 대해 <strong>유한 시간 안에 반드시 답이 나옴이 수학적으로 보장</strong>되는 성질. OWL Full은 표현력은 가장 크지만 결정 불가능한 질문이 생길 수 있어 reasoner가 무한루프에 빠질 수 있다. OWL 2 DL은 표현력을 일부 제한하는 대신 이 보장을 얻는다.</p>
+      </div>
+
+      <p>실무적으로 이게 중요한 이유: reasoner(4장)가 "일관성이 있다/없다"를 항상 유한 시간에 답할 수 있어야 파이프라인에 자동으로 넣을 수 있다. OWL Full로 갔다면 이 보장이 없어 "reasoner가 멈추지 않을 수도 있다"는 리스크를 안게 된다.</p>
+    </section>
+
+    <!-- Chapter 4 -->
+    <section class="chapter" id="c4">
+      <div class="chapter-head"><span class="chapter-no">4</span><h2>Reasoner가 하는 일</h2></div>
+      <p>HermiT·Pellet 같은 reasoner는 온톨로지를 "실행"하는 엔진이다. 세 가지 표준 추론 서비스를 제공한다.</p>
+
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th>서비스</th><th>질문</th><th>3분커리 예시</th></tr></thead>
+          <tbody>
+            <tr><td><strong>일관성 검사</strong><br>(consistency checking)</td><td>이 온톨로지에 논리적 모순이 있는가?</td><td>EECE233→MATH110→EECE233 같은 <code>hasPrerequisite</code> 순환이 있으면 모순으로 검출 (CQ3)</td></tr>
+            <tr><td><strong>분류</strong><br>(classification)</td><td>클래스 간 상하관계를 자동으로 정리하면?</td><td><code>ResearchTopic</code> 계층에서 명시하지 않은 상속관계도 자동 정리</td></tr>
+            <tr><td><strong>함의 추론</strong><br>(entailment)</td><td>명시하지 않았지만 논리적으로 반드시 참인 사실은?</td><td>Lab이 <code>SemanticCommunication</code>을 다룬다고만 적었는데, <code>coversTopic</code>+<code>isSubfieldOf</code> 공리로 <code>Communications</code>도 다룬다는 게 자동 도출됨 (CQ7)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="project-note">
+        <div class="pt">우리 프로젝트에서는</div>
+        <p>"LLM 제안 → reasoner 검증 → 통과분만 커밋"이라는 워크플로우(8장)에서 reasoner가 하는 실질적 역할은 <strong>일관성 검사</strong>다. LLM이 실수로 순환 관계나 모순되는 공리를 만들어내면, 사람이 일일이 검토하지 않아도 reasoner가 즉시 잡아낸다.</p>
+      </div>
+    </section>
+
+    <!-- Chapter 5 -->
+    <section class="chapter" id="c5">
+      <div class="chapter-head"><span class="chapter-no">5</span><h2>관계의 성질 — transitive와 property chain</h2></div>
+      <p>DL에서 관계(Object Property)는 그냥 화살표가 아니라, 스스로 <strong>성질(characteristic)</strong>을 가질 수 있다. 우리 스키마에서 실제로 쓰는 두 가지만 짚는다.</p>
+
+      <h3>Transitive (전이성)</h3>
+      <div class="definition">
+        <div class="dt">정의</div>
+        <p>관계 R이 transitive면: R(A,B) ∧ R(B,C) → R(A,C)가 항상 성립한다.</p>
+      </div>
+      <p><code>hasPrerequisite</code>와 <code>isSubfieldOf</code>가 이 성질을 갖는다. "A가 B의 선수과목, B가 C의 선수과목이면 A는 C의 선수과목이기도 하다"는 게 자동으로 참이 된다 — 매 쌍을 일일이 다 적을 필요가 없다.</p>
+
+      <div class="tree">
+        <ul>
+          <li><span class="node">ElectricalEngineering</span>
+            <ul><li><span class="node">Communications</span>
+              <ul><li><span class="node">InformationTheory</span>
+                <ul><li><span class="node">SemanticCommunication</span>
+                  <ul><li><span class="node leaf">JointSourceChannelCoding</span></li></ul>
+                </li></ul>
+              </li></ul>
+            </li></ul>
+          </li>
+        </ul>
+      </div>
+      <p style="font-size:.85rem; color:var(--ink-faint);">depth 5의 <code>isSubfieldOf</code> 체인. transitive 덕분에 "JointSourceChannelCoding은 ElectricalEngineering의 하위분야다"를 명시적으로 적지 않아도 reasoner가 도출한다 (CQ7).</p>
+
+      <h3>Property Chain (관계 합성)</h3>
+      <div class="definition">
+        <div class="dt">정의</div>
+        <p>서로 다른 두 관계를 이어붙여 세 번째 관계를 자동 생성하는 공리. <code>R1 ∘ R2 ⊑ R3</code>: "R1으로 갔다가 R2로 가면, R3로 간 것과 같다."</p>
+      </div>
+      <p>우리 스키마에서 CQ7("깊은 노드와 관련된 모든 Course/Lab을 depth 무관하게 찾기")을 실제로 구현하는 공리가 바로 이것이다:</p>
+      <pre><code>SubObjectPropertyOf(
+  ObjectPropertyChain(coversTopic isSubfieldOf)
+  coversTopic
+)</code></pre>
+      <div class="chain-diagram">
+        <span class="box">Lab</span>
+        <span class="arrow">--coversTopic→</span>
+        <span class="box">SemanticCommunication</span>
+        <span class="arrow">--isSubfieldOf→</span>
+        <span class="box">Communications</span>
+        <span class="arrow">⟹</span>
+        <span class="box entail">Lab coversTopic Communications</span>
+      </div>
+      <p>리프 노드(SemanticCommunication)에만 <code>coversTopic</code> 엣지를 심어두면, 상위 노드(Communications)로의 전파는 사람이 손댈 필요 없이 reasoner가 이 공리 하나로 전부 처리한다.</p>
+
+      <div class="warn-note">
+        <div class="wt">주의</div>
+        <p><code>hasSynergyWith</code>는 의도적으로 <strong>non-transitive</strong>다. "A가 B에 시너지, B가 C에 시너지"라고 "A가 C에도 시너지"가 자동으로 참이 되게 두면, 관계가 없는 과목 쌍까지 실수로 강하게 연결돼버린다. 이건 §7.2에서 <code>hasPrerequisite</code>와 <code>hasSynergyWith</code>를 분리한 것과 같은 이유의 설계 판단이다.</p>
+      </div>
+    </section>
+
+    <!-- Chapter 6 -->
+    <section class="chapter" id="c6">
+      <div class="chapter-head"><span class="chapter-no">6</span><h2>Competency Questions 방법론</h2></div>
+      <p>온톨로지를 "일단 클래스부터 그리면서" 시작하면 대개 실패한다. 표준 절차는 반대 방향이다 — <strong>"이 온톨로지가 답해야 하는 질문들"을 먼저 자연어로 나열</strong>하고, 그 질문들을 답하는 데 필요한 최소한의 클래스·관계·공리만 역산해서 스키마를 만든다.</p>
+
+      <div class="definition">
+        <div class="dt">정의 — Competency Question(CQ)</div>
+        <p>온톨로지가 반드시 답할 수 있어야 하는 자연어 질문. 스키마 설계의 요구사항 명세서 역할을 한다.</p>
+      </div>
+
+      <p>절차는 4단계다:</p>
+      <ol>
+        <li><strong>CQ 정의</strong> — "학생이 목표 과목까지 최소 선수과목 체인은?" 같은 질문들을 도메인 전문가(팀)가 직접 작성</li>
+        <li><strong>개념화</strong> — 각 CQ를 답하는 데 필요한 Class/Property/Axiom을 역산</li>
+        <li><strong>OWL 형식화</strong> — Protégé 등으로 실제 논리 언어로 작성</li>
+        <li><strong>Reasoner 검증</strong> — 일관성 검사 + 실제로 CQ에 답이 나오는지 SPARQL 등으로 확인</li>
+      </ol>
+
+      <div class="project-note">
+        <div class="pt">우리 프로젝트에서는</div>
+        <p>3분커리는 이미 9개 CQ를 정의했고(7장 표), 그중 CQ2(경로계획 제약 — 축C 스트레치 목표라 스코프 밖)는 제외하기로 했다. 스키마의 모든 클래스·관계는 "이 CQ를 풀기 위해 필요한가?"라는 질문 하나로 정당화된다 — 필요 없는데 "있으면 좋을 것 같아서" 넣은 요소는 없어야 한다.</p>
+      </div>
+    </section>
+
+    <!-- Chapter 7 -->
+    <section class="chapter" id="c7">
+      <div class="chapter-head"><span class="chapter-no">7</span><h2>축D 스키마 실제 매핑</h2></div>
+      <p>지금까지의 개념을 3분커리 스키마에 그대로 대응시키면 다음과 같다.</p>
+
+      <h3>Competency Questions (CQ2 제외, 8개 유효)</h3>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th>#</th><th>질문</th><th>관련 관계</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>목표 과목까지 최소 선수과목 체인은?</td><td><code>hasPrerequisite</code> (transitive)</td></tr>
+            <tr><td>3</td><td>순환 관계(모순)가 존재하는가?</td><td>일관성 검사</td></tr>
+            <tr><td>4</td><td>관심 주제를 다루는 Lab/Professor는?</td><td><code>coversTopic</code></td></tr>
+            <tr><td>5</td><td>Lab이 요구하는 Skill과 그걸 제공하는 Course는?</td><td><code>requiresSkill</code>/<code>providesSkill</code> — 해결됨, 아래 참고</td></tr>
+            <tr><td>6</td><td>타학과 두 과목이 인접 주제를 다루는가?</td><td><code>isSubfieldOf</code> (depth ≤ k)</td></tr>
+            <tr><td>7</td><td>깊은 노드 관련 과목을 depth 무관하게 찾을 수 있는가?</td><td><code>isSubfieldOf</code> (transitive) + property chain</td></tr>
+            <tr><td>8</td><td>Lab 논문 키워드 변화를 어떻게 반영하는가?</td><td><code>coversTopic</code> 재계산 (파생 관계)</td></tr>
+            <tr><td>9</td><td>필수는 아니지만 실질적 도움되는 과목은?</td><td><code>hasSynergyWith</code> (non-transitive)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:.85rem; color:var(--ink-faint);">CQ2(경로계획 제약)는 축C가 있어야 답할 수 있어 현재 스코프 제외 — 나머지 8개는 전부 유효(2026-08-03 확정).</p>
+
+      <h3>클래스와 관계 요약</h3>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th>구분</th><th>이름</th><th>성질</th></tr></thead>
+          <tbody>
+            <tr><td>Class</td><td><code>Course, Lab, Professor, ResearchTopic(계층형), Skill, Department</code></td><td>—</td></tr>
+            <tr><td>Object Property</td><td><code>hasPrerequisite</code></td><td>transitive · <strong>MVP#2(테크트리)에 직접 노출</strong>되는 사실성 정보라 LLM 추론 배제, 텍스트 파싱만 채택</td></tr>
+            <tr><td>Object Property</td><td><code>isSubfieldOf</code></td><td>transitive</td></tr>
+            <tr><td>Object Property</td><td><code>coversTopic</code></td><td>property chain(∘isSubfieldOf)으로 상위 전파</td></tr>
+            <tr><td>Object Property</td><td><code>hasSynergyWith</code></td><td>non-transitive · 소프트 가점</td></tr>
+            <tr><td>Object Property</td><td><code>requiresSkill, providesSkill, partOfDepartment, specializesIn</code></td><td>기본(단순 이항 관계)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="warn-note">
+        <div class="wt">정정 — <code>hasPrerequisite</code>가 신중해야 하는 진짜 이유</div>
+        <p>이전엔 "축C 하드 제약"을 근거로 들었으나 축C는 스트레치 목표라 현재 미착수다. 실제 근거는 <strong>MVP#2(선수과목 테크트리 생성)가 이 관계를 학생에게 그대로 보여준다</strong>는 점 — 틀리면 축C 여부와 무관하게 학생이 잘못된 학사 계획을 세우게 된다.</p>
+      </div>
+
+      <div class="project-note">
+        <div class="pt">CQ5 / Skill 데이터 공백 해결</div>
+        <p>별도 Skill 어휘를 새로 모을 필요 없이 이미 있는 두 데이터에서 파생시킨다:</p>
+        <ul>
+          <li><code>requiresSkill(Lab, Skill)</code> — Lab 키워드를 "주제"류/"기술"류로 LLM이 분류, 기술류만 Skill로 승격(Lab 자기소개 그대로라 신뢰도 1.0)</li>
+          <li><code>providesSkill(Course, Skill)</code> — <code>course_objectives</code> 필드(654건 전체 보유)와 Skill 앵커문장의 임베딩 유사도로 생성 — <code>coversTopic</code>과 동일 메커니즘 재사용</li>
+        </ul>
+      </div>
+
+      <h3>자동화 리스크 그룹핑</h3>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th>그룹</th><th>관계</th><th>이유</th><th>자동화 수위</th></tr></thead>
+          <tbody>
+            <tr><td><strong>A · 하드</strong></td><td><code>hasPrerequisite</code></td><td>사실 오류가 학생에게 직접 잘못된 정보로 노출됨(CQ1,3)</td><td>LLM 사실생성 배제, 텍스트 파싱만</td></tr>
+            <tr><td><strong>B · 소프트</strong></td><td><code>coversTopic, requiresSkill, providesSkill, hasSynergyWith</code></td><td>오류 피해가 "추천 품질 저하" 수준(CQ4,5,6,7,8,9)</td><td>LLM 제안 + 임베딩 유사도로 완전 자동화</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:.85rem; color:var(--ink-faint);">reasoner는 논리적 모순만 잡고 사실관계 오류는 못 잡기 때문에 이 구분이 필요하다 — 8장 참고.</p>
+    </section>
+
+    <!-- Chapter 8 -->
+    <section class="chapter" id="c8">
+      <div class="chapter-head"><span class="chapter-no">8</span><h2>LLM-assisted, reasoner-gated 워크플로우</h2></div>
+      <p>Gemini/Claude로 온톨로지 구축을 돕는다는 계획과, 축D가 근접 선행연구(Abu-Rasheed et al., 2025)와 차별화하려는 지점 — "LLM이 그래프 완성을 직접 담당해 노이즈/비일관성이 있는" 접근 — 은 자칫 충돌한다. 이를 가르는 원칙 하나:</p>
+
+      <div class="definition">
+        <div class="dt">원칙</div>
+        <p>LLM은 <strong>제안(propose)</strong>만 하고, reasoner의 <strong>일관성 검증을 통과한 것만 커밋(commit)</strong>된다. LLM 출력이 그 자체로 최종 사실이 되는 지점은 없다.</p>
+      </div>
+
+      <p>단계별로 LLM의 역할과 리스크 수준이 다르다.</p>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th>단계</th><th>LLM 활용</th><th>리스크</th><th>안전장치</th></tr></thead>
+          <tbody>
+            <tr><td>ResearchTopic 계층 초안</td><td>후보 트리 제안</td><td>낮음</td><td>팀이 Protégé에서 직접 검토·확정</td></tr>
+            <tr><td>앵커문장 작성</td><td>노드별 대표 문장 초안</td><td>낮음</td><td>팀 검수, 구조에 영향 없음</td></tr>
+            <tr><td><code>coversTopic</code> 인스턴스</td><td>보조 신호로만 (메인은 임베딩 유사도)</td><td>중간</td><td>임베딩 결과와 불일치 시만 사람 검토</td></tr>
+            <tr><td>OWL 공리 문법 생성</td><td>이미 확정된 논리를 문법으로 번역</td><td>낮음</td><td>공리 자체는 사람이 확정, LLM은 번역만</td></tr>
+            <tr><td>모든 삽입 후</td><td>—</td><td>—</td><td><strong>reasoner 일관성 검사 필수 통과</strong>, 실패 시 반려</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="project-note">
+        <div class="pt">우리 프로젝트에서는</div>
+        <p>"LLM 그래프 완성 vs reasoner 검증된 그래프"라는 §7 축D의 차별화 문구는, LLM을 안 쓴다는 뜻이 아니라 <strong>LLM 출력이 절대 검증 없이 그래프에 커밋되지 않는다</strong>는 뜻으로 해석해야 한다. 이 원칙이 지켜지는 한 LLM 활용과 방법론적 차별화는 모순되지 않는다.</p>
+      </div>
+
+      <div class="warn-note">
+        <div class="wt">이 챕터의 "LLM"은 축A/축E와 다른 세 번째 용도다</div>
+        <p>축A(BGE-m3)는 <strong>서비스 운영 중</strong> 실시간으로 도는 임베딩 인코더, 축E(경량 로컬 LLM)는 <strong>서비스 운영 중</strong> 학생에게 추천 근거를 설명하는 생성 모델이다. 반면 이 챕터의 Gemini/Claude는 <strong>개발 단계에서 팀이 온톨로지를 저작할 때만</strong> 쓰는 도구이며, 산출물(OWL 파일)만 남고 서비스가 실제로 돌아갈 때는 관여하지 않는다.</p>
+      </div>
+    </section>
+
+    <!-- Chapter 9 -->
+    <section class="chapter" id="c9">
+      <div class="chapter-head"><span class="chapter-no">9</span><h2>실습 도구 — Protégé와 owlready2</h2></div>
+
+      <h3>Protégé</h3>
+      <p>온톨로지 저작을 위한 표준 GUI 도구. 클래스/관계/개체를 마우스로 만들고, HermiT·Pellet reasoner를 메뉴에서 바로 실행해 일관성을 확인할 수 있다. 소규모 스키마 설계·검토 단계(6~7장)에 적합하다.</p>
+
+      <h3>owlready2</h3>
+      <p>Python에서 OWL 온톨로지를 직접 다루는 라이브러리. Protégé GUI로 654개 과목 + 여러 Lab을 일일이 넣는 건 스케일이 안 맞기 때문에, 실제 대량 인스턴스 삽입은 스크립트로 처리하는 게 실용적이다.</p>
+      <pre><code>from owlready2 import *
+
+onto = get_ontology("file://curri.owl").load()
+
+# LLM이 제안한 coversTopic 후보를 삽입
+lab.coversTopic.append(onto.SemanticCommunication)
+
+# 삽입 직후 바로 reasoner 호출 — 일관성 깨지면 예외 발생
+with onto:
+    sync_reasoner_pellet(infer_property_values=True)</code></pre>
+      <p>이 스크립트 패턴이 8장의 "LLM 제안 → 즉시 reasoner 검증 → 실패 시 반려" 루프를 실제로 구현하는 방식이다.</p>
+    </section>
+
+    <!-- Chapter 10 -->
+    <section class="chapter" id="c10">
+      <div class="chapter-head"><span class="chapter-no">10</span><h2>전체 개발 워크플로우</h2></div>
+      <p>지금까지 축A와 축D를 따로 다뤘지만, 실제로는 데이터 정제 단계를 공유하는 하나의 흐름이다. 전체 그림, 축A/축D 개별 흐름, 그리고 실무적으로 가장 손이 많이 가는 데이터셋 생성 파이프라인을 순서대로 짚는다.</p>
+
+      <h3>전체 플로우</h3>
+      <div class="flow-diagram">
+        <div class="flow-row">
+          <span class="fnode">원천 데이터 수집<br><small>커리큘럼북 654건 · Lab 키워드+논문 · 로드맵 원문</small></span>
+          <span class="farrow">→</span>
+          <span class="fnode">데이터 정제<br><small>오파싱 제거 · 코드/fuzzy 매칭</small></span>
+        </div>
+        <div class="flow-split">
+          <span class="farrow down">↓</span>
+          <span class="farrow down">↓</span>
+        </div>
+        <div class="flow-row">
+          <span class="fnode branch">축A 임베딩 학습<br><small>5원 가중결합 → BGE-m3</small></span>
+          <span class="fnode branch">축D 온톨로지 구축<br><small>CQ → OWL → reasoner 검증</small></span>
+        </div>
+        <div class="flow-row" style="justify-content:center;">
+          <span class="farrow">↘ ↙</span>
+        </div>
+        <div class="flow-row" style="justify-content:center;">
+          <span class="fnode accent">통합 (옵션3)<br><small>ResearchTopic 노드 + 앵커문장</small></span>
+        </div>
+        <div class="flow-row" style="justify-content:center;">
+          <span class="farrow down">↓</span>
+        </div>
+        <div class="flow-row" style="justify-content:center;">
+          <span class="fnode">Neo4j materialize<br><small>reasoner 검증 완료 그래프</small></span>
+        </div>
+        <div class="flow-row" style="justify-content:center;">
+          <span class="farrow down">↓</span>
+        </div>
+        <div class="flow-row" style="justify-content:center; flex-wrap:wrap;">
+          <span class="fnode">축E GraphRAG 설명생성</span>
+          <span class="farrow">+</span>
+          <span class="fnode">MVP 서빙<br><small>추천·테크트리·타과융합</small></span>
+        </div>
+        <div class="flow-row" style="justify-content:center;">
+          <span class="farrow down">↓ (CQ8, 순환)</span>
+        </div>
+        <div class="flow-row" style="justify-content:center;">
+          <span class="fnode warn">트렌드 갱신 루프<br><small>재크롤링 → 축A 재학습 · coversTopic 재계산</small></span>
+        </div>
+      </div>
+      <p style="font-size:.9rem; color:var(--ink-soft);">데이터 정제 단계는 축A와 축D가 함께 쓰는 공용 인프라다 — <code>prerequisites</code> 필드 정제 하나가 축A의 supervision 소스(a)이자 축D의 <code>hasPrerequisite</code>(그룹A) 소스로 동시에 쓰인다. 서비스가 나간 뒤에도 Lab 논문/키워드가 갱신될 때마다 <code>coversTopic</code> 같은 파생 관계를 재계산해 그래프에 반영하는 순환 구조로 끝난다(CQ8).</p>
+
+      <h3>축A 플로우</h3>
+      <div class="flow-diagram">
+        <div class="flow-row" style="flex-wrap:wrap;">
+          <span class="fnode">원문 코퍼스<br><small>개요·목표·교재·강의계획</small></span>
+          <span class="farrow">→</span>
+          <span class="fnode accent">5원 가중결합<br><small>a1.0 · b0.5~0.7 · c0.3 · LLM concept0.3 · LLM query0.3</small></span>
+          <span class="farrow">→</span>
+          <span class="fnode">BGE-m3 fine-tuning</span>
+          <span class="farrow">→</span>
+          <span class="fnode">평가<br><small>링크예측·ablation·NDCG/Precision</small></span>
+          <span class="farrow">→</span>
+          <span class="fnode">임베딩 서빙</span>
+        </div>
+      </div>
+      <p style="font-size:.9rem; color:var(--ink-soft);">5개 supervision 소스를 신뢰도 가중치로 결합하는 단계가 축A의 핵심이다. 리소스가 남으면 텍스트 임베딩 위에 GAT/GraphSAGE를 얹는 갈림길이 있지만, 없어도 파이프라인 자체는 끊기지 않는다.</p>
+
+      <h3>축D 플로우</h3>
+      <div class="flow-diagram">
+        <div class="flow-row" style="flex-wrap:wrap;">
+          <span class="fnode">CQ 정의<br><small>CQ1,3~9 · CQ2 제외</small></span>
+          <span class="farrow">→</span>
+          <span class="fnode">개념화<br><small>클래스/관계/공리 역산</small></span>
+          <span class="farrow">→</span>
+          <span class="fnode">LLM 초안 제안</span>
+          <span class="farrow">→</span>
+          <span class="fnode">사람 검토<br><small>Protégé</small></span>
+        </div>
+        <div class="flow-row" style="justify-content:center;"><span class="farrow down">↓</span></div>
+        <div class="flow-row" style="flex-wrap:wrap; justify-content:center;">
+          <span class="fnode">그룹A(하드)<br><small>결정적 파싱만</small></span>
+          <span class="fnode">그룹B(소프트)<br><small>임베딩+LLM 자동화</small></span>
+        </div>
+        <div class="flow-row" style="justify-content:center;"><span class="farrow down">↓</span></div>
+        <div class="flow-row" style="justify-content:center;"><span class="fnode">owlready2 삽입 → reasoner 일관성 검사</span></div>
+        <div class="flow-row" style="justify-content:center;"><span class="farrow down">통과 ↓ · 실패 → 반려·재검토</span></div>
+        <div class="flow-row" style="justify-content:center;"><span class="fnode accent">그래프 커밋</span></div>
+      </div>
+      <p style="font-size:.9rem; color:var(--ink-soft);">CQ에서 스키마를 역산한 뒤, 관계를 그룹A(하드)/그룹B(소프트)로 나눠 자동화 수위를 다르게 적용한다. 어느 그룹이든 reasoner 일관성 검사를 반드시 통과해야 커밋되고, 실패하면 반려되어 LLM 초안 단계로 돌아간다 — 8장의 "LLM은 제안만, reasoner가 검증한 것만 커밋" 원칙의 실제 구현이다.</p>
+
+      <h3>데이터셋 생성 파이프라인 (실무 세부)</h3>
+      <div class="flow-diagram">
+        <div class="flow-row" style="flex-wrap:wrap; justify-content:center;">
+          <span class="fnode">커리큘럼북 PDF</span>
+          <span class="fnode">학과 홈페이지 로드맵</span>
+          <span class="fnode">Lab 홈페이지+논문DB</span>
+        </div>
+        <div class="flow-row" style="justify-content:center;"><span class="farrow down">↓ 파싱/크롤링</span></div>
+        <div class="flow-row" style="flex-wrap:wrap; justify-content:center;">
+          <span class="fnode"><code>UG_2026_curriculum_courses.jsonl</code><br><small>654건</small></span>
+          <span class="fnode"><code>roadmap_raw.jsonl</code><br><small>3단계 품질</small></span>
+          <span class="fnode">Lab 프로필<br><small>키워드+논문제목</small></span>
+        </div>
+        <div class="flow-row" style="justify-content:center;"><span class="farrow down">↓ 정제</span></div>
+        <div class="flow-row" style="flex-wrap:wrap; justify-content:center;">
+          <span class="fnode">prerequisites 정제</span>
+          <span class="fnode">학년/학기 일람표 파싱</span>
+          <span class="fnode">course_objectives 추출</span>
+          <span class="fnode">키워드 주제/기술 분류</span>
+        </div>
+        <div class="flow-row" style="justify-content:center;"><span class="farrow down">↓</span></div>
+        <div class="flow-row" style="flex-wrap:wrap; justify-content:center;">
+          <span class="fnode accent">축A pair (a)(c)</span>
+          <span class="fnode accent">축D Skill 인스턴스</span>
+          <span class="fnode accent"><code>hasSynergyWith</code> 1차 소스</span>
+        </div>
+      </div>
+      <p style="font-size:.9rem; color:var(--ink-soft);">세 원천(커리큘럼북·로드맵·Lab)이 각각 다른 파싱을 거쳐 정제 단계로 모이고, 여기서 나온 산출물이 축A 학습 pair와 축D Skill 인스턴스로 동시에 흘러들어간다. 같은 원천 데이터가 축A/축D 양쪽에서 재사용되는 지점(<code>prerequisites</code> 정제 → 로드맵 순서 pair + <code>hasPrerequisite</code>, <code>course_objectives</code> → 어휘중첩 pair + Skill 소스)이 파이프라인을 한 번만 구축하면 되는 이유다.</p>
+    </section>
+
+    <!-- Chapter 11 -->
+    <section class="chapter glossary" id="c11">
+      <div class="chapter-head"><span class="chapter-no">11</span><h2>용어 정리</h2></div>
+      <dl>
+        <dt>Class (Concept)</dt>
+        <dd>개체들의 집합. 예: Course, Lab.</dd>
+        <dt>Individual</dt>
+        <dd>클래스의 실제 인스턴스 한 건. 예: EECE233.</dd>
+        <dt>Object Property</dt>
+        <dd>개체 간 이항 관계. 예: hasPrerequisite.</dd>
+        <dt>Axiom</dt>
+        <dd>온톨로지에 참이라고 선언하는 논리 문장. 클래스 정의, 관계 성질, property chain 모두 axiom이다.</dd>
+        <dt>Transitive Property</dt>
+        <dd>R(A,B) ∧ R(B,C) → R(A,C)가 항상 성립하는 관계.</dd>
+        <dt>Property Chain</dt>
+        <dd>두 관계를 합성해 세 번째 관계를 자동 생성하는 공리.</dd>
+        <dt>Reasoner</dt>
+        <dd>온톨로지의 일관성 검사·분류·함의 추론을 수행하는 엔진. 예: HermiT, Pellet.</dd>
+        <dt>Consistency Checking</dt>
+        <dd>온톨로지에 논리적 모순이 있는지 확인하는 reasoner의 기본 서비스.</dd>
+        <dt>Competency Question (CQ)</dt>
+        <dd>온톨로지가 반드시 답할 수 있어야 하는 자연어 질문. 스키마 설계의 출발점.</dd>
+        <dt>OWL 2 DL</dt>
+        <dd>표현력과 결정가능성 사이의 균형을 맞춘 OWL 2의 표준 프로파일.</dd>
+      </dl>
+    </section>
+
+    <footer class="doc-foot">
+      관련 문서: <code>/workspaces/UGRP_2026/PROJECT_DESIGN.md</code> §7 축D · 이 노트는 배경지식 정리용이며 스키마 자체의 확정 여부는 원문을 따른다.
+    </footer>
+  </main>
+</div>
+</body>
+</html>

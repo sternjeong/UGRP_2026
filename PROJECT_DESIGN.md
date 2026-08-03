@@ -138,6 +138,18 @@
   - 이 논문: LLM이 그래프 **완성(completion)**을 직접 담당하며, 평가도 그래프 구조 지표 + 전문가 정성 피드백에 그침(formal reasoner에 의한 논리적 일관성 검증 없음). 스케일도 임베디드시스템/FPGA **2개 모듈**에 국한.
   - 우리: OWL 2 DL + reasoner(HermiT/Pellet)로 논리적 일관성을 검증하고, 링크 예측 기반 정량 평가(§7 축A 평가 프로토콜과 동일 방법론)를 사용하며, EECE 전체 + 타학과 융합까지 스케일을 확장한다. "LLM 추출 그래프의 노이즈/비일관성 vs reasoner 검증된 그래프"가 핵심 차별화 문구.
 
+- **CQ 최종 스코프 확정(2026-08-03)**: CQ2는 축C(경로계획, 스트레치 목표) 알고리즘이 있어야 답할 수 있어 현재 스코프에서 제외. 나머지 8개(CQ1, 3~9)는 모두 데이터 확보 방안이 있어 유효.
+- **CQ1/CQ3(`hasPrerequisite`) 근거 정정(2026-08-03)**: 이 관계가 "하드 제약"으로 신중히 다뤄져야 하는 이유는 축C가 아니다(축C는 스트레치 목표로 현재 미착수). 실제 근거는 **MVP #2(선수과목 테크트리 생성)가 이 관계를 학생에게 직접 노출**한다는 점 — 틀린 선수관계를 보여주면 축C 여부와 무관하게 학생이 실제로 잘못된 학사 계획을 세우게 된다. 따라서 이 관계는 LLM이 새로 추론해서 만들어내지 않고, `prerequisites` 필드(정제 후, §7.3)처럼 텍스트에 명시된 사실만 결정적으로 채택한다.
+- **CQ5(`requiresSkill`) 데이터 공백 해결(2026-08-03)**: 별도 Skill 어휘를 새로 수집할 필요 없이 이미 확보된/확보 예정인 데이터에서 파생시킨다.
+  - `requiresSkill(Lab, Skill)`: Lab의 대표 키워드 중 "주제(도메인)"류와 "기술/방법론"류를 LLM으로 분류해, 기술류만 `Skill` 인스턴스로 승격. Lab 본인이 밝힌 키워드이므로 신뢰도 1.0으로 채택.
+  - `providesSkill(Course, Skill)`: `UG_2026_curriculum_courses.jsonl`의 `course_objectives` 필드(654건 전체 보유)와 Skill 앵커문장 간 임베딩 유사도로 생성 — `coversTopic`과 동일한 메커니즘(축A 인프라) 재사용.
+  - `Skill`은 `ResearchTopic`과 완전히 배타적인 클래스로 억지로 분리하지 않고, 리프 노드가 겸하거나 서브클래스로 선언 가능.
+- **자동화 리스크 그룹핑(확정, 2026-08-03)**: reasoner는 논리적 모순만 잡아내고 사실관계 오류는 못 잡기 때문에, 관계를 두 그룹으로 나눠 자동화 수위를 다르게 적용한다.
+  - **그룹 A(하드/사실성)** — `hasPrerequisite`(CQ1, 3): LLM 추론 배제, 텍스트 파싱 결과만 채택(정제 파이프라인은 §7.3). LLM은 fuzzy matching 등 매칭 보조 역할까지만.
+  - **그룹 B(소프트/설명용)** — `coversTopic`(CQ4, 8), `requiresSkill`/`providesSkill`(CQ5), `isSubfieldOf` 인스턴스 전파(CQ6, 7), `hasSynergyWith`(CQ9): 오류의 피해가 "추천 품질 저하" 수준에 그쳐, 사람 검수 없이 LLM+임베딩 유사도로 완전 자동화 가능.
+- **LLM-assisted, reasoner-gated 온톨로지 구축 워크플로우(확정, 2026-08-03)**: Gemini/Claude로 온톨로지 구축을 돕되, 근접 선행연구(Abu-Rasheed et al.) 대비 차별점("LLM 그래프 완성 vs reasoner 검증된 그래프")과 모순되지 않도록 원칙을 하나 둔다 — **LLM은 제안(propose)만 하고, reasoner의 일관성 검증을 통과한 것만 그래프에 커밋된다.** 즉 "LLM을 안 쓴다"가 아니라 "LLM 출력이 검증 없이 최종 사실이 되는 지점이 없다"는 뜻으로 차별화 문구를 해석한다. 그룹 A(하드)는 LLM의 사실 생성 자체를 배제하고, 그룹 B(소프트)는 LLM 제안 + reasoner 일관성 검사만으로 완전 자동화한다.
+  - **주의 — 여기서의 "LLM"은 축A/축E와 다른 별개의 용도다**: 축A(BGE-m3)는 서비스 운영 중 실시간으로 도는 임베딩 인코더, 축E(경량 로컬 LLM)는 서비스 운영 중 학생에게 추천 근거를 자연어로 설명하는 생성 모델. 반면 이 워크플로우의 Gemini/Claude는 **개발 단계에서 팀이 온톨로지를 저작할 때 쓰는 도구**일 뿐이며, 산출물(OWL 파일)만 남고 서비스 서빙 시점에는 관여하지 않는다.
+
 ### 축 E — 생성/설명 계층 & LLM 벤치마크
 
 - "자체 LLM engine이 Gemini API보다 낫다"는 주장은 **범용 성능이 아니라 이 특정 과제(커리큘럼/연구실 추천 + 근거 생성)에서의 우위**로 해석. 온톨로지+검색으로 확정된 사실만 가지고 문장을 다듬는 경량 로컬 모델이 현실적 형태.
@@ -279,6 +291,9 @@
 - **축D 근접 선행연구 차별점 명시(2026-07-23)** — Abu-Rasheed et al., arXiv 2501.12300(2025)가 커리큘럼/도메인 모델링+개인화 고등교육 추천 KG라는 거의 동일한 문제의식을 다룸. 우리는 (1) formal reasoner(HermiT/Pellet) 기반 논리적 일관성 검증, (2) 링크예측 정량평가, (3) EECE 전체+타학과 융합 스케일에서 차별화 (§7 축D 참고).
 - **`hasSynergyWith` 관계 신설, `hasPrerequisite`와 분리(확정, 2026-07-23)** — "신호및시스템(EECE233)은 자신의 선수과목을 텍스트로 밝히지 않지만 응용선형대수(MATH203)와 학과 로드맵상 인접 배치된다" 같은, 자유서술 선수과목 필드로는 못 잡는 관계를 별도 non-transitive object property로 모델링하기로 결정. `hasPrerequisite`(transitive·축C 하드 제약)와 섞으면 CQ#1 최소 선수과목 체인 계산이 오염된다는 것이 분리 근거. 1차 데이터 소스는 §5.1에서 새로 구분한 "학년/학기별 전공과목 일람표"(로드맵 표, 공동배치 신호) — §5.2 `UG_2026_curriculum_courses.jsonl` 구축 시 의도적으로 제외해둔 부분이라 별도 파싱 필요. 상세 정의·추출 방법은 §7.2.
 - **`UG_2026_curriculum_courses.jsonl`(654건) 구축 완료(2026-07-23)** — 공식 커리큘럼 PDF 203페이지 전체를 "교과목 개요" 절 기준으로 파싱해 전학과 스케일 텍스트 코퍼스 확보. `syllabus_raw.jsonl`(참고용, §5.2)을 대체할 실제 축A/D 1차 원문 데이터로 사용 가능해짐.
+- **축D CQ 최종 스코프 확정(2026-08-03)** — CQ2(축C 필요)만 제외, 나머지 8개(CQ1,3~9) 전부 유효. CQ5(`requiresSkill`)의 데이터 공백은 Lab 키워드 분류 + `course_objectives` 임베딩 유사도로 신규 수집 없이 해결. `hasPrerequisite`가 신중히 다뤄져야 하는 근거는 축C가 아니라 MVP#2 직접 노출로 정정. 자동화 리스크를 그룹A(하드, LLM 사실생성 배제)/그룹B(소프트, 완전자동화 가능)로 구분(§7 축D).
+- **LLM-assisted, reasoner-gated 온톨로지 구축 원칙 확정(2026-08-03)** — Gemini/Claude는 온톨로지 저작을 돕는 개발 단계 도구(축A/축E와 별개)로 활용하되, 모든 산출물은 reasoner 일관성 검증을 통과해야 커밋된다는 원칙으로 근접 선행연구 대비 차별화를 유지.
+- **전체 개발 워크플로우 문서화(2026-08-03, §12)** — 전체 플로우, 축A/축D 개별 플로우, 데이터셋 생성 파이프라인을 mermaid 다이어그램으로 정리.
 
 ### 미정 / 확인 필요
 - 온톨로지 툴스택(Protégé + HermiT/Pellet + Neo4j) 확정 여부 — **아직 이르다고 판단, 보류**. 온톨로지 스키마가 더 무르익은 뒤 재논의.
@@ -315,3 +330,88 @@
 - 경로계획 알고리즘(축 C): MPC vs MCTS 중 어느 쪽을 프로토타입 우선순위로 둘 것인가?
 - 대시보드/UX: 추천 근거(온톨로지 경로 + 유사도 점수)를 사용자에게 어떻게 시각화할 것인가?
 - 온톨로지 툴스택: 스키마가 무르익으면 Protégé/HermiT/Pellet/Neo4j 조합을 재검토할 시점을 언제로 볼 것인가?
+
+---
+
+## 12. 전체 개발 워크플로우 (신설, 2026-08-03)
+
+지금까지 축별로 흩어져 논의된 결정들을 하나의 실행 순서로 묶는다. 축A/축D는 이미 인프라(코퍼스, 가중결합 원칙, reasoner 검증)를 공유하므로, 완전히 독립된 파이프라인이 아니라 **데이터 정제 단계를 공유하는 하나의 흐름**으로 봐야 한다.
+
+### 12.1 전체 플로우
+
+```mermaid
+flowchart TD
+    A[원천 데이터 수집<br/>커리큘럼북 654건 · Lab 키워드+논문제목 · 로드맵 원문] --> B[데이터 정제<br/>prerequisites 오파싱 제거·course_code 매칭·fuzzy 매칭]
+    B --> C[축A: 임베딩 학습<br/>5원 가중결합 supervision → BGE-m3 fine-tuning]
+    B --> D[축D: 온톨로지 구축<br/>CQ → 스키마 → OWL → reasoner 검증]
+    C --> E[통합: 옵션3 결합<br/>ResearchTopic 노드에 앵커문장 부착]
+    D --> E
+    E --> F[Neo4j materialize<br/>reasoner 검증 완료 그래프]
+    F --> G[축E: GraphRAG 설명생성<br/>서브그래프 검색 → 로컬 LLM 문장화]
+    C --> H[MVP 서빙<br/>임베딩 매칭·테크트리·타과 융합]
+    F --> H
+    G --> H
+    H --> I[트렌드 갱신 루프<br/>재크롤링 → 축A 재학습 · coversTopic 재계산]
+    I -.CQ8.-> F
+```
+
+**아래 설명**: 데이터 정제(B)는 축A와 축D가 함께 쓰는 공용 인프라다 — 특히 `prerequisites` 필드 정제(오파싱 제거→코드/fuzzy 매칭)는 축A의 supervision 소스 (a)이자 축D의 `hasPrerequisite`(그룹 A, §7 축D) 채택 소스로 동시에 쓰인다. 축A(임베딩)와 축D(온톨로지)는 별도로 만들어지지만 §10에서 결정한 "옵션3"(E) 단계에서 결합되고, 이 결합된 그래프가 Neo4j에 materialize된 뒤(F) 축E(G)와 MVP 서빙(H)의 공통 기반이 된다. 서비스가 나간 뒤에도 끝나는 게 아니라, Lab 논문/키워드가 갱신될 때마다(I) `coversTopic` 같은 파생 관계를 재계산해 그래프에 다시 반영하는 순환 구조다(CQ8).
+
+### 12.2 축A 플로우 — 상태 표현 학습
+
+```mermaid
+flowchart LR
+    A1[원문 코퍼스<br/>654건 개요/목표/교재/강의계획] --> A2[5원 가중결합<br/>a로드맵 1.0 · b레벨 0.5~0.7 · c어휘 0.3 · LLM concept 0.3 · LLM query 0.3]
+    A2 --> A3[BGE-m3 fine-tuning<br/>MultipleNegativesRankingLoss]
+    A3 --> A4{여유 있으면}
+    A4 -->|예| A5[GAT/GraphSAGE 레이어 추가]
+    A4 -->|아니오| A6[텍스트 임베딩만]
+    A5 --> A7[평가<br/>링크예측·ablation·휴먼NDCG/Precision]
+    A6 --> A7
+    A7 --> A8[임베딩 서빙<br/>MVP#1 추천·MVP#4 타과 융합]
+```
+
+**아래 설명**: 5개 supervision 소스를 신뢰도 가중치로 결합하는 단계(A2)가 축A의 핵심이자 가장 손이 많이 가는 단계다. 여기서 나온 pair들로 BGE-m3를 파인튜닝(A3)하고, 리소스가 남으면 그래프 레이어를 얹는 갈림길(A4)이 있다. 최종 산출물은 링크예측·ablation·휴먼평가 3갈래로 검증(A7)한 뒤 실제 추천에 쓰이는 임베딩(A8)이 된다.
+
+### 12.3 축D 플로우 — 온톨로지
+
+```mermaid
+flowchart TD
+    D1[Competency Questions 정의<br/>CQ1,3~9 확정 · CQ2 제외] --> D2[개념화<br/>클래스/관계/공리 역산]
+    D2 --> D3[LLM 초안 제안<br/>ResearchTopic 계층·앵커문장·OWL 문법]
+    D3 --> D4[사람 검토<br/>Protégé에서 구조 확정]
+    D4 --> D5{관계 그룹}
+    D5 -->|그룹A 하드: hasPrerequisite| D6[결정적 파싱만<br/>LLM은 매칭 보조까지만]
+    D5 -->|그룹B 소프트: coversTopic·requiresSkill·hasSynergyWith| D7[임베딩 유사도로 인스턴스 생성<br/>+ LLM 보조신호]
+    D6 --> D8[owlready2로 삽입]
+    D7 --> D8
+    D8 --> D9[reasoner 일관성 검사]
+    D9 -->|실패| D10[반려·재검토]
+    D9 -->|통과| D11[그래프 커밋]
+    D10 --> D3
+```
+
+**아래 설명**: CQ에서 시작해(D1) 스키마를 역산하는(D2) 표준 절차 이후, 실무에서는 관계를 두 그룹으로 나눠 자동화 수위를 다르게 가져간다(D5) — 그룹A(`hasPrerequisite`)는 LLM이 새 사실을 만들지 못하게 막고, 그룹B(`coversTopic`, `requiresSkill`, `hasSynergyWith`)는 LLM+임베딩으로 사람 개입 없이 자동화한다. 어느 쪽이든 마지막엔 반드시 reasoner 일관성 검사(D9)를 통과해야 커밋되고(D11), 실패하면 반려되어 재검토 루프(D10→D3)로 돌아간다 — 이게 "LLM은 제안만, reasoner가 검증한 것만 커밋"이라는 §7 축D 원칙의 실제 구현이다.
+
+### 12.4 데이터셋 생성 파이프라인 (실무 세부)
+
+```mermaid
+flowchart TD
+    S1[커리큘럼북 PDF 203p] -->|파싱| S2[UG_2026_curriculum_courses.jsonl<br/>654건: content·objectives·references·plan]
+    S3[학과 홈페이지 로드맵] -->|파싱| S4[roadmap_raw.jsonl<br/>다이어그램/표/자유서술 3단계 품질]
+    S5[Lab 홈페이지+논문DB] -->|크롤링, 팀원 진행중| S6[Lab 프로필<br/>키워드+최근 논문제목]
+
+    S2 --> T1[prerequisites 필드 정제<br/>오파싱 제거→코드매칭→fuzzy매칭]
+    S4 --> T2["학년/학기별 일람표" 파싱<br/>hasSynergyWith 1차 소스]
+    S2 --> T3[course_objectives 추출<br/>requiresSkill/providesSkill 소스]
+    S6 --> T4[키워드 주제/기술 분류<br/>LLM 보조]
+
+    T1 --> U1[축A pair (a) 로드맵 순서]
+    T2 --> U1
+    S2 --> U2[축A pair (c) 어휘중첩]
+    S6 --> U2
+    T3 --> U3[축D Skill 인스턴스]
+    T4 --> U3
+```
+
+**아래 설명**: 세 원천(커리큘럼북, 학과 로드맵, Lab 정보)이 각각 다른 파싱을 거쳐(S2/S4/S6) 정제 단계(T1~T4)로 모이고, 여기서 나온 산출물이 축A의 학습 pair(U1, U2)와 축D의 Skill 인스턴스(U3)로 각각 흘러들어간다. 같은 원천 데이터가 축A/축D 양쪽에서 재사용되는 지점(`prerequisites` 정제 → 로드맵 순서 pair + `hasPrerequisite`, `course_objectives` → 어휘중첩 pair + Skill 소스)이 이 파이프라인을 한 번만 구축하면 되는 이유다.
