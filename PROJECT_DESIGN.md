@@ -90,7 +90,7 @@
   - **PU-learning 주의**: 권장이수체계도에 없는 쌍을 곧바로 negative로 취급하지 않는다("관찰 안 됨 ≠ 관계 없음") — §7 평가 프로토콜(링크 예측)에도 동일하게 적용.
   - **과목코드 피처화 확장**: (b) 레벨 신호를 이수구분 플래그뿐 아니라 과목코드 숫자 패턴(학년대 반영 여부 등)까지 세밀화해 반영(Liang et al.에서 검증된 피처).
   - **최신 대체 참고(2026-07-22 추가)**: "A Bayesian approach to inferring prerequisite structures and topic difficulty" (BEA 2025 워크숍) — 선수관계+난이도를 베이지안으로 동시 추론하는 최신 방법론. Liang/Pan(2017)보다 "가중 결합" 아이디어를 더 정교하게 구현할 근거로 우선 검토.
-- **모델**: 사전학습 한국어/다국어 인코더(KoSimCSE, KLUE-RoBERTa, multilingual-e5 등)를 백본으로, `MultipleNegativesRankingLoss` 등으로 contrastive fine-tuning. 시간이 남으면 텍스트 임베딩 위에 얕은 GAT/GraphSAGE 레이어를 얹어 그래프 구조(선수과목 체인)를 명시적으로 반영 (text-attributed graph representation learning).
+- **모델(확정, 2026-08-03)**: 백본은 **BGE-m3**(다국어, 8192 토큰 긴 컨텍스트, dense/sparse/multi-vector 하이브리드 지원)로 확정. 이 위에 `MultipleNegativesRankingLoss` 등으로 contrastive fine-tuning. 시간이 남으면 텍스트 임베딩 위에 얕은 GAT/GraphSAGE 레이어를 얹어 그래프 구조(선수과목 체인)를 명시적으로 반영 (text-attributed graph representation learning).
   - **최신 참고(2024~2025)**: "Toward General and Robust LLM-enhanced Text-attributed Graph Learning" (2025), "GraphRAG-Induced Dual Knowledge Structure Graphs for Personalized Learning Path Recommendation" (2025, 개인화 학습경로 추천을 그래프+RAG로 다루는 논문이라 옵션3 설계와 직접 비교 대상).
 - **베이스라인 비교 대상(확정)**: 옵션3(온톨로지 노드+앵커문장 결합) 구현 시, **OWL2Vec\*** (Chen et al. 2021)의 최신 후속작인 **OWL2Vec4OA** (2024.12, KGSWC — confidence-weighted random walk로 개선)를 §7 평가의 baseline/비교 대상으로 추가한다.
 - **평가**: (1) 권장이수그래프 엣지 일부를 hidden하고 링크 예측 정확도 비교(파인튜닝 vs 베이스라인 SBERT), (2) text-only vs text+graph ablation, (3) 팀 라벨링 골드셋/소규모 학생 대상 휴먼 평가(NDCG@k, Precision@k).
@@ -191,6 +191,29 @@
 - **2차/보강 방법(로드맵에 없는 순수 타학과 시너지용, 예: 로드맵에 없는 MATH333↔CSED226 같은 쌍)**: §7 축A에서 이미 결정한 개념 단위 접근을 재사용 — Liang et al. AAAI'17 / Pan et al. ACL'17 스타일 concept-level dependency mining. 각 과목 개요에서 후보 개념구(concept phrase)를 추출해 "어느 과목이 그 개념을 정의/도입하는가"를 앵커로 삼고, 다른 과목이 그 개념을 정의 없이 응용만 하면 정의 과목 → 응용 과목 방향으로 `hasSynergyWith` 후보 생성. 로드맵 기반 신호(고신뢰)와 개념 마이닝 기반 신호(저신뢰)를 축A와 동일한 "가중 결합" 원칙(§7 축A)으로 합친다.
 - **축A와의 관계**: 학년/학기별 로드맵 데이터는 축A 지도학습 신호 (a)(권장이수체계도의 순서 관계)와 **동일한 원천을 공유**한다 — 단 축A는 이를 임베딩 학습용 연속 신뢰도 신호로, 축D는 이를 이산적 OWL object property(`hasSynergyWith`)로 사용한다는 점이 다르다. 같은 표를 두 축이 각자 방식으로 소비하므로, 로드맵 표 파싱 파이프라인은 축A/축D 공용 인프라로 1회만 구축하면 된다.
 
+### 7.3 축A 학습 데이터 구성 & 로드맵 자료 수집 결산 (신설, 2026-08-03)
+
+- **축A 백본 확정**: 사전학습 인코더는 **BGE-m3**로 확정(다국어, 8192 토큰 긴 컨텍스트, dense/sparse/multi-vector 하이브리드). multilingual-e5-large·KURE-v1은 §7 평가 프로토콜(링크 예측)의 비교 baseline으로만 사용.
+- **학습 pair 구성 원칙**: 아래 5개 소스를 신뢰도 가중치와 함께 하나의 학습셋으로 결합(하나의 모델을 학습시키는 것이며, 소스별로 별도 모델을 두지 않음). 전부 **자체 수집 데이터 기반**이며, 오픈 데이터셋(KLUE-STS/KorSTS/KorNLI 등)은 pair 소스가 아니라 워밍업/회귀테스트·방법론 검증용 별도 트랙으로 분리한다.
+
+  | 소스 | anchor | positive | 신뢰도 | 생성 방법 |
+  |---|---|---|---|---|
+  | (a) 로드맵 순서 | 선수과목 개요 | 후속과목 개요 | 1.0 | `hasPrerequisite` 확정 엣지(텍스트 명시) |
+  | (b) 레벨 신호 | 저학년 필수과목 개요 | 고학년 관련과목 개요 | 0.5~0.7 | 과목코드 앞자리(학년대)+이수구분 플래그 |
+  | (c) 어휘중첩 | 연구실 키워드/논문 초록 | 과목개요 | 0.3 | TF-IDF/어휘 overlap 상위 쌍 |
+  | LLM concept | "정의 과목" 개요 | "응용만 하는 과목" 개요 | 0.3(c와 동급) | §7.2 2차방법과 동일 메커니즘: LLM이 concept phrase 추출 → 정의/응용 방향 판별 |
+  | LLM query | 합성 질의 | 과목개요 | 0.3, 검수 전까지 최저티어 | Claude/Gemini로 "이 과목을 찾을 법한 자연어 질의" structured output 생성 — 실제 서비스의 질의-문서 분포에 맞춘 augmentation |
+
+  낮은 신뢰도 소스는 다운샘플링 또는 loss weight 축소로 반영(Snorkel식 확률결합의 실무적 근사).
+
+- **`prerequisites` 필드 실사 결과(2026-08-03)**: `UG_2026_curriculum_courses.jsonl`(654건) 점검 결과 `"없음"` 외에 `"-"` 같은 사실상 결측값도 존재(예: AMSE405/406). 또한 **오파싱 사례 발견** — `AMSE407`은 `prerequisites` 필드에 강의계획서 전체(주차별 커리큘럼)가 통째로 들어간 컬럼 밀림 버그. (a) 소스로 채택 전 "오파싱 제거 → 자유서술 내 course_code 매칭 → 매칭 성공분만 채택"의 정제 단계가 필요함을 확인. 자유서술 값 중에는 `AMSE201 -> General Physics, General Chemistry`처럼 코드가 아닌 과목명만 있는 경우도 많아 fuzzy matching 또는 폐기 판단이 필요.
+- **학과별 로드맵 데이터 품질 3단계**(로드맵 원문 수집 결과로 확인, `roadmap_raw.jsonl`에 저장):
+  1. **다이어그램/구조화표 보유**(MECH, IMEN, 반도체 트랙[소속 학과명 미확인 — 확인 필요], CITE): (a)(b) 고신뢰 소스를 사람이 이미 검증한 형태로 확보 가능.
+  2. **로드맵은 있으나 자유서술 텍스트뿐**(PHYS): 학년/트랙 구조는 있지만 파싱 필요.
+  3. **그 외 대다수 학과**: 위 `prerequisites` 필드 정제 + (c) 어휘중첩 + LLM concept mining(§7.2 2차방법)에만 의존.
+  - **결정(2026-08-03)**: 전학과 다이어그램 커버를 목표로 삼지 않고, 다이어그램 수집은 여기서 마무리. 나머지 학과는 텍스트 기반 파이프라인((c)+LLM concept mining)으로 진행.
+- **CITE(IT융합공학과) 자료의 특별한 가치**: 트랙별(의공학/인간-로봇공학/지능형시스템공학/디자인공학) 추천과목 리스트에 EECE/MECH/AMSE/CSED/LIFE 등 타학과 과목코드가 이미 명시적으로 묶여 있어, §7.2 `hasSynergyWith` 2차방법(로드맵에 없는 순수 타학과 시너지, 예시로 든 MATH333↔CSED226류)의 **실증 사례이자 고신뢰 소스**로 concept mining 없이 바로 활용 가능.
+
 ---
 
 ## 8. 대략적 로드맵 (6개월 가정)
@@ -218,6 +241,7 @@
 - 현재 `syllabus_raw.jsonl`/`DATA_ANALYSIS.md`는 참고용, 실제 데이터는 재크롤링 + 초기 더미 데이터로 진행
 - SBERT 그대로 사용하지 않고 도메인 특화 임베딩을 직접 학습 (연구 실적화)
 - 연구 기여 우선순위: 축 A(상태표현학습) 최우선, 축 C(경로계획)는 스트레치
+- **(2026-08-03) 축A 백본을 BGE-m3로 확정** — multilingual-e5-large/KURE-v1은 비교 baseline으로만 사용 (§7 축A 참고)
 - MVP 기능: 임베딩 매칭 추천, 테크트리 생성, 논문 트렌드 갱신 파이프라인, 타과 융합 검색(통합 임베딩 공간으로 자연 확보)
 - 커리어 패스 매핑은 Phase 2로 보류
 - 온톨로지는 formal(OWL)로 진행, 학습 목적 포함

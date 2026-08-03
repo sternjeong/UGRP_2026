@@ -692,6 +692,45 @@
       <p><strong>축A와의 관계</strong>: 학년/학기별 로드맵 데이터는 축A 지도학습 신호 (a)(권장이수체계도의 순서 관계)와 <strong>동일한 원천을 공유</strong>한다 — 축A는 이를 임베딩 학습용 연속 신뢰도 신호로, 축D는 이산적 OWL object property로 사용한다는 점이 다르다. 로드맵 표 파싱 파이프라인은 축A/축D 공용 인프라로 1회만 구축하면 된다.</p>
     </section>
 
+    <section class="doc-section" id="s73">
+      <div class="sec-head"><span class="sec-num">§7.3</span><h2>축A 학습 데이터 구성 & 로드맵 자료 수집 결산</h2><span class="chip decided">신설 · 08-03</span></div>
+
+      <p><strong>축A 백본 확정</strong>: 사전학습 인코더는 <strong>BGE-m3</strong>로 확정(다국어, 8192 토큰 긴 컨텍스트, dense/sparse/multi-vector 하이브리드). multilingual-e5-large·KURE-v1은 §7 평가 프로토콜(링크 예측)의 비교 baseline으로만 사용.</p>
+
+      <p><strong>학습 pair 구성 원칙</strong>: 아래 5개 소스를 신뢰도 가중치와 함께 <strong>하나의 모델</strong>에 대한 하나의 학습셋으로 결합(소스별 별도 모델 아님). 전부 자체 수집 데이터 기반이며, 오픈 데이터셋(KLUE-STS/KorSTS/KorNLI 등)은 pair 소스가 아니라 워밍업/회귀테스트·방법론 검증용 별도 트랙.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>소스</th><th>anchor</th><th>positive</th><th>신뢰도</th><th>생성 방법</th></tr></thead>
+          <tbody>
+            <tr><td>(a) 로드맵 순서</td><td>선수과목 개요</td><td>후속과목 개요</td><td>1.0</td><td><code>hasPrerequisite</code> 확정 엣지(텍스트 명시)</td></tr>
+            <tr><td>(b) 레벨 신호</td><td>저학년 필수과목 개요</td><td>고학년 관련과목 개요</td><td>0.5~0.7</td><td>과목코드 앞자리(학년대)+이수구분 플래그</td></tr>
+            <tr><td>(c) 어휘중첩</td><td>연구실 키워드/논문 초록</td><td>과목개요</td><td>0.3</td><td>TF-IDF/어휘 overlap 상위 쌍</td></tr>
+            <tr><td>LLM concept</td><td>"정의 과목" 개요</td><td>"응용만 하는 과목" 개요</td><td>0.3(c와 동급)</td><td>§7.2 2차방법과 동일 메커니즘: LLM concept phrase 추출 → 정의/응용 방향 판별</td></tr>
+            <tr><td>LLM query</td><td>합성 질의</td><td>과목개요</td><td>0.3, 검수 전 최저티어</td><td>Claude/Gemini로 "이 과목을 찾을 법한 자연어 질의" structured output 생성</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:13px; color: var(--ink-faint);">낮은 신뢰도 소스는 다운샘플링 또는 loss weight 축소로 반영(Snorkel식 확률결합의 실무적 근사).</p>
+
+      <div class="card">
+        <div class="card-head"><strong><code>prerequisites</code> 필드 실사 결과</strong><span class="chip decided">08-03</span></div>
+        <p><code>UG_2026_curriculum_courses.jsonl</code>(654건) 점검 결과 <code>"없음"</code> 외에 <code>"-"</code> 같은 사실상 결측값도 존재(예: AMSE405/406). <strong>오파싱 사례 발견</strong> — <code>AMSE407</code>은 <code>prerequisites</code> 필드에 강의계획서 전체(주차별 커리큘럼)가 통째로 들어간 컬럼 밀림 버그. (a) 소스로 채택 전 "오파싱 제거 → 자유서술 내 course_code 매칭 → 매칭 성공분만 채택"의 정제 단계가 필요함을 확인. 자유서술 값 중 <code>AMSE201 → General Physics, General Chemistry</code>처럼 코드가 아닌 과목명만 있는 경우도 많아 fuzzy matching 또는 폐기 판단 필요.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><strong>학과별 로드맵 데이터 품질 3단계</strong></div>
+        <p>로드맵 원문 수집 결과로 확인(<code>roadmap_raw.jsonl</code>에 저장):</p>
+        <ul>
+          <li><strong>다이어그램/구조화표 보유</strong>(MECH, IMEN, 반도체 트랙[소속 학과명 미확인], CITE): (a)(b) 고신뢰 소스를 사람이 이미 검증한 형태로 확보 가능.</li>
+          <li><strong>로드맵은 있으나 자유서술 텍스트뿐</strong>(PHYS): 학년/트랙 구조는 있지만 파싱 필요.</li>
+          <li><strong>그 외 대다수 학과</strong>: <code>prerequisites</code> 필드 정제 + (c) 어휘중첩 + LLM concept mining(§7.2 2차방법)에만 의존.</li>
+        </ul>
+        <div class="callout"><strong>결정(08-03)</strong>: 전학과 다이어그램 커버를 목표로 삼지 않고 다이어그램 수집은 여기서 마무리. 나머지 학과는 텍스트 기반 파이프라인((c)+LLM concept mining)으로 진행.</div>
+      </div>
+
+      <p><strong>CITE(IT융합공학과) 자료의 특별한 가치</strong>: 트랙별(의공학/인간-로봇공학/지능형시스템공학/디자인공학) 추천과목 리스트에 EECE/MECH/AMSE/CSED/LIFE 등 타학과 과목코드가 이미 명시적으로 묶여 있어, §7.2 <code>hasSynergyWith</code> 2차방법(로드맵에 없는 순수 타학과 시너지, 예시 MATH333↔CSED226류)의 <strong>실증 사례이자 고신뢰 소스</strong>로 concept mining 없이 바로 활용 가능.</p>
+    </section>
+
     <section class="doc-section" id="s8">
       <div class="sec-head"><span class="sec-num">§8</span><h2>대략적 로드맵 (6개월 가정)</h2></div>
       <div class="table-wrap">
