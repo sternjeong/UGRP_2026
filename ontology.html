@@ -273,6 +273,35 @@
   .farrow { color: var(--ink-faint); font-family: var(--mono); font-size: .85rem; white-space: nowrap; }
   .farrow.down { align-self: center; }
 
+  /* personal insight journal */
+  .insight-list { display: flex; flex-direction: column; gap: 1rem; margin: 1.2rem 0; }
+  .insight {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    padding: 1rem 1.3rem;
+    box-shadow: var(--shadow);
+  }
+  .insight .ino {
+    font-family: var(--mono);
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: .5rem;
+  }
+  .insight .before {
+    color: var(--ink-faint);
+    font-size: .9rem;
+    text-decoration: line-through;
+    text-decoration-color: var(--rule);
+    margin-bottom: .35rem;
+  }
+  .insight .after { font-size: .96rem; }
+  .insight .after strong { color: var(--accent-ink); }
+
   .glossary dl { margin: 0; }
   .glossary dt { font-family: var(--mono); font-weight: 700; color: var(--accent-ink); margin-top: 1rem; }
   .glossary dd { margin: .3rem 0 0; color: var(--ink-soft); }
@@ -303,7 +332,8 @@
       <li><a href="#c8">LLM-assisted, reasoner-gated 워크플로우</a></li>
       <li><a href="#c9">실습 도구 — Protégé와 owlready2</a></li>
       <li><a href="#c10">전체 개발 워크플로우</a></li>
-      <li><a href="#c11">용어 정리</a></li>
+      <li><a href="#c11">이 대화에서 얻은 깨달음</a></li>
+      <li><a href="#c12">용어 정리</a></li>
     </ol>
   </nav>
 
@@ -718,8 +748,70 @@ with onto:
     </section>
 
     <!-- Chapter 11 -->
-    <section class="chapter glossary" id="c11">
-      <div class="chapter-head"><span class="chapter-no">11</span><h2>용어 정리</h2></div>
+    <section class="chapter" id="c11">
+      <div class="chapter-head"><span class="chapter-no">11</span><h2>이 대화에서 얻은 깨달음</h2></div>
+      <p>1~10장이 정리된 개념 설명이라면, 이 장은 그 개념들을 실제로 이해해가는 과정에서 걸렸던 지점과 그걸 넘어선 순간을 기록한 것이다. 각 항목은 "처음엔 이렇게 생각했는데 → 실제로는 이런 거였다" 형식으로 적었다.</p>
+
+      <div class="insight-list">
+        <div class="insight">
+          <div class="ino">깨달음 1 · 1장</div>
+          <div class="before">온톨로지도 결국 태그를 좀 더 잘 정리한 것 아닌가?</div>
+          <div class="after">태그는 라벨을 붙이는 것까진 온톨로지와 똑같이 할 수 있지만, <strong>태그들 사이의 관계를 표현할 방법이 없다</strong>는 게 결정적 차이다. "통신"과 "신호처리"가 같은 레벨로 나열될 뿐, 하나가 다른 하나의 하위분야라는 사실 자체를 표현할 수 없다.</div>
+        </div>
+
+        <div class="insight">
+          <div class="ino">깨달음 2 · 4장</div>
+          <div class="before">reasoner를 "실행"한다는 게 무슨 소리인지 감이 안 왔다.</div>
+          <div class="after">OWL 파일은 프로그램이 아니라 <strong>공리(참인 선언)들의 모음</strong>이고, reasoner를 돌린다는 건 그 선언들로부터 명시적으로 안 적힌 사실을 계산해서 뽑아내는 것이다. 스프레드시트에 수식을 넣고 "재계산" 버튼을 누르는 것과 같은 비유가 제일 와닿았다.</div>
+        </div>
+
+        <div class="insight">
+          <div class="ino">깨달음 3 · 5장</div>
+          <div class="before">transitive랑 property chain이랑 뭐가 다른지 헷갈렸다.</div>
+          <div class="after">"친구의 친구는 친구"(같은 관계 R이 R 자신과 이어짐)가 transitive고, "삼촌의 딸은 사촌"(관계 두 개가 섞여 제3의 관계가 나옴)이 property chain이다. <code>coversTopic</code>과 <code>isSubfieldOf</code>처럼 <strong>서로 다른 관계 두 개를 이어붙여야 할 때</strong>는 transitive가 아니라 property chain이 필요하다는 걸 이 비유로 정리했다.</div>
+        </div>
+
+        <div class="insight">
+          <div class="ino">깨달음 4 · 9장</div>
+          <div class="before">Protégé, owlready2, reasoner가 각각 뭘 하는 도구인지 구분이 안 됐다.</div>
+          <div class="after">OWL이 "언어"라면 Protégé는 그 언어로 글을 쓰는 <strong>워드프로세서</strong>, reasoner는 그 글을 읽고 추론을 계산하는 <strong>엔진</strong>, owlready2는 그 엔진을 파이썬에서 <strong>대량으로 스크립트화</strong>해서 돌리는 도구다. 소규모 설계·검토엔 Protégé, 654건 규모의 인스턴스 채우기엔 owlready2로 역할이 나뉜다.</div>
+        </div>
+
+        <div class="insight">
+          <div class="ino">깨달음 5 · 7장</div>
+          <div class="before"><code>hasPrerequisite</code>를 조심히 다뤄야 하는 이유가 축C(경로계획) 때문이라고 생각했다.</div>
+          <div class="after">축C는 스트레치 목표로 이미 보류된 축이라 지금 근거가 될 수 없었다. 실제 이유는 <strong>MVP#2(테크트리 생성)가 이 관계를 학생에게 그대로 노출</strong>한다는 점 — 틀린 선수관계를 보여주면 축C 여부와 무관하게 학생이 실제로 잘못된 학사 계획을 세우게 된다. "왜 위험한가"의 근거를 다른 축이 아니라 실제 사용자 노출 지점에서 찾아야 한다는 걸 정정하며 배웠다.</div>
+        </div>
+
+        <div class="insight">
+          <div class="ino">깨달음 6 · 7장</div>
+          <div class="before">CQ5(Skill)는 Lab 키워드+논문제목만으로는 데이터가 없어서 못 푸는 질문인 줄 알았다.</div>
+          <div class="after">새 데이터를 수집할 필요가 없었다 — Lab 키워드 자체가 이미 Skill 후보(주제/기술 분류만 하면 됨)였고, Course 쪽은 이미 확보된 <code>course_objectives</code> 필드가 Skill 서술을 담고 있었다. <strong>"데이터가 없다"가 아니라 "이미 있는 데이터를 아직 다른 용도로 재활용 안 했을 뿐"</strong>이었던 경우가 실제로는 더 많다는 걸 배웠다.</div>
+        </div>
+
+        <div class="insight">
+          <div class="ino">깨달음 7 · 8장</div>
+          <div class="before">LLM을 온톨로지 구축에 쓴다는 게, 경쟁 논문을 "LLM이 그래프를 직접 완성해서 문제"라고 비판한 것과 모순되는 줄 알았다.</div>
+          <div class="after">차이는 "LLM을 쓰냐 안 쓰냐"가 아니라 <strong>"LLM 출력이 검증 없이 그래프에 바로 커밋되냐"</strong>였다. LLM은 제안만 하고 reasoner의 일관성 검사를 통과한 것만 커밋되게 만들면, 같은 도구를 써도 방법론적 차별화는 유지된다.</div>
+        </div>
+
+        <div class="insight">
+          <div class="ino">깨달음 8 · 7~8장</div>
+          <div class="before">reasoner 검증을 거치면 자동화해도 다 안전한 줄 알았다.</div>
+          <div class="after">reasoner는 <strong>논리적 모순만</strong> 잡지, "사실관계가 틀렸지만 모순은 아닌 경우"는 못 잡는다. 그래서 관계를 하드(사실 오류가 치명적, LLM 추론 배제)와 소프트(오류 피해가 경미, 완전 자동화 가능) 그룹으로 나눠 자동화 수위를 다르게 가져가야 한다는 걸 알게 됐다.</div>
+        </div>
+
+        <div class="insight">
+          <div class="ino">깨달음 9 · 8장</div>
+          <div class="before">프로젝트에 나오는 "LLM"이 다 같은 걸 가리키는 줄 알았다.</div>
+          <div class="after">실제로는 세 가지가 완전히 별개다 — 축A(BGE-m3, 서비스 중 실시간 임베딩), 축E(경량 로컬 LLM, 서비스 중 설명 생성), 그리고 온톨로지 구축용 Gemini/Claude(개발 단계에서만, 산출물만 남고 서비스엔 관여 안 함). 이름이 같다고 같은 역할인 게 아니라는 걸 문서에 명시해둘 필요가 있었다.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chapter 12 -->
+    <section class="chapter glossary" id="c12">
+      <div class="chapter-head"><span class="chapter-no">12</span><h2>용어 정리</h2></div>
       <dl>
         <dt>Class (Concept)</dt>
         <dd>개체들의 집합. 예: Course, Lab.</dd>

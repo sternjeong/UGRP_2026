@@ -393,7 +393,21 @@ flowchart TD
 
 **아래 설명**: CQ에서 시작해(D1) 스키마를 역산하는(D2) 표준 절차 이후, 실무에서는 관계를 두 그룹으로 나눠 자동화 수위를 다르게 가져간다(D5) — 그룹A(`hasPrerequisite`)는 LLM이 새 사실을 만들지 못하게 막고, 그룹B(`coversTopic`, `requiresSkill`, `hasSynergyWith`)는 LLM+임베딩으로 사람 개입 없이 자동화한다. 어느 쪽이든 마지막엔 반드시 reasoner 일관성 검사(D9)를 통과해야 커밋되고(D11), 실패하면 반려되어 재검토 루프(D10→D3)로 돌아간다 — 이게 "LLM은 제안만, reasoner가 검증한 것만 커밋"이라는 §7 축D 원칙의 실제 구현이다.
 
-### 12.4 데이터셋 생성 파이프라인 (실무 세부)
+### 12.4 축E 플로우 — 생성/설명 계층
+
+```mermaid
+flowchart LR
+    E1[축D 검증된 그래프<br/>Neo4j materialize] --> E2[학생 질의/추천 결과<br/>MVP#1 관심사 매칭 산출물]
+    E2 --> E3[GraphRAG 서브그래프 검색<br/>coversTopic·hasSynergyWith·isSubfieldOf 경로]
+    E3 --> E4[경량 로컬 LLM<br/>확정 사실을 자연어 문장으로 다듬기]
+    E4 --> E5[근거 포함 추천 문장<br/>MVP#1·#5 설명 UI]
+    E5 --> E6{벤치마크}
+    E6 -->|ALERT 착안| E7[Gemini API 대비<br/>LLM-judge 평가]
+```
+
+**아래 설명**: 축E는 축D가 이미 reasoner로 검증해둔 그래프(E1)만 검색 대상으로 삼기 때문에, 일반적인 GraphRAG가 겪는 "그래프 자체의 노이즈" 문제가 없다 — 그래프가 LLM 추출물이 아니라 reasoner 산출물이기 때문이다. 로컬 LLM(E4)은 검증된 사실을 문장으로 다듬기만 할 뿐, 새로운 사실을 만들어내지 않는다는 점이 §7 축E의 "확정된 사실만 다듬는 경량 모델" 정의와 일치한다. 벤치마크(E6~E7)는 세부 지표가 여전히 미정이나, ALERT(NAACL 2025)를 착안점으로 등록해두었다(§7.1).
+
+### 12.5 데이터셋 생성 파이프라인 (실무 세부, 축A·D·E 공용)
 
 ```mermaid
 flowchart TD
@@ -406,12 +420,26 @@ flowchart TD
     S2 --> T3[course_objectives 추출<br/>requiresSkill/providesSkill 소스]
     S6 --> T4[키워드 주제/기술 분류<br/>LLM 보조]
 
-    T1 --> U1[축A pair (a) 로드맵 순서]
+    T1 --> U1[축A pair a<br/>로드맵 순서, 신뢰도 1.0]
     T2 --> U1
-    S2 --> U2[축A pair (c) 어휘중첩]
+    S2 --> U2[축A pair c<br/>어휘중첩, 신뢰도 0.3]
     S6 --> U2
-    T3 --> U3[축D Skill 인스턴스]
+    T3 --> U3[축D Skill 인스턴스<br/>providesSkill]
     T4 --> U3
+    T1 --> U4[축D hasPrerequisite<br/>그룹A 확정 엣지]
+
+    U1 --> V1[축A 학습셋<br/>5원 가중결합]
+    U2 --> V1
+    V1 --> V2[BGE-m3 fine-tuning]
+    U3 --> V3[축D 그래프 인스턴스]
+    U4 --> V3
+    V3 --> V4[reasoner 검증]
+    V2 --> V5[임베딩 서빙]
+    V4 --> V6[Neo4j materialize]
+    V5 --> W1[축E GraphRAG 입력]
+    V6 --> W1
 ```
+
+**아래 설명**: 세 원천(커리큘럼북·로드맵·Lab)이 각각 파싱되어(S2/S4/S6) 정제 단계(T1~T4)를 거치는 것까지는 §12.4 이전과 같지만, 여기서는 그 산출물이 실제로 어디로 흘러가는지 끝까지 추적한다 — 축A 학습셋(V1→V2→V5)과 축D 그래프 인스턴스(V3→V4→V6)가 각자 완성된 뒤, 최종적으로 **둘 다 축E(W1)의 입력**으로 합류한다. 즉 축A·축D는 병렬로 만들어지는 두 산출물이지만, 서비스 시점에는 축E가 이 둘을 함께 소비하는 구조로 수렴한다. 같은 정제 산출물(T1: `prerequisites` 정제)이 축A pair(U1)와 축D `hasPrerequisite`(U4) 양쪽에 동시에 쓰이는 지점이, 정제 파이프라인을 한 번만 구축해도 되는 이유다.
 
 **아래 설명**: 세 원천(커리큘럼북, 학과 로드맵, Lab 정보)이 각각 다른 파싱을 거쳐(S2/S4/S6) 정제 단계(T1~T4)로 모이고, 여기서 나온 산출물이 축A의 학습 pair(U1, U2)와 축D의 Skill 인스턴스(U3)로 각각 흘러들어간다. 같은 원천 데이터가 축A/축D 양쪽에서 재사용되는 지점(`prerequisites` 정제 → 로드맵 순서 pair + `hasPrerequisite`, `course_objectives` → 어휘중첩 pair + Skill 소스)이 이 파이프라인을 한 번만 구축하면 되는 이유다.
