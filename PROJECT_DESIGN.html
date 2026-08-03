@@ -929,19 +929,29 @@
 
       <h3 style="font-size:14px; margin: 18px 0 8px;">12.2 축A 플로우</h3>
       <div class="flow-diagram">
-        <div class="flow-row">
-          <span class="fnode">원문 코퍼스<br><small>개요·목표·교재·강의계획</small></span>
-          <span class="farrow">→</span>
-          <span class="fnode accent">5원 가중결합<br><small>a1.0 · b0.5~0.7 · c0.3 · LLM concept0.3 · LLM query0.3</small></span>
-          <span class="farrow">→</span>
-          <span class="fnode">BGE-m3 fine-tuning</span>
-          <span class="farrow">→</span>
-          <span class="fnode">평가<br><small>링크예측·ablation·NDCG/Precision</small></span>
-          <span class="farrow">→</span>
-          <span class="fnode">임베딩 서빙</span>
+        <div class="flow-row" style="flex-wrap:wrap;">
+          <span class="fnode">(a) 로드맵 순서<br><small>신뢰도 1.0</small></span>
+          <span class="fnode">(b) 레벨 신호<br><small>신뢰도 0.5~0.7</small></span>
+          <span class="fnode">(c) 어휘중첩<br><small>신뢰도 0.3</small></span>
+          <span class="fnode">LLM concept<br><small>신뢰도 0.3</small></span>
+          <span class="fnode">LLM query<br><small>신뢰도 0.3 최저</small></span>
         </div>
+        <div class="flow-row center"><span class="farrow">↓ ↓ ↓ ↓ ↓</span></div>
+        <div class="flow-row center"><span class="fnode accent">가중 결합 학습셋<br><small>Snorkel식 확률결합 · 저신뢰 소스는 다운샘플링/loss weight 축소</small></span></div>
+        <div class="flow-row center"><span class="farrow">↓</span></div>
+        <div class="flow-row center"><span class="fnode">BGE-m3 fine-tuning<br><small>MultipleNegativesRankingLoss + hard negative mining</small></span></div>
+        <div class="flow-row center"><span class="farrow">↓ (여유 있으면 GAT/GraphSAGE 레이어 추가)</span></div>
+        <div class="flow-row center"><span class="fnode">평가 3갈래</span></div>
+        <div class="flow-row center"><span class="farrow">↓</span></div>
+        <div class="flow-row" style="flex-wrap:wrap; justify-content:center;">
+          <span class="fnode branch">① 링크예측<br><small>엣지 hide → MRR/Hits@k<br>vs OWL2Vec4OA·e5·KURE</small></span>
+          <span class="fnode branch">② Ablation<br><small>text-only vs text+graph</small></span>
+          <span class="fnode branch">③ 휴먼평가<br><small>골드셋/학생 대상<br>NDCG@k·Precision@k</small></span>
+        </div>
+        <div class="flow-row center"><span class="farrow">↓</span></div>
+        <div class="flow-row center"><span class="fnode accent">임베딩 서빙<br><small>MVP#1 추천·MVP#4 타과 융합</small></span></div>
       </div>
-      <p style="font-size:13px; color:var(--ink-soft);">5개 supervision 소스를 신뢰도 가중치로 결합하는 단계가 축A의 핵심이다. 리소스가 남으면 텍스트 임베딩 위에 GAT/GraphSAGE를 얹지만, 없어도 파이프라인은 끊기지 않는다.</p>
+      <p style="font-size:13px; color:var(--ink-soft);">5개 supervision 소스는 신뢰도가 다르므로 단순 합집합이 아니라 Snorkel식 확률결합으로 가중 결합한다 — 이게 축A의 핵심이자 가장 손이 많이 가는 단계다. 여기서 나온 pair로 BGE-m3를 hard negative mining과 함께 파인튜닝하고, 리소스가 남으면 GAT/GraphSAGE 레이어를 얹는다. 최종 산출물은 3갈래로 검증한다 — <strong>①링크예측</strong>은 권장이수그래프 엣지를 숨기고 베이스라인(OWL2Vec4OA·multilingual-e5·KURE-v1) 대비 복원 정확도(MRR/Hits@k)를 비교, <strong>②Ablation</strong>은 text-only vs text+graph로 그래프 레이어의 실제 기여도를 검증, <strong>③휴먼평가</strong>는 골드셋/학생 대상 추천 리스트를 NDCG@k(순위 가중 품질)·Precision@k(상위 k개 중 관련 비율)로 채점한다. 세 결과가 합쳐져야 실제 서빙에 쓰이는 임베딩이 확정된다.</p>
 
       <h3 style="font-size:14px; margin: 18px 0 8px;">12.3 축D 플로우</h3>
       <div class="flow-diagram">

@@ -360,18 +360,36 @@ flowchart TD
 ### 12.2 축A 플로우 — 상태 표현 학습
 
 ```mermaid
-flowchart LR
-    A1[원문 코퍼스<br/>654건 개요/목표/교재/강의계획] --> A2[5원 가중결합<br/>a로드맵 1.0 · b레벨 0.5~0.7 · c어휘 0.3 · LLM concept 0.3 · LLM query 0.3]
-    A2 --> A3[BGE-m3 fine-tuning<br/>MultipleNegativesRankingLoss]
+flowchart TD
+    subgraph SUP["5원 가중결합 supervision"]
+        direction LR
+        Pa["(a) 로드맵 순서<br/>신뢰도 1.0<br/>hasPrerequisite 확정 엣지"]
+        Pb["(b) 레벨 신호<br/>신뢰도 0.5~0.7<br/>과목코드+이수구분"]
+        Pc["(c) 어휘중첩<br/>신뢰도 0.3<br/>Lab키워드↔개요 TF-IDF"]
+        Pd["LLM concept<br/>신뢰도 0.3<br/>정의→응용 방향판별"]
+        Pe["LLM query<br/>신뢰도 0.3 최저<br/>합성질의↔개요"]
+    end
+    Pa --> W[가중 결합 학습셋<br/>Snorkel식 확률결합<br/>저신뢰 소스는 다운샘플링/loss weight 축소]
+    Pb --> W
+    Pc --> W
+    Pd --> W
+    Pe --> W
+    W --> A3[BGE-m3 fine-tuning<br/>MultipleNegativesRankingLoss<br/>+ hard negative mining]
     A3 --> A4{여유 있으면}
     A4 -->|예| A5[GAT/GraphSAGE 레이어 추가]
     A4 -->|아니오| A6[텍스트 임베딩만]
-    A5 --> A7[평가<br/>링크예측·ablation·휴먼NDCG/Precision]
-    A6 --> A7
-    A7 --> A8[임베딩 서빙<br/>MVP#1 추천·MVP#4 타과 융합]
+
+    A5 --> EV{평가 3갈래}
+    A6 --> EV
+    EV --> EV1["① 링크예측<br/>권장이수그래프 엣지 hide<br/>→ MRR/Hits@k, 파인튜닝 vs OWL2Vec4OA/e5/KURE"]
+    EV --> EV2["② Ablation<br/>text-only vs text+graph<br/>동일 태스크로 비교"]
+    EV --> EV3["③ 휴먼평가<br/>골드셋/학생 대상<br/>NDCG@k · Precision@k"]
+    EV1 --> A8[임베딩 서빙<br/>MVP#1 추천·MVP#4 타과 융합]
+    EV2 --> A8
+    EV3 --> A8
 ```
 
-**아래 설명**: 5개 supervision 소스를 신뢰도 가중치로 결합하는 단계(A2)가 축A의 핵심이자 가장 손이 많이 가는 단계다. 여기서 나온 pair들로 BGE-m3를 파인튜닝(A3)하고, 리소스가 남으면 그래프 레이어를 얹는 갈림길(A4)이 있다. 최종 산출물은 링크예측·ablation·휴먼평가 3갈래로 검증(A7)한 뒤 실제 추천에 쓰이는 임베딩(A8)이 된다.
+**아래 설명**: 5개 supervision 소스(Pa~Pe)는 신뢰도가 다르므로 단순 합집합이 아니라 Snorkel식 확률결합으로 가중 결합(W)한다 — 이게 축A의 핵심이자 가장 손이 많이 가는 단계다. 여기서 나온 pair로 BGE-m3를 hard negative mining과 함께 파인튜닝(A3)하고, 리소스가 남으면 그래프 레이어를 얹는 갈림길(A4)이 있다. 최종 산출물은 3갈래로 검증한다 — ①**링크예측**은 권장이수그래프에서 엣지 일부를 숨기고 파인튜닝 모델이 베이스라인(OWL2Vec4OA, multilingual-e5, KURE-v1) 대비 얼마나 잘 복원하는지 MRR/Hits@k로 비교, ②**Ablation**은 text-only와 text+graph 버전을 같은 태스크로 비교해 그래프 레이어의 실제 기여도를 검증, ③**휴먼평가**는 팀 골드셋/소규모 학생 대상으로 추천 리스트 관련도를 NDCG@k(순위 가중 품질)·Precision@k(상위 k개 중 관련 비율)로 채점한다. 세 결과가 합쳐져야 비로소 실제 서빙에 쓰이는 임베딩(A8)이 확정된다.
 
 ### 12.3 축D 플로우 — 온톨로지
 
