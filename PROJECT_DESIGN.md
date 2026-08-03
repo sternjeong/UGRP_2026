@@ -395,35 +395,53 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    D1[Competency Questions 정의<br/>CQ1,3~9 확정 · CQ2 제외] --> D2[개념화<br/>클래스/관계/공리 역산]
-    D2 --> D3[LLM 초안 제안<br/>ResearchTopic 계층·앵커문장·OWL 문법]
-    D3 --> D4[사람 검토<br/>Protégé에서 구조 확정]
+    D1["CQ 정의<br/>CQ1: 최소선수과목체인 · CQ3: 순환검증<br/>CQ4: Lab검색 · CQ5: Skill · CQ6/7: 타학과/깊이<br/>CQ8: 트렌드갱신 · CQ9: 시너지 (CQ2 제외)"]
+    D1 --> D2["개념화<br/>Class: Course·Lab·Professor·ResearchTopic·Skill·Department<br/>Property: hasPrerequisite·isSubfieldOf·coversTopic·requiresSkill·hasSynergyWith"]
+
+    D2 --> D3a[LLM 초안: ResearchTopic 계층<br/>ACM CCS/IEEE Thesaurus 스캐폴드]
+    D2 --> D3b[LLM 초안: 앵커문장<br/>노드당 1~3문장]
+    D2 --> D3c[LLM 초안: OWL 공리 문법<br/>property chain 등 번역]
+    D3a --> D4[사람 검토<br/>Protégé에서 구조 확정]
+    D3b --> D4
+    D3c --> D4
+
     D4 --> D5{관계 그룹}
-    D5 -->|그룹A 하드: hasPrerequisite| D6[결정적 파싱만<br/>LLM은 매칭 보조까지만]
-    D5 -->|그룹B 소프트: coversTopic·requiresSkill·hasSynergyWith| D7[임베딩 유사도로 인스턴스 생성<br/>+ LLM 보조신호]
+    D5 -->|"그룹A 하드<br/>hasPrerequisite"| D6["정제된 prerequisites 텍스트 채택<br/>(§12.5 정제 산출물)<br/>LLM은 fuzzy matching 보조만"]
+    D5 -->|"그룹B 소프트<br/>coversTopic"| D7a["Lab 프로필 임베딩 ↔<br/>ResearchTopic 앵커문장 유사도<br/>임계값 이상 전부 채택"]
+    D5 -->|"그룹B 소프트<br/>requiresSkill/providesSkill"| D7b["Lab 키워드 주제/기술 분류<br/>+ course_objectives ↔ Skill 앵커문장 유사도"]
+    D5 -->|"그룹B 소프트<br/>hasSynergyWith"| D7c["로드맵 공동배치(1차,고신뢰)<br/>+ concept mining(2차,저신뢰) 가중결합"]
+
     D6 --> D8[owlready2로 삽입]
-    D7 --> D8
-    D8 --> D9[reasoner 일관성 검사]
-    D9 -->|실패| D10[반려·재검토]
-    D9 -->|통과| D11[그래프 커밋]
-    D10 --> D3
+    D7a --> D8
+    D7b --> D8
+    D7c --> D8
+    D8 --> D9["reasoner 일관성 검사<br/>HermiT/Pellet"]
+    D9 -->|실패: 모순 검출| D10[반려 · 재검토]
+    D9 -->|통과| D11["property chain 전파<br/>coversTopic∘isSubfieldOf ⊑ coversTopic<br/>→ CQ7 깊이 무관 탐색 해결"]
+    D10 --> D3a
+    D11 --> D12[그래프 커밋 → Neo4j materialize]
 ```
 
-**아래 설명**: CQ에서 시작해(D1) 스키마를 역산하는(D2) 표준 절차 이후, 실무에서는 관계를 두 그룹으로 나눠 자동화 수위를 다르게 가져간다(D5) — 그룹A(`hasPrerequisite`)는 LLM이 새 사실을 만들지 못하게 막고, 그룹B(`coversTopic`, `requiresSkill`, `hasSynergyWith`)는 LLM+임베딩으로 사람 개입 없이 자동화한다. 어느 쪽이든 마지막엔 반드시 reasoner 일관성 검사(D9)를 통과해야 커밋되고(D11), 실패하면 반려되어 재검토 루프(D10→D3)로 돌아간다 — 이게 "LLM은 제안만, reasoner가 검증한 것만 커밋"이라는 §7 축D 원칙의 실제 구현이다.
+**아래 설명**: CQ(D1)에서 스키마를 역산(D2)하는 표준 절차 이후, LLM은 세 갈래(계층 초안·앵커문장·OWL 문법, D3a~c)로 초안을 내고 사람이 Protégé에서 확정(D4)한다. 그다음 관계를 그룹A/B로 나눠 인스턴스를 채운다(D5) — 그룹A(`hasPrerequisite`, D6)는 §12.5에서 정제된 텍스트만 결정적으로 채택하고, 그룹B는 관계마다 채우는 방식이 다르다: `coversTopic`(D7a)은 Lab 프로필과 앵커문장의 임베딩 유사도, `requiresSkill`/`providesSkill`(D7b)은 키워드 분류+`course_objectives` 유사도, `hasSynergyWith`(D7c)는 로드맵 공동배치와 concept mining의 가중결합. 무엇을 삽입하든(D8) 마지막엔 반드시 reasoner 일관성 검사(D9)를 통과해야 하고, 통과분은 property chain(D11)으로 상위 관계까지 자동 전파되어 CQ7을 해결한 뒤 Neo4j에 커밋된다(D12). 실패하면 반려되어 LLM 초안(D3a) 단계로 돌아간다 — "LLM은 제안만, reasoner가 검증한 것만 커밋"이라는 §7 축D 원칙의 실제 구현이다.
 
 ### 12.4 축E 플로우 — 생성/설명 계층
 
 ```mermaid
-flowchart LR
-    E1[축D 검증된 그래프<br/>Neo4j materialize] --> E2[학생 질의/추천 결과<br/>MVP#1 관심사 매칭 산출물]
-    E2 --> E3[GraphRAG 서브그래프 검색<br/>coversTopic·hasSynergyWith·isSubfieldOf 경로]
-    E3 --> E4[경량 로컬 LLM<br/>확정 사실을 자연어 문장으로 다듬기]
-    E4 --> E5[근거 포함 추천 문장<br/>MVP#1·#5 설명 UI]
-    E5 --> E6{벤치마크}
-    E6 -->|ALERT 착안| E7[Gemini API 대비<br/>LLM-judge 평가]
+flowchart TD
+    IN1[축D 검증 그래프<br/>Neo4j materialize] --> RAG[GraphRAG 서브그래프 검색]
+    IN2[축A 임베딩 매칭 결과<br/>학생 질의/추천 후보] --> RAG
+    RAG --> SUB["관련 서브그래프 추출<br/>coversTopic·hasSynergyWith·isSubfieldOf 경로"]
+    SUB --> PROMPT[프롬프트 구성<br/>서브그래프 트리플 + 앵커문장]
+    PROMPT --> GEN["경량 로컬 LLM 생성<br/>확정된 사실만 문장화, 새 사실 생성 금지"]
+    GEN --> OUT[근거 포함 추천 문장<br/>MVP#1·#5 설명 UI]
+
+    OUT --> BENCH{벤치마크 §11 미정}
+    GEMINI[동일 질의 → Gemini API] --> BENCH
+    BENCH --> JUDGE["LLM-judge 평가<br/>ALERT 착안"]
+    JUDGE --> SCORE["이 특정 과제 한정 비교<br/>범용 성능 주장 아님"]
 ```
 
-**아래 설명**: 축E는 축D가 이미 reasoner로 검증해둔 그래프(E1)만 검색 대상으로 삼기 때문에, 일반적인 GraphRAG가 겪는 "그래프 자체의 노이즈" 문제가 없다 — 그래프가 LLM 추출물이 아니라 reasoner 산출물이기 때문이다. 로컬 LLM(E4)은 검증된 사실을 문장으로 다듬기만 할 뿐, 새로운 사실을 만들어내지 않는다는 점이 §7 축E의 "확정된 사실만 다듬는 경량 모델" 정의와 일치한다. 벤치마크(E6~E7)는 세부 지표가 여전히 미정이나, ALERT(NAACL 2025)를 착안점으로 등록해두었다(§7.1).
+**아래 설명**: 축E의 입력은 두 갈래다 — 축D가 reasoner로 검증해둔 그래프(IN1)와 축A 임베딩 매칭이 뽑아낸 추천 후보(IN2). 이 둘을 합쳐 GraphRAG가 관련 서브그래프를 검색(SUB)하고, 그 트리플+앵커문장을 프롬프트로 구성(PROMPT)해 경량 로컬 LLM이 문장화(GEN)한다. 축D 그래프가 이미 reasoner 검증을 거쳤기 때문에 일반 GraphRAG가 겪는 "그래프 자체의 노이즈" 문제가 없고, 로컬 LLM은 확정된 사실을 다듬을 뿐 새 사실을 만들지 않는다(§7 축E 정의와 일치). 벤치마크(BENCH~SCORE)는 동일 질의를 Gemini API에도 던져 LLM-judge(ALERT 착안)로 비교하되, "범용 성능"이 아니라 "이 특정 과제에서의 우위"로 해석 범위를 한정한다 — 세부 지표는 §11에서 여전히 미정.
 
 ### 12.5 데이터셋 생성 파이프라인 (실무 세부, 축A·D·E 공용)
 

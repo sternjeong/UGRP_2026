@@ -955,42 +955,61 @@
 
       <h3 style="font-size:14px; margin: 18px 0 8px;">12.3 축D 플로우</h3>
       <div class="flow-diagram">
-        <div class="flow-row">
-          <span class="fnode">CQ 정의<br><small>CQ1,3~9 · CQ2 제외</small></span>
-          <span class="farrow">→</span>
-          <span class="fnode">개념화<br><small>클래스/관계/공리 역산</small></span>
-          <span class="farrow">→</span>
-          <span class="fnode">LLM 초안 제안</span>
-          <span class="farrow">→</span>
-          <span class="fnode">사람 검토<br><small>Protégé</small></span>
+        <div class="flow-row center"><span class="fnode">CQ 정의<br><small>CQ1 최소체인·CQ3 순환·CQ4 Lab검색·CQ5 Skill·CQ6/7 타학과/깊이·CQ8 트렌드·CQ9 시너지 (CQ2 제외)</small></span></div>
+        <div class="flow-row center"><span class="farrow">↓</span></div>
+        <div class="flow-row center"><span class="fnode">개념화<br><small>Class: Course·Lab·Professor·ResearchTopic·Skill·Department<br>Property: hasPrerequisite·isSubfieldOf·coversTopic·requiresSkill·hasSynergyWith</small></span></div>
+        <div class="flow-row center"><span class="farrow">↓</span></div>
+        <div class="flow-row" style="flex-wrap:wrap; justify-content:center;">
+          <span class="fnode branch">LLM 초안: ResearchTopic 계층<br><small>ACM CCS/IEEE Thesaurus 스캐폴드</small></span>
+          <span class="fnode branch">LLM 초안: 앵커문장<br><small>노드당 1~3문장</small></span>
+          <span class="fnode branch">LLM 초안: OWL 공리 문법<br><small>property chain 등 번역</small></span>
         </div>
         <div class="flow-row center"><span class="farrow">↓</span></div>
-        <div class="flow-row center">
-          <span class="fnode">그룹A 하드<br><small><code>hasPrerequisite</code> · 결정적 파싱만</small></span>
-          <span class="fnode">그룹B 소프트<br><small><code>coversTopic·requiresSkill·hasSynergyWith</code> · 임베딩+LLM 자동화</small></span>
+        <div class="flow-row center"><span class="fnode">사람 검토<br><small>Protégé에서 구조 확정</small></span></div>
+        <div class="flow-row center"><span class="farrow">↓</span></div>
+        <div class="flow-row" style="flex-wrap:wrap; justify-content:center;">
+          <span class="fnode branch">그룹A 하드 · <code>hasPrerequisite</code><br><small>§12.5 정제된 텍스트만 채택<br>LLM은 fuzzy matching 보조만</small></span>
+          <span class="fnode branch">그룹B · <code>coversTopic</code><br><small>Lab 프로필 ↔ 앵커문장 임베딩 유사도<br>임계값 이상 전부 채택</small></span>
+          <span class="fnode branch">그룹B · <code>requiresSkill/providesSkill</code><br><small>키워드 주제/기술 분류<br>+ course_objectives 유사도</small></span>
+          <span class="fnode branch">그룹B · <code>hasSynergyWith</code><br><small>로드맵 공동배치(고신뢰)<br>+ concept mining(저신뢰) 가중결합</small></span>
         </div>
         <div class="flow-row center"><span class="farrow">↓</span></div>
-        <div class="flow-row center"><span class="fnode">owlready2 삽입 → reasoner 일관성 검사</span></div>
-        <div class="flow-row center"><span class="farrow">통과 ↓ · 실패 → 반려·재검토</span></div>
-        <div class="flow-row center"><span class="fnode accent">그래프 커밋</span></div>
+        <div class="flow-row center"><span class="fnode">owlready2 삽입</span></div>
+        <div class="flow-row center"><span class="farrow">↓</span></div>
+        <div class="flow-row center"><span class="fnode">reasoner 일관성 검사<br><small>HermiT/Pellet</small></span></div>
+        <div class="flow-row center"><span class="farrow">통과 ↓ · 실패 → 반려·재검토(LLM 초안으로)</span></div>
+        <div class="flow-row center"><span class="fnode">property chain 전파<br><small>coversTopic∘isSubfieldOf ⊑ coversTopic → CQ7 해결</small></span></div>
+        <div class="flow-row center"><span class="farrow">↓</span></div>
+        <div class="flow-row center"><span class="fnode accent">그래프 커밋 → Neo4j materialize</span></div>
       </div>
-      <p style="font-size:13px; color:var(--ink-soft);">CQ에서 스키마를 역산한 뒤, 관계를 그룹A(하드)/그룹B(소프트)로 나눠 자동화 수위를 다르게 적용한다. 어느 쪽이든 reasoner 일관성 검사를 통과해야 커밋되고, 실패하면 반려되어 LLM 초안 단계로 돌아간다 — "LLM은 제안만, reasoner가 검증한 것만 커밋"이라는 §7 축D 원칙의 실제 구현이다.</p>
+      <p style="font-size:13px; color:var(--ink-soft);">CQ에서 스키마를 역산한 뒤, LLM은 계층·앵커문장·OWL 문법 세 갈래로 초안을 내고 사람이 Protégé에서 확정한다. 관계는 그룹A/B로 나눠 인스턴스를 채우되, 그룹B 안에서도 관계마다 채우는 방식이 다르다 — <code>coversTopic</code>은 임베딩 유사도, <code>requiresSkill</code>은 키워드 분류+텍스트 유사도, <code>hasSynergyWith</code>는 로드맵+concept mining 가중결합. 무엇을 삽입하든 reasoner 일관성 검사를 통과해야 하고, 통과분은 property chain으로 상위 관계까지 자동 전파되어 CQ7을 해결한 뒤 Neo4j에 커밋된다. 실패하면 반려되어 LLM 초안 단계로 돌아간다 — "LLM은 제안만, reasoner가 검증한 것만 커밋"이라는 §7 축D 원칙의 실제 구현이다.</p>
 
       <h3 style="font-size:14px; margin: 18px 0 8px;">12.4 축E 플로우</h3>
       <div class="flow-diagram">
-        <div class="flow-row">
-          <span class="fnode">축D 검증된 그래프<br><small>Neo4j materialize</small></span>
-          <span class="farrow">→</span>
-          <span class="fnode">GraphRAG 서브그래프 검색<br><small>coversTopic·hasSynergyWith·isSubfieldOf 경로</small></span>
-          <span class="farrow">→</span>
-          <span class="fnode accent">경량 로컬 LLM<br><small>확정 사실을 문장으로 다듬기</small></span>
-          <span class="farrow">→</span>
-          <span class="fnode">근거 포함 추천 문장<br><small>MVP#1·#5 설명 UI</small></span>
+        <div class="flow-row" style="flex-wrap:wrap; justify-content:center;">
+          <span class="fnode">축D 검증 그래프<br><small>Neo4j materialize</small></span>
+          <span class="fnode">축A 임베딩 매칭 결과<br><small>학생 질의/추천 후보</small></span>
         </div>
+        <div class="flow-row center"><span class="farrow">↓ ↓</span></div>
+        <div class="flow-row center"><span class="fnode accent">GraphRAG 서브그래프 검색</span></div>
         <div class="flow-row center"><span class="farrow">↓</span></div>
-        <div class="flow-row center"><span class="fnode">벤치마크<br><small>ALERT 착안 · Gemini API 대비 LLM-judge 평가 · §11 미정</small></span></div>
+        <div class="flow-row center"><span class="fnode">관련 서브그래프 추출<br><small>coversTopic·hasSynergyWith·isSubfieldOf 경로</small></span></div>
+        <div class="flow-row center"><span class="farrow">↓</span></div>
+        <div class="flow-row center"><span class="fnode">프롬프트 구성<br><small>서브그래프 트리플 + 앵커문장</small></span></div>
+        <div class="flow-row center"><span class="farrow">↓</span></div>
+        <div class="flow-row center"><span class="fnode accent">경량 로컬 LLM 생성<br><small>확정된 사실만 문장화, 새 사실 생성 금지</small></span></div>
+        <div class="flow-row center"><span class="farrow">↓</span></div>
+        <div class="flow-row center"><span class="fnode">근거 포함 추천 문장<br><small>MVP#1·#5 설명 UI</small></span></div>
+        <div class="flow-row center"><span class="farrow">↓</span></div>
+        <div class="flow-row" style="flex-wrap:wrap; justify-content:center;">
+          <span class="fnode branch">동일 질의 → Gemini API</span>
+        </div>
+        <div class="flow-row center"><span class="farrow">↓ ↓</span></div>
+        <div class="flow-row center"><span class="fnode">LLM-judge 평가<br><small>ALERT 착안 · §11 미정</small></span></div>
+        <div class="flow-row center"><span class="farrow">↓</span></div>
+        <div class="flow-row center"><span class="fnode accent">이 특정 과제 한정 비교<br><small>범용 성능 주장 아님</small></span></div>
       </div>
-      <p style="font-size:13px; color:var(--ink-soft);">축D가 reasoner로 이미 검증한 그래프만 검색 대상으로 삼기 때문에 일반 GraphRAG의 "그래프 자체 노이즈" 문제가 없다 — 그래프가 LLM 추출물이 아니라 reasoner 산출물이기 때문이다. 로컬 LLM은 검증된 사실을 문장으로 다듬을 뿐 새 사실을 만들지 않는다 — §7 축E "확정된 사실만 다듬는 경량 모델" 정의와 일치.</p>
+      <p style="font-size:13px; color:var(--ink-soft);">축E의 입력은 두 갈래다 — 축D가 reasoner로 검증해둔 그래프와 축A 임베딩 매칭이 뽑아낸 추천 후보. 이 둘을 합쳐 GraphRAG가 관련 서브그래프를 검색하고, 그 트리플+앵커문장을 프롬프트로 구성해 경량 로컬 LLM이 문장화한다. 축D 그래프가 이미 reasoner 검증을 거쳤기 때문에 일반 GraphRAG의 "그래프 자체 노이즈" 문제가 없고, 로컬 LLM은 확정된 사실을 다듬을 뿐 새 사실을 만들지 않는다(§7 축E 정의와 일치). 벤치마크는 동일 질의를 Gemini API에도 던져 LLM-judge(ALERT 착안)로 비교하되, "범용 성능"이 아니라 "이 특정 과제에서의 우위"로 해석 범위를 한정한다 — 세부 지표는 §11에서 여전히 미정.</p>
 
       <h3 style="font-size:14px; margin: 18px 0 8px;">12.5 데이터셋 생성 파이프라인 (축A·D·E 공용)</h3>
       <div class="flow-diagram">
