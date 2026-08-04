@@ -419,20 +419,19 @@
     </header>
 
     <div class="kpi-row">
-      <div class="kpi decided"><div class="n">25</div><div class="l">결정된 사항</div></div>
+      <div class="kpi decided"><div class="n">27</div><div class="l">결정된 사항</div></div>
       <div class="kpi open"><div class="n">6</div><div class="l">미정 · 확인 필요</div></div>
       <div class="kpi hold"><div class="n">2</div><div class="l">보류 항목</div></div>
-      <div class="kpi"><div class="n">3</div><div class="l">§11 열린 질문</div></div>
+      <div class="kpi"><div class="n">4</div><div class="l">§11 열린 질문</div></div>
     </div>
 
     <div class="session-log">
-      <h2>오늘 세션에서 결정된 것 <span class="date">2026-08-03</span></h2>
+      <h2>오늘 세션에서 결정된 것 <span class="date">2026-08-04</span></h2>
       <ol>
-        <li><a href="#s7">축A 백본을 <strong>BGE-m3</strong>로 확정 — multilingual-e5-large·KURE-v1은 비교 baseline으로만 사용</a></li>
-        <li><a href="#s73">§7.3 신설 — 축A 학습 pair 5개 소스(로드맵/레벨/어휘중첩/LLM concept/LLM query) 신뢰도 가중 결합 구성, 학과별 로드맵 데이터 품질 3단계 확인</a></li>
-        <li><a href="#s73"><code>prerequisites</code> 필드 실사 — 결측·오파싱(AMSE407 컬럼 밀림) 사례 발견, 채택 전 정제 단계 필요 확인</a></li>
-        <li><a href="#s74">§7.4 신설 — 타학과 과목쌍은 (a) 신호 관점에서 구조적으로 라벨이 없다는 한계 진단, 보강 후보 5가지 + 신규 신호 (e)(f) 검토</a></li>
-        <li><a href="#s74"><code>course_references</code>/<code>course_plan</code> 필드가 이미 654건 코퍼스에 존재함을 확인(추가 크롤링 불요) — 교재/강의계획 유사도 신호 (f)로 활용 가능</a></li>
+        <li><a href="#s73">연구실 데이터 없이 지금 생성 가능한 축A 소스 확정 — (a)로드맵순서·(b)레벨신호·LLM concept·LLM query는 즉시 가능, (c)어휘중첩만 Lab 프로필 필요해 블로킹</a></li>
+        <li><a href="#s73">(a)는 자유서술 선수과목 fuzzy 매칭(<code>_freetext</code>/<code>_needs_review.jsonl</code>) 병합이 아직 미완료라 후순위로 미루고, <strong>(b) 레벨 신호부터 먼저 생성</strong>하기로 결정</a></li>
+        <li><a href="#s73">(b) 레벨 신호 페어 규칙 확정 — 이수구분 필드가 데이터에 없어 학년 규칙만 사용(같은 학과 내부로 한정), 신뢰도 0.5~0.7 → 0.4로 하향</a></li>
+        <li><code>UG_2026_curriculum_courses.jsonl</code> 건수 정정 — 08-03 정제로 654건 → <strong>427건</strong>(중복 없음, 실측 확인). 문서 전체 654건 표기 427건으로 수정</li>
       </ol>
     </div>
 
@@ -509,7 +508,7 @@
         <li><code>syllabus_raw.jsonl</code>(353건, EECE/CSED/MATH/IMEN)과 <code>DATA_ANALYSIS.md</code>는 <strong>참고용 프로토타입</strong>일 뿐 — 실제 개발은 재크롤링 데이터(+초기 더미 데이터)로 진행</li>
         <li>재크롤링 시 실라버스뿐 아니라 권장이수체계도·연구실 키워드/논문을 1순위로 확보</li>
         <li>
-          <code>UG_2026_curriculum_courses.jsonl</code>(654건) <span class="chip decided">신설 · 07-23</span>
+          <code>UG_2026_curriculum_courses.jsonl</code>(427건, 08-03 정제 후) <span class="chip decided">신설 · 07-23</span>
           <p style="margin-top:6px;">공식 커리큘럼북(<em>UG 2026 curriculum v.2.0</em>) 203페이지 전체의 "교과목 개요" 절을 끝까지 파싱한 전학과 텍스트 코퍼스(학수번호·과목명 국영문·학점·개요). <code>syllabus_raw.jsonl</code>과 달리 전학과 스케일이며 축A/D 실제 개발의 1차 원문 데이터로 사용 가능. <strong>"학년/학기별 전공과목 일람표"(표 형식 로드맵)는 의도적으로 제외</strong> — 별도 파싱이 필요한 구조화 데이터.</p>
         </li>
       </ul>
@@ -778,8 +777,14 @@
       <p style="font-size:13px; color: var(--ink-faint);">낮은 신뢰도 소스는 다운샘플링 또는 loss weight 축소로 반영(Snorkel식 확률결합의 실무적 근사).</p>
 
       <div class="card">
+        <div class="card-head"><strong>(b) 레벨 신호 페어 생성 규칙 확정</strong><span class="chip decided">08-04</span></div>
+        <p><code>UG_2026_curriculum_courses.jsonl</code>에 이수구분(전공필수/선택) 필드가 없음을 확인 — 원래 표의 "이수구분 플래그"는 현재 데이터로 못 만든다. 대신 <strong>학년 규칙만 사용</strong>(과목코드 학과 prefix 뒤 첫 숫자를 학년으로 취급: 1/2학년 vs 3/4학년), 필수 여부 조건은 제거. "관련" 판정은 <strong>같은 학과(code prefix) 내부로 한정</strong> — 학과 무관 전체 조합(N×M)은 무관한 쌍이 대량 섞여 기각.</p>
+        <div class="callout">이 변경으로 신뢰도는 원래 0.5~0.7에서 <strong>0.4</strong>로 하향 조정(필수과목이라는 강한 신호가 빠졌으므로). 이수구분이 필요해지면 §11 "전공과목 일람표 재파싱"으로 보강 가능.</div>
+      </div>
+
+      <div class="card">
         <div class="card-head"><strong><code>prerequisites</code> 필드 실사 결과</strong><span class="chip decided">08-03</span></div>
-        <p><code>UG_2026_curriculum_courses.jsonl</code>(654건) 점검 결과 <code>"없음"</code> 외에 <code>"-"</code> 같은 사실상 결측값도 존재(예: AMSE405/406). <strong>오파싱 사례 발견</strong> — <code>AMSE407</code>은 <code>prerequisites</code> 필드에 강의계획서 전체(주차별 커리큘럼)가 통째로 들어간 컬럼 밀림 버그. (a) 소스로 채택 전 "오파싱 제거 → 자유서술 내 course_code 매칭 → 매칭 성공분만 채택"의 정제 단계가 필요함을 확인. 자유서술 값 중 <code>AMSE201 → General Physics, General Chemistry</code>처럼 코드가 아닌 과목명만 있는 경우도 많아 fuzzy matching 또는 폐기 판단 필요.</p>
+        <p><code>UG_2026_curriculum_courses.jsonl</code>(427건, 08-03 정제 후 기준) 점검 결과 <code>"없음"</code> 외에 <code>"-"</code> 같은 사실상 결측값도 존재(예: AMSE405/406). <strong>오파싱 사례 발견</strong> — <code>AMSE407</code>은 <code>prerequisites</code> 필드에 강의계획서 전체(주차별 커리큘럼)가 통째로 들어간 컬럼 밀림 버그. (a) 소스로 채택 전 "오파싱 제거 → 자유서술 내 course_code 매칭 → 매칭 성공분만 채택"의 정제 단계가 필요함을 확인. 자유서술 값 중 <code>AMSE201 → General Physics, General Chemistry</code>처럼 코드가 아닌 과목명만 있는 경우도 많아 fuzzy matching 또는 폐기 판단 필요.</p>
       </div>
 
       <div class="card">
@@ -820,7 +825,7 @@
 
       <div class="card">
         <div class="card-head"><strong>신규 후보 신호 (f) 교재/강의계획 목차 유사도</strong><span class="chip decided">확인 · 08-03</span></div>
-        <p>당초 "별도 크롤링 필요"로 판단했으나, <code>UG_2026_curriculum_courses.jsonl</code>에 이미 <code>course_references</code>(지정 교재)·<code>course_plan</code>(주차별 강의계획) 필드로 존재함을 확인해 추가 크롤링 없이 바로 활용 가능. 654건 기준 필드 커버리지 실측:</p>
+        <p>당초 "별도 크롤링 필요"로 판단했으나, <code>UG_2026_curriculum_courses.jsonl</code>에 이미 <code>course_references</code>(지정 교재)·<code>course_plan</code>(주차별 강의계획) 필드로 존재함을 확인해 추가 크롤링 없이 바로 활용 가능. 427건 기준 필드 커버리지 실측(08-03 정제 후 재실측 필요 — 아래 표는 정제 전 654건 기준, TODO):</p>
         <div class="table-wrap">
           <table>
             <thead><tr><th>필드</th><th class="num">비어있지 않은 건수</th><th class="num">비율</th></tr></thead>
@@ -859,11 +864,13 @@
       <div class="sec-head"><span class="sec-num">§9</span><h2>결정된 사항 vs 미정 사항</h2></div>
       <div class="status-cols">
         <div>
-          <h3><span class="wp-dot decided"></span> 결정됨 (25)</h3>
+          <h3><span class="wp-dot decided"></span> 결정됨 (27)</h3>
           <ul>
+            <li><a href="#s73">연구실 데이터 없이 시작 가능한 축A 소스 확정 — (a)로드맵순서·(b)레벨신호·LLM concept·LLM query는 지금 생성 가능, (c)어휘중첩만 Lab 프로필 필요해 블로킹 (08-04)</a></li>
+            <li><a href="#s73">(b) 레벨 신호 페어 생성 규칙 확정 — 이수구분 필드 없어 학년 규칙+같은 학과 한정으로 대체, 신뢰도 0.4로 하향 (08-04)</a></li>
             <li><a href="#s7">축A 백본을 <strong>BGE-m3</strong>로 확정 — multilingual-e5-large/KURE-v1은 비교 baseline (08-03)</a></li>
             <li><a href="#s72"><code>hasSynergyWith</code> 관계 신설, <code>hasPrerequisite</code>와 분리 (07-23)</a></li>
-            <li><a href="#s5"><code>UG_2026_curriculum_courses.jsonl</code>(654건) 구축 완료 (07-23)</a></li>
+            <li><a href="#s5"><code>UG_2026_curriculum_courses.jsonl</code>(427건, 08-03 정제 후) 구축 완료 (07-23)</a></li>
             <li><a href="#s71">연구실적화 플래그십 축: 축A+축D+축E 병행 확정 (07-23)</a></li>
             <li><a href="#s71">§7.1 문헌 스터디 트래커 신설 — 축A/D/E 논문 상태·활용목적 지속 추적 (07-23)</a></li>
             <li><a href="#s7">축D 근접 선행연구(Abu-Rasheed et al. 2025) 대비 차별점 명시 (07-23)</a></li>
@@ -927,11 +934,12 @@
     </section>
 
     <section class="doc-section" id="s11">
-      <div class="sec-head"><span class="sec-num">§11</span><h2>열린 질문 (다음 논의)</h2><span class="chip open">오픈 · 3</span></div>
+      <div class="sec-head"><span class="sec-num">§11</span><h2>열린 질문 (다음 논의)</h2><span class="chip open">오픈 · 4</span></div>
       <ul>
         <li><strong>경로계획 알고리즘(축C)</strong>: MPC vs MCTS 중 어느 쪽을 프로토타입 우선순위로 둘 것인가?</li>
         <li><strong>대시보드/UX</strong>: 추천 근거(온톨로지 경로 + 유사도 점수)를 사용자에게 어떻게 시각화할 것인가?</li>
         <li><strong>온톨로지 툴스택</strong>: 스키마가 무르익으면 Protégé/HermiT/Pellet/Neo4j 조합을 재검토할 시점을 언제로 볼 것인가?</li>
+        <li><a href="#s73"><strong>(b) 이수구분 플래그 복원 여부</strong>: 필요해지면 PDF "전공과목 일람표" 재파싱으로 보강 가능하나 별도 추출 작업 필요해 지금은 보류</a></li>
       </ul>
     </section>
 
@@ -942,7 +950,7 @@
       <h3 style="font-size:14px; margin: 18px 0 8px;">12.1 전체 플로우</h3>
       <div class="flow-diagram">
         <div class="flow-row">
-          <span class="fnode">원천 데이터 수집<br><small>커리큘럼북 654건 · Lab 키워드+논문제목 · 로드맵 원문</small></span>
+          <span class="fnode">원천 데이터 수집<br><small>커리큘럼북 427건 · Lab 키워드+논문제목 · 로드맵 원문</small></span>
           <span class="farrow">→</span>
           <span class="fnode">데이터 정제<br><small>오파싱 제거 · 코드/fuzzy 매칭</small></span>
         </div>
@@ -1059,7 +1067,7 @@
         </div>
         <div class="flow-row center"><span class="farrow">↓ 파싱/크롤링</span></div>
         <div class="flow-row center">
-          <span class="fnode"><code>UG_2026_curriculum_courses.jsonl</code><br><small>654건</small></span>
+          <span class="fnode"><code>UG_2026_curriculum_courses.jsonl</code><br><small>427건</small></span>
           <span class="fnode"><code>roadmap_raw.jsonl</code><br><small>3단계 품질</small></span>
           <span class="fnode">Lab 프로필<br><small>키워드+논문제목</small></span>
         </div>

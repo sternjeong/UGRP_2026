@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>선수과목 정제 — 사람 검토 태스크</title>
+<style>
+  :root {
+    --paper: #eef0ea;
+    --paper-raised: #ffffff;
+    --ink: #1a2420;
+    --ink-soft: #4b5750;
+    --ink-faint: #7c8780;
+    --rule: #d7dcd3;
+    --rule-soft: #e3e7de;
+    --accent: #5b3ea6;
+    --accent-soft: #eae4f6;
+    --accent-ink: #422d7d;
+    --done: #2f7a52;
+    --done-soft: #e1f0e6;
+    --warn: #a8721f;
+    --warn-soft: #f5ecd9;
+    --code-bg: #e4e7df;
+    --shadow: 0 1px 2px rgba(26,36,32,0.04), 0 8px 24px rgba(26,36,32,0.06);
+    --serif: "Iowan Old Style", "Palatino Linotype", "Noto Serif KR", Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Pretendard", "Apple SD Gothic Neo", sans-serif;
+    --mono: "SFMono-Regular", Menlo, Consolas, "Noto Sans Mono", monospace;
+  }
+  :root[data-theme="dark"] {
+    --paper: #12160f; --paper-raised: #191f17; --ink: #e6ebe3; --ink-soft: #a9b3a5; --ink-faint: #737d70;
+    --rule: #2a332a; --rule-soft: #202920; --accent: #a892e0; --accent-soft: #26203a; --accent-ink: #c3b3ee;
+    --done: #5ec98a; --done-soft: #16301f; --warn: #d9a34f; --warn-soft: #362c19; --code-bg: #1e251c;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 28px rgba(0,0,0,.4);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #12160f; --paper-raised: #191f17; --ink: #e6ebe3; --ink-soft: #a9b3a5; --ink-faint: #737d70;
+      --rule: #2a332a; --rule-soft: #202920; --accent: #a892e0; --accent-soft: #26203a; --accent-ink: #c3b3ee;
+      --done: #5ec98a; --done-soft: #16301f; --warn: #d9a34f; --warn-soft: #362c19; --code-bg: #1e251c;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 28px rgba(0,0,0,.4);
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper); color: var(--ink); font-family: var(--sans);
+    font-size: 15.5px; line-height: 1.65; -webkit-font-smoothing: antialiased;
+  }
+  code {
+    font-family: var(--mono); font-size: .87em; background: var(--code-bg);
+    padding: .05em .38em; border-radius: 4px;
+  }
+  main { max-width: 880px; margin: 0 auto; padding: 2.5rem 1.75rem 6rem; }
+
+  header.hero { margin-bottom: 1.6rem; }
+  .eyebrow {
+    font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--accent-ink); margin: 0 0 .6rem;
+  }
+  h1 { font-family: var(--serif); font-weight: 600; font-size: 1.9rem; margin: 0 0 .6rem; text-wrap: balance; }
+  .hero-lead { color: var(--ink-soft); max-width: 68ch; margin: 0 0 .3rem; }
+
+  .instructions {
+    background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 10px;
+    padding: 1.1rem 1.4rem; margin: 1.4rem 0 1.8rem; font-size: .94rem;
+  }
+  .instructions h2 {
+    font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--accent-ink); margin: 0 0 .7rem;
+  }
+  .instructions ol { margin: 0; padding-left: 1.2rem; }
+  .instructions li { margin-bottom: .45rem; }
+  .instructions li:last-child { margin-bottom: 0; }
+
+  .progress-bar-wrap {
+    position: sticky; top: 0; z-index: 5; background: var(--paper);
+    padding: .8rem 0; border-bottom: 1px solid var(--rule); margin-bottom: 1.6rem;
+  }
+  .progress-row { display: flex; align-items: center; gap: .9rem; }
+  .progress-track {
+    flex: 1; height: 8px; background: var(--rule-soft); border-radius: 999px; overflow: hidden;
+  }
+  .progress-fill { height: 100%; background: var(--done); width: 0%; transition: width .2s ease; }
+  .progress-label { font-family: var(--mono); font-size: .8rem; color: var(--ink-soft); white-space: nowrap; }
+
+  h2.section-title {
+    font-family: var(--serif); font-size: 1.25rem; font-weight: 600; margin: 2.2rem 0 .5rem;
+    padding-bottom: .5rem; border-bottom: 2px solid var(--rule);
+  }
+  p.section-lead { color: var(--ink-soft); font-size: .92rem; max-width: 66ch; margin: 0 0 1rem; }
+
+  .task-card {
+    background: var(--paper-raised); border: 1px solid var(--rule-soft); border-radius: 10px;
+    padding: 1.1rem 1.3rem; margin: .8rem 0; box-shadow: var(--shadow);
+    transition: border-color .15s ease;
+  }
+  .task-card.filled { border-color: var(--done); }
+  .task-head {
+    display: flex; align-items: baseline; justify-content: space-between; gap: .8rem;
+    flex-wrap: wrap; margin-bottom: .5rem;
+  }
+  .task-code { font-family: var(--mono); font-weight: 700; font-size: .95rem; }
+  .task-name { color: var(--ink-soft); font-size: .85rem; }
+  .status-chip {
+    font-family: var(--sans); font-size: .68rem; font-weight: 700; letter-spacing: .03em;
+    padding: .2rem .55rem; border-radius: 999px; white-space: nowrap;
+  }
+  .status-chip.pending { background: var(--warn-soft); color: var(--warn); }
+  .status-chip.filled { background: var(--done-soft); color: var(--done); }
+
+  .context-box {
+    background: var(--code-bg); border-radius: 8px; padding: .7rem 1rem; margin: .6rem 0;
+    font-size: .87rem; white-space: pre-wrap;
+  }
+  .context-label {
+    font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--ink-faint); margin-bottom: .35rem;
+  }
+  .hint {
+    font-size: .82rem; color: var(--ink-faint); margin: .4rem 0;
+  }
+  .hint strong { color: var(--ink-soft); }
+
+  .answer-row { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .8rem; align-items: center; }
+  .answer-row input[type="text"] {
+    flex: 1; min-width: 220px; font-family: var(--mono); font-size: .88rem;
+    padding: .5rem .7rem; border: 1px solid var(--rule); border-radius: 6px;
+    background: var(--paper); color: var(--ink);
+  }
+  .answer-row input[type="text"]:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  label.checkbox-label {
+    display: inline-flex; align-items: center; gap: .35rem; font-size: .84rem; color: var(--ink-soft);
+    white-space: nowrap; cursor: pointer;
+  }
+
+  .export-section {
+    margin-top: 2.6rem; padding-top: 1.6rem; border-top: 2px solid var(--rule);
+  }
+  .export-actions { display: flex; gap: .7rem; flex-wrap: wrap; margin: .9rem 0; }
+  button {
+    font-family: var(--sans); font-size: .88rem; font-weight: 600; cursor: pointer;
+    padding: .6rem 1.1rem; border-radius: 8px; border: 1px solid var(--rule);
+    background: var(--paper-raised); color: var(--ink);
+  }
+  button.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+  button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  textarea#exportOut {
+    width: 100%; min-height: 160px; font-family: var(--mono); font-size: .8rem;
+    padding: .8rem; border: 1px solid var(--rule); border-radius: 8px;
+    background: var(--code-bg); color: var(--ink); margin-top: .6rem;
+  }
+  .copy-feedback { font-size: .82rem; color: var(--done); margin-left: .5rem; opacity: 0; transition: opacity .2s; }
+  .copy-feedback.show { opacity: 1; }
+
+  footer.doc-foot {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--rule);
+    font-size: .78rem; color: var(--ink-faint);
+  }
+</style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <p class="eyebrow">3분커리 · 선수과목 데이터 정제</p>
+    <h1>사람이 채워야 할 37개 — 검토 워크시트</h1>
+    <p class="hero-lead">자동 정제(오파싱 제거 · 코드/fuzzy 매칭)가 끝까지 처리하지 못한 항목입니다. 답을 아는 것만 채우고, 모르면 비워두거나 "모르겠음"에 체크해도 됩니다.</p>
+  </header>
+
+  <div class="instructions">
+    <h2>사용 방법</h2>
+    <ol>
+      <li>아래 항목을 훑으면서 아는 것만 입력칸에 적어주세요 — 입력은 브라우저에 자동 저장되니 나눠서 작업해도 됩니다.</li>
+      <li>과목코드로 답할 수 있으면 코드(예: <code>PHYS101</code>)를, 여러 개면 쉼표로 구분해서 적어주세요.</li>
+      <li>정말 선수과목이 없는 게 맞다고 확인되면 "선수과목 없음이 맞음" 체크박스만 눌러주세요.</li>
+      <li>다 채운 뒤(또는 중간에라도) 맨 아래 <strong>"진행상황 JSON 내보내기"</strong>를 눌러 나온 텍스트를 복사해서 다음 대화에 붙여넣어 주시면, 그걸 기반으로 이어서 반영하겠습니다.</li>
+    </ol>
+  </div>
+
+  <div class="progress-bar-wrap">
+    <div class="progress-row">
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="progress-label" id="progressLabel">0 / 37 채움</div>
+    </div>
+  </div>
+
+  <h2 class="section-title">A. 원본 데이터 오류 — 진짜 선수과목이 있는지 확인 필요 (2건)</h2>
+  <p class="section-lead">이 두 과목은 <code>UG_2026_curriculum_courses.jsonl</code>의 선수과목 칸에 선수과목이 아니라 강의 목차가 잘못 들어가 있었습니다(PDF 파싱 중 컬럼 밀림). 실제로 선수과목이 있는지, 있다면 무엇인지 확인이 필요합니다.</p>
+  <div id="misparsedList"></div>
+
+  <h2 class="section-title">B. 과목명 매칭 실패 — 문맥상 어떤 과목인지 확인 필요 (35건)</h2>
+  <p class="section-lead">강의계획서 자유서술에 과목명이 언급됐지만, 654개 과목 목록에서 정확히 일치하는 걸 못 찾았습니다(구어체 표현, 교외 과목, 애매한 축약 등). 문맥(원문)을 보고 어느 과목인지 판단해주세요. <code>참고: 로드맵 소스</code>가 표시된 항목은 이미 공식 로드맵에 다른 선수과목이 등록돼 있으니, 자유서술 쪽이 그것과 같은 걸 말하는지만 확인하면 됩니다.</p>
+  <div id="reviewList"></div>
+
+  <div class="export-section">
+    <h2 class="section-title" style="margin-top:0;">진행상황 내보내기</h2>
+    <p class="section-lead">지금까지 입력한 내용을 JSON으로 모아 보여줍니다. 복사해서 다음 대화에 붙여넣어 주세요.</p>
+    <div class="export-actions">
+      <button class="primary" id="btnExport">진행상황 JSON 내보내기</button>
+      <button id="btnCopy">복사</button>
+      <span class="copy-feedback" id="copyFeedback">복사됐습니다</span>
+    </div>
+    <textarea id="exportOut" readonly placeholder="위 버튼을 누르면 여기에 JSON이 나타납니다."></textarea>
+  </div>
+
+  <footer class="doc-foot">
+    입력 내용은 이 브라우저의 localStorage에만 저장됩니다(서버 전송 없음). 원본 데이터: <code>UG_2026_prerequisites_needs_review.jsonl</code>, <code>UG_2026_curriculum_courses.jsonl</code>.
+  </footer>
+</main>
+
+<script>
+const DATA = {"misparsed": [{"course_code": "AMSE407", "course_name_kr": "소재분석기기", "course_name_en": "Materials Analysis and Characterization"}, {"course_code": "SEMI362", "course_name_kr": "반도체 소재 분석", "course_name_en": "Analysis and Characterization of Semiconductor Materials"}], "review": [{"course_code": "AMSE341", "course_name_kr": "세라믹소재 개론", "raw_prerequisites_field": "Introduction to Materials Science & Engineering\nCrystal structure", "also_in_roadmap_source": ["AMSE201"]}, {"course_code": "AMSE401", "course_name_kr": "장기현장실습", "raw_prerequisites_field": "수강신청 이전에 학과사무실과 협의 바랍니다.", "also_in_roadmap_source": null}, {"course_code": "AMSE464", "course_name_kr": "고분자 물성과 응용", "raw_prerequisites_field": "Introduction to Polymers (recommended, not mendatory)", "also_in_roadmap_source": null}, {"course_code": "CHEB212", "course_name_kr": "물리화학실험", "raw_prerequisites_field": "물리화학 강의를 들어야 함.", "also_in_roadmap_source": null}, {"course_code": "CHEB214", "course_name_kr": "에너지환경공학", "raw_prerequisites_field": "Prerequisite: 일반화학", "also_in_roadmap_source": null}, {"course_code": "CHEB301", "course_name_kr": "화공 프로그래밍 및 AI", "raw_prerequisites_field": "(Prerequisite)\nUndergrad math (1st year)", "also_in_roadmap_source": ["인공지능기초(unresolved)", "CSED101", "CHEB303"]}, {"course_code": "CHEM101", "course_name_kr": "일반화학 I", "raw_prerequisites_field": "고등학교 화학 I, II 또는 Remedial course를 이수한 학생", "also_in_roadmap_source": null}, {"course_code": "CHEM102", "course_name_kr": "일반화학실험 I", "raw_prerequisites_field": "o 선수과목 : 일반화학을 미리 공부해 두면 도움이 됨.\no 필수사항 :\n1) [중요] 일반화학실험I은 무은재학부 신입생이 우선적으로 배정된 후, 정정 기간 동안 최대 정원(38명)이내에서 전산 상의 신청으로 수강 등록을 할 수 있음.\n따라서, 신입생의 경우에 배정된 학기에 수강하지 않으면 졸업이 어려울 수도 있고, 분반 이동 시 정원 제한으로 인해 수강이 불가능할 수도 있음을 유념하기 바람.\n분반 최대 정원이 38명이 아닌 학기에는 정원 외 배정을 하더라도 저학년/저학기 수강 요청자부터 순차적으로 배정함.\n2) [중요] 수업운영동의서와 당해 학기의 실험실 안전교육(온라인 6시간)의 이수증을 제출한 경우에 한하여 실험 수업에 참여할 수 있음.\n3) 본 과목의 수강생은 당일의 실험 내용을 충분한 예습으로 실험 내용과 과정을 이해하고 실험실에 들어와야 하며,\n실험 시작 전에 실시하는 당일의 실험내용에 관한 quiz에 대비하여야 함.\n4) 모든 실험은 1인 1조로 편성되며, 수강 학생이 주체적이고 독자적으로 수행함.\n5) 수강생은 담당교수가 정하는 복장 등 실험실 안전에 관한 규정과 지시 사항에 반드시 따라야 함.", "also_in_roadmap_source": null}, {"course_code": "CHEM231", "course_name_kr": "나노화학개론", "raw_prerequisites_field": "- Prerequisites: General chemistry", "also_in_roadmap_source": ["CHEM101", "CHEM103"]}, {"course_code": "CHEM261", "course_name_kr": "의약생명화학", "raw_prerequisites_field": "Open mind to new knowledge and concept", "also_in_roadmap_source": ["CHEM101", "CHEM103"]}, {"course_code": "CITE201", "course_name_kr": "IT융합 종합설계Ⅰ: 기초이론", "raw_prerequisites_field": "여러분 첫 수업은 체인지업 그라운드 메이커스페이스 306호에서 진행합니다.", "also_in_roadmap_source": null}, {"course_code": "CITE301", "course_name_kr": "IT융합 종합설계Ⅲ: 고급설계", "raw_prerequisites_field": "창의IT설계II", "also_in_roadmap_source": ["CITE202"]}, {"course_code": "CITE341", "course_name_kr": "제어시스템 이론 및 실험", "raw_prerequisites_field": "1. This class will be given in English\n2. About 5 problem sets will be given to you as homework\nassignment. Each contains about 10 problems. Late homework will be not accepted.\n3. Reports will be required after real experiments.", "also_in_roadmap_source": null}, {"course_code": "CSED321", "course_name_kr": "프로그래밍언어", "raw_prerequisites_field": "http://pl.postech.ac.kr/~gla/cs321/", "also_in_roadmap_source": ["CSED233"]}, {"course_code": "CSED404", "course_name_kr": "모바일 및 유비쿼터스 컴퓨팅", "raw_prerequisites_field": "This course is designed for senior students with knowledge on basic computer science principles and reasonable programming skills. Competent junior students should also fit. Prior experiences of mobile programming (e.g., Android, iOS, embedded platforms, etc.) will be a plus but not strictly required to take this course.", "also_in_roadmap_source": null}, {"course_code": "EECE495", "course_name_kr": "장기현장실습", "raw_prerequisites_field": "수강신청 이전에 학과사무실과 협의 바랍니다.", "also_in_roadmap_source": null}, {"course_code": "ENTP301", "course_name_kr": "비즈니스플래닝", "raw_prerequisites_field": "- 본 교과목은 기업가정신융합부전공 전공필수 강좌입니다. 기업가정신융합부전공 관련 정보는 [http://entp.postech.ac.kr/]에서 확인해주세요.\n- 산업경영공학과 학생분들은 IMEN412로 신청하시면, 학과 전공선택 및 부전공 전공필수 교과목으로 동시 인정됩니다.\n- 기업가정신의 핵심은 혁신적 신제품/신사업 개발이며, 이는 모든 기업이 존재하는 이유(reason for being)입니다. 기업가정신융합부전공이 여러분이 혁신 활동을 지원할 것입니다. 많은 관심을 부탁드립니다.", "also_in_roadmap_source": null}, {"course_code": "ENTP491", "course_name_kr": "기업가정신 세미나", "raw_prerequisites_field": "★중요★ 올해 2025년에는 1학기에만 \"기업가정신 세미나\"를 개설 예정이므로, 기업가정신 융합부전공 이수 등 꼭 수강이 필요하신 분은 이번학기에 꼭 수강을 부탁드립니다.\n- 본 교과목은 기업가정신융합부전공 전공필수 강좌입니다. 기업가정신융합부전공 관련 정보는 [http://entp.postech.ac.kr/]에서 확인하실 수 있습니다.\n- 기업가정신의 핵심은 혁신적 신제품/신사업 개발이며, 이는 모든 기업이 존재하는 이유(reason for being)입니다. 기업가정신융합부전공이 여러분이 혁신 활동을 지원할 것입니다. 많은 관심을 부탁드립니다.", "also_in_roadmap_source": null}, {"course_code": "ENTP492", "course_name_kr": "창업의 실제", "raw_prerequisites_field": "- 멘토링을 통해 교내외 창업경진대회 참여를 권장\n- 참고: 본 과목은 기업가정신융합부전공 이수과목으로 산업경영공학과 전공과목으로 인정되지 않습니다.(자유선택)", "also_in_roadmap_source": null}, {"course_code": "IMEN412", "course_name_kr": "비즈니스플래닝", "raw_prerequisites_field": "- 본 교과목은 기업가정신융합부전공 전공필수 강좌입니다. 기업가정신융합부전공 관련 정보는 [http://entp.postech.ac.kr/]에서 확인해주세요.\n- 산업경영공학과 학생분들은 IMEN412로 신청하시면, 학과 전공선택 및 부전공 전공필수 교과목으로 동시 인정됩니다.\n- 기업가정신의 핵심은 혁신적 신제품/신사업 개발이며, 이는 모든 기업이 존재하는 이유(reason for being)입니다. 기업가정신융합부전공이 여러분이 혁신 활동을 지원할 것입니다. 많은 관심을 부탁드립니다.", "also_in_roadmap_source": null}, {"course_code": "LIFE104", "course_name_kr": "일반생명과학실험", "raw_prerequisites_field": "학부신입생 (1학년)만 수강가능", "also_in_roadmap_source": null}, {"course_code": "LIFE217", "course_name_kr": "세포생물학", "raw_prerequisites_field": "Introductory biology", "also_in_roadmap_source": ["LIFE103", "LIFE103(H)"]}, {"course_code": "LIFE321", "course_name_kr": "분자생물학", "raw_prerequisites_field": "일반 생물학 또는 일반 생물학 (H)", "also_in_roadmap_source": ["LIFE218"]}, {"course_code": "MATH101", "course_name_kr": "미적분학 I", "raw_prerequisites_field": "Honest effort and diligence to learn", "also_in_roadmap_source": null}, {"course_code": "MATH321", "course_name_kr": "일반위상수학", "raw_prerequisites_field": "See below.", "also_in_roadmap_source": null}, {"course_code": "MECH250", "course_name_kr": "열역학", "raw_prerequisites_field": "일반물리I", "also_in_roadmap_source": ["일반물리I(unresolved)"]}, {"course_code": "MECH381", "course_name_kr": "기계전자공학", "raw_prerequisites_field": "일반 물리학Ⅰ", "also_in_roadmap_source": null}, {"course_code": "MSUS101", "course_name_kr": "학과탐색", "raw_prerequisites_field": "- 20 이후 학번 대상 (19 이전 학번 수강 불가)", "also_in_roadmap_source": null}, {"course_code": "MSUS102, 103", "course_name_kr": "대학생활과 미래설계 Ⅰ, Ⅱ", "raw_prerequisites_field": "◯ 20 이후 학번 대상 (19 이전 학번 수강불가)", "also_in_roadmap_source": null}, {"course_code": "PHYS110, 111", "course_name_kr": "일반물리연습: 역학과 파동, 일반물리연습: 전자기와 빛", "raw_prerequisites_field": "일반물리 I  동시 수강 필수\n(자격 : 2021년 입학생 중에 고교물리I 정도 또는 그 이하의 물리배경만을 갖고 있어서, 일반물리I 담당교수의 추천이 있는자)", "also_in_roadmap_source": null}, {"course_code": "PHYS201", "course_name_kr": "양자물리학입문", "raw_prerequisites_field": "Knowledge on\n(i) Newton's laws of motion (circular motion, harmonic oscillation), energy conservation law,\n(2) Wave (wave length, frequency), light polarization,\n(3) Differentiation & integration of elementary functions", "also_in_roadmap_source": null}, {"course_code": "PHYS250, 351", "course_name_kr": "물리실험-종합설계Ⅰ,Ⅱ", "raw_prerequisites_field": "General physics and Physics Laboratory I.", "also_in_roadmap_source": null}, {"course_code": "PHYS360", "course_name_kr": "물리학의 선구자", "raw_prerequisites_field": "일반 물리학에 대한 기초 지식이 있으면 전공에 상관없이 누구라도 수강 가능\n포스텍에서 개설되는 마지막 강의임", "also_in_roadmap_source": null}, {"course_code": "PHYS406", "course_name_kr": "플라즈마물리", "raw_prerequisites_field": "General Physics or equivalent", "also_in_roadmap_source": ["PHYS203", "PHYS206"]}, {"course_code": "PHYS412", "course_name_kr": "물리공작실험", "raw_prerequisites_field": "공작실험시 안전수칙 준수 및 정신 집중", "also_in_roadmap_source": null}]};
+
+const STORAGE_KEY = "curri_prereq_review_answers_v1";
+function loadAnswers() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+  catch (e) { return {}; }
+}
+function saveAnswers(answers) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(answers));
+}
+let answers = loadAnswers();
+
+function updateProgress() {
+  const total = DATA.misparsed.length + DATA.review.length;
+  let filled = 0;
+  const allCodes = [...DATA.misparsed.map(d => d.course_code), ...DATA.review.map(d => d.course_code)];
+  allCodes.forEach(code => {
+    const a = answers[code];
+    if (a && (a.codes && a.codes.trim() || a.noPrereq || a.unknown)) filled++;
+  });
+  document.getElementById("progressFill").style.width = (filled / total * 100) + "%";
+  document.getElementById("progressLabel").textContent = filled + " / " + total + " 채움";
+}
+
+function makeCard(code, title, contextLabel, contextText, hintHtml) {
+  const card = document.createElement("div");
+  card.className = "task-card";
+  card.dataset.code = code;
+
+  const a = answers[code] || {};
+
+  card.innerHTML = `
+    <div class="task-head">
+      <div><span class="task-code">${code}</span> <span class="task-name">${title}</span></div>
+      <span class="status-chip pending">미확인</span>
+    </div>
+    ${hintHtml || ""}
+    <div class="context-box"><div class="context-label">${contextLabel}</div>${contextText}</div>
+    <div class="answer-row">
+      <input type="text" placeholder="과목코드 입력 (예: PHYS101, MATH200)" value="${(a.codes || "").replace(/"/g, '&quot;')}">
+      <label class="checkbox-label"><input type="checkbox" class="chk-noprereq" ${a.noPrereq ? "checked" : ""}> 선수과목 없음이 맞음</label>
+      <label class="checkbox-label"><input type="checkbox" class="chk-unknown" ${a.unknown ? "checked" : ""}> 모르겠음</label>
+    </div>
+  `;
+
+  const input = card.querySelector('input[type="text"]');
+  const chkNo = card.querySelector(".chk-noprereq");
+  const chkUnknown = card.querySelector(".chk-unknown");
+  const chip = card.querySelector(".status-chip");
+
+  function refreshState() {
+    const filled = (input.value.trim() || chkNo.checked || chkUnknown.checked);
+    card.classList.toggle("filled", !!filled);
+    chip.textContent = filled ? "확인됨" : "미확인";
+    chip.classList.toggle("filled", !!filled);
+    chip.classList.toggle("pending", !filled);
+    answers[code] = { codes: input.value.trim(), noPrereq: chkNo.checked, unknown: chkUnknown.checked };
+    saveAnswers(answers);
+    updateProgress();
+  }
+
+  input.addEventListener("input", () => { if (input.value.trim()) { chkNo.checked = false; chkUnknown.checked = false; } refreshState(); });
+  chkNo.addEventListener("change", () => { if (chkNo.checked) { input.value = ""; chkUnknown.checked = false; } refreshState(); });
+  chkUnknown.addEventListener("change", () => { if (chkUnknown.checked) { input.value = ""; chkNo.checked = false; } refreshState(); });
+
+  refreshState();
+  return card;
+}
+
+const misparsedList = document.getElementById("misparsedList");
+DATA.misparsed.forEach(d => {
+  const ctx = `${d.course_name_en}\n\n(현재 이 필드엔 강의 목차가 잘못 들어가 있습니다 — 실제 선수과목을 알거나, "없음"이 맞으면 그렇게 표시해주세요.)`;
+  misparsedList.appendChild(makeCard(d.course_code, d.course_name_kr, "과목 정보", ctx));
+});
+
+const reviewList = document.getElementById("reviewList");
+DATA.review.forEach(d => {
+  const roadmapHint = d.also_in_roadmap_source
+    ? `<p class="hint">참고: 로드맵 소스에는 이미 <strong>${d.also_in_roadmap_source.join(", ")}</strong>가 등록되어 있습니다. 자유서술이 같은 걸 말하는지만 확인해주세요.</p>`
+    : "";
+  reviewList.appendChild(makeCard(d.course_code, d.course_name_kr, "강의계획서 원문", d.raw_prerequisites_field, roadmapHint));
+});
+
+updateProgress();
+
+document.getElementById("btnExport").addEventListener("click", () => {
+  const out = { generated_at: new Date().toISOString(), answers: answers };
+  document.getElementById("exportOut").value = JSON.stringify(out, null, 2);
+});
+document.getElementById("btnCopy").addEventListener("click", () => {
+  const ta = document.getElementById("exportOut");
+  if (!ta.value) { document.getElementById("btnExport").click(); }
+  ta.select();
+  navigator.clipboard && navigator.clipboard.writeText(ta.value);
+  const fb = document.getElementById("copyFeedback");
+  fb.classList.add("show");
+  setTimeout(() => fb.classList.remove("show"), 1500);
+});
+</script>
+</body>
+</html>
