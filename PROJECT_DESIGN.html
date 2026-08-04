@@ -419,7 +419,7 @@
     </header>
 
     <div class="kpi-row">
-      <div class="kpi decided"><div class="n">27</div><div class="l">결정된 사항</div></div>
+      <div class="kpi decided"><div class="n">28</div><div class="l">결정된 사항</div></div>
       <div class="kpi open"><div class="n">6</div><div class="l">미정 · 확인 필요</div></div>
       <div class="kpi hold"><div class="n">2</div><div class="l">보류 항목</div></div>
       <div class="kpi"><div class="n">4</div><div class="l">§11 열린 질문</div></div>
@@ -432,6 +432,7 @@
         <li><a href="#s73">(a)는 자유서술 선수과목 fuzzy 매칭(<code>_freetext</code>/<code>_needs_review.jsonl</code>) 병합이 아직 미완료라 후순위로 미루고, <strong>(b) 레벨 신호부터 먼저 생성</strong>하기로 결정</a></li>
         <li><a href="#s73">(b) 레벨 신호 페어 규칙 확정 — 이수구분 필드가 데이터에 없어 학년 규칙만 사용(같은 학과 내부로 한정), 신뢰도 0.5~0.7 → 0.4로 하향</a></li>
         <li><code>UG_2026_curriculum_courses.jsonl</code> 건수 정정 — 08-03 정제로 654건 → <strong>427건</strong>(중복 없음, 실측 확인). 문서 전체 654건 표기 427건으로 수정</li>
+        <li><a href="#s73">최종 코퍼스 언어 방침 확정 — <code>course_name_kr</code> 제외 전부 영어 통일 예정, (b) pair 텍스트는 <code>course_objectives</code> 우선·공백만 <code>content</code> 번역으로 채움</a></li>
       </ol>
     </div>
 
@@ -777,6 +778,11 @@
       <p style="font-size:13px; color: var(--ink-faint);">낮은 신뢰도 소스는 다운샘플링 또는 loss weight 축소로 반영(Snorkel식 확률결합의 실무적 근사).</p>
 
       <div class="card">
+        <div class="card-head"><strong>최종 코퍼스 언어 방침</strong><span class="chip decided">08-04</span></div>
+        <p><code>course_name_kr</code>을 제외한 모든 텍스트 필드는 최종 jsonl 확정 시 <strong>영어로 통일 번역</strong> 예정(모델 학습 편의). 아직 jsonl 확정 전이라 번역 미착수. Pair anchor/positive 텍스트는 <code>course_objectives</code>(이미 영어) 우선 사용, 비어있는 경우만 <code>content</code>(한국어)를 번역해 채움 — 전량 번역보다 공백만 메우는 쪽이 작업량이 적고 최종 영어 단일 코퍼스 목표와도 일치.</p>
+      </div>
+
+      <div class="card">
         <div class="card-head"><strong>(b) 레벨 신호 페어 생성 규칙 확정</strong><span class="chip decided">08-04</span></div>
         <p><code>UG_2026_curriculum_courses.jsonl</code>에 이수구분(전공필수/선택) 필드가 없음을 확인 — 원래 표의 "이수구분 플래그"는 현재 데이터로 못 만든다. 대신 <strong>학년 규칙만 사용</strong>(과목코드 학과 prefix 뒤 첫 숫자를 학년으로 취급: 1/2학년 vs 3/4학년), 필수 여부 조건은 제거. "관련" 판정은 <strong>같은 학과(code prefix) 내부로 한정</strong> — 학과 무관 전체 조합(N×M)은 무관한 쌍이 대량 섞여 기각.</p>
         <div class="callout">이 변경으로 신뢰도는 원래 0.5~0.7에서 <strong>0.4</strong>로 하향 조정(필수과목이라는 강한 신호가 빠졌으므로). 이수구분이 필요해지면 §11 "전공과목 일람표 재파싱"으로 보강 가능.</div>
@@ -864,8 +870,9 @@
       <div class="sec-head"><span class="sec-num">§9</span><h2>결정된 사항 vs 미정 사항</h2></div>
       <div class="status-cols">
         <div>
-          <h3><span class="wp-dot decided"></span> 결정됨 (27)</h3>
+          <h3><span class="wp-dot decided"></span> 결정됨 (28)</h3>
           <ul>
+            <li><a href="#s73">최종 코퍼스 언어 방침 확정 — <code>course_name_kr</code> 제외 전부 영어 통일, (b) pair는 <code>course_objectives</code> 우선·공백만 번역 (08-04)</a></li>
             <li><a href="#s73">연구실 데이터 없이 시작 가능한 축A 소스 확정 — (a)로드맵순서·(b)레벨신호·LLM concept·LLM query는 지금 생성 가능, (c)어휘중첩만 Lab 프로필 필요해 블로킹 (08-04)</a></li>
             <li><a href="#s73">(b) 레벨 신호 페어 생성 규칙 확정 — 이수구분 필드 없어 학년 규칙+같은 학과 한정으로 대체, 신뢰도 0.4로 하향 (08-04)</a></li>
             <li><a href="#s7">축A 백본을 <strong>BGE-m3</strong>로 확정 — multilingual-e5-large/KURE-v1은 비교 baseline (08-03)</a></li>
