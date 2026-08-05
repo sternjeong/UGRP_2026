@@ -56,9 +56,36 @@
 | [`PROJECT_DESIGN.html`](PROJECT_DESIGN.html) | 위 문서를 브라우저에서 훑어보는 스냅샷 뷰 |
 | [`ontology.html`](ontology.html) | 축D(온톨로지) 배경지식 + 프로젝트 스키마 매핑 강의노트 |
 | [`demo.html`](demo.html) | 추천 파이프라인(임베딩 매칭 → 온톨로지 경로 → 테크트리 → 설명 생성) 시연용 정적 mock UI |
-| `UG_2026_curriculum_courses.jsonl` | 공식 커리큘럼북 203페이지 전체를 파싱한 전학과 교과목 텍스트 코퍼스 (654건) — 축A/D 1차 원문 데이터 |
-| `roadmap_raw.jsonl` | 학과별 권장이수체계도 원문 (다이어그램/표/자유서술) |
-| `syllabus_raw.jsonl`, `DATA_ANALYSIS.md` | 참고용 프로토타입 데이터 (실제 개발에는 미사용) |
+| `scripts/` | jsonl 생성/가공 파이프라인 스크립트 (예: `gen_axisA_pairs_b.py`) |
+| `patch.jsonl` | 세션별 데이터 변경 로그 — 무엇을 왜 바꿨는지, 어떤 커밋에서인지 기록 |
+
+### 원문 소스 데이터
+
+| 파일 | 설명 |
+|---|---|
+| `UG_2026_curriculum_courses.jsonl` (419건) | 학부 공식 커리큘럼북 203페이지 전체를 파싱한 전학과 교과목 텍스트 코퍼스 — 축A/D 1차 원문 데이터. `course_code`가 모든 파생 파일(pair jsonl 등)의 join 키. |
+| `roadmap_raw.jsonl` | 학과별 권장이수체계도 원문 (다이어그램/표/자유서술 3단계 품질) — 축D `hasSynergyWith` 관계의 1차 소스, 아직 구조화 파싱 전 |
+| `syllabus_raw.jsonl` | 강의계획서 스크래핑 참고용 프로토타입 데이터 (353건, EECE/CSED/MATH/IMEN만) — 실제 개발에는 미사용, `DATA_ANALYSIS.md`와 짝 |
+| `gr_2026_courses.jsonl` (1047건) | 대학원 과목 데이터 — 현재 파이프라인(학부 축A/D/E)에서는 미사용이지만 향후 확장 대비 보류 |
+
+### 선수과목(hasPrerequisite) 파생 데이터
+
+| 파일 | 설명 |
+|---|---|
+| `UG_2026_prerequisites_merged.jsonl` (301건) | 로드맵 표 소스 + 강의계획서 자유서술 소스를 과목코드 기준 합집합으로 병합한 **최종본** — 축A (a) 페어 생성의 직접 입력 |
+
+원래 있던 중간 산출물 3종(`UG_2026_prerequisites.jsonl`, `UG_2026_prerequisites_freetext.jsonl`, `UG_2026_prerequisites_needs_review.jsonl`)과 `missing_syllabus_courses.jsonl`은 내용이 위 병합본에 흡수됐거나 이후 파이프라인에서 쓰이지 않아 삭제했다(2026-08-05, git 히스토리에는 남아있음).
+
+### 축A 학습 페어 데이터
+
+공용 스키마 `{pair_id, source, confidence, anchor_course, positive_course}` — 텍스트는 담지 않고 `course_code`만 저장, 실제 텍스트는 학습 시점에 `UG_2026_curriculum_courses.jsonl`과 join해서 채운다.
+
+| 파일 | 소스 | 신뢰도 | 설명 |
+|---|---|---|---|
+| `UG_2026_axisA_pairs_a.jsonl` (472건) | (a) 선수과목 명시 | 1.0 | `UG_2026_prerequisites_merged.jsonl`에서 코드 매칭에 성공한 유효 페어 |
+| `UG_2026_axisA_pairs_a_skipped.jsonl` (131건) | (a) | — | 코드 매칭 실패/비정형 표기로 스킵된 항목 — 추후 사람 검토(재매칭 또는 폐기) 대기 |
+| `UG_2026_axisA_pairs_b.jsonl` (2651건) | (b) 학과·학년 근접 | 0.4 | 같은 학과(code prefix) 내 저학년×고학년 전 조합 페어링 (`scripts/gen_axisA_pairs_b.py`) |
+| `UG_2026_axisA_pairs_llmquery.jsonl` (838건) | LLM 합성 질의 | 0.3 | 과목당 직설/간접 질의 2개씩 LLM으로 생성한 anchor 텍스트-과목 페어 |
 
 ## 로드맵 (6개월 가정)
 

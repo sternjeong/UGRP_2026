@@ -1,0 +1,838 @@
+{"pair_id": "llmquery_1_AMSE100", "source": "llm_query", "confidence": 0.3, "anchor_text": "신소재공학 전체 분야를 개괄적으로 소개해주는 입문 과목 있나요?", "positive_course": "AMSE100", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE100", "source": "llm_query", "confidence": 0.3, "anchor_text": "신소재공학과에 왔는데 세부 전공을 아직 못 정했어요, 뭐부터 들어야 할지 감이 안 와요", "positive_course": "AMSE100", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE201", "source": "llm_query", "confidence": 0.3, "anchor_text": "금속, 세라믹, 고분자 같은 다양한 소재의 기초 물성을 배우는 과목 찾아요", "positive_course": "AMSE201", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE201", "source": "llm_query", "confidence": 0.3, "anchor_text": "재료마다 왜 성질이 다른지 근본 원리부터 이해하고 싶은데 어떤 수업이 좋을까요?", "positive_course": "AMSE201", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE205", "source": "llm_query", "confidence": 0.3, "anchor_text": "소재 열역학이랑 상평형을 다루는 강의 있어요?", "positive_course": "AMSE205", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE205", "source": "llm_query", "confidence": 0.3, "anchor_text": "새로운 소재가 어떤 조건에서 안정적으로 존재하는지 예측하는 법을 배우고 싶어요", "positive_course": "AMSE205", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE207", "source": "llm_query", "confidence": 0.3, "anchor_text": "원자/분자 구조부터 재료의 화학적 성질까지 다루는 과목 있나요", "positive_course": "AMSE207", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE207", "source": "llm_query", "confidence": 0.3, "anchor_text": "재료의 화학적 합성 원리를 이해해서 나중에 신소재 개발 연구에 써먹고 싶어요", "positive_course": "AMSE207", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE208", "source": "llm_query", "confidence": 0.3, "anchor_text": "결정 구조와 결정 대칭성을 배우는 과목 찾고 있어요", "positive_course": "AMSE208", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE208", "source": "llm_query", "confidence": 0.3, "anchor_text": "X선 회절 패턴을 해석하려면 어떤 배경지식이 필요한가요?", "positive_course": "AMSE208", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE211", "source": "llm_query", "confidence": 0.3, "anchor_text": "소재를 직접 합성하고 분석해보는 실습 위주 과목 있나요?", "positive_course": "AMSE211", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE211", "source": "llm_query", "confidence": 0.3, "anchor_text": "이론 수업만 듣다 보니 지루한데 직접 손으로 뭔가 만들어보는 수업 없을까요", "positive_course": "AMSE211", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE213", "source": "llm_query", "confidence": 0.3, "anchor_text": "금속의 강도나 파괴 현상을 다루는 과목 있어요?", "positive_course": "AMSE213", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE213", "source": "llm_query", "confidence": 0.3, "anchor_text": "재료가 왜 부러지고 변형되는지 원리를 배우고 시뮬레이션도 해보고 싶어요", "positive_course": "AMSE213", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE301", "source": "llm_query", "confidence": 0.3, "anchor_text": "신소재공학 전공 필수 실험 과목이 뭐가 있나요", "positive_course": "AMSE301", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE301", "source": "llm_query", "confidence": 0.3, "anchor_text": "전자현미경이나 인장시험 같은 실제 실험 장비 다루는 법 배우고 싶어요", "positive_course": "AMSE301", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE313", "source": "llm_query", "confidence": 0.3, "anchor_text": "고체 안 전자의 에너지 구조를 다루는 소재물리 과목 있나요?", "positive_course": "AMSE313", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE313", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체 소자를 이해하려면 전자구조 관련 지식이 필요하다는데 뭘 들어야 하나요", "positive_course": "AMSE313", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE315", "source": "llm_query", "confidence": 0.3, "anchor_text": "상변화나 상전이 현상을 열역학적으로 분석하는 과목 있어요?", "positive_course": "AMSE315", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE315", "source": "llm_query", "confidence": 0.3, "anchor_text": "금속 조직이 어떻게 형성되는지 핵생성과 성장 과정을 배우고 싶어요", "positive_course": "AMSE315", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE318", "source": "llm_query", "confidence": 0.3, "anchor_text": "재료공학 문제를 컴퓨터 수치해석으로 푸는 과목 있나요", "positive_course": "AMSE318", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE318", "source": "llm_query", "confidence": 0.3, "anchor_text": "재료 시뮬레이션 프로그래밍을 배워서 연구에 활용하고 싶어요", "positive_course": "AMSE318", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE321", "source": "llm_query", "confidence": 0.3, "anchor_text": "철강이나 비철금속 같은 금속 재료를 다루는 개론 과목 있어요?", "positive_course": "AMSE321", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE321", "source": "llm_query", "confidence": 0.3, "anchor_text": "수소에너지 소재 개발 쪽에 관심 있는데 금속재료 기초부터 배우고 싶어요", "positive_course": "AMSE321", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE341", "source": "llm_query", "confidence": 0.3, "anchor_text": "세라믹 소재의 구조와 물성을 배우는 과목 찾아요", "positive_course": "AMSE341", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE341", "source": "llm_query", "confidence": 0.3, "anchor_text": "전자소자나 에너지소자에 쓰이는 세라믹 재료에 관심이 생겼어요, 뭘 들어야 하나요", "positive_course": "AMSE341", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE344", "source": "llm_query", "confidence": 0.3, "anchor_text": "세라믹 재료를 직접 합성하고 물성을 측정하는 실험 과목 있나요?", "positive_course": "AMSE344", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE344", "source": "llm_query", "confidence": 0.3, "anchor_text": "세라믹 소재 공정 설계를 실습을 통해 배우고 싶어요", "positive_course": "AMSE344", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE361", "source": "llm_query", "confidence": 0.3, "anchor_text": "플라스틱이나 고분자 재료의 원리를 배우는 과목 있어요?", "positive_course": "AMSE361", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE361", "source": "llm_query", "confidence": 0.3, "anchor_text": "바이오나 전자소자에 쓰이는 고분자 소재 개발에 관심이 있어요", "positive_course": "AMSE361", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE388", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체 소자의 기본 동작 원리를 배우는 신소재과 과목 있나요", "positive_course": "AMSE388", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE388", "source": "llm_query", "confidence": 0.3, "anchor_text": "p-n 접합이나 캐리어 이동 같은 반도체 기초를 재료 관점에서 배우고 싶어요", "positive_course": "AMSE388", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE405", "source": "llm_query", "confidence": 0.3, "anchor_text": "팀 프로젝트로 소재/공정을 직접 설계해보는 종합설계 과목 있나요?", "positive_course": "AMSE405", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE405", "source": "llm_query", "confidence": 0.3, "anchor_text": "졸업하기 전에 스스로 연구주제를 정해서 창의적으로 문제를 풀어보고 싶어요", "positive_course": "AMSE405", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE406", "source": "llm_query", "confidence": 0.3, "anchor_text": "소재/공정 캡스톤 디자인 후속 과목이 있나요?", "positive_course": "AMSE406", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE406", "source": "llm_query", "confidence": 0.3, "anchor_text": "종합설계 III를 들었는데 이어서 들을 수 있는 심화 설계 과목이 있을까요", "positive_course": "AMSE406", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE407", "source": "llm_query", "confidence": 0.3, "anchor_text": "XRD, TEM, SEM 같은 소재 분석 기기 원리를 배우는 과목 있어요?", "positive_course": "AMSE407", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE407", "source": "llm_query", "confidence": 0.3, "anchor_text": "연구실에서 재료 분석 장비를 써야 하는데 원리를 먼저 이해하고 싶어요", "positive_course": "AMSE407", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE412", "source": "llm_query", "confidence": 0.3, "anchor_text": "나노 스케일 소재의 독특한 특성을 배우는 과목 있나요", "positive_course": "AMSE412", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE412", "source": "llm_query", "confidence": 0.3, "anchor_text": "나노기술 분야로 진로를 생각 중인데 입문할 만한 수업이 있을까요", "positive_course": "AMSE412", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE414", "source": "llm_query", "confidence": 0.3, "anchor_text": "연료전지나 이차전지에 쓰이는 소재를 배우는 과목 있나요?", "positive_course": "AMSE414", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE414", "source": "llm_query", "confidence": 0.3, "anchor_text": "배터리 산업 쪽 취업을 생각 중인데 에너지 저장 소재 관련해서 뭘 들어야 하나요", "positive_course": "AMSE414", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE416", "source": "llm_query", "confidence": 0.3, "anchor_text": "바이오/의료 분야에 쓰이는 소재를 다루는 과목 있어요?", "positive_course": "AMSE416", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE416", "source": "llm_query", "confidence": 0.3, "anchor_text": "약물전달이나 조직공학 쪽에 관심 있는데 재료공학적으로 접근하는 수업이 있을까요", "positive_course": "AMSE416", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE423", "source": "llm_query", "confidence": 0.3, "anchor_text": "금속 3D프린팅이나 합금 제조 공정을 실습하는 과목 있나요?", "positive_course": "AMSE423", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE423", "source": "llm_query", "confidence": 0.3, "anchor_text": "실제 금속 재료를 만들어보고 분석까지 해보는 경험을 쌓고 싶어요", "positive_course": "AMSE423", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE441", "source": "llm_query", "confidence": 0.3, "anchor_text": "압전 재료나 유전체 같은 전자 세라믹스를 배우는 과목 있어요?", "positive_course": "AMSE441", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE441", "source": "llm_query", "confidence": 0.3, "anchor_text": "이차전지나 열전소재에 쓰이는 세라믹 물질의 원리가 궁금해요", "positive_course": "AMSE441", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE452", "source": "llm_query", "confidence": 0.3, "anchor_text": "LED나 레이저 같은 광전소자의 원리를 배우는 과목 있나요?", "positive_course": "AMSE452", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE452", "source": "llm_query", "confidence": 0.3, "anchor_text": "빛과 소재가 상호작용하는 원리를 이용해서 디스플레이 소자를 이해하고 싶어요", "positive_course": "AMSE452", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE463", "source": "llm_query", "confidence": 0.3, "anchor_text": "고분자를 직접 합성해서 분자량이나 구조를 분석하는 실험 과목 있어요?", "positive_course": "AMSE463", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE463", "source": "llm_query", "confidence": 0.3, "anchor_text": "유기 발광소재 박막을 만들어보는 실습 수업이 있을까요", "positive_course": "AMSE463", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE464", "source": "llm_query", "confidence": 0.3, "anchor_text": "고분자의 점탄성이나 기계적 물성을 이론적으로 분석하는 과목 있나요?", "positive_course": "AMSE464", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE464", "source": "llm_query", "confidence": 0.3, "anchor_text": "플라스틱 소재의 구조와 성능이 어떻게 연결되는지 깊이 배우고 싶어요", "positive_course": "AMSE464", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE481", "source": "llm_query", "confidence": 0.3, "anchor_text": "MOSFET 같은 반도체 소자의 동작 원리를 배우는 과목 있어요?", "positive_course": "AMSE481", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE481", "source": "llm_query", "confidence": 0.3, "anchor_text": "메모리 반도체가 어떻게 동작하는지 소자 관점에서 이해하고 싶어요", "positive_course": "AMSE481", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE483", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체/나노 소자 제작 공정을 직접 실습하는 과목 있나요?", "positive_course": "AMSE483", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE483", "source": "llm_query", "confidence": 0.3, "anchor_text": "산업체 반도체 공정에 실제로 어떻게 적응해야 할지 미리 경험해보고 싶어요", "positive_course": "AMSE483", "query_type": "indirect"}
+{"pair_id": "llmquery_1_AMSE484", "source": "llm_query", "confidence": 0.3, "anchor_text": "신소재공학과에서 전자회로 기초를 배우는 과목 있어요?", "positive_course": "AMSE484", "query_type": "direct"}
+{"pair_id": "llmquery_2_AMSE484", "source": "llm_query", "confidence": 0.3, "anchor_text": "회로랑 프로그래밍을 조금씩 다뤄보고 싶은데 재료공학 전공에도 그런 수업이 있나요", "positive_course": "AMSE484", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB100", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학공학과에 처음 들어왔는데 학과 전반을 소개해주는 과목 있나요?", "positive_course": "CHEB100", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB100", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학공학이 정확히 뭘 배우는 학문인지 감이 안 잡혀서 개론 수업을 듣고 싶어요", "positive_course": "CHEB100", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB201", "source": "llm_query", "confidence": 0.3, "anchor_text": "화공 전공을 위한 고전열역학 기초 과목 있어요?", "positive_course": "CHEB201", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB201", "source": "llm_query", "confidence": 0.3, "anchor_text": "엔트로피랑 상평형 개념을 화학공학 관점에서 배우고 싶어요", "positive_course": "CHEB201", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB202", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학공학 전공에서 양자역학 기초를 배우는 과목 있나요?", "positive_course": "CHEB202", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB202", "source": "llm_query", "confidence": 0.3, "anchor_text": "원자/분자 구조를 이해해서 신소재 개발에 활용하고 싶은데 뭘 들어야 하나요", "positive_course": "CHEB202", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB204", "source": "llm_query", "confidence": 0.3, "anchor_text": "화공열역학을 공학적으로 응용하는 과목 있어요?", "positive_course": "CHEB204", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB204", "source": "llm_query", "confidence": 0.3, "anchor_text": "엔탈피, 엔트로피 개념을 실제 공정 설계에 어떻게 쓰는지 배우고 싶어요", "positive_course": "CHEB204", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB206", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학공학과에서 배우는 유기화학 기초 과목 있나요?", "positive_course": "CHEB206", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB206", "source": "llm_query", "confidence": 0.3, "anchor_text": "수소에너지나 태양전지 연구에 쓰이는 화합물 기초를 알고 싶어요", "positive_course": "CHEB206", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB207", "source": "llm_query", "confidence": 0.3, "anchor_text": "방향족 화합물이나 카르보닐 화합물 합성을 다루는 유기화학 과목 있어요?", "positive_course": "CHEB207", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB207", "source": "llm_query", "confidence": 0.3, "anchor_text": "유기화학 I을 들었는데 이어서 심화로 들을 수 있는 과목이 있을까요", "positive_course": "CHEB207", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB208", "source": "llm_query", "confidence": 0.3, "anchor_text": "화공 전공에서 생화학, 분자생물학 기초를 배우는 과목 있나요?", "positive_course": "CHEB208", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB208", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학공학 전공인데 나중에 바이오 분야로 연구를 확장하고 싶어요", "positive_course": "CHEB208", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB211", "source": "llm_query", "confidence": 0.3, "anchor_text": "유기화학 반응을 실제로 실습해보는 실험 과목 있어요?", "positive_course": "CHEB211", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB211", "source": "llm_query", "confidence": 0.3, "anchor_text": "합성, 분리, 정제 같은 실험 기법을 직접 익히고 싶어요", "positive_course": "CHEB211", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB212", "source": "llm_query", "confidence": 0.3, "anchor_text": "물질의 물리화학적 특성을 실험으로 배우는 과목 있나요?", "positive_course": "CHEB212", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB212", "source": "llm_query", "confidence": 0.3, "anchor_text": "이론으로만 배운 물리화학을 실습을 통해 확인해보고 싶어요", "positive_course": "CHEB212", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB213", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학생명공학 실험 과목이 있나요?", "positive_course": "CHEB213", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB213", "source": "llm_query", "confidence": 0.3, "anchor_text": "생명체 시스템을 화학공학적으로 연구하는 실험을 해보고 싶어요", "positive_course": "CHEB213", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB214", "source": "llm_query", "confidence": 0.3, "anchor_text": "신재생에너지나 환경 기술을 다루는 화공과 과목 있나요?", "positive_course": "CHEB214", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB214", "source": "llm_query", "confidence": 0.3, "anchor_text": "탄소중립 관련 산업에 관심 있는데 화학공학에서 뭘 배워야 할지 모르겠어요", "positive_course": "CHEB214", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB216", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학공학과 전공 실험 필수 과목이 뭐가 있나요", "positive_course": "CHEB216", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB216", "source": "llm_query", "confidence": 0.3, "anchor_text": "물리화학, 유기화학, 생화학 실험을 종합적으로 익힐 수 있는 과목 있을까요", "positive_course": "CHEB216", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB301", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학공학에서 파이썬으로 데이터분석이나 AI를 배우는 과목 있어요?", "positive_course": "CHEB301", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB301", "source": "llm_query", "confidence": 0.3, "anchor_text": "코딩 좀 할 줄 아는데 화공 문제에 프로그래밍을 어떻게 접목하는지 배우고 싶어요", "positive_course": "CHEB301", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB303", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학공학에 필요한 선형대수나 편미분방정식을 배우는 과목 있나요", "positive_course": "CHEB303", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB303", "source": "llm_query", "confidence": 0.3, "anchor_text": "화공수학이 어렵다는데 어떤 수학적 도구들을 미리 배워둬야 하나요", "positive_course": "CHEB303", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB305", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학 반응기 설계나 반응속도론을 배우는 과목 있어요?", "positive_course": "CHEB305", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB305", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학 반응이 실제 공장에서 어떻게 제어되는지 이해하고 싶어요", "positive_course": "CHEB305", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB306", "source": "llm_query", "confidence": 0.3, "anchor_text": "촉매의 구조와 반응 메커니즘을 배우는 과목 있나요?", "positive_course": "CHEB306", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB306", "source": "llm_query", "confidence": 0.3, "anchor_text": "석유화학이나 제약 산업에서 쓰이는 촉매공학에 관심이 생겼어요", "positive_course": "CHEB306", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB308", "source": "llm_query", "confidence": 0.3, "anchor_text": "생물공학의 산업적 응용 사례를 소개하는 개론 과목 있나요?", "positive_course": "CHEB308", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB308", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학공학이랑 생명과학이 어떻게 융합되는지 궁금해요", "positive_course": "CHEB308", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB313", "source": "llm_query", "confidence": 0.3, "anchor_text": "계면 현상이나 콜로이드 시스템을 배우는 과목 있어요?", "positive_course": "CHEB313", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB313", "source": "llm_query", "confidence": 0.3, "anchor_text": "화장품이나 약물전달시스템 개발에 필요한 기초 지식을 배우고 싶어요", "positive_course": "CHEB313", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB314", "source": "llm_query", "confidence": 0.3, "anchor_text": "분자 간 상호작용이나 표면 힘을 배우는 이론 과목 있나요?", "positive_course": "CHEB314", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB314", "source": "llm_query", "confidence": 0.3, "anchor_text": "미세가공이나 박막 공정을 이해하려면 어떤 기초 수업이 필요한가요", "positive_course": "CHEB314", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB315", "source": "llm_query", "confidence": 0.3, "anchor_text": "액정이나 폴리머 같은 연성물질의 특성을 배우는 과목 있어요?", "positive_course": "CHEB315", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB315", "source": "llm_query", "confidence": 0.3, "anchor_text": "스마트 소재나 반응형 재료에 관심이 있는데 관련 과목이 있을까요", "positive_course": "CHEB315", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB316", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체 재료의 전자 상태와 밴드 구조를 화공 관점에서 배우는 과목 있나요?", "positive_course": "CHEB316", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB316", "source": "llm_query", "confidence": 0.3, "anchor_text": "태양전지나 발광소자가 어떻게 동작하는지 재료 원리부터 알고 싶어요", "positive_course": "CHEB316", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB360", "source": "llm_query", "confidence": 0.3, "anchor_text": "고체재료의 화학적 결합과 물성을 배우는 과목 있나요?", "positive_course": "CHEB360", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB360", "source": "llm_query", "confidence": 0.3, "anchor_text": "분자전자소재의 광학적, 전기적 특성을 양자화학적으로 이해하고 싶어요", "positive_course": "CHEB360", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB401", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학공정의 제어이론을 배우는 과목 있어요?", "positive_course": "CHEB401", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB401", "source": "llm_query", "confidence": 0.3, "anchor_text": "PID 제어기나 공정 안정성 분석하는 법을 배우고 싶어요", "positive_course": "CHEB401", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB402", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학공정 전체를 설계하고 경제성을 분석하는 과목 있나요?", "positive_course": "CHEB402", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB402", "source": "llm_query", "confidence": 0.3, "anchor_text": "공정 시뮬레이터를 이용해서 실제 플랜트 설계를 경험해보고 싶어요", "positive_course": "CHEB402", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB403", "source": "llm_query", "confidence": 0.3, "anchor_text": "증류나 추출 같은 화학 분리공정을 배우는 과목 있어요?", "positive_course": "CHEB403", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB403", "source": "llm_query", "confidence": 0.3, "anchor_text": "물질 및 에너지 수지를 계산해서 분리장치를 설계하는 법을 배우고 싶어요", "positive_course": "CHEB403", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB405", "source": "llm_query", "confidence": 0.3, "anchor_text": "고분자 합성부터 물성, 가공까지 전반을 다루는 입문 과목 있나요?", "positive_course": "CHEB405", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB405", "source": "llm_query", "confidence": 0.3, "anchor_text": "차세대 반도체나 이차전지에 쓰이는 유연소재 연구를 하고 싶어요", "positive_course": "CHEB405", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB408", "source": "llm_query", "confidence": 0.3, "anchor_text": "생물반응기나 생물공정 설계를 다루는 과목 있어요?", "positive_course": "CHEB408", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB408", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학공학 지식으로 바이오 공정을 해석하고 싶어요", "positive_course": "CHEB408", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB409", "source": "llm_query", "confidence": 0.3, "anchor_text": "인공 미생물을 설계하는 합성생물학 과목 있나요?", "positive_course": "CHEB409", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB409", "source": "llm_query", "confidence": 0.3, "anchor_text": "친환경 바이오화학 산업에 관심 있는데 유전자회로 설계를 배우고 싶어요", "positive_course": "CHEB409", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB412", "source": "llm_query", "confidence": 0.3, "anchor_text": "이차전지 제조 공정을 실습해보는 과목 있나요?", "positive_course": "CHEB412", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB412", "source": "llm_query", "confidence": 0.3, "anchor_text": "배터리 전극이나 셀을 직접 만들어보고 산업 전문가 강연도 듣고 싶어요", "positive_course": "CHEB412", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB413", "source": "llm_query", "confidence": 0.3, "anchor_text": "친환경 에너지 소재를 분석하는 기술을 배우는 과목 있어요?", "positive_course": "CHEB413", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB413", "source": "llm_query", "confidence": 0.3, "anchor_text": "수소저장 소재 특성 분석에 필요한 분석기술들을 배우고 싶어요", "positive_course": "CHEB413", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB417", "source": "llm_query", "confidence": 0.3, "anchor_text": "유체 흐름을 지배하는 운동량 전달 원리를 배우는 과목 있나요?", "positive_course": "CHEB417", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB417", "source": "llm_query", "confidence": 0.3, "anchor_text": "층류, 난류 같은 유체역학 개념을 화학공학 관점에서 배우고 싶어요", "positive_course": "CHEB417", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB418", "source": "llm_query", "confidence": 0.3, "anchor_text": "에너지와 물질 전달을 편미분방정식으로 다루는 과목 있어요?", "positive_course": "CHEB418", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB418", "source": "llm_query", "confidence": 0.3, "anchor_text": "열전도와 물질전달 현상을 수학적으로 모델링하는 법을 배우고 싶어요", "positive_course": "CHEB418", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB425", "source": "llm_query", "confidence": 0.3, "anchor_text": "화공과에서 학부생이 개인 연구주제로 논문연구를 할 수 있는 과목 있나요?", "positive_course": "CHEB425", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB425", "source": "llm_query", "confidence": 0.3, "anchor_text": "교수님 지도 아래 연구 프로젝트를 직접 진행해보고 싶어요", "positive_course": "CHEB425", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB426", "source": "llm_query", "confidence": 0.3, "anchor_text": "논문연구 I을 마치고 이어서 들을 수 있는 후속 연구 과목 있나요?", "positive_course": "CHEB426", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB426", "source": "llm_query", "confidence": 0.3, "anchor_text": "학부 연구를 더 심화해서 진행하고 싶은데 어떤 과목을 들어야 하나요", "positive_course": "CHEB426", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB461", "source": "llm_query", "confidence": 0.3, "anchor_text": "나노 구조를 화학적으로 합성하는 공정을 배우는 과목 있나요?", "positive_course": "CHEB461", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB461", "source": "llm_query", "confidence": 0.3, "anchor_text": "정보전자소자에 쓰이는 나노소재를 화학공학적으로 만드는 법이 궁금해요", "positive_course": "CHEB461", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB463", "source": "llm_query", "confidence": 0.3, "anchor_text": "양자역학과 고체물리 기초를 바탕으로 나노공학을 배우는 과목 있어요?", "positive_course": "CHEB463", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB463", "source": "llm_query", "confidence": 0.3, "anchor_text": "나노스케일 이미징이나 공정 툴을 다루는 수업을 찾고 있어요", "positive_course": "CHEB463", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB465", "source": "llm_query", "confidence": 0.3, "anchor_text": "고분자 사슬 구조와 점탄성 같은 물성을 배우는 과목 있나요?", "positive_course": "CHEB465", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB465", "source": "llm_query", "confidence": 0.3, "anchor_text": "고분자의 화학구조가 물리적 성질에 어떤 영향을 주는지 자세히 알고 싶어요", "positive_course": "CHEB465", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEB471", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학공학 최신 연구 동향을 소개하는 세미나 과목 있나요?", "positive_course": "CHEB471", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEB471", "source": "llm_query", "confidence": 0.3, "anchor_text": "화공 분야에서 요즘 어떤 연구가 활발한지 감을 잡고 싶어요", "positive_course": "CHEB471", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEM100", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학 기초가 부족한 학생을 위한 보충 개념 과목 있나요?", "positive_course": "CHEM100", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEM100", "source": "llm_query", "confidence": 0.3, "anchor_text": "고등학교 때 화학을 잘 못 배웠는데 일반화학 듣기 전에 기초를 다지고 싶어요", "positive_course": "CHEM100", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEM101", "source": "llm_query", "confidence": 0.3, "anchor_text": "원자구조, 화학결합 같은 화학의 기본 개념을 배우는 과목 있나요?", "positive_course": "CHEM101", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEM101", "source": "llm_query", "confidence": 0.3, "anchor_text": "이공계 전공에 필요한 화학 기초를 처음부터 체계적으로 배우고 싶어요", "positive_course": "CHEM101", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEM102", "source": "llm_query", "confidence": 0.3, "anchor_text": "일반화학 이론을 실제 실험으로 확인해보는 과목 있어요?", "positive_course": "CHEM102", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEM102", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학 실험의 기초 조작법을 처음 배워보고 싶어요", "positive_course": "CHEM102", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEM103", "source": "llm_query", "confidence": 0.3, "anchor_text": "코딩으로 일반화학 개념을 배우는 과목이 있다던데요?", "positive_course": "CHEM103", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEM103", "source": "llm_query", "confidence": 0.3, "anchor_text": "파이썬으로 분자 오비탈이나 반응속도론을 시각화하면서 배우고 싶어요", "positive_course": "CHEM103", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEM104", "source": "llm_query", "confidence": 0.3, "anchor_text": "일반화학 II 내용을 실험으로 익히는 과목 있나요?", "positive_course": "CHEM104", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEM104", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학 실험 결과를 이론과 연결해서 이해하는 연습을 하고 싶어요", "positive_course": "CHEM104", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEM211", "source": "llm_query", "confidence": 0.3, "anchor_text": "양자화학과 분자 구조, 분광학을 배우는 물리화학 과목 있나요?", "positive_course": "CHEM211", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEM211", "source": "llm_query", "confidence": 0.3, "anchor_text": "원자와 분자의 미시세계를 지배하는 양자역학을 화학적으로 배우고 싶어요", "positive_course": "CHEM211", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEM213", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학 문제를 수학적으로 표현하고 푸는 방법을 배우는 과목 있어요?", "positive_course": "CHEM213", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEM213", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학 실험 데이터를 통계적으로 처리하는 법도 함께 배우고 싶어요", "positive_course": "CHEM213", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEM221", "source": "llm_query", "confidence": 0.3, "anchor_text": "알케인, 알켄 같은 유기화합물의 기본 구조와 반응성을 배우는 과목 있나요?", "positive_course": "CHEM221", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEM221", "source": "llm_query", "confidence": 0.3, "anchor_text": "유기화학을 처음 배우는데 어떤 과목부터 들어야 하나요", "positive_course": "CHEM221", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEM222", "source": "llm_query", "confidence": 0.3, "anchor_text": "방향족 화합물과 다양한 작용기의 반응을 다루는 유기화학 과목 있어요?", "positive_course": "CHEM222", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEM222", "source": "llm_query", "confidence": 0.3, "anchor_text": "유기화학 I을 듣고 이어서 심화된 반응 메커니즘을 배우고 싶어요", "positive_course": "CHEM222", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEM226", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학물질을 직접 합성해보는 실험 과목 있나요?", "positive_course": "CHEM226", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEM226", "source": "llm_query", "confidence": 0.3, "anchor_text": "저분자부터 고분자까지 다양한 물질을 합성하고 정제하는 기법을 배우고 싶어요", "positive_course": "CHEM226", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEM231", "source": "llm_query", "confidence": 0.3, "anchor_text": "나노미터 스케일에서 일어나는 양자 현상을 다루는 화학 과목 있어요?", "positive_course": "CHEM231", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEM231", "source": "llm_query", "confidence": 0.3, "anchor_text": "나노소재를 화학적으로 합성하는 법에 관심이 생겼어요", "positive_course": "CHEM231", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEM243", "source": "llm_query", "confidence": 0.3, "anchor_text": "산-염기 평형이나 기기분석 같은 화학분석 기초를 배우는 과목 있나요?", "positive_course": "CHEM243", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEM243", "source": "llm_query", "confidence": 0.3, "anchor_text": "실험 데이터를 통계적으로 처리하고 분석하는 방법을 배우고 싶어요", "positive_course": "CHEM243", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEM261", "source": "llm_query", "confidence": 0.3, "anchor_text": "생명현상을 화학적으로 이해하는 의약화학 과목 있나요?", "positive_course": "CHEM261", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEM261", "source": "llm_query", "confidence": 0.3, "anchor_text": "줄기세포나 천연물 의약화학 쪽에 관심 있는데 화학과에도 관련 과목이 있나요", "positive_course": "CHEM261", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEM292", "source": "llm_query", "confidence": 0.3, "anchor_text": "타 학과생도 들을 수 있는 유기화학 실험 과목 있어요?", "positive_course": "CHEM292", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEM292", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학 전공은 아닌데 유기합성 실험을 가볍게 경험해보고 싶어요", "positive_course": "CHEM292", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEM311", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학 열역학과 통계역학, 반응속도를 배우는 과목 있나요?", "positive_course": "CHEM311", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEM311", "source": "llm_query", "confidence": 0.3, "anchor_text": "물리화학 I을 들었는데 이어서 통계역학까지 배우고 싶어요", "positive_course": "CHEM311", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEM314", "source": "llm_query", "confidence": 0.3, "anchor_text": "분광학이나 기기분석을 실습으로 배우는 화학실험 과목 있어요?", "positive_course": "CHEM314", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEM314", "source": "llm_query", "confidence": 0.3, "anchor_text": "물리화학 이론을 실제 분석기기로 확인해보는 실습을 하고 싶어요", "positive_course": "CHEM314", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEM325", "source": "llm_query", "confidence": 0.3, "anchor_text": "최신 연구동향에 맞춘 첨단 화학실험 과목 있나요?", "positive_course": "CHEM325", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEM325", "source": "llm_query", "confidence": 0.3, "anchor_text": "실제 연구현장에서 쓰는 장비로 실험해보고 싶어요", "positive_course": "CHEM325", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEM331", "source": "llm_query", "confidence": 0.3, "anchor_text": "전이금속 착화합물의 결합과 구조를 다루는 무기화학 과목 있어요?", "positive_course": "CHEM331", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEM331", "source": "llm_query", "confidence": 0.3, "anchor_text": "리간드장 이론 같은 무기화학 개념이 궁금해요", "positive_course": "CHEM331", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEM342", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학분석기기의 원리와 구조를 배우는 과목 있나요?", "positive_course": "CHEM342", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEM342", "source": "llm_query", "confidence": 0.3, "anchor_text": "분광법이나 전기화학분석법 같은 기기분석 방법들을 체계적으로 배우고 싶어요", "positive_course": "CHEM342", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEM451", "source": "llm_query", "confidence": 0.3, "anchor_text": "고분자 중합반응과 분자량 분포를 배우는 과목 있어요?", "positive_course": "CHEM451", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEM451", "source": "llm_query", "confidence": 0.3, "anchor_text": "대학원에서 고분자화학을 전공하고 싶은데 학부에서 뭘 미리 들어야 하나요", "positive_course": "CHEM451", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEM461", "source": "llm_query", "confidence": 0.3, "anchor_text": "단백질과 DNA 구조, 유전정보 발현을 화학적으로 배우는 과목 있나요?", "positive_course": "CHEM461", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEM461", "source": "llm_query", "confidence": 0.3, "anchor_text": "생명현상을 분자 수준에서 화학적으로 이해하고 싶어요", "positive_course": "CHEM461", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEM497", "source": "llm_query", "confidence": 0.3, "anchor_text": "연구실에서 최신 연구과제를 직접 수행하는 고급 화학실험 과목 있나요?", "positive_course": "CHEM497", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEM497", "source": "llm_query", "confidence": 0.3, "anchor_text": "전문연구자가 되고 싶은데 학부 때 미리 연구경험을 쌓고 싶어요", "positive_course": "CHEM497", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CHEM499", "source": "llm_query", "confidence": 0.3, "anchor_text": "화학과 학사논문을 쓰는 졸업연구 과목 있나요?", "positive_course": "CHEM499", "query_type": "direct"}
+{"pair_id": "llmquery_2_CHEM499", "source": "llm_query", "confidence": 0.3, "anchor_text": "대학원 진학 전에 연구실에서 논문을 써보는 경험을 하고 싶어요", "positive_course": "CHEM499", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CITE103", "source": "llm_query", "confidence": 0.3, "anchor_text": "1학년 무학과생을 위한 디자인 씽킹 기반 프로젝트 과목 있나요?", "positive_course": "CITE103", "query_type": "direct"}
+{"pair_id": "llmquery_2_CITE103", "source": "llm_query", "confidence": 0.3, "anchor_text": "전공을 아직 못 정했는데 창의적인 문제해결 역량을 길러주는 수업이 있을까요", "positive_course": "CITE103", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CITE201", "source": "llm_query", "confidence": 0.3, "anchor_text": "리눅스, 아두이노, CAD 같은 IT 융합 설계 기초 도구를 배우는 과목 있어요?", "positive_course": "CITE201", "query_type": "direct"}
+{"pair_id": "llmquery_2_CITE201", "source": "llm_query", "confidence": 0.3, "anchor_text": "종합설계 프로젝트를 하기 전에 기초 툴부터 배우고 싶어요", "positive_course": "CITE201", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CITE202", "source": "llm_query", "confidence": 0.3, "anchor_text": "팀을 이뤄 IT 시스템 블록을 직접 설계해보는 과목 있나요?", "positive_course": "CITE202", "query_type": "direct"}
+{"pair_id": "llmquery_2_CITE202", "source": "llm_query", "confidence": 0.3, "anchor_text": "기초이론 과목을 들었는데 이제 실제로 설계해보는 수업이 있을까요", "positive_course": "CITE202", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CITE203", "source": "llm_query", "confidence": 0.3, "anchor_text": "제품의 사용성과 인터랙션을 디자인하는 방법을 배우는 과목 있어요?", "positive_course": "CITE203", "query_type": "direct"}
+{"pair_id": "llmquery_2_CITE203", "source": "llm_query", "confidence": 0.3, "anchor_text": "기술과 사회 문제를 함께 고민하며 사용자 친화적인 제품을 만들고 싶어요", "positive_course": "CITE203", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CITE204", "source": "llm_query", "confidence": 0.3, "anchor_text": "자기 자신을 탐구하고 성장 방향을 설계하는 과목이 있나요?", "positive_course": "CITE204", "query_type": "direct"}
+{"pair_id": "llmquery_2_CITE204", "source": "llm_query", "confidence": 0.3, "anchor_text": "졸업할 때까지 나만의 진로와 성장 계획을 세워보고 싶어요", "positive_course": "CITE204", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CITE205", "source": "llm_query", "confidence": 0.3, "anchor_text": "인문학과 공학이 만나는 융합적 사고를 배우는 과목 있어요?", "positive_course": "CITE205", "query_type": "direct"}
+{"pair_id": "llmquery_2_CITE205", "source": "llm_query", "confidence": 0.3, "anchor_text": "기술과 철학, 예술이 어떻게 연결되는지 폭넓게 배우고 싶어요", "positive_course": "CITE205", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CITE215", "source": "llm_query", "confidence": 0.3, "anchor_text": "간단한 프로토타입을 직접 만들어보는 메이커 입문 과목 있나요?", "positive_course": "CITE215", "query_type": "direct"}
+{"pair_id": "llmquery_2_CITE215", "source": "llm_query", "confidence": 0.3, "anchor_text": "창의스튜디오 듣기 전에 손으로 뭔가 만들어보는 경험을 하고 싶어요", "positive_course": "CITE215", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CITE221", "source": "llm_query", "confidence": 0.3, "anchor_text": "디지털 회로와 마이크로프로세서 설계 기초를 배우는 과목 있어요?", "positive_course": "CITE221", "query_type": "direct"}
+{"pair_id": "llmquery_2_CITE221", "source": "llm_query", "confidence": 0.3, "anchor_text": "IT설계 프로젝트를 하려는데 회로와 로직에 대한 기초 지식이 부족해요", "positive_course": "CITE221", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CITE241/MECH361", "source": "llm_query", "confidence": 0.3, "anchor_text": "생명과학과 공학이 결합된 의공학 입문 과목 있나요?", "positive_course": "CITE241/MECH361", "query_type": "direct"}
+{"pair_id": "llmquery_2_CITE241/MECH361", "source": "llm_query", "confidence": 0.3, "anchor_text": "바이오메디컬 엔지니어링 시스템을 설계해보고 싶어요", "positive_course": "CITE241/MECH361", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CITE301", "source": "llm_query", "confidence": 0.3, "anchor_text": "프로토타입을 만들고 오류를 검증해보는 IT융합 고급설계 과목 있나요?", "positive_course": "CITE301", "query_type": "direct"}
+{"pair_id": "llmquery_2_CITE301", "source": "llm_query", "confidence": 0.3, "anchor_text": "실제 문제를 해결하는 독립적인 설계 프로젝트를 진행해보고 싶어요", "positive_course": "CITE301", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CITE302", "source": "llm_query", "confidence": 0.3, "anchor_text": "설계한 시스템을 통합해서 결과물로 시연하는 과목 있어요?", "positive_course": "CITE302", "query_type": "direct"}
+{"pair_id": "llmquery_2_CITE302", "source": "llm_query", "confidence": 0.3, "anchor_text": "IT융합 종합설계 시리즈의 마지막 단계 과목이 있을까요", "positive_course": "CITE302", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CITE303", "source": "llm_query", "confidence": 0.3, "anchor_text": "생명과 인간에 대한 상상력을 IT기술과 결합하는 스튜디오 과목 있나요?", "positive_course": "CITE303", "query_type": "direct"}
+{"pair_id": "llmquery_2_CITE303", "source": "llm_query", "confidence": 0.3, "anchor_text": "트랜스휴먼이나 미래 인간에 대해 창의적으로 탐구하는 수업이 있을까요", "positive_course": "CITE303", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CITE304", "source": "llm_query", "confidence": 0.3, "anchor_text": "게임 문화와 설계 이론을 함께 배우는 스튜디오 과목 있어요?", "positive_course": "CITE304", "query_type": "direct"}
+{"pair_id": "llmquery_2_CITE304", "source": "llm_query", "confidence": 0.3, "anchor_text": "게임 기획이나 인터랙티브 콘텐츠 제작에 관심이 있어요", "positive_course": "CITE304", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CITE306", "source": "llm_query", "confidence": 0.3, "anchor_text": "비즈니스 플랜을 직접 개발해보는 스튜디오 과목 있나요?", "positive_course": "CITE306", "query_type": "direct"}
+{"pair_id": "llmquery_2_CITE306", "source": "llm_query", "confidence": 0.3, "anchor_text": "공학적 아이디어를 사업으로 연결하는 법을 배우고 싶어요", "positive_course": "CITE306", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CITE341", "source": "llm_query", "confidence": 0.3, "anchor_text": "제어 이론과 실험을 압축적으로 배우는 과목 있어요?", "positive_course": "CITE341", "query_type": "direct"}
+{"pair_id": "llmquery_2_CITE341", "source": "llm_query", "confidence": 0.3, "anchor_text": "PID 제어 설계 같은 제어시스템 핵심 지식만 빠르게 배우고 싶어요", "positive_course": "CITE341", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CITE405", "source": "llm_query", "confidence": 0.3, "anchor_text": "인간중심 디자인과 HCI 이론을 배우는 스튜디오 과목 있나요?", "positive_course": "CITE405", "query_type": "direct"}
+{"pair_id": "llmquery_2_CITE405", "source": "llm_query", "confidence": 0.3, "anchor_text": "모바일 앱을 사용자 중심으로 개발하는 프로젝트를 해보고 싶어요", "positive_course": "CITE405", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CITE411/IMEN412/ENTP301", "source": "llm_query", "confidence": 0.3, "anchor_text": "실제 사업계획서를 작성해보는 기업가정신 과목 있어요?", "positive_course": "CITE411/IMEN412/ENTP301", "query_type": "direct"}
+{"pair_id": "llmquery_2_CITE411/IMEN412/ENTP301", "source": "llm_query", "confidence": 0.3, "anchor_text": "투자자들에게 피드백 받으며 창업 아이템을 검증해보고 싶어요", "positive_course": "CITE411/IMEN412/ENTP301", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CITE421/CSED357", "source": "llm_query", "confidence": 0.3, "anchor_text": "데이터베이스 설계와 파일구조를 배우는 과목 있나요?", "positive_course": "CITE421/CSED357", "query_type": "direct"}
+{"pair_id": "llmquery_2_CITE421/CSED357", "source": "llm_query", "confidence": 0.3, "anchor_text": "실제 데이터베이스를 직접 설계해보는 경험을 하고 싶어요", "positive_course": "CITE421/CSED357", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CITE441/EECE423", "source": "llm_query", "confidence": 0.3, "anchor_text": "상태공간 방정식으로 다입력 다출력 시스템을 다루는 제어이론 과목 있어요?", "positive_course": "CITE441/EECE423", "query_type": "direct"}
+{"pair_id": "llmquery_2_CITE441/EECE423", "source": "llm_query", "confidence": 0.3, "anchor_text": "현대적인 제어 기법과 관측기 설계를 배우고 싶어요", "positive_course": "CITE441/EECE423", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CITE451/MECH423", "source": "llm_query", "confidence": 0.3, "anchor_text": "3D 바이오프린팅이나 생체재료 가공기술을 배우는 과목 있나요?", "positive_course": "CITE451/MECH423", "query_type": "direct"}
+{"pair_id": "llmquery_2_CITE451/MECH423", "source": "llm_query", "confidence": 0.3, "anchor_text": "인체조직을 모사하는 바이오패브리케이션 기술에 관심이 있어요", "positive_course": "CITE451/MECH423", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CITE452", "source": "llm_query", "confidence": 0.3, "anchor_text": "의료기기의 설계 원리를 배우는 생체전자기기 과목 있어요?", "positive_course": "CITE452", "query_type": "direct"}
+{"pair_id": "llmquery_2_CITE452", "source": "llm_query", "confidence": 0.3, "anchor_text": "메디컬 디바이스를 만드는데 필요한 공학 지식을 배우고 싶어요", "positive_course": "CITE452", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CITE453", "source": "llm_query", "confidence": 0.3, "anchor_text": "생체 신호를 시간/주파수 영역에서 분석하는 과목 있나요?", "positive_course": "CITE453", "query_type": "direct"}
+{"pair_id": "llmquery_2_CITE453", "source": "llm_query", "confidence": 0.3, "anchor_text": "심전도 같은 생체신호 데이터를 처리하는 법을 배우고 싶어요", "positive_course": "CITE453", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CMEF301", "source": "llm_query", "confidence": 0.3, "anchor_text": "경제학의 기본 개념을 배우는 개론 과목 있나요?", "positive_course": "CMEF301", "query_type": "direct"}
+{"pair_id": "llmquery_2_CMEF301", "source": "llm_query", "confidence": 0.3, "anchor_text": "경제가 어떻게 돌아가는지 기초부터 알고 싶은 이공계생이에요", "positive_course": "CMEF301", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CMEF302", "source": "llm_query", "confidence": 0.3, "anchor_text": "소비자와 기업의 합리적 선택을 이론적으로 다루는 미시경제 과목 있어요?", "positive_course": "CMEF302", "query_type": "direct"}
+{"pair_id": "llmquery_2_CMEF302", "source": "llm_query", "confidence": 0.3, "anchor_text": "수요와 공급, 시장구조를 수학적으로 깊이 이해하고 싶어요", "positive_course": "CMEF302", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CMEF303", "source": "llm_query", "confidence": 0.3, "anchor_text": "국민소득, 물가, 실업률 같은 거시경제 변수를 분석하는 과목 있나요?", "positive_course": "CMEF303", "query_type": "direct"}
+{"pair_id": "llmquery_2_CMEF303", "source": "llm_query", "confidence": 0.3, "anchor_text": "인플레이션이나 경기변동이 왜 일어나는지 이해하고 싶어요", "positive_course": "CMEF303", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CMEF304", "source": "llm_query", "confidence": 0.3, "anchor_text": "금융상품의 가치평가를 수학적으로 배우는 과목 있어요?", "positive_course": "CMEF304", "query_type": "direct"}
+{"pair_id": "llmquery_2_CMEF304", "source": "llm_query", "confidence": 0.3, "anchor_text": "옵션 가격이나 파생상품 이론에 관심이 있는데 어떤 과목을 들어야 하나요", "positive_course": "CMEF304", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CMEF305", "source": "llm_query", "confidence": 0.3, "anchor_text": "주식과 채권 평가, 기업 투자결정을 배우는 재무 과목 있나요?", "positive_course": "CMEF305", "query_type": "direct"}
+{"pair_id": "llmquery_2_CMEF305", "source": "llm_query", "confidence": 0.3, "anchor_text": "이공계인데 재무제표 읽는 법과 투자 판단 기준을 배우고 싶어요", "positive_course": "CMEF305", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CMEF306", "source": "llm_query", "confidence": 0.3, "anchor_text": "ESG나 지속가능경영을 실제 프로젝트로 배우는 과목 있어요?", "positive_course": "CMEF306", "query_type": "direct"}
+{"pair_id": "llmquery_2_CMEF306", "source": "llm_query", "confidence": 0.3, "anchor_text": "포스코 같은 기업과 연계해서 ESG 프로젝트를 해볼 수 있는 수업이 있나요", "positive_course": "CMEF306", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CMEF401", "source": "llm_query", "confidence": 0.3, "anchor_text": "회귀분석 같은 통계적 방법으로 경제이론을 검증하는 과목 있나요?", "positive_course": "CMEF401", "query_type": "direct"}
+{"pair_id": "llmquery_2_CMEF401", "source": "llm_query", "confidence": 0.3, "anchor_text": "현실 데이터를 가지고 경제모형을 통계적으로 분석하는 법을 배우고 싶어요", "positive_course": "CMEF401", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CMEF402", "source": "llm_query", "confidence": 0.3, "anchor_text": "은행제도와 통화정책을 배우는 화폐금융론 과목 있나요?", "positive_course": "CMEF402", "query_type": "direct"}
+{"pair_id": "llmquery_2_CMEF402", "source": "llm_query", "confidence": 0.3, "anchor_text": "이공계생인데 중앙은행이 금리를 어떻게 조절하는지 궁금해요", "positive_course": "CMEF402", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CMEF405", "source": "llm_query", "confidence": 0.3, "anchor_text": "채권시장의 수익률 곡선과 신용위험을 배우는 과목 있어요?", "positive_course": "CMEF405", "query_type": "direct"}
+{"pair_id": "llmquery_2_CMEF405", "source": "llm_query", "confidence": 0.3, "anchor_text": "국채나 회사채 투자 원리를 체계적으로 배우고 싶어요", "positive_course": "CMEF405", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CMEF406", "source": "llm_query", "confidence": 0.3, "anchor_text": "전략적 의사결정과 내쉬균형을 배우는 게임이론 과목 있나요?", "positive_course": "CMEF406", "query_type": "direct"}
+{"pair_id": "llmquery_2_CMEF406", "source": "llm_query", "confidence": 0.3, "anchor_text": "경매나 계약 같은 현상을 수학적으로 분석하는 법을 배우고 싶어요", "positive_course": "CMEF406", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CMEF407", "source": "llm_query", "confidence": 0.3, "anchor_text": "기업의 가격전략과 시장구조를 분석하는 산업조직론 과목 있어요?", "positive_course": "CMEF407", "query_type": "direct"}
+{"pair_id": "llmquery_2_CMEF407", "source": "llm_query", "confidence": 0.3, "anchor_text": "담합이나 가격차별 같은 기업 행동을 경제학적으로 이해하고 싶어요", "positive_course": "CMEF407", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CMEF408", "source": "llm_query", "confidence": 0.3, "anchor_text": "정보 비대칭 상황에서의 경제적 선택을 배우는 과목 있나요?", "positive_course": "CMEF408", "query_type": "direct"}
+{"pair_id": "llmquery_2_CMEF408", "source": "llm_query", "confidence": 0.3, "anchor_text": "시그널링이나 스크리닝 같은 개념이 실제 시장에서 어떻게 작동하는지 궁금해요", "positive_course": "CMEF408", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CMEF410", "source": "llm_query", "confidence": 0.3, "anchor_text": "정치와 경제의 상호작용을 분석하는 정치경제학 과목 있어요?", "positive_course": "CMEF410", "query_type": "direct"}
+{"pair_id": "llmquery_2_CMEF410", "source": "llm_query", "confidence": 0.3, "anchor_text": "마르크스 경제학이나 자본주의 운동법칙에 대해 깊이 배우고 싶어요", "positive_course": "CMEF410", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CMEF411", "source": "llm_query", "confidence": 0.3, "anchor_text": "매칭이나 경매 같은 시장의 규칙을 설계하는 과목 있나요?", "positive_course": "CMEF411", "query_type": "direct"}
+{"pair_id": "llmquery_2_CMEF411", "source": "llm_query", "confidence": 0.3, "anchor_text": "효율적인 시장 제도를 고안하는 방법에 관심이 있어요", "positive_course": "CMEF411", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CMEF414", "source": "llm_query", "confidence": 0.3, "anchor_text": "심리학과 경제학이 만나는 행동경제학 과목 있어요?", "positive_course": "CMEF414", "query_type": "direct"}
+{"pair_id": "llmquery_2_CMEF414", "source": "llm_query", "confidence": 0.3, "anchor_text": "인간의 비합리적 선택을 실험으로 분석하는 법을 배우고 싶어요", "positive_course": "CMEF414", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CMEF499", "source": "llm_query", "confidence": 0.3, "anchor_text": "경제학의 최신 쟁점을 심도있게 다루는 특강 과목 있나요?", "positive_course": "CMEF499", "query_type": "direct"}
+{"pair_id": "llmquery_2_CMEF499", "source": "llm_query", "confidence": 0.3, "anchor_text": "기업시민이나 지속가능경영 프로젝트를 팀으로 해볼 수 있는 수업이 있나요", "positive_course": "CMEF499", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED100", "source": "llm_query", "confidence": 0.3, "anchor_text": "컴퓨터공학과에 처음 들어왔는데 전공을 소개해주는 개론 과목 있나요?", "positive_course": "CSED100", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED100", "source": "llm_query", "confidence": 0.3, "anchor_text": "컴퓨터공학의 다양한 세부분야가 뭐가 있는지 감을 잡고 싶어요", "positive_course": "CSED100", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED101", "source": "llm_query", "confidence": 0.3, "anchor_text": "파이썬으로 계산적 사고와 문제해결을 배우는 과목 있어요?", "positive_course": "CSED101", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED101", "source": "llm_query", "confidence": 0.3, "anchor_text": "프로그래밍을 전혀 안 해봤는데 처음 시작하기 좋은 과목이 있을까요", "positive_course": "CSED101", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED103", "source": "llm_query", "confidence": 0.3, "anchor_text": "C와 C++로 프로그래밍 기초를 배우는 과목 있나요?", "positive_course": "CSED103", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED103", "source": "llm_query", "confidence": 0.3, "anchor_text": "객체지향 프로그래밍 개념까지 포함한 입문 수업을 찾고 있어요", "positive_course": "CSED103", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED105", "source": "llm_query", "confidence": 0.3, "anchor_text": "인공지능의 기본 개념을 배우는 입문 과목 있어요?", "positive_course": "CSED105", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED105", "source": "llm_query", "confidence": 0.3, "anchor_text": "AI가 뭔지 기초부터 쉽게 배우고 싶은 신입생이에요", "positive_course": "CSED105", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED211", "source": "llm_query", "confidence": 0.3, "anchor_text": "컴퓨터가 프로그램을 실행하고 메모리를 관리하는 원리를 배우는 과목 있나요?", "positive_course": "CSED211", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED211", "source": "llm_query", "confidence": 0.3, "anchor_text": "더 효율적이고 안정적인 프로그램을 짜려면 시스템 내부를 알아야 한다는데 뭘 들어야 하나요", "positive_course": "CSED211", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED212", "source": "llm_query", "confidence": 0.3, "anchor_text": "코드 리뷰와 토론 중심으로 프로그래밍 실력을 늘리는 과목 있어요?", "positive_course": "CSED212", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED212", "source": "llm_query", "confidence": 0.3, "anchor_text": "혼자 코딩하다 보니 실력이 안 느는 것 같은데 피드백 받으면서 배울 수 있는 수업 있을까요", "positive_course": "CSED212", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED213", "source": "llm_query", "confidence": 0.3, "anchor_text": "알고리즘 문제를 직접 구현해보는 실습 과목 있나요?", "positive_course": "CSED213", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED213", "source": "llm_query", "confidence": 0.3, "anchor_text": "코딩테스트 대비해서 알고리즘 실력을 기르고 싶어요", "positive_course": "CSED213", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED226", "source": "llm_query", "confidence": 0.3, "anchor_text": "파이썬으로 데이터분석을 실습하고 대회에 참가해보는 과목 있어요?", "positive_course": "CSED226", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED226", "source": "llm_query", "confidence": 0.3, "anchor_text": "데이터 분석 경진대회에 나가보고 싶은데 기초부터 배울 수 있는 수업이 있나요", "positive_course": "CSED226", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED232", "source": "llm_query", "confidence": 0.3, "anchor_text": "객체지향 설계와 소프트웨어 검증 원리를 배우는 과목 있나요?", "positive_course": "CSED232", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED232", "source": "llm_query", "confidence": 0.3, "anchor_text": "생성형 AI가 코드를 짜는 시대에도 필요한 소프트웨어 기초 원리를 배우고 싶어요", "positive_course": "CSED232", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED233", "source": "llm_query", "confidence": 0.3, "anchor_text": "기본적인 자료구조와 알고리즘 효율성 분석을 배우는 과목 있어요?", "positive_course": "CSED233", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED233", "source": "llm_query", "confidence": 0.3, "anchor_text": "코딩 인터뷰에 자주 나오는 자료구조를 체계적으로 배우고 싶어요", "positive_course": "CSED233", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED261", "source": "llm_query", "confidence": 0.3, "anchor_text": "컴퓨터공학의 기초가 되는 이산수학 과목 있나요?", "positive_course": "CSED261", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED261", "source": "llm_query", "confidence": 0.3, "anchor_text": "집합이나 조합론 같은 수학이 컴퓨터공학에 어떻게 쓰이는지 궁금해요", "positive_course": "CSED261", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED273", "source": "llm_query", "confidence": 0.3, "anchor_text": "조합회로와 순차회로 설계 이론을 배우는 과목 있나요?", "positive_course": "CSED273", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED273", "source": "llm_query", "confidence": 0.3, "anchor_text": "컴퓨터구조를 배우기 전에 디지털회로 기초부터 실습해보고 싶어요", "positive_course": "CSED273", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED312", "source": "llm_query", "confidence": 0.3, "anchor_text": "프로세스 관리, 메모리 관리 같은 운영체제 개념을 배우는 과목 있어요?", "positive_course": "CSED312", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED312", "source": "llm_query", "confidence": 0.3, "anchor_text": "직접 작은 운영체제를 만들어보는 실습 과제가 있는 수업을 찾고 있어요", "positive_course": "CSED312", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED321", "source": "llm_query", "confidence": 0.3, "anchor_text": "타입체계와 언어 의미론 같은 프로그래밍 언어 이론을 배우는 과목 있나요?", "positive_course": "CSED321", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED321", "source": "llm_query", "confidence": 0.3, "anchor_text": "새로운 프로그래밍 언어를 설계하는 원리가 궁금해요", "positive_course": "CSED321", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED331", "source": "llm_query", "confidence": 0.3, "anchor_text": "알고리즘의 효율성을 분석하고 설계하는 방법을 배우는 과목 있어요?", "positive_course": "CSED331", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED331", "source": "llm_query", "confidence": 0.3, "anchor_text": "코딩테스트나 알고리즘 대회를 준비하려면 어떤 과목을 들어야 하나요", "positive_course": "CSED331", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED332", "source": "llm_query", "confidence": 0.3, "anchor_text": "소프트웨어 설계원리와 실제 설계과제를 다루는 과목 있나요?", "positive_course": "CSED332", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED332", "source": "llm_query", "confidence": 0.3, "anchor_text": "Java로 큰 소프트웨어 프로젝트 설계 경험을 쌓고 싶어요", "positive_course": "CSED332", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED341", "source": "llm_query", "confidence": 0.3, "anchor_text": "오토마타와 계산이론을 배우는 과목 있어요?", "positive_course": "CSED341", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED341", "source": "llm_query", "confidence": 0.3, "anchor_text": "어떤 문제가 계산 가능하고 불가능한지 이론적으로 이해하고 싶어요", "positive_course": "CSED341", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED342", "source": "llm_query", "confidence": 0.3, "anchor_text": "탐색 알고리즘과 강화학습을 포함한 인공지능 과목 있나요?", "positive_course": "CSED342", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED342", "source": "llm_query", "confidence": 0.3, "anchor_text": "게임 AI나 의사결정 문제를 푸는 법을 배우고 싶어요", "positive_course": "CSED342", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED343", "source": "llm_query", "confidence": 0.3, "anchor_text": "머신러닝에 필요한 선형대수와 확률 같은 수학을 배우는 과목 있어요?", "positive_course": "CSED343", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED343", "source": "llm_query", "confidence": 0.3, "anchor_text": "딥러닝을 제대로 이해하려면 어떤 수학적 배경이 필요한지 궁금해요", "positive_course": "CSED343", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED353", "source": "llm_query", "confidence": 0.3, "anchor_text": "TCP/IP 프로토콜을 직접 구현해보는 네트워크 과목 있나요?", "positive_course": "CSED353", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED353", "source": "llm_query", "confidence": 0.3, "anchor_text": "인터넷이 어떻게 동작하는지 프로그래밍 과제를 통해 배우고 싶어요", "positive_course": "CSED353", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED354", "source": "llm_query", "confidence": 0.3, "anchor_text": "컴퓨터공학 대학원 세부전공을 소개하는 과목 있어요?", "positive_course": "CSED354", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED354", "source": "llm_query", "confidence": 0.3, "anchor_text": "대학원 진학을 생각 중인데 어떤 연구분야가 있는지 알고 싶어요", "positive_course": "CSED354", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED355", "source": "llm_query", "confidence": 0.3, "anchor_text": "푸리에 변환 같은 신호처리 기법을 배우는 과목 있나요?", "positive_course": "CSED355", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED355", "source": "llm_query", "confidence": 0.3, "anchor_text": "이미지나 그래프 데이터에 신호처리 개념을 적용하는 법을 배우고 싶어요", "positive_course": "CSED355", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED356", "source": "llm_query", "confidence": 0.3, "anchor_text": "사용자 인터페이스를 설계하고 평가하는 HCI 과목 있어요?", "positive_course": "CSED356", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED356", "source": "llm_query", "confidence": 0.3, "anchor_text": "사람과 컴퓨터가 상호작용하는 방식을 설계해보고 싶어요", "positive_course": "CSED356", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED357", "source": "llm_query", "confidence": 0.3, "anchor_text": "관계형 데이터베이스 시스템의 구현 원리를 배우는 과목 있나요?", "positive_course": "CSED357", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED357", "source": "llm_query", "confidence": 0.3, "anchor_text": "DBMS가 내부적으로 어떻게 동작하는지 깊이 이해하고 싶어요", "positive_course": "CSED357", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED401", "source": "llm_query", "confidence": 0.3, "anchor_text": "IT 기술의 사회적, 윤리적 문제를 다루는 과목 있어요?", "positive_course": "CSED401", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED401", "source": "llm_query", "confidence": 0.3, "anchor_text": "컴퓨터 범죄나 정보화 사회의 윤리 문제에 대해 토론하는 수업이 있을까요", "positive_course": "CSED401", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED403", "source": "llm_query", "confidence": 0.3, "anchor_text": "비트코인이나 이더리움 같은 블록체인 기술을 배우는 과목 있나요?", "positive_course": "CSED403", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED403", "source": "llm_query", "confidence": 0.3, "anchor_text": "스마트 계약이나 DApp을 직접 개발해보고 싶어요", "positive_course": "CSED403", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED404", "source": "llm_query", "confidence": 0.3, "anchor_text": "모바일과 유비쿼터스 컴퓨팅의 실세계 응용을 배우는 과목 있어요?", "positive_course": "CSED404", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED404", "source": "llm_query", "confidence": 0.3, "anchor_text": "언제 어디서나 사용자를 인지하는 컴퓨팅 시스템에 관심이 있어요", "positive_course": "CSED404", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED405", "source": "llm_query", "confidence": 0.3, "anchor_text": "GPU 프로그래밍과 병렬 컴퓨팅 아키텍처를 배우는 과목 있나요?", "positive_course": "CSED405", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED405", "source": "llm_query", "confidence": 0.3, "anchor_text": "AI 학습 가속을 위한 CUDA 프로그래밍을 배우고 싶어요", "positive_course": "CSED405", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED415", "source": "llm_query", "confidence": 0.3, "anchor_text": "암호체계와 침입탐지 같은 컴퓨터 보안 기법을 배우는 과목 있어요?", "positive_course": "CSED415", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED415", "source": "llm_query", "confidence": 0.3, "anchor_text": "해킹 방어나 안전한 전자상거래 시스템 설계에 관심이 있어요", "positive_course": "CSED415", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED420", "source": "llm_query", "confidence": 0.3, "anchor_text": "소프트웨어의 신뢰성을 자동으로 검증하는 기법을 배우는 과목 있나요?", "positive_course": "CSED420", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED420", "source": "llm_query", "confidence": 0.3, "anchor_text": "자율주행차처럼 버그가 치명적인 시스템의 소프트웨어를 검증하는 법을 배우고 싶어요", "positive_course": "CSED420", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED423", "source": "llm_query", "confidence": 0.3, "anchor_text": "직접 컴파일러를 만들어보는 과목 있어요?", "positive_course": "CSED423", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED423", "source": "llm_query", "confidence": 0.3, "anchor_text": "어휘분석부터 코드 최적화까지 컴파일러 내부 원리를 배우고 싶어요", "positive_course": "CSED423", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED425", "source": "llm_query", "confidence": 0.3, "anchor_text": "임베디드 리눅스에서 커널 프로그래밍을 배우는 과목 있나요?", "positive_course": "CSED425", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED425", "source": "llm_query", "confidence": 0.3, "anchor_text": "저전력 임베디드 보드에서 딥러닝 AI를 직접 구동해보고 싶어요", "positive_course": "CSED425", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED433", "source": "llm_query", "confidence": 0.3, "anchor_text": "구성적 논리와 타입 이론의 관계를 배우는 전산논리 과목 있어요?", "positive_course": "CSED433", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED433", "source": "llm_query", "confidence": 0.3, "anchor_text": "자동정리 증명기로 수학적 증명을 검증하는 법을 배우고 싶어요", "positive_course": "CSED433", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED434", "source": "llm_query", "confidence": 0.3, "anchor_text": "Scala로 객체지향과 함수형 프로그래밍을 함께 배우는 과목 있나요?", "positive_course": "CSED434", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED434", "source": "llm_query", "confidence": 0.3, "anchor_text": "테스팅이나 버전관리 같은 실무 개발 기법도 같이 배우고 싶어요", "positive_course": "CSED434", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED441", "source": "llm_query", "confidence": 0.3, "anchor_text": "사진이나 동영상을 자동으로 이해하는 컴퓨터비전 과목 있어요?", "positive_course": "CSED441", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED441", "source": "llm_query", "confidence": 0.3, "anchor_text": "이미지 인식 프로젝트를 해보고 싶은데 기초부터 배울 수 있는 수업이 있나요", "positive_course": "CSED441", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED451", "source": "llm_query", "confidence": 0.3, "anchor_text": "2D/3D 그래픽스의 렌더링과 기하학적 변환을 배우는 과목 있나요?", "positive_course": "CSED451", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED451", "source": "llm_query", "confidence": 0.3, "anchor_text": "게임이나 애니메이션에 쓰이는 그래픽스 원리를 배우고 싶어요", "positive_course": "CSED451", "query_type": "indirect"}
+{"pair_id": "llmquery_1_CSED490A", "source": "llm_query", "confidence": 0.3, "anchor_text": "정해진 커리큘럼에 없는 최신 주제를 다루는 컴퓨터공학 특강 있나요?", "positive_course": "CSED490A", "query_type": "direct"}
+{"pair_id": "llmquery_2_CSED490A", "source": "llm_query", "confidence": 0.3, "anchor_text": "학부 때 미리 연구 프로젝트를 진행하고 포스터 발표까지 해보고 싶어요", "positive_course": "CSED490A", "query_type": "indirect"}
+{"pair_id": "llmquery_1_DISU101", "source": "llm_query", "confidence": 0.3, "anchor_text": "전자공학과에 처음 들어왔는데 전공 전반을 소개하는 과목 있나요?", "positive_course": "DISU101", "query_type": "direct"}
+{"pair_id": "llmquery_2_DISU101", "source": "llm_query", "confidence": 0.3, "anchor_text": "전자공학 핵심 개념들을 쉽고 직관적으로 개괄해주는 입문 수업이 있을까요", "positive_course": "DISU101", "query_type": "indirect"}
+{"pair_id": "llmquery_1_DISU221", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체 공정을 직접 체험해보는 실습 과목 있어요?", "positive_course": "DISU221", "query_type": "direct"}
+{"pair_id": "llmquery_2_DISU221", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체 산업에 관심이 생겼는데 공정 기초부터 실습해보고 싶어요", "positive_course": "DISU221", "query_type": "indirect"}
+{"pair_id": "llmquery_1_DISU231", "source": "llm_query", "confidence": 0.3, "anchor_text": "전기회로 해석 능력을 기르는 기초 과목 있나요?", "positive_course": "DISU231", "query_type": "direct"}
+{"pair_id": "llmquery_2_DISU231", "source": "llm_query", "confidence": 0.3, "anchor_text": "키르히호프 법칙이나 임피던스 개념을 처음부터 배우고 싶어요", "positive_course": "DISU231", "query_type": "indirect"}
+{"pair_id": "llmquery_1_DISU232", "source": "llm_query", "confidence": 0.3, "anchor_text": "전기회로 이론을 오디오 앰프 제작으로 실습하는 과목 있어요?", "positive_course": "DISU232", "query_type": "direct"}
+{"pair_id": "llmquery_2_DISU232", "source": "llm_query", "confidence": 0.3, "anchor_text": "회로이론을 배운 걸 직접 손으로 만들어보고 싶어요", "positive_course": "DISU232", "query_type": "indirect"}
+{"pair_id": "llmquery_1_DISU301", "source": "llm_query", "confidence": 0.3, "anchor_text": "박막트랜지스터를 직접 설계하고 공정해보는 실습 과목 있나요?", "positive_course": "DISU301", "query_type": "direct"}
+{"pair_id": "llmquery_2_DISU301", "source": "llm_query", "confidence": 0.3, "anchor_text": "OLED나 LCD에 쓰이는 반도체 소자를 실제로 만들어보고 싶어요", "positive_course": "DISU301", "query_type": "indirect"}
+{"pair_id": "llmquery_1_DISU361", "source": "llm_query", "confidence": 0.3, "anchor_text": "전자기파와 전송선로 이론을 다루는 초고주파공학 과목 있어요?", "positive_course": "DISU361", "query_type": "direct"}
+{"pair_id": "llmquery_2_DISU361", "source": "llm_query", "confidence": 0.3, "anchor_text": "안테나나 도파관 설계의 기초 이론이 궁금해요", "positive_course": "DISU361", "query_type": "indirect"}
+{"pair_id": "llmquery_1_DISU402", "source": "llm_query", "confidence": 0.3, "anchor_text": "수십 GHz급 고속 반도체 입출력회로를 배우는 과목 있나요?", "positive_course": "DISU402", "query_type": "direct"}
+{"pair_id": "llmquery_2_DISU402", "source": "llm_query", "confidence": 0.3, "anchor_text": "고속 디지털 회로 설계 기술을 실습으로 익히고 싶어요", "positive_course": "DISU402", "query_type": "indirect"}
+{"pair_id": "llmquery_1_DISU403", "source": "llm_query", "confidence": 0.3, "anchor_text": "고속 반도체 회로를 측정하는 고가 계측장비 실습 과목 있어요?", "positive_course": "DISU403", "query_type": "direct"}
+{"pair_id": "llmquery_2_DISU403", "source": "llm_query", "confidence": 0.3, "anchor_text": "벡터 네트워크 분석기 같은 장비 사용법을 배우고 싶어요", "positive_course": "DISU403", "query_type": "indirect"}
+{"pair_id": "llmquery_1_DISU404", "source": "llm_query", "confidence": 0.3, "anchor_text": "설계 관점에서 아날로그 회로를 직관적으로 해석하는 과목 있나요?", "positive_course": "DISU404", "query_type": "direct"}
+{"pair_id": "llmquery_2_DISU404", "source": "llm_query", "confidence": 0.3, "anchor_text": "복잡한 회로를 빠르게 해석하는 실무적인 능력을 기르고 싶어요", "positive_course": "DISU404", "query_type": "indirect"}
+{"pair_id": "llmquery_1_DISU412", "source": "llm_query", "confidence": 0.3, "anchor_text": "OLED나 플렉시블 디스플레이용 반도체를 배우는 과목 있어요?", "positive_course": "DISU412", "query_type": "direct"}
+{"pair_id": "llmquery_2_DISU412", "source": "llm_query", "confidence": 0.3, "anchor_text": "디스플레이 산업 취업을 생각 중인데 TFT 관련 기술을 배우고 싶어요", "positive_course": "DISU412", "query_type": "indirect"}
+{"pair_id": "llmquery_1_DISU421", "source": "llm_query", "confidence": 0.3, "anchor_text": "이온트랩이나 초전도 큐비트 기반 양자컴퓨팅 하드웨어를 배우는 과목 있나요?", "positive_course": "DISU421", "query_type": "direct"}
+{"pair_id": "llmquery_2_DISU421", "source": "llm_query", "confidence": 0.3, "anchor_text": "양자컴퓨터가 실제로 어떻게 작동하는지 물리적으로 이해하고 싶어요", "positive_course": "DISU421", "query_type": "indirect"}
+{"pair_id": "llmquery_1_DISU431", "source": "llm_query", "confidence": 0.3, "anchor_text": "뉴로모픽 시냅스 소자를 배우는 지능형 반도체 과목 있어요?", "positive_course": "DISU431", "query_type": "direct"}
+{"pair_id": "llmquery_2_DISU431", "source": "llm_query", "confidence": 0.3, "anchor_text": "AI 연산을 저전력으로 처리하는 하드웨어 기술에 관심이 있어요", "positive_course": "DISU431", "query_type": "indirect"}
+{"pair_id": "llmquery_1_DISU434", "source": "llm_query", "confidence": 0.3, "anchor_text": "VLSI 설계 플로우를 실습하는 시스템 반도체 과목 있나요?", "positive_course": "DISU434", "query_type": "direct"}
+{"pair_id": "llmquery_2_DISU434", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체 팹리스 기업에 취업하려면 RTL 코딩을 배워야 한다는데 관련 과목 있나요", "positive_course": "DISU434", "query_type": "indirect"}
+{"pair_id": "llmquery_1_DISU496A", "source": "llm_query", "confidence": 0.3, "anchor_text": "산업체 전문가와 함께하는 반도체 캡스톤디자인 과목 있어요?", "positive_course": "DISU496A", "query_type": "direct"}
+{"pair_id": "llmquery_2_DISU496A", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체 이론이 실제 연구개발에 어떻게 적용되는지 현장학습을 해보고 싶어요", "positive_course": "DISU496A", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE100/DISU101", "source": "llm_query", "confidence": 0.3, "anchor_text": "전자전기공학과 신입생을 위한 학과 소개 과목 있나요?", "positive_course": "EECE100/DISU101", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE100/DISU101", "source": "llm_query", "confidence": 0.3, "anchor_text": "전자공학 핵심 개념들을 빠르고 쉽게 개괄해주는 수업이 있을까요", "positive_course": "EECE100/DISU101", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE201", "source": "llm_query", "confidence": 0.3, "anchor_text": "양자역학부터 반도체 소자까지 단계적으로 배우는 전자공학 기초 과목 있어요?", "positive_course": "EECE201", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE201", "source": "llm_query", "confidence": 0.3, "anchor_text": "복잡한 수학 없이 양자컴퓨팅이나 AI 하드웨어 원리를 쉽게 이해하고 싶어요", "positive_course": "EECE201", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE202", "source": "llm_query", "confidence": 0.3, "anchor_text": "전자전기공학에서 확률과 랜덤프로세스를 배우는 과목 있나요?", "positive_course": "EECE202", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE202", "source": "llm_query", "confidence": 0.3, "anchor_text": "신호와 시스템의 불확실성을 수학적으로 모델링하는 법을 배우고 싶어요", "positive_course": "EECE202", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE211", "source": "llm_query", "confidence": 0.3, "anchor_text": "P-N 접합이나 MOSFET 같은 반도체 소자 기본원리를 배우는 과목 있어요?", "positive_course": "EECE211", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE211", "source": "llm_query", "confidence": 0.3, "anchor_text": "집적회로에 쓰이는 트랜지스터 동작 원리를 처음부터 배우고 싶어요", "positive_course": "EECE211", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE231/DISU231", "source": "llm_query", "confidence": 0.3, "anchor_text": "전기회로 해석 능력을 기르는 회로이론 과목 있나요?", "positive_course": "EECE231/DISU231", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE231/DISU231", "source": "llm_query", "confidence": 0.3, "anchor_text": "테브난 정리나 임피던스 개념을 전자전기공학과 관점에서 배우고 싶어요", "positive_course": "EECE231/DISU231", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE233", "source": "llm_query", "confidence": 0.3, "anchor_text": "푸리에 변환과 선형시불변 시스템을 배우는 신호및시스템 과목 있어요?", "positive_course": "EECE233", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE233", "source": "llm_query", "confidence": 0.3, "anchor_text": "신호를 샘플링하고 필터링하는 원리를 수학적으로 이해하고 싶어요", "positive_course": "EECE233", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE236", "source": "llm_query", "confidence": 0.3, "anchor_text": "매트랩으로 재밌는 전자공학 프로젝트를 해보는 과목 있나요?", "positive_course": "EECE236", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE236", "source": "llm_query", "confidence": 0.3, "anchor_text": "전공을 아직 못 정했는데 전자공학을 쉽고 재밌게 맛보고 싶어요", "positive_course": "EECE236", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE261", "source": "llm_query", "confidence": 0.3, "anchor_text": "쿨롱법칙이나 맥스웰방정식 같은 전자기학 기초를 배우는 과목 있어요?", "positive_course": "EECE261", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE261", "source": "llm_query", "confidence": 0.3, "anchor_text": "커패시터나 인덕터의 동작 원리를 벡터해석으로 이해하고 싶어요", "positive_course": "EECE261", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE274", "source": "llm_query", "confidence": 0.3, "anchor_text": "하드웨어 기술언어로 디지털 시스템을 설계하는 과목 있나요?", "positive_course": "EECE274", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE274", "source": "llm_query", "confidence": 0.3, "anchor_text": "조합논리와 순차논리 회로를 HDL로 직접 설계해보고 싶어요", "positive_course": "EECE274", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE276", "source": "llm_query", "confidence": 0.3, "anchor_text": "전자계측기와 아두이노를 활용한 전자공학 첫 실험 과목 있어요?", "positive_course": "EECE276", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE276", "source": "llm_query", "confidence": 0.3, "anchor_text": "회로이론을 배운 걸 실제로 손으로 만들어보는 실습을 하고 싶어요", "positive_course": "EECE276", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE303", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체의 에너지밴드와 캐리어 수송현상을 배우는 물리전자 과목 있나요?", "positive_course": "EECE303", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE303", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체가 물리적으로 왜 그렇게 동작하는지 깊이 이해하고 싶어요", "positive_course": "EECE303", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE304", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체나 전자파 분야에 필요한 수학기법을 배우는 전자수학 과목 있어요?", "positive_course": "EECE304", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE304", "source": "llm_query", "confidence": 0.3, "anchor_text": "그린함수나 적분변환 같은 응용수학을 전자공학 문제에 적용하는 법을 배우고 싶어요", "positive_course": "EECE304", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE305", "source": "llm_query", "confidence": 0.3, "anchor_text": "교류를 직류로 변환하는 전력전자공학 과목 있나요?", "positive_course": "EECE305", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE305", "source": "llm_query", "confidence": 0.3, "anchor_text": "DC-DC 컨버터나 PWM 제어 이론을 배우고 싶어요", "positive_course": "EECE305", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE306", "source": "llm_query", "confidence": 0.3, "anchor_text": "레이다 시스템의 원리를 배우는 과목 있어요?", "positive_course": "EECE306", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE306", "source": "llm_query", "confidence": 0.3, "anchor_text": "안테나나 신호탐지 같은 레이다 관련 공학 지식을 배우고 싶어요", "positive_course": "EECE306", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE308", "source": "llm_query", "confidence": 0.3, "anchor_text": "디지털 신호의 샘플링과 변조를 배우는 통신 개론 과목 있나요?", "positive_course": "EECE308", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE308", "source": "llm_query", "confidence": 0.3, "anchor_text": "디지털 통신 시스템이 어떻게 송수신되는지 전반적으로 배우고 싶어요", "positive_course": "EECE308", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE309", "source": "llm_query", "confidence": 0.3, "anchor_text": "상태공간 방정식으로 다입력 다출력 시스템을 다루는 제어 과목 있어요?", "positive_course": "EECE309", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE309", "source": "llm_query", "confidence": 0.3, "anchor_text": "관측기 설계나 시스템 안정성 판별법을 배우고 싶어요", "positive_course": "EECE309", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE310", "source": "llm_query", "confidence": 0.3, "anchor_text": "대규모 전력시스템의 실시간 제어를 배우는 과목 있나요?", "positive_course": "EECE310", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE310", "source": "llm_query", "confidence": 0.3, "anchor_text": "신재생에너지 발전단지의 출력 예측과 제어 방안이 궁금해요", "positive_course": "EECE310", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE312", "source": "llm_query", "confidence": 0.3, "anchor_text": "전자전기공학 배경으로 기계학습과 딥러닝을 배우는 과목 있어요?", "positive_course": "EECE312", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE312", "source": "llm_query", "confidence": 0.3, "anchor_text": "AI를 전자공학 문제에 응용하는 법을 배우고 싶어요", "positive_course": "EECE312", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE320", "source": "llm_query", "confidence": 0.3, "anchor_text": "궤환제어 시스템을 주파수 영역에서 해석하는 자동제어 과목 있나요?", "positive_course": "EECE320", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE320", "source": "llm_query", "confidence": 0.3, "anchor_text": "보드선도나 나이퀴스트 방법으로 제어시스템을 분석하고 싶어요", "positive_course": "EECE320", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE336", "source": "llm_query", "confidence": 0.3, "anchor_text": "차동증폭기와 다단 증폭기 회로를 해석하는 전자회로 과목 있어요?", "positive_course": "EECE336", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE336", "source": "llm_query", "confidence": 0.3, "anchor_text": "전자회로 I을 들었는데 필터나 오실레이터까지 심화로 배우고 싶어요", "positive_course": "EECE336", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE338", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체 소자 특성분석과 임베디드 시스템을 함께 실습하는 과목 있나요?", "positive_course": "EECE338", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE338", "source": "llm_query", "confidence": 0.3, "anchor_text": "아날로그 회로와 디지털 신호처리를 실험으로 통합해서 배우고 싶어요", "positive_course": "EECE338", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE341", "source": "llm_query", "confidence": 0.3, "anchor_text": "푸리에 변환을 통신시스템 설계에 적용하는 과목 있어요?", "positive_course": "EECE341", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE341", "source": "llm_query", "confidence": 0.3, "anchor_text": "AM, FM 같은 아날로그 통신의 변조 복조 기초를 배우고 싶어요", "positive_course": "EECE341", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE361/DISU361", "source": "llm_query", "confidence": 0.3, "anchor_text": "전송선로 이론과 스미스차트를 배우는 전자파 응용 과목 있나요?", "positive_course": "EECE361/DISU361", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE361/DISU361", "source": "llm_query", "confidence": 0.3, "anchor_text": "무선시스템의 안테나와 도파관 설계 원리가 궁금해요", "positive_course": "EECE361/DISU361", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE372", "source": "llm_query", "confidence": 0.3, "anchor_text": "ARM 기반 마이크로프로세서 구조를 배우는 과목 있어요?", "positive_course": "EECE372", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE372", "source": "llm_query", "confidence": 0.3, "anchor_text": "C언어로 시스템레벨 프로그래밍을 해보고 싶어요", "positive_course": "EECE372", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE375", "source": "llm_query", "confidence": 0.3, "anchor_text": "Verilog나 VHDL로 FPGA 컴퓨터를 설계하는 과목 있나요?", "positive_course": "EECE375", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE375", "source": "llm_query", "confidence": 0.3, "anchor_text": "직접 컴퓨터 시스템을 하드웨어부터 만들어보고 싶어요", "positive_course": "EECE375", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE376", "source": "llm_query", "confidence": 0.3, "anchor_text": "드론 제어나 무선통신 장치를 직접 제작하는 실험 과목 있어요?", "positive_course": "EECE376", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE376", "source": "llm_query", "confidence": 0.3, "anchor_text": "MATLAB 시뮬레이션으로 제어공학 이론을 검증해보는 실습을 하고 싶어요", "positive_course": "EECE376", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE392", "source": "llm_query", "confidence": 0.3, "anchor_text": "전자전기공학 전 분야 연구를 소개하는 세미나 과목 있나요?", "positive_course": "EECE392", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE392", "source": "llm_query", "confidence": 0.3, "anchor_text": "전공분야를 아직 못 정했는데 어떤 세부전공이 있는지 알고 싶어요", "positive_course": "EECE392", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE401", "source": "llm_query", "confidence": 0.3, "anchor_text": "심화된 MOSFET과 HEMT 같은 반도체 소자를 배우는 과목 있어요?", "positive_course": "EECE401", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE401", "source": "llm_query", "confidence": 0.3, "anchor_text": "최신 반도체 산업 동향과 첨단 소자 기술을 배우고 싶어요", "positive_course": "EECE401", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE411", "source": "llm_query", "confidence": 0.3, "anchor_text": "LCD와 OLED 원리를 배우는 디스플레이공학 과목 있나요?", "positive_course": "EECE411", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE411", "source": "llm_query", "confidence": 0.3, "anchor_text": "AR/VR 기기에 쓰이는 새로운 디스플레이 기술도 알고 싶어요", "positive_course": "EECE411", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE412/DISU412", "source": "llm_query", "confidence": 0.3, "anchor_text": "박막트랜지스터와 QD 발광체 기술을 배우는 디스플레이 심화 과목 있어요?", "positive_course": "EECE412/DISU412", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE412/DISU412", "source": "llm_query", "confidence": 0.3, "anchor_text": "디스플레이공학1을 듣고 이어서 소자와 공정을 더 깊이 배우고 싶어요", "positive_course": "EECE412/DISU412", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE413", "source": "llm_query", "confidence": 0.3, "anchor_text": "트랜지스터 레벨에서 고속 디지털회로를 커스텀 설계하는 과목 있나요?", "positive_course": "EECE413", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE413", "source": "llm_query", "confidence": 0.3, "anchor_text": "고속으로 동작하는 회로를 직접 설계해보고 싶어요", "positive_course": "EECE413", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE414", "source": "llm_query", "confidence": 0.3, "anchor_text": "4G/5G 통신에 쓰이는 RF 회로 설계를 배우는 과목 있어요?", "positive_course": "EECE414", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE414", "source": "llm_query", "confidence": 0.3, "anchor_text": "무선통신이나 차량용 레이더 반도체 회로 설계에 관심이 있어요", "positive_course": "EECE414", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE415", "source": "llm_query", "confidence": 0.3, "anchor_text": "신경 전자 기반 진단 치료기기를 배우는 생체전자기기 과목 있나요?", "positive_course": "EECE415", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE415", "source": "llm_query", "confidence": 0.3, "anchor_text": "의료기기 설계에 필요한 공학 지식을 배우고 싶어요", "positive_course": "EECE415", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE416", "source": "llm_query", "confidence": 0.3, "anchor_text": "다이오드나 HEMT 같은 고주파 소자의 등가회로를 배우는 과목 있어요?", "positive_course": "EECE416", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE416", "source": "llm_query", "confidence": 0.3, "anchor_text": "S-파라미터로 소자의 주파수 특성을 해석하는 법을 배우고 싶어요", "positive_course": "EECE416", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE417", "source": "llm_query", "confidence": 0.3, "anchor_text": "양자역학과 고체물리를 바탕으로 나노공학을 배우는 과목 있나요?", "positive_course": "EECE417", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE417", "source": "llm_query", "confidence": 0.3, "anchor_text": "나노스케일 소자와 광자학 응용에 관심이 있어요", "positive_course": "EECE417", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE418", "source": "llm_query", "confidence": 0.3, "anchor_text": "이온트랩과 초전도 큐비트 기반 양자컴퓨팅 하드웨어를 배우는 과목 있어요?", "positive_course": "EECE418", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE418", "source": "llm_query", "confidence": 0.3, "anchor_text": "양자정보처리 시스템을 수학적으로 이해하고 싶어요", "positive_course": "EECE418", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE419/DISU404", "source": "llm_query", "confidence": 0.3, "anchor_text": "설계 지향적으로 고급 전자회로를 배우는 과목 있나요?", "positive_course": "EECE419/DISU404", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE419/DISU404", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체 소자 모델링과 아날로그·디지털 혼합회로 설계를 배우고 싶어요", "positive_course": "EECE419/DISU404", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE422", "source": "llm_query", "confidence": 0.3, "anchor_text": "Z-변환으로 디지털 제어시스템을 해석하는 과목 있어요?", "positive_course": "EECE422", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE422", "source": "llm_query", "confidence": 0.3, "anchor_text": "마이크로컴퓨터로 제어계통을 설계하는 법을 배우고 싶어요", "positive_course": "EECE422", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE423", "source": "llm_query", "confidence": 0.3, "anchor_text": "다입력 다출력 시스템의 상태공간 방정식을 배우는 현대제어이론 과목 있나요?", "positive_course": "EECE423", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE423", "source": "llm_query", "confidence": 0.3, "anchor_text": "제어기와 관측기를 설계하는 현대적인 기법을 배우고 싶어요", "positive_course": "EECE423", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE425", "source": "llm_query", "confidence": 0.3, "anchor_text": "PWM과 DC-DC 컨버터를 배우는 전력전자공학 과목 있어요?", "positive_course": "EECE425", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE425", "source": "llm_query", "confidence": 0.3, "anchor_text": "교류를 직류로 바꾸는 전력변환 회로 설계를 배우고 싶어요", "positive_course": "EECE425", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE429", "source": "llm_query", "confidence": 0.3, "anchor_text": "경제급전 알고리즘으로 전력시스템을 운영하는 과목 있나요?", "positive_course": "EECE429", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE429", "source": "llm_query", "confidence": 0.3, "anchor_text": "신재생 발전단지의 출력예측과 제어 방안을 배우고 싶어요", "positive_course": "EECE429", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE434/DISU434", "source": "llm_query", "confidence": 0.3, "anchor_text": "EDA 소프트웨어로 로직합성과 physical 설계를 배우는 VLSI 과목 있어요?", "positive_course": "EECE434/DISU434", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE434/DISU434", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체 설계 방법론을 상용 툴로 실습해보고 싶어요", "positive_course": "EECE434/DISU434", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE442/NGCN301", "source": "llm_query", "confidence": 0.3, "anchor_text": "통신 네트워크의 표준과 변조기술을 배우는 개론 과목 있나요?", "positive_course": "EECE442/NGCN301", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE442/NGCN301", "source": "llm_query", "confidence": 0.3, "anchor_text": "네트워크 구조와 기능을 통신 분야와 함께 폭넓게 배우고 싶어요", "positive_course": "EECE442/NGCN301", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE443/NGCN302", "source": "llm_query", "confidence": 0.3, "anchor_text": "USRP와 스펙트럼 분석기로 통신 실험을 하는 과목 있어요?", "positive_course": "EECE443/NGCN302", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE443/NGCN302", "source": "llm_query", "confidence": 0.3, "anchor_text": "무선환경에서 실제로 신호를 주고받아보는 실습을 하고 싶어요", "positive_course": "EECE443/NGCN302", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE455", "source": "llm_query", "confidence": 0.3, "anchor_text": "Verilog로 시스템온칩을 설계하는 임베디드 과목 있나요?", "positive_course": "EECE455", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE455", "source": "llm_query", "confidence": 0.3, "anchor_text": "임베디드 프로세서와 가속기 구조를 FPGA로 구현해보고 싶어요", "positive_course": "EECE455", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE480", "source": "llm_query", "confidence": 0.3, "anchor_text": "생물학과 공학의 접점을 다루는 의공학 개론 과목 있어요?", "positive_course": "EECE480", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE480", "source": "llm_query", "confidence": 0.3, "anchor_text": "생체의료공학 시스템을 설계하는 프로젝트를 해보고 싶어요", "positive_course": "EECE480", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE491", "source": "llm_query", "confidence": 0.3, "anchor_text": "4학년 종합설계 프로젝트 첫 단계 과목 있나요?", "positive_course": "EECE491", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE491", "source": "llm_query", "confidence": 0.3, "anchor_text": "전자전기공학 4년 배운 걸 결집해서 시연 가능한 작품을 만들어보고 싶어요", "positive_course": "EECE491", "query_type": "indirect"}
+{"pair_id": "llmquery_1_EECE492", "source": "llm_query", "confidence": 0.3, "anchor_text": "종합설계과제 I을 이어서 마무리하는 캡스톤 과목 있어요?", "positive_course": "EECE492", "query_type": "direct"}
+{"pair_id": "llmquery_2_EECE492", "source": "llm_query", "confidence": 0.3, "anchor_text": "연구계획서대로 만든 걸 최종 시연하고 보고서를 작성하는 수업이 있나요", "positive_course": "EECE492", "query_type": "indirect"}
+{"pair_id": "llmquery_1_ENTP201", "source": "llm_query", "confidence": 0.3, "anchor_text": "이공계생을 위한 기업가정신 입문 과목 있나요?", "positive_course": "ENTP201", "query_type": "direct"}
+{"pair_id": "llmquery_2_ENTP201", "source": "llm_query", "confidence": 0.3, "anchor_text": "창업에 대해 전혀 모르는데 기초 개념부터 배우고 싶어요", "positive_course": "ENTP201", "query_type": "indirect"}
+{"pair_id": "llmquery_1_ENTP301", "source": "llm_query", "confidence": 0.3, "anchor_text": "실제 사업계획서를 작성해서 발표하는 액션러닝 과목 있어요?", "positive_course": "ENTP301", "query_type": "direct"}
+{"pair_id": "llmquery_2_ENTP301", "source": "llm_query", "confidence": 0.3, "anchor_text": "창업경진대회나 투자유치와 연계된 실무 수업을 찾고 있어요", "positive_course": "ENTP301", "query_type": "indirect"}
+{"pair_id": "llmquery_1_ENTP451A", "source": "llm_query", "confidence": 0.3, "anchor_text": "테크 스타트업 창업가에게 직접 배우는 특강 과목 있나요?", "positive_course": "ENTP451A", "query_type": "direct"}
+{"pair_id": "llmquery_2_ENTP451A", "source": "llm_query", "confidence": 0.3, "anchor_text": "기술 창업 분야에서 실제 창업가의 경험을 듣고 싶어요", "positive_course": "ENTP451A", "query_type": "indirect"}
+{"pair_id": "llmquery_1_ENTP451B", "source": "llm_query", "confidence": 0.3, "anchor_text": "서비스 스타트업 창업 사례를 배우는 특강 과목 있어요?", "positive_course": "ENTP451B", "query_type": "direct"}
+{"pair_id": "llmquery_2_ENTP451B", "source": "llm_query", "confidence": 0.3, "anchor_text": "서비스업 창업에 관심 있는데 현업 창업가의 이야기를 듣고 싶어요", "positive_course": "ENTP451B", "query_type": "indirect"}
+{"pair_id": "llmquery_1_ENTP491", "source": "llm_query", "confidence": 0.3, "anchor_text": "벤처캐피탈리스트나 액셀러레이터의 강연을 듣는 기업가정신 세미나 있나요?", "positive_course": "ENTP491", "query_type": "direct"}
+{"pair_id": "llmquery_2_ENTP491", "source": "llm_query", "confidence": 0.3, "anchor_text": "국내 스타트업 생태계를 간접적으로 경험하고 싶어요", "positive_course": "ENTP491", "query_type": "indirect"}
+{"pair_id": "llmquery_1_ENTP492", "source": "llm_query", "confidence": 0.3, "anchor_text": "포스텍 홀딩스와 연계해서 창업을 실전으로 배우는 과목 있어요?", "positive_course": "ENTP492", "query_type": "direct"}
+{"pair_id": "llmquery_2_ENTP492", "source": "llm_query", "confidence": 0.3, "anchor_text": "창업경진대회에 나가서 펀드레이징 전략까지 배우고 싶어요", "positive_course": "ENTP492", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN100", "source": "llm_query", "confidence": 0.3, "anchor_text": "산업경영공학과에 처음 들어왔는데 학과 전반을 소개하는 과목 있나요?", "positive_course": "IMEN100", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN100", "source": "llm_query", "confidence": 0.3, "anchor_text": "산업경영공학이 어떤 문제를 다루는 학문인지 감을 잡고 싶어요", "positive_course": "IMEN100", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN110", "source": "llm_query", "confidence": 0.3, "anchor_text": "이공계생을 위한 기업가정신과 기술혁신 과목 있어요?", "positive_course": "IMEN110", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN110", "source": "llm_query", "confidence": 0.3, "anchor_text": "공학적 지식을 사회적 가치로 만드는 법을 배우고 싶어요", "positive_course": "IMEN110", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN203", "source": "llm_query", "confidence": 0.3, "anchor_text": "기업의 재무제표를 읽고 분석하는 회계 과목 있나요?", "positive_course": "IMEN203", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN203", "source": "llm_query", "confidence": 0.3, "anchor_text": "재무회계 기초 개념과 회계처리 실무를 배우고 싶어요", "positive_course": "IMEN203", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN242", "source": "llm_query", "confidence": 0.3, "anchor_text": "여러 요인의 영향을 분석하는 실험계획법을 배우는 과목 있어요?", "positive_course": "IMEN242", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN242", "source": "llm_query", "confidence": 0.3, "anchor_text": "실험 데이터에서 최적 조건을 찾는 통계적 방법을 배우고 싶어요", "positive_course": "IMEN242", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN260", "source": "llm_query", "confidence": 0.3, "anchor_text": "선형계획이론을 심화로 배우는 경영과학 과목 있나요?", "positive_course": "IMEN260", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN260", "source": "llm_query", "confidence": 0.3, "anchor_text": "최적화개론을 들었는데 이론적으로 더 깊이 들어가고 싶어요", "positive_course": "IMEN260", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN261", "source": "llm_query", "confidence": 0.3, "anchor_text": "선형계획과 최적화 알고리즘을 배우는 개론 과목 있어요?", "positive_course": "IMEN261", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN261", "source": "llm_query", "confidence": 0.3, "anchor_text": "의사결정 문제를 계량적으로 모델링하고 푸는 법을 배우고 싶어요", "positive_course": "IMEN261", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN266", "source": "llm_query", "confidence": 0.3, "anchor_text": "마코브체인이나 대기이론 같은 확률모형을 배우는 과목 있나요?", "positive_course": "IMEN266", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN266", "source": "llm_query", "confidence": 0.3, "anchor_text": "확률적 시스템을 모델링해서 신뢰도나 대기시간을 분석하는 법을 배우고 싶어요", "positive_course": "IMEN266", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN272", "source": "llm_query", "confidence": 0.3, "anchor_text": "공학도를 위한 확률과 통계 기초 과목 있어요?", "positive_course": "IMEN272", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN272", "source": "llm_query", "confidence": 0.3, "anchor_text": "가설검정이나 회귀분석 기초를 공학 문제에 적용하는 법을 배우고 싶어요", "positive_course": "IMEN272", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN281", "source": "llm_query", "confidence": 0.3, "anchor_text": "산업경영공학 문제를 프로그래밍으로 푸는 과목 있나요?", "positive_course": "IMEN281", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN281", "source": "llm_query", "confidence": 0.3, "anchor_text": "최단경로나 스케줄링 문제를 코드로 구현해보고 싶어요", "positive_course": "IMEN281", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN301", "source": "llm_query", "confidence": 0.3, "anchor_text": "기술을 획득하고 관리하는 전략을 배우는 기술경영 과목 있어요?", "positive_course": "IMEN301", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN301", "source": "llm_query", "confidence": 0.3, "anchor_text": "공학 지식을 가지고 경영 쪽으로 커리어를 넓히고 싶어요", "positive_course": "IMEN301", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN302", "source": "llm_query", "confidence": 0.3, "anchor_text": "경영의 기본 개념을 체계적으로 배우는 입문 과목 있나요?", "positive_course": "IMEN302", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN302", "source": "llm_query", "confidence": 0.3, "anchor_text": "인사, 재무, 마케팅 등 경영 전반을 한번에 훑어보고 싶어요", "positive_course": "IMEN302", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN303", "source": "llm_query", "confidence": 0.3, "anchor_text": "STP, 4P 같은 마케팅 기본 이론을 배우는 과목 있어요?", "positive_course": "IMEN303", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN303", "source": "llm_query", "confidence": 0.3, "anchor_text": "이공계생인데 기술을 비즈니스 전략으로 구체화하는 법을 배우고 싶어요", "positive_course": "IMEN303", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN343", "source": "llm_query", "confidence": 0.3, "anchor_text": "인간-기계-환경 시스템을 설계하는 인간공학 과목 있나요?", "positive_course": "IMEN343", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN343", "source": "llm_query", "confidence": 0.3, "anchor_text": "제품을 사용하는 사람의 인지와 수행능력을 고려한 설계를 배우고 싶어요", "positive_course": "IMEN343", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN346", "source": "llm_query", "confidence": 0.3, "anchor_text": "신제품 개발 프로세스를 팀 프로젝트로 배우는 과목 있어요?", "positive_course": "IMEN346", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN346", "source": "llm_query", "confidence": 0.3, "anchor_text": "고객요구 분석부터 시제품 제작까지 제품개발 전 과정을 경험하고 싶어요", "positive_course": "IMEN346", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN361", "source": "llm_query", "confidence": 0.3, "anchor_text": "정수계획법과 조합최적화를 배우는 수리계획 과목 있나요?", "positive_course": "IMEN361", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN361", "source": "llm_query", "confidence": 0.3, "anchor_text": "최단경로나 매칭 문제를 primal-dual 관점에서 분석하는 법을 배우고 싶어요", "positive_course": "IMEN361", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN371", "source": "llm_query", "confidence": 0.3, "anchor_text": "통계적 공정관리로 제품 품질을 보증하는 과목 있어요?", "positive_course": "IMEN371", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN371", "source": "llm_query", "confidence": 0.3, "anchor_text": "제조업에서 품질을 관리하는 통계적 방법론을 배우고 싶어요", "positive_course": "IMEN371", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN376", "source": "llm_query", "confidence": 0.3, "anchor_text": "수요예측과 재고관리를 계량적으로 다루는 생산관리 과목 있나요?", "positive_course": "IMEN376", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN376", "source": "llm_query", "confidence": 0.3, "anchor_text": "생산 일정과 재고를 최적화하는 방법을 배우고 싶어요", "positive_course": "IMEN376", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN381", "source": "llm_query", "confidence": 0.3, "anchor_text": "정보기술을 경영전략에 활용하는 경영정보시스템 과목 있어요?", "positive_course": "IMEN381", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN381", "source": "llm_query", "confidence": 0.3, "anchor_text": "IT를 기업 경쟁력으로 연결하는 전략을 배우고 싶어요", "positive_course": "IMEN381", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN382", "source": "llm_query", "confidence": 0.3, "anchor_text": "ER모델과 SQL로 데이터베이스를 설계하는 과목 있나요?", "positive_course": "IMEN382", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN382", "source": "llm_query", "confidence": 0.3, "anchor_text": "경영 관점에서 데이터베이스 시스템을 배우고 싶어요", "positive_course": "IMEN382", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN387", "source": "llm_query", "confidence": 0.3, "anchor_text": "금융파생상품 가격결정을 수학적으로 배우는 금융공학 과목 있어요?", "positive_course": "IMEN387", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN387", "source": "llm_query", "confidence": 0.3, "anchor_text": "MATLAB으로 포트폴리오 이론이나 옵션가격을 실습해보고 싶어요", "positive_course": "IMEN387", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN388", "source": "llm_query", "confidence": 0.3, "anchor_text": "위험과 수익률의 관계를 배우는 투자론 과목 있나요?", "positive_course": "IMEN388", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN388", "source": "llm_query", "confidence": 0.3, "anchor_text": "채권이나 주식 같은 금융자산을 어떻게 가치평가하는지 배우고 싶어요", "positive_course": "IMEN388", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN422", "source": "llm_query", "confidence": 0.3, "anchor_text": "설비 위치선정과 물류관리를 다루는 공급망관리 과목 있어요?", "positive_course": "IMEN422", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN422", "source": "llm_query", "confidence": 0.3, "anchor_text": "제조와 서비스 산업의 물류 시스템을 최적화하는 법을 배우고 싶어요", "positive_course": "IMEN422", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN443", "source": "llm_query", "confidence": 0.3, "anchor_text": "UX 디자인 프로세스 전체를 배우는 입문 과목 있나요?", "positive_course": "IMEN443", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN443", "source": "llm_query", "confidence": 0.3, "anchor_text": "사용자 리서치부터 프로토타이핑까지 UX 디자이너가 되고 싶어서 배우고 싶어요", "positive_course": "IMEN443", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN446", "source": "llm_query", "confidence": 0.3, "anchor_text": "감성을 디자인에 반영하는 감성공학 과목 있어요?", "positive_course": "IMEN446", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN446", "source": "llm_query", "confidence": 0.3, "anchor_text": "제품이나 마케팅에 감정적 요소를 어떻게 적용하는지 배우고 싶어요", "positive_course": "IMEN446", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN411", "source": "llm_query", "confidence": 0.3, "anchor_text": "산업경영공학과에서 듣는 기업가정신 입문 과목 있나요?", "positive_course": "IMEN411", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN411", "source": "llm_query", "confidence": 0.3, "anchor_text": "이공학도로서 창업과 초기 기업 운영에 대한 기초를 배우고 싶어요", "positive_course": "IMEN411", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN412", "source": "llm_query", "confidence": 0.3, "anchor_text": "산업경영공학과에서 사업계획서를 작성해보는 비즈니스플래닝 과목 있어요?", "positive_course": "IMEN412", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN412", "source": "llm_query", "confidence": 0.3, "anchor_text": "창업경진대회나 투자유치를 대비해서 사업계획서 작성 실무를 배우고 싶어요", "positive_course": "IMEN412", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN472", "source": "llm_query", "confidence": 0.3, "anchor_text": "예측, 분류, 군집 같은 데이터마이닝 기법을 배우는 과목 있나요?", "positive_course": "IMEN472", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN472", "source": "llm_query", "confidence": 0.3, "anchor_text": "추천시스템이나 연관규칙분석 같은 방법을 배우고 싶어요", "positive_course": "IMEN472", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN473", "source": "llm_query", "confidence": 0.3, "anchor_text": "데이터로 합리적인 비즈니스 의사결정을 내리는 애널리틱스 과목 있어요?", "positive_course": "IMEN473", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN473", "source": "llm_query", "confidence": 0.3, "anchor_text": "텍스트마이닝이나 웹분석 같은 실제 데이터 분석 도구를 다뤄보고 싶어요", "positive_course": "IMEN473", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN474", "source": "llm_query", "confidence": 0.3, "anchor_text": "네트워크나 프랙탈 같은 복잡계 모델을 배우는 과목 있나요?", "positive_course": "IMEN474", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN474", "source": "llm_query", "confidence": 0.3, "anchor_text": "경영, 사회 현상을 복잡계 관점에서 분석하는 프로젝트를 해보고 싶어요", "positive_course": "IMEN474", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN481", "source": "llm_query", "confidence": 0.3, "anchor_text": "시스템 모형화와 시뮬레이션 기법을 배우는 과목 있어요?", "positive_course": "IMEN481", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN481", "source": "llm_query", "confidence": 0.3, "anchor_text": "복잡한 시스템의 운영을 시뮬레이션으로 평가하는 법을 배우고 싶어요", "positive_course": "IMEN481", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN482", "source": "llm_query", "confidence": 0.3, "anchor_text": "서비스 경제로의 전환을 다루는 서비스경영 과목 있나요?", "positive_course": "IMEN482", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN482", "source": "llm_query", "confidence": 0.3, "anchor_text": "서비스 개발과 운영 단계에서 생기는 문제를 해결하는 기법을 배우고 싶어요", "positive_course": "IMEN482", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN483", "source": "llm_query", "confidence": 0.3, "anchor_text": "정보시스템 개발을 위한 요구분석과 설계기법을 배우는 과목 있어요?", "positive_course": "IMEN483", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN483", "source": "llm_query", "confidence": 0.3, "anchor_text": "구조적 기법과 객체지향 방법을 비교하며 시스템을 설계하는 법을 배우고 싶어요", "positive_course": "IMEN483", "query_type": "indirect"}
+{"pair_id": "llmquery_1_IMEN487", "source": "llm_query", "confidence": 0.3, "anchor_text": "기업의 자본구성과 투자결정을 배우는 기업재무 과목 있나요?", "positive_course": "IMEN487", "query_type": "direct"}
+{"pair_id": "llmquery_2_IMEN487", "source": "llm_query", "confidence": 0.3, "anchor_text": "재무관리자 관점에서 투자와 자금조달 결정을 분석하는 법을 배우고 싶어요", "positive_course": "IMEN487", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE103", "source": "llm_query", "confidence": 0.3, "anchor_text": "동식물 세포의 구조와 기능을 배우는 일반생명과학 과목 있어요?", "positive_course": "LIFE103", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE103", "source": "llm_query", "confidence": 0.3, "anchor_text": "이공계 전공인데 생명현상에 대한 기초 지식을 폭넓게 쌓고 싶어요", "positive_course": "LIFE103", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE104", "source": "llm_query", "confidence": 0.3, "anchor_text": "생명과학과 연구실을 직접 방문해보는 실험 과목 있나요?", "positive_course": "LIFE104", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE104", "source": "llm_query", "confidence": 0.3, "anchor_text": "생명과학 신입생인데 어떤 연구가 진행되는지 견학해보고 싶어요", "positive_course": "LIFE104", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE209", "source": "llm_query", "confidence": 0.3, "anchor_text": "세포생물학 연구의 기본 실험법을 익히는 과목 있어요?", "positive_course": "LIFE209", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE209", "source": "llm_query", "confidence": 0.3, "anchor_text": "심화 실험 교과목 전에 기초 실험법부터 제대로 배우고 싶어요", "positive_course": "LIFE209", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE216", "source": "llm_query", "confidence": 0.3, "anchor_text": "인체의 기관과 조직 기능을 배우는 생리학 과목 있나요?", "positive_course": "LIFE216", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE216", "source": "llm_query", "confidence": 0.3, "anchor_text": "신경, 대사, 면역 관점에서 인체가 어떻게 작동하는지 배우고 싶어요", "positive_course": "LIFE216", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE217", "source": "llm_query", "confidence": 0.3, "anchor_text": "고등세포의 구조와 기능을 배우는 세포생물학 과목 있어요?", "positive_course": "LIFE217", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE217", "source": "llm_query", "confidence": 0.3, "anchor_text": "생명과학 전공자라면 꼭 알아야 하는 세포 기본 개념을 배우고 싶어요", "positive_course": "LIFE217", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE218", "source": "llm_query", "confidence": 0.3, "anchor_text": "분자생물학, 세포생물학, 생화학 개론을 flipped learning으로 배우는 과목 있나요?", "positive_course": "LIFE218", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE218", "source": "llm_query", "confidence": 0.3, "anchor_text": "원서를 읽고 발표하는 방식으로 생명과학 기초를 다지고 싶어요", "positive_course": "LIFE218", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE219", "source": "llm_query", "confidence": 0.3, "anchor_text": "생명과학과 공학이 융합되는 사례를 배우는 과목 있어요?", "positive_course": "LIFE219", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE219", "source": "llm_query", "confidence": 0.3, "anchor_text": "뇌-기계 인터페이스나 조직공학 같은 융합 연구 분야가 궁금해요", "positive_course": "LIFE219", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE220", "source": "llm_query", "confidence": 0.3, "anchor_text": "암이나 당뇨병 같은 난치병 치료 기술을 다루는 의생명과학 과목 있나요?", "positive_course": "LIFE220", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE220", "source": "llm_query", "confidence": 0.3, "anchor_text": "줄기세포 치료나 나노바이오기술에 관심이 있어요", "positive_course": "LIFE220", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE221", "source": "llm_query", "confidence": 0.3, "anchor_text": "노벨상 수상 논문을 분석하는 생명과학 과목 있어요?", "positive_course": "LIFE221", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE221", "source": "llm_query", "confidence": 0.3, "anchor_text": "위대한 과학적 발견이 어떻게 이루어졌는지 그 과정을 배우고 싶어요", "positive_course": "LIFE221", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE303", "source": "llm_query", "confidence": 0.3, "anchor_text": "박테리아와 바이러스의 구조와 기능을 배우는 미생물학 과목 있나요?", "positive_course": "LIFE303", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE303", "source": "llm_query", "confidence": 0.3, "anchor_text": "미생물이 환경과 인간에 미치는 영향을 배우고 싶어요", "positive_course": "LIFE303", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE315", "source": "llm_query", "confidence": 0.3, "anchor_text": "돌연변이와 유전의 분자적 원리를 배우는 유전학 과목 있어요?", "positive_course": "LIFE315", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE315", "source": "llm_query", "confidence": 0.3, "anchor_text": "유전 물질의 구조와 재조합 과정을 이해하고 싶어요", "positive_course": "LIFE315", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE319", "source": "llm_query", "confidence": 0.3, "anchor_text": "핵산, 단백질, 지질의 생화학적 구조를 배우는 과목 있나요?", "positive_course": "LIFE319", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE319", "source": "llm_query", "confidence": 0.3, "anchor_text": "생명현상을 분자 수준의 화학으로 분석하는 능력을 기르고 싶어요", "positive_course": "LIFE319", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE320", "source": "llm_query", "confidence": 0.3, "anchor_text": "생화학 I에 이어 에너지 대사와 신호전달을 배우는 과목 있어요?", "positive_course": "LIFE320", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE320", "source": "llm_query", "confidence": 0.3, "anchor_text": "분자 수준에서 세포의 생물학적 현상을 설명하는 능력을 기르고 싶어요", "positive_course": "LIFE320", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE321", "source": "llm_query", "confidence": 0.3, "anchor_text": "DNA 복제와 유전자 발현 조절을 배우는 분자생물학 과목 있나요?", "positive_course": "LIFE321", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE321", "source": "llm_query", "confidence": 0.3, "anchor_text": "유전자 재조합 기술의 원리를 분자 수준에서 이해하고 싶어요", "positive_course": "LIFE321", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE322", "source": "llm_query", "confidence": 0.3, "anchor_text": "유전자 클로닝이나 세포형질전환을 실습하는 현대생명과학실험 과목 있어요?", "positive_course": "LIFE322", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE322", "source": "llm_query", "confidence": 0.3, "anchor_text": "단백질 발현부터 결정화까지 실제 구조생물학 실험을 해보고 싶어요", "positive_course": "LIFE322", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE323", "source": "llm_query", "confidence": 0.3, "anchor_text": "생태계와 개체군을 현장 관찰로 배우는 야외실습 과목 있나요?", "positive_course": "LIFE323", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE323", "source": "llm_query", "confidence": 0.3, "anchor_text": "실내 강의 말고 야외에서 생태학을 직접 경험해보고 싶어요", "positive_course": "LIFE323", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE325", "source": "llm_query", "confidence": 0.3, "anchor_text": "유전체 정보를 이용한 신약개발과 생물공학 과목 있어요?", "positive_course": "LIFE325", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE325", "source": "llm_query", "confidence": 0.3, "anchor_text": "개인 맞춤 약처방이나 바이오인포매틱스에 관심이 있어요", "positive_course": "LIFE325", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE326", "source": "llm_query", "confidence": 0.3, "anchor_text": "히스톤 변형이나 비번역 RNA 같은 후성유전학 개념을 배우는 과목 있나요?", "positive_course": "LIFE326", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE326", "source": "llm_query", "confidence": 0.3, "anchor_text": "DNA 서열이 아니라 유전자 발현 조절 기전을 배우고 싶어요", "positive_course": "LIFE326", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE327", "source": "llm_query", "confidence": 0.3, "anchor_text": "줄기세포 분화와 초기 배아발생을 배우는 과목 있어요?", "positive_course": "LIFE327", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE327", "source": "llm_query", "confidence": 0.3, "anchor_text": "줄기세포를 이용한 재생치료 최신 연구를 배우고 싶어요", "positive_course": "LIFE327", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE402", "source": "llm_query", "confidence": 0.3, "anchor_text": "지도교수와 상의해서 학사 논문을 쓰는 연구 과목 있나요?", "positive_course": "LIFE402", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE402", "source": "llm_query", "confidence": 0.3, "anchor_text": "생명과학과 졸업 전에 나만의 연구주제로 논문을 써보고 싶어요", "positive_course": "LIFE402", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE414", "source": "llm_query", "confidence": 0.3, "anchor_text": "유전체와 단백질체 네트워크를 시스템 차원에서 배우는 과목 있어요?", "positive_course": "LIFE414", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE414", "source": "llm_query", "confidence": 0.3, "anchor_text": "생명체를 통합적으로 분석하는 시스템생물학적 시각을 기르고 싶어요", "positive_course": "LIFE414", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE415", "source": "llm_query", "confidence": 0.3, "anchor_text": "식물의 구조와 기능을 다루는 현대식물학 과목 있나요?", "positive_course": "LIFE415", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE415", "source": "llm_query", "confidence": 0.3, "anchor_text": "식물생명공학이 식량, 에너지 문제 해결에 어떻게 쓰이는지 궁금해요", "positive_course": "LIFE415", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE419", "source": "llm_query", "confidence": 0.3, "anchor_text": "뇌와 행동의 상호작용을 다루는 신경계 과목 있어요?", "positive_course": "LIFE419", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE419", "source": "llm_query", "confidence": 0.3, "anchor_text": "약물이 행동에 미치는 영향이나 뇌가 기억하는 원리가 궁금해요", "positive_course": "LIFE419", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE420", "source": "llm_query", "confidence": 0.3, "anchor_text": "숙주 방어체계와 병원체의 상호작용을 배우는 면역학 과목 있나요?", "positive_course": "LIFE420", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE420", "source": "llm_query", "confidence": 0.3, "anchor_text": "우리 몸이 병원균과 어떻게 싸우는지 기초부터 배우고 싶어요", "positive_course": "LIFE420", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE424", "source": "llm_query", "confidence": 0.3, "anchor_text": "종양억제유전자와 암세포의 비정상 메커니즘을 배우는 과목 있어요?", "positive_course": "LIFE424", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE424", "source": "llm_query", "confidence": 0.3, "anchor_text": "최신 항암 치료법과 암전이 관련 지식을 배우고 싶어요", "positive_course": "LIFE424", "query_type": "indirect"}
+{"pair_id": "llmquery_1_LIFE451A", "source": "llm_query", "confidence": 0.3, "anchor_text": "임상 관점에서 인체 해부와 생리를 배우는 생명과학 특강 있나요?", "positive_course": "LIFE451A", "query_type": "direct"}
+{"pair_id": "llmquery_2_LIFE451A", "source": "llm_query", "confidence": 0.3, "anchor_text": "심혈관, 호흡기 질병의 병태생리를 이해하고 싶어요", "positive_course": "LIFE451A", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH100", "source": "llm_query", "confidence": 0.3, "anchor_text": "수학과 신입생을 위한 학과 소개 과목 있나요?", "positive_course": "MATH100", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH100", "source": "llm_query", "confidence": 0.3, "anchor_text": "수학이 과학과 산업에 어떻게 응용되는지 다양한 강연으로 알고 싶어요", "positive_course": "MATH100", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH101", "source": "llm_query", "confidence": 0.3, "anchor_text": "단변수 함수의 미적분과 급수를 배우는 미적분학 과목 있어요?", "positive_course": "MATH101", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH101", "source": "llm_query", "confidence": 0.3, "anchor_text": "이공계 기초 수학인 미적분학을 처음부터 제대로 배우고 싶어요", "positive_course": "MATH101", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH102", "source": "llm_query", "confidence": 0.3, "anchor_text": "다변수 함수의 선적분, 면적분을 배우는 미적분학 과목 있나요?", "positive_course": "MATH102", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH102", "source": "llm_query", "confidence": 0.3, "anchor_text": "그린정리나 스토크스정리 같은 벡터 미적분을 배우고 싶어요", "positive_course": "MATH102", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH103", "source": "llm_query", "confidence": 0.3, "anchor_text": "급수와 편미분, 중적분을 통합적으로 배우는 미적분학 과목 있어요?", "positive_course": "MATH103", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH103", "source": "llm_query", "confidence": 0.3, "anchor_text": "미적분학 전체를 한 과목으로 압축해서 배우고 싶어요", "positive_course": "MATH103", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH200", "source": "llm_query", "confidence": 0.3, "anchor_text": "라플라스 변환과 급수해를 이용해 미분방정식을 배우는 과목 있나요?", "positive_course": "MATH200", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH200", "source": "llm_query", "confidence": 0.3, "anchor_text": "고차 상미분방정식과 연립방정식 푸는 법을 배우고 싶어요", "positive_course": "MATH200", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH203", "source": "llm_query", "confidence": 0.3, "anchor_text": "고유치와 고유벡터, 대각화를 배우는 응용선형대수 과목 있어요?", "positive_course": "MATH203", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH203", "source": "llm_query", "confidence": 0.3, "anchor_text": "최소자승법이나 그람슈미트 직교화 같은 개념을 공학에 응용하고 싶어요", "positive_course": "MATH203", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH210", "source": "llm_query", "confidence": 0.3, "anchor_text": "복소함수와 코시-리만 방정식을 배우는 과목 있나요?", "positive_course": "MATH210", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH210", "source": "llm_query", "confidence": 0.3, "anchor_text": "등각사상이나 로랑급수 같은 복소해석학을 응용 관점에서 배우고 싶어요", "positive_course": "MATH210", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH230", "source": "llm_query", "confidence": 0.3, "anchor_text": "가설검정과 모수추정을 배우는 공학용 확률통계 과목 있나요?", "positive_course": "MATH230", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH230", "source": "llm_query", "confidence": 0.3, "anchor_text": "최소한의 이론으로 많은 예제를 통해 통계를 배우고 싶어요", "positive_course": "MATH230", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH231", "source": "llm_query", "confidence": 0.3, "anchor_text": "타학과생을 위한 실험통계학 과목 있어요?", "positive_course": "MATH231", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH231", "source": "llm_query", "confidence": 0.3, "anchor_text": "실험 설계와 결과분석에 필요한 통계 지식을 배우고 싶어요", "positive_course": "MATH231", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH261", "source": "llm_query", "confidence": 0.3, "anchor_text": "그래프이론과 불대수를 배우는 이산수학 과목 있나요?", "positive_course": "MATH261", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH261", "source": "llm_query", "confidence": 0.3, "anchor_text": "컴퓨터과학에 필요한 수학적 추론 능력을 기르고 싶어요", "positive_course": "MATH261", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH301, 302", "source": "llm_query", "confidence": 0.3, "anchor_text": "군론과 환론 같은 추상대수 구조를 배우는 과목 있어요?", "positive_course": "MATH301, 302", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH301, 302", "source": "llm_query", "confidence": 0.3, "anchor_text": "현대수학의 기초가 되는 대수적 구조를 배우고 싶어요", "positive_course": "MATH301, 302", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH304", "source": "llm_query", "confidence": 0.3, "anchor_text": "소수 분포와 합동식을 배우는 정수론 과목 있나요?", "positive_course": "MATH304", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH304", "source": "llm_query", "confidence": 0.3, "anchor_text": "공개키 암호시스템의 수학적 기초가 되는 정수론을 배우고 싶어요", "positive_course": "MATH304", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH311, 312", "source": "llm_query", "confidence": 0.3, "anchor_text": "리만-스틸체스 적분과 거리공간을 엄밀하게 배우는 해석학 과목 있어요?", "positive_course": "MATH311, 312", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH311, 312", "source": "llm_query", "confidence": 0.3, "anchor_text": "미적분학을 엄밀한 증명 기반으로 다시 배우고 싶어요", "positive_course": "MATH311, 312", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH313", "source": "llm_query", "confidence": 0.3, "anchor_text": "포물형, 쌍곡형 편미분방정식을 배우는 과목 있나요?", "positive_course": "MATH313", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH313", "source": "llm_query", "confidence": 0.3, "anchor_text": "물리 현상에서 유도되는 편미분방정식을 푸는 법을 배우고 싶어요", "positive_course": "MATH313", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH321", "source": "llm_query", "confidence": 0.3, "anchor_text": "콤팩트 공간과 위상수학의 기본 개념을 배우는 과목 있어요?", "positive_course": "MATH321", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH321", "source": "llm_query", "confidence": 0.3, "anchor_text": "수학과라면 꼭 알아야 하는 점집합 위상수학을 배우고 싶어요", "positive_course": "MATH321", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH333", "source": "llm_query", "confidence": 0.3, "anchor_text": "R로 통계적 추론과 몬테카를로 방법을 배우는 과목 있나요?", "positive_course": "MATH333", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH333", "source": "llm_query", "confidence": 0.3, "anchor_text": "붓스트랩이나 마코프체인 몬테카를로 같은 계산통계 기법을 배우고 싶어요", "positive_course": "MATH333", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH351", "source": "llm_query", "confidence": 0.3, "anchor_text": "연립방정식과 미분/적분의 수치해법을 배우는 과목 있어요?", "positive_course": "MATH351", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH351", "source": "llm_query", "confidence": 0.3, "anchor_text": "컴퓨터로 수치적으로 문제를 푸는 수치해석 기초를 배우고 싶어요", "positive_course": "MATH351", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH400", "source": "llm_query", "confidence": 0.3, "anchor_text": "조던 표준형과 특성다항식을 배우는 심화 선형대수학 과목 있나요?", "positive_course": "MATH400", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH400", "source": "llm_query", "confidence": 0.3, "anchor_text": "응용선형대수를 넘어서 순수수학적으로 선형대수를 깊이 배우고 싶어요", "positive_course": "MATH400", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH401", "source": "llm_query", "confidence": 0.3, "anchor_text": "리만곡면 관점에서 대수곡선의 기하를 배우는 과목 있어요?", "positive_course": "MATH401", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH401", "source": "llm_query", "confidence": 0.3, "anchor_text": "대수다양체와 리만-로흐 정리에 관심이 있어요", "positive_course": "MATH401", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH402", "source": "llm_query", "confidence": 0.3, "anchor_text": "행렬 계산 알고리즘과 고성능컴퓨팅을 배우는 과목 있나요?", "positive_course": "MATH402", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH402", "source": "llm_query", "confidence": 0.3, "anchor_text": "기계학습에 필요한 계산 선형대수를 파이썬으로 실습하고 싶어요", "positive_course": "MATH402", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH403", "source": "llm_query", "confidence": 0.3, "anchor_text": "유한군의 표현론을 배우는 과목 있어요?", "positive_course": "MATH403", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH403", "source": "llm_query", "confidence": 0.3, "anchor_text": "군의 캐릭터나 유도표현 같은 대수적 개념을 깊이 배우고 싶어요", "positive_course": "MATH403", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH409", "source": "llm_query", "confidence": 0.3, "anchor_text": "정해진 커리큘럼 밖의 수학 주제를 다루는 특강 과목 있나요?", "positive_course": "MATH409", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH409", "source": "llm_query", "confidence": 0.3, "anchor_text": "최신 수학 연구 주제를 다루는 심화 수업을 찾고 있어요", "positive_course": "MATH409", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH410", "source": "llm_query", "confidence": 0.3, "anchor_text": "등각사상과 조화함수를 배우는 해석함수론 과목 있어요?", "positive_course": "MATH410", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH410", "source": "llm_query", "confidence": 0.3, "anchor_text": "복소함수론을 더 깊이 있게 배우고 싶어요", "positive_course": "MATH410", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH412", "source": "llm_query", "confidence": 0.3, "anchor_text": "베셀함수와 스텀-리우빌 계를 배우는 상미분방정식 과목 있나요?", "positive_course": "MATH412", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH412", "source": "llm_query", "confidence": 0.3, "anchor_text": "평면 역학계의 안정성을 리아프노프 방법으로 분석하고 싶어요", "positive_course": "MATH412", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH415", "source": "llm_query", "confidence": 0.3, "anchor_text": "푸리에 급수와 변환의 수렴성을 배우는 과목 있어요?", "positive_course": "MATH415", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH415", "source": "llm_query", "confidence": 0.3, "anchor_text": "유클리드 공간에서의 푸리에 해석학을 깊이 배우고 싶어요", "positive_course": "MATH415", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH422", "source": "llm_query", "confidence": 0.3, "anchor_text": "곡면의 분류와 기본군을 배우는 기하위상 과목 있나요?", "positive_course": "MATH422", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH422", "source": "llm_query", "confidence": 0.3, "anchor_text": "대수적 방법과 미분기하적 방법으로 위상수학을 연구하고 싶어요", "positive_course": "MATH422", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH426", "source": "llm_query", "confidence": 0.3, "anchor_text": "곡률과 측지선을 배우는 미분기하학 과목 있어요?", "positive_course": "MATH426", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH426", "source": "llm_query", "confidence": 0.3, "anchor_text": "가우스-보네 정리 같은 곡면의 미분기하를 배우고 싶어요", "positive_course": "MATH426", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH428", "source": "llm_query", "confidence": 0.3, "anchor_text": "쌍곡기하학과 사영기하학을 배우는 현대기하학 과목 있나요?", "positive_course": "MATH428", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH428", "source": "llm_query", "confidence": 0.3, "anchor_text": "힐베르트 세번째 문제나 비유클리드 기하학에 관심이 있어요", "positive_course": "MATH428", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH431", "source": "llm_query", "confidence": 0.3, "anchor_text": "확률변수와 극한정리를 다루는 확률개론 과목 있어요?", "positive_course": "MATH431", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH431", "source": "llm_query", "confidence": 0.3, "anchor_text": "측도론 없이 확률론의 기초를 엄밀하게 배우고 싶어요", "positive_course": "MATH431", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH432", "source": "llm_query", "confidence": 0.3, "anchor_text": "데이터를 수학적 관점에서 다루는 수리데이터사이언스 과목 있나요?", "positive_course": "MATH432", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH432", "source": "llm_query", "confidence": 0.3, "anchor_text": "빅데이터와 기계학습을 수학적 언어로 이해하고 싶어요", "positive_course": "MATH432", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH442", "source": "llm_query", "confidence": 0.3, "anchor_text": "머신러닝 알고리즘의 수학적 기초를 배우는 과목 있어요?", "positive_course": "MATH442", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH442", "source": "llm_query", "confidence": 0.3, "anchor_text": "선형대수와 최적화를 AI 문제에 적용하는 법을 배우고 싶어요", "positive_course": "MATH442", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH443", "source": "llm_query", "confidence": 0.3, "anchor_text": "자연현상을 수학적 모델로 변형하는 과목 있나요?", "positive_course": "MATH443", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH443", "source": "llm_query", "confidence": 0.3, "anchor_text": "전염병 확산이나 인구역학을 수학 모델로 표현하는 법을 배우고 싶어요", "positive_course": "MATH443", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH451", "source": "llm_query", "confidence": 0.3, "anchor_text": "뉴턴법과 직교다항식으로 수치해를 구하는 응용수치해석 과목 있어요?", "positive_course": "MATH451", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH451", "source": "llm_query", "confidence": 0.3, "anchor_text": "상미분방정식의 경계치 문제를 수치적으로 푸는 법을 배우고 싶어요", "positive_course": "MATH451", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH461", "source": "llm_query", "confidence": 0.3, "anchor_text": "생성함수와 폴리아 열거법을 배우는 조합개론 과목 있나요?", "positive_course": "MATH461", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH461", "source": "llm_query", "confidence": 0.3, "anchor_text": "카운팅 문제와 코딩이론에 쓰이는 조합론을 배우고 싶어요", "positive_course": "MATH461", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH464", "source": "llm_query", "confidence": 0.3, "anchor_text": "해밀턴 사이클과 그래프 색칠을 배우는 그래프론 과목 있어요?", "positive_course": "MATH464", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH464", "source": "llm_query", "confidence": 0.3, "anchor_text": "네트워크 이론에 필요한 그래프 수학을 폭넓게 배우고 싶어요", "positive_course": "MATH464", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MATH472", "source": "llm_query", "confidence": 0.3, "anchor_text": "금융파생상품 가격결정 이론을 수학과에서 배우는 과목 있나요?", "positive_course": "MATH472", "query_type": "direct"}
+{"pair_id": "llmquery_2_MATH472", "source": "llm_query", "confidence": 0.3, "anchor_text": "이자율 이론과 포트폴리오 관리를 수학적으로 배우고 싶어요", "positive_course": "MATH472", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH100", "source": "llm_query", "confidence": 0.3, "anchor_text": "기계공학과 신입생을 위한 학과 소개 과목 있나요?", "positive_course": "MECH100", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH100", "source": "llm_query", "confidence": 0.3, "anchor_text": "기계공학의 주요 문제와 연구분야를 전반적으로 알고 싶어요", "positive_course": "MECH100", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH203", "source": "llm_query", "confidence": 0.3, "anchor_text": "CAD와 3D프린터로 기계 부품을 설계하고 제작하는 과목 있어요?", "positive_course": "MECH203", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH203", "source": "llm_query", "confidence": 0.3, "anchor_text": "선반이나 밀링머신 같은 공작기계 실습도 해보고 싶어요", "positive_course": "MECH203", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH211", "source": "llm_query", "confidence": 0.3, "anchor_text": "강체의 운동을 해석하는 동역학 과목 있나요?", "positive_course": "MECH211", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH211", "source": "llm_query", "confidence": 0.3, "anchor_text": "여러 강체로 이루어진 시스템의 운동을 뉴턴역학으로 분석하고 싶어요", "positive_course": "MECH211", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH240", "source": "llm_query", "confidence": 0.3, "anchor_text": "응력과 변형률을 해석하는 고체역학 과목 있어요?", "positive_course": "MECH240", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH240", "source": "llm_query", "confidence": 0.3, "anchor_text": "구조물이 하중을 받을 때 어떻게 변형되는지 예측하는 법을 배우고 싶어요", "positive_course": "MECH240", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH244", "source": "llm_query", "confidence": 0.3, "anchor_text": "금속, 세라믹, 고분자의 기계적 성질을 배우는 재료학 과목 있나요?", "positive_course": "MECH244", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH244", "source": "llm_query", "confidence": 0.3, "anchor_text": "재료의 파손 메커니즘과 열처리에 따른 물성 변화를 배우고 싶어요", "positive_course": "MECH244", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH250", "source": "llm_query", "confidence": 0.3, "anchor_text": "열역학 1, 2법칙과 열기관 효율을 배우는 과목 있어요?", "positive_course": "MECH250", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH250", "source": "llm_query", "confidence": 0.3, "anchor_text": "열역학 사이클을 해석해서 효율을 높이는 방법을 배우고 싶어요", "positive_course": "MECH250", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH280", "source": "llm_query", "confidence": 0.3, "anchor_text": "센서의 동적반응과 신호처리를 배우는 측정 과목 있나요?", "positive_course": "MECH280", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH280", "source": "llm_query", "confidence": 0.3, "anchor_text": "메카트로닉스 실험을 통해 실제 측정 장치를 다뤄보고 싶어요", "positive_course": "MECH280", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH303", "source": "llm_query", "confidence": 0.3, "anchor_text": "선형연산자와 고유값문제로 편미분방정식을 배우는 공학수학 과목 있어요?", "positive_course": "MECH303", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH303", "source": "llm_query", "confidence": 0.3, "anchor_text": "라플라스 방정식이나 열방정식을 변수분리법으로 푸는 법을 배우고 싶어요", "positive_course": "MECH303", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH305", "source": "llm_query", "confidence": 0.3, "anchor_text": "매트랩으로 기계공학 수치해석을 배우는 과목 있나요?", "positive_course": "MECH305", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH305", "source": "llm_query", "confidence": 0.3, "anchor_text": "비선형 방정식의 근사해를 구하는 프로그래밍 기법을 배우고 싶어요", "positive_course": "MECH305", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH311", "source": "llm_query", "confidence": 0.3, "anchor_text": "자유진동과 강제진동을 다루는 기계진동학 과목 있어요?", "positive_course": "MECH311", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH311", "source": "llm_query", "confidence": 0.3, "anchor_text": "구조물의 고유진동수와 고유모드를 예측하는 법을 배우고 싶어요", "positive_course": "MECH311", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH323", "source": "llm_query", "confidence": 0.3, "anchor_text": "동적 시스템의 피드백 제어를 배우는 시스템제어 과목 있나요?", "positive_course": "MECH323", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH323", "source": "llm_query", "confidence": 0.3, "anchor_text": "드론이나 로봇 제어에 필요한 보드선도, 나이퀴스트 플롯을 배우고 싶어요", "positive_course": "MECH323", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH330", "source": "llm_query", "confidence": 0.3, "anchor_text": "주조, 압연, 단조 같은 재료 제조 공정을 배우는 과목 있나요?", "positive_course": "MECH330", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH330", "source": "llm_query", "confidence": 0.3, "anchor_text": "제품을 만들 때 어떤 재료와 가공법을 선택해야 하는지 배우고 싶어요", "positive_course": "MECH330", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH340", "source": "llm_query", "confidence": 0.3, "anchor_text": "3차원 응력과 파괴역학을 심도있게 다루는 응용고체역학 과목 있어요?", "positive_course": "MECH340", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH340", "source": "llm_query", "confidence": 0.3, "anchor_text": "재료의 피로수명과 파괴를 정량적으로 예측하는 법을 배우고 싶어요", "positive_course": "MECH340", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH361", "source": "llm_query", "confidence": 0.3, "anchor_text": "생물학과 공학이 만나는 기계공학과 의공학 과목 있나요?", "positive_course": "MECH361", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH361", "source": "llm_query", "confidence": 0.3, "anchor_text": "생체공학 시스템을 설계해보는 프로젝트를 하고 싶어요", "positive_course": "MECH361", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH370", "source": "llm_query", "confidence": 0.3, "anchor_text": "질량보존과 운동량보존을 유체에 적용하는 유체역학 과목 있어요?", "positive_course": "MECH370", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH370", "source": "llm_query", "confidence": 0.3, "anchor_text": "파이프 유동이나 경계층 같은 유체역학 기초를 배우고 싶어요", "positive_course": "MECH370", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH371", "source": "llm_query", "confidence": 0.3, "anchor_text": "전도, 대류, 복사 열전달을 배우는 과목 있나요?", "positive_course": "MECH371", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH371", "source": "llm_query", "confidence": 0.3, "anchor_text": "정상상태와 과도 열전달 문제를 해석하는 법을 배우고 싶어요", "positive_course": "MECH371", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH381", "source": "llm_query", "confidence": 0.3, "anchor_text": "기계공학도를 위한 전자회로 기초 과목 있어요?", "positive_course": "MECH381", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH381", "source": "llm_query", "confidence": 0.3, "anchor_text": "트랜지스터나 다이오드 같은 전자소자를 기계공학 관점에서 배우고 싶어요", "positive_course": "MECH381", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH403", "source": "llm_query", "confidence": 0.3, "anchor_text": "양자역학과 고체물리를 바탕으로 나노공학을 배우는 기계공학과 과목 있나요?", "positive_course": "MECH403", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH403", "source": "llm_query", "confidence": 0.3, "anchor_text": "나노스케일 재료와 센서 응용을 배우고 싶어요", "positive_course": "MECH403", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH421", "source": "llm_query", "confidence": 0.3, "anchor_text": "마이크로센서와 액추에이터를 만드는 MEMS 과목 있어요?", "positive_course": "MECH421", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH421", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체 공정 기술을 이용한 초소형 기전 시스템을 배우고 싶어요", "positive_course": "MECH421", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH423", "source": "llm_query", "confidence": 0.3, "anchor_text": "3D 바이오프린팅으로 생체재료를 가공하는 과목 있나요?", "positive_course": "MECH423", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH423", "source": "llm_query", "confidence": 0.3, "anchor_text": "인체조직을 모사하는 바이오패브리케이션 기술이 궁금해요", "positive_course": "MECH423", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH424", "source": "llm_query", "confidence": 0.3, "anchor_text": "의료기기의 설계 원리를 배우는 생체전자기기 과목 있어요?", "positive_course": "MECH424", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH424", "source": "llm_query", "confidence": 0.3, "anchor_text": "진단과 치료를 위한 의료 디바이스 공학을 배우고 싶어요", "positive_course": "MECH424", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH427", "source": "llm_query", "confidence": 0.3, "anchor_text": "광학현미경의 원리와 영상 시스템을 배우는 과목 있나요?", "positive_course": "MECH427", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH427", "source": "llm_query", "confidence": 0.3, "anchor_text": "생명, 재료 시편을 고해상도로 관찰하는 광학 기술을 배우고 싶어요", "positive_course": "MECH427", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH434", "source": "llm_query", "confidence": 0.3, "anchor_text": "기계공학 지식을 종합해서 시스템을 설계하는 캡스톤디자인 과목 있어요?", "positive_course": "MECH434", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH434", "source": "llm_query", "confidence": 0.3, "anchor_text": "학부 4년 배운 걸 활용해 공학 문제 해결 프로젝트를 해보고 싶어요", "positive_course": "MECH434", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH437", "source": "llm_query", "confidence": 0.3, "anchor_text": "확률적 관점에서 기계공학에 인공지능을 적용하는 과목 있나요?", "positive_course": "MECH437", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH437", "source": "llm_query", "confidence": 0.3, "anchor_text": "가우시안 프로세스 회귀 같은 데이터 기반 기법을 기계공학에 쓰고 싶어요", "positive_course": "MECH437", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH439", "source": "llm_query", "confidence": 0.3, "anchor_text": "로봇의 운동학과 동역학을 배우는 로보틱스 과목 있어요?", "positive_course": "MECH439", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH439", "source": "llm_query", "confidence": 0.3, "anchor_text": "6축 로봇을 시뮬레이터로 제어해보는 프로젝트를 하고 싶어요", "positive_course": "MECH439", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH450", "source": "llm_query", "confidence": 0.3, "anchor_text": "냉동공조나 연료전지 같은 응용 열공학 과목 있나요?", "positive_course": "MECH450", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH450", "source": "llm_query", "confidence": 0.3, "anchor_text": "열역학, 유체역학 이론을 실제 산업 기술에 적용하는 법을 배우고 싶어요", "positive_course": "MECH450", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH451", "source": "llm_query", "confidence": 0.3, "anchor_text": "화석연료부터 태양열까지 다양한 발전 시스템을 배우는 과목 있어요?", "positive_course": "MECH451", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH451", "source": "llm_query", "confidence": 0.3, "anchor_text": "차세대 에너지 시스템의 장단점을 비교 분석하고 싶어요", "positive_course": "MECH451", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH465", "source": "llm_query", "confidence": 0.3, "anchor_text": "트리즈 기법으로 창의적 문제해결을 배우는 설계 과목 있나요?", "positive_course": "MECH465", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH465", "source": "llm_query", "confidence": 0.3, "anchor_text": "기업의 실제 시스템 문제를 개선하는 프로젝트를 해보고 싶어요", "positive_course": "MECH465", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH467", "source": "llm_query", "confidence": 0.3, "anchor_text": "적정기술을 공학적으로 분석하는 과목 있어요?", "positive_course": "MECH467", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH467", "source": "llm_query", "confidence": 0.3, "anchor_text": "저개발국 대상 대체에너지나 폐기물 관리 기술에 관심이 있어요", "positive_course": "MECH467", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH470", "source": "llm_query", "confidence": 0.3, "anchor_text": "공기역학이나 미세유체 등 다양한 응용 유체역학 과목 있나요?", "positive_course": "MECH470", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH470", "source": "llm_query", "confidence": 0.3, "anchor_text": "실생활의 복잡한 유동현상을 유체역학 이론으로 해석하고 싶어요", "positive_course": "MECH470", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH471", "source": "llm_query", "confidence": 0.3, "anchor_text": "항공기 날개나 풍력 터빈의 공기역학적 설계를 배우는 과목 있어요?", "positive_course": "MECH471", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH471", "source": "llm_query", "confidence": 0.3, "anchor_text": "익단면 이론과 유도저항 저감 설계의 기초를 배우고 싶어요", "positive_course": "MECH471", "query_type": "indirect"}
+{"pair_id": "llmquery_1_MECH496", "source": "llm_query", "confidence": 0.3, "anchor_text": "연소 과정에서 대기오염물질이 생기는 원리를 배우는 과목 있나요?", "positive_course": "MECH496", "query_type": "direct"}
+{"pair_id": "llmquery_2_MECH496", "source": "llm_query", "confidence": 0.3, "anchor_text": "내연기관이나 가스터빈의 연소 현상을 열역학적으로 이해하고 싶어요", "positive_course": "MECH496", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS101, 102", "source": "llm_query", "confidence": 0.3, "anchor_text": "역학과 파동, 전자기와 빛을 다루는 일반물리 과목 있어요?", "positive_course": "PHYS101, 102", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS101, 102", "source": "llm_query", "confidence": 0.3, "anchor_text": "이공계 기초인 뉴턴역학과 전자기학을 처음부터 배우고 싶어요", "positive_course": "PHYS101, 102", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS101H, 102H", "source": "llm_query", "confidence": 0.3, "anchor_text": "일반물리를 심화 수준으로 배우는 명예반 과목 있나요?", "positive_course": "PHYS101H, 102H", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS101H, 102H", "source": "llm_query", "confidence": 0.3, "anchor_text": "일반물리를 더 어려운 응용문제까지 포함해서 깊게 배우고 싶어요", "positive_course": "PHYS101H, 102H", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS103", "source": "llm_query", "confidence": 0.3, "anchor_text": "일반물리 역학과 파동을 실험으로 확인하는 과목 있어요?", "positive_course": "PHYS103", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS103", "source": "llm_query", "confidence": 0.3, "anchor_text": "이론으로 배운 물리 원리를 실험으로 검증해보고 싶어요", "positive_course": "PHYS103", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS104", "source": "llm_query", "confidence": 0.3, "anchor_text": "학생이 직접 실험장치를 설계하고 제작하는 물리실험 과목 있나요?", "positive_course": "PHYS104", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS104", "source": "llm_query", "confidence": 0.3, "anchor_text": "정형화된 실험이 아니라 창의적으로 실험을 기획해보고 싶어요", "positive_course": "PHYS104", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS110, 111", "source": "llm_query", "confidence": 0.3, "anchor_text": "일반물리 수업 진도에 맞춰 문제풀이를 보충하는 연습 과목 있어요?", "positive_course": "PHYS110, 111", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS110, 111", "source": "llm_query", "confidence": 0.3, "anchor_text": "물리 기초가 부족한데 보충학습으로 따라갈 수 있는 수업이 있나요", "positive_course": "PHYS110, 111", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS201", "source": "llm_query", "confidence": 0.3, "anchor_text": "수학적 부담을 줄이고 양자역학 개념을 배우는 입문 과목 있나요?", "positive_course": "PHYS201", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS201", "source": "llm_query", "confidence": 0.3, "anchor_text": "파동-입자 이중성이나 불확정성 원리를 직관적으로 이해하고 싶어요", "positive_course": "PHYS201", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS202", "source": "llm_query", "confidence": 0.3, "anchor_text": "특수상대론과 일반상대론을 소개하는 입문 과목 있어요?", "positive_course": "PHYS202", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS202", "source": "llm_query", "confidence": 0.3, "anchor_text": "블랙홀이나 우주론에 관심이 있는데 상대성이론 기초부터 배우고 싶어요", "positive_course": "PHYS202", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS203", "source": "llm_query", "confidence": 0.3, "anchor_text": "입자와 강체의 뉴턴역학을 해석적으로 다루는 역학 과목 있나요?", "positive_course": "PHYS203", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS203", "source": "llm_query", "confidence": 0.3, "anchor_text": "라그랑지안과 해밀토니안 formulation을 배우고 싶어요", "positive_course": "PHYS203", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS206", "source": "llm_query", "confidence": 0.3, "anchor_text": "전하와 장, 맥스웰방정식을 다루는 전자기학 과목 있어요?", "positive_course": "PHYS206", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS206", "source": "llm_query", "confidence": 0.3, "anchor_text": "일반물리보다 높은 수준으로 정전기학과 정자기학을 배우고 싶어요", "positive_course": "PHYS206", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS209", "source": "llm_query", "confidence": 0.3, "anchor_text": "물리학에 필요한 벡터해석과 푸리에수열 같은 수학을 배우는 과목 있나요?", "positive_course": "PHYS209", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS209", "source": "llm_query", "confidence": 0.3, "anchor_text": "양자역학이나 전자기학 공부에 필요한 수학적 도구를 미리 다지고 싶어요", "positive_course": "PHYS209", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS250, 351", "source": "llm_query", "confidence": 0.3, "anchor_text": "학부 전공 지식을 활용해 물리학 프로젝트를 기획, 설계하는 종합설계 과목 있어요?", "positive_course": "PHYS250, 351", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS250, 351", "source": "llm_query", "confidence": 0.3, "anchor_text": "고급 물리실험을 스스로 기획하고 제작하는 경험을 하고 싶어요", "positive_course": "PHYS250, 351", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS301", "source": "llm_query", "confidence": 0.3, "anchor_text": "슈뢰딩거 방정식과 조화진동자를 배우는 양자물리 과목 있나요?", "positive_course": "PHYS301", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS301", "source": "llm_query", "confidence": 0.3, "anchor_text": "수소원자 문제를 양자역학적으로 푸는 법을 배우고 싶어요", "positive_course": "PHYS301", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS302", "source": "llm_query", "confidence": 0.3, "anchor_text": "각운동량과 섭동론을 배우는 양자물리 심화 과목 있어요?", "positive_course": "PHYS302", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS302", "source": "llm_query", "confidence": 0.3, "anchor_text": "원자물리 현상을 양자역학으로 설명하는 법을 더 배우고 싶어요", "positive_course": "PHYS302", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS304", "source": "llm_query", "confidence": 0.3, "anchor_text": "통계역학을 기초로 열현상을 다루는 열물리 과목 있나요?", "positive_course": "PHYS304", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS304", "source": "llm_query", "confidence": 0.3, "anchor_text": "미시적 구성요소로부터 거시적 열현상을 확률적으로 설명하는 법을 배우고 싶어요", "positive_course": "PHYS304", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS307", "source": "llm_query", "confidence": 0.3, "anchor_text": "맥스웰방정식의 응용과 도파관, 특수상대성이론을 배우는 과목 있어요?", "positive_course": "PHYS307", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS307", "source": "llm_query", "confidence": 0.3, "anchor_text": "전자기파와 파동광학을 심화로 배우고 싶어요", "positive_course": "PHYS307", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS312", "source": "llm_query", "confidence": 0.3, "anchor_text": "컴퓨터로 물리 문제를 시뮬레이션하는 전산물리 과목 있나요?", "positive_course": "PHYS312", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS312", "source": "llm_query", "confidence": 0.3, "anchor_text": "복잡한 물리현상을 컴퓨터 모의실험으로 탐구하는 법을 배우고 싶어요", "positive_course": "PHYS312", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS352", "source": "llm_query", "confidence": 0.3, "anchor_text": "컴퓨터 제어 데이터 수집을 활용한 고급 물리실험 과목 있어요?", "positive_course": "PHYS352", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS352", "source": "llm_query", "confidence": 0.3, "anchor_text": "연구노트 작성과 논문 형식의 보고서 쓰는 법도 함께 배우고 싶어요", "positive_course": "PHYS352", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS353", "source": "llm_query", "confidence": 0.3, "anchor_text": "대학원 진학 전에 필요한 고급 물리실험 명예과정 있나요?", "positive_course": "PHYS353", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS353", "source": "llm_query", "confidence": 0.3, "anchor_text": "응집물질, 생물물리 실험을 정밀하게 수행하는 법을 배우고 싶어요", "positive_course": "PHYS353", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS360", "source": "llm_query", "confidence": 0.3, "anchor_text": "위대한 물리학자들의 일대기를 통해 물리학사를 배우는 과목 있어요?", "positive_course": "PHYS360", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS360", "source": "llm_query", "confidence": 0.3, "anchor_text": "물리학의 역사적 발전 과정과 인물들에 대해 배우고 싶어요", "positive_course": "PHYS360", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS401", "source": "llm_query", "confidence": 0.3, "anchor_text": "결정구조와 에너지띠 이론을 배우는 고체물리 과목 있나요?", "positive_course": "PHYS401", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS401", "source": "llm_query", "confidence": 0.3, "anchor_text": "금속의 전자이론과 격자진동 같은 응집물질 물리를 배우고 싶어요", "positive_course": "PHYS401", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS403", "source": "llm_query", "confidence": 0.3, "anchor_text": "쿼크와 소립자의 강작용, 약작용을 배우는 핵물리 과목 있어요?", "positive_course": "PHYS403", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS403", "source": "llm_query", "confidence": 0.3, "anchor_text": "물질의 궁극적 구조를 통일된 관점에서 이해하고 싶어요", "positive_course": "PHYS403", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS406", "source": "llm_query", "confidence": 0.3, "anchor_text": "자기장 내 하전입자의 운동을 다루는 플라즈마물리 과목 있나요?", "positive_course": "PHYS406", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS406", "source": "llm_query", "confidence": 0.3, "anchor_text": "플라즈마 진단법이나 산업적 응용에 관심이 있어요", "positive_course": "PHYS406", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS410", "source": "llm_query", "confidence": 0.3, "anchor_text": "레이저와 홀로그래피를 다루는 광물리학 과목 있어요?", "positive_course": "PHYS410", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS410", "source": "llm_query", "confidence": 0.3, "anchor_text": "빛과 물질의 상호작용을 파동광학과 양자광학 관점에서 배우고 싶어요", "positive_course": "PHYS410", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS412", "source": "llm_query", "confidence": 0.3, "anchor_text": "실험물리학에 필요한 기계 가공 기술을 배우는 과목 있나요?", "positive_course": "PHYS412", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS412", "source": "llm_query", "confidence": 0.3, "anchor_text": "실험장치를 직접 설계하고 제작하는 능력을 기르고 싶어요", "positive_course": "PHYS412", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS413", "source": "llm_query", "confidence": 0.3, "anchor_text": "물리학적 방법으로 생명현상을 이해하는 생물물리 과목 있어요?", "positive_course": "PHYS413", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS413", "source": "llm_query", "confidence": 0.3, "anchor_text": "브라운운동이나 분자수준의 생명현상을 물리학으로 분석하고 싶어요", "positive_course": "PHYS413", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS420", "source": "llm_query", "confidence": 0.3, "anchor_text": "초전도체와 위상물질 같은 응집물질 최신 주제를 다루는 특강 있나요?", "positive_course": "PHYS420", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS420", "source": "llm_query", "confidence": 0.3, "anchor_text": "상전이나 임계현상 같은 물성물리 심화 내용을 배우고 싶어요", "positive_course": "PHYS420", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS422", "source": "llm_query", "confidence": 0.3, "anchor_text": "현대물리학의 최신 이론을 소개하는 특강 과목 있어요?", "positive_course": "PHYS422", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS422", "source": "llm_query", "confidence": 0.3, "anchor_text": "강사에 따라 달라지는 최신 물리 주제를 다루는 수업을 찾고 있어요", "positive_course": "PHYS422", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS431, 432", "source": "llm_query", "confidence": 0.3, "anchor_text": "교수 지도 아래 물리학 연구 경험을 쌓는 과목 있나요?", "positive_course": "PHYS431, 432", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS431, 432", "source": "llm_query", "confidence": 0.3, "anchor_text": "논문과 세미나 발표로 연구결과를 표현하는 훈련을 하고 싶어요", "positive_course": "PHYS431, 432", "query_type": "indirect"}
+{"pair_id": "llmquery_1_PHYS460", "source": "llm_query", "confidence": 0.3, "anchor_text": "최근 물리학 연구 동향을 세미나로 소개하는 과목 있어요?", "positive_course": "PHYS460", "query_type": "direct"}
+{"pair_id": "llmquery_2_PHYS460", "source": "llm_query", "confidence": 0.3, "anchor_text": "대학원 진학이나 연구주제 선정에 도움되는 세미나를 찾고 있어요", "positive_course": "PHYS460", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI100", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체공학과 신입생을 위한 학과 소개 과목 있나요?", "positive_course": "SEMI100", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI100", "source": "llm_query", "confidence": 0.3, "anchor_text": "메모리, 로직, AI 반도체의 원리를 전반적으로 훑어보고 싶어요", "positive_course": "SEMI100", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI111", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체 산업 경영자 관점의 초청강연 세미나 과목 있어요?", "positive_course": "SEMI111", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI111", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체 산업의 최신 동향을 경영자 시각에서 듣고 싶어요", "positive_course": "SEMI111", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI201", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체공학을 위한 미분방정식과 푸리에해석을 배우는 과목 있나요?", "positive_course": "SEMI201", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI201", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체공학에 필요한 공업수학 기초를 다지고 싶어요", "positive_course": "SEMI201", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI202", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체 물질의 성질을 해석하는 물리 과목 있어요?", "positive_course": "SEMI202", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI202", "source": "llm_query", "confidence": 0.3, "anchor_text": "저차원 반도체 같은 새로운 물질의 조건을 배우고 싶어요", "positive_course": "SEMI202", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI203", "source": "llm_query", "confidence": 0.3, "anchor_text": "다이오드와 트랜지스터의 동작원리를 배우는 반도체소자 과목 있나요?", "positive_course": "SEMI203", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI203", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체 물성과 접합구조 기초부터 배우고 싶어요", "positive_course": "SEMI203", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI204", "source": "llm_query", "confidence": 0.3, "anchor_text": "키르히호프 법칙과 반도체 소자를 실험으로 배우는 과목 있어요?", "positive_course": "SEMI204", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI204", "source": "llm_query", "confidence": 0.3, "anchor_text": "RLC 회로와 다이오드, MOSFET을 실습으로 확인하고 싶어요", "positive_course": "SEMI204", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI205", "source": "llm_query", "confidence": 0.3, "anchor_text": "SPICE로 반도체 회로를 설계하고 시뮬레이션하는 과목 있나요?", "positive_course": "SEMI205", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI205", "source": "llm_query", "confidence": 0.3, "anchor_text": "정류기나 증폭기 회로를 직접 해석하고 설계해보고 싶어요", "positive_course": "SEMI205", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI206", "source": "llm_query", "confidence": 0.3, "anchor_text": "결정구조와 전하수송 등 반도체소재를 배우는 개론 과목 있어요?", "positive_course": "SEMI206", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI206", "source": "llm_query", "confidence": 0.3, "anchor_text": "p-n 접합을 재료과학 관점에서 이해하고 싶어요", "positive_course": "SEMI206", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI207", "source": "llm_query", "confidence": 0.3, "anchor_text": "TCAD로 반도체 집적공정을 가상 체험하는 캡스톤디자인 과목 있나요?", "positive_course": "SEMI207", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI207", "source": "llm_query", "confidence": 0.3, "anchor_text": "MOS 캐패시터를 직접 제작하고 테스트하는 실습을 하고 싶어요", "positive_course": "SEMI207", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI208", "source": "llm_query", "confidence": 0.3, "anchor_text": "CMOS 인버터를 제작하는 반도체 집적공정 심화 과목 있어요?", "positive_course": "SEMI208", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI208", "source": "llm_query", "confidence": 0.3, "anchor_text": "로직 반도체의 기본 단위를 실제로 만들어보고 싶어요", "positive_course": "SEMI208", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI209", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체 회로와 논리회로를 함께 배우는 과목 있나요?", "positive_course": "SEMI209", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI209", "source": "llm_query", "confidence": 0.3, "anchor_text": "전기회로 이론과 디지털 논리회로 설계를 같이 배우고 싶어요", "positive_course": "SEMI209", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI211", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체 특허작성법과 지식재산권을 배우는 과목 있어요?", "positive_course": "SEMI211", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI211", "source": "llm_query", "confidence": 0.3, "anchor_text": "새로운 소자를 발명하고 특허화하는 프로젝트를 해보고 싶어요", "positive_course": "SEMI211", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI212", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체공학을 위한 전자기학 개론 과목 있나요?", "positive_course": "SEMI212", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI212", "source": "llm_query", "confidence": 0.3, "anchor_text": "전송선로나 도파관 이론을 반도체 관점에서 배우고 싶어요", "positive_course": "SEMI212", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI311", "source": "llm_query", "confidence": 0.3, "anchor_text": "해외 전문가들이 릴레이로 강의하는 반도체 특강 과목 있어요?", "positive_course": "SEMI311", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI311", "source": "llm_query", "confidence": 0.3, "anchor_text": "매주 다른 글로벌 반도체 전문가의 강의를 듣고 싶어요", "positive_course": "SEMI311", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI312", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체 생산현장을 해외에서 직접 체험하는 현장연수 과목 있나요?", "positive_course": "SEMI312", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI312", "source": "llm_query", "confidence": 0.3, "anchor_text": "졸업 후 반도체 산업 커리어를 위해 해외 현장 경험을 쌓고 싶어요", "positive_course": "SEMI312", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI321", "source": "llm_query", "confidence": 0.3, "anchor_text": "차세대 MOSFET 소자 개발 동향을 배우는 심화 과목 있어요?", "positive_course": "SEMI321", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI321", "source": "llm_query", "confidence": 0.3, "anchor_text": "멀티게이트 MOSFET 같은 최신 반도체 소자 기술을 배우고 싶어요", "positive_course": "SEMI321", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI322", "source": "llm_query", "confidence": 0.3, "anchor_text": "DRAM, SRAM, FLASH 메모리 소자를 배우는 과목 있나요?", "positive_course": "SEMI322", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI322", "source": "llm_query", "confidence": 0.3, "anchor_text": "PRAM이나 MRAM 같은 차세대 메모리 소자에 관심이 있어요", "positive_course": "SEMI322", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI323", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체 소자의 전기적 특성 평가와 신뢰성을 배우는 과목 있어요?", "positive_course": "SEMI323", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI323", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체 제품의 In-line 측정 기술을 배우고 싶어요", "positive_course": "SEMI323", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI342", "source": "llm_query", "confidence": 0.3, "anchor_text": "컴퓨터의 내부 구조와 성능 최적화를 설계하는 과목 있나요?", "positive_course": "SEMI342", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI342", "source": "llm_query", "confidence": 0.3, "anchor_text": "Verilog로 FPGA 컴퓨터 구조를 직접 설계해보고 싶어요", "positive_course": "SEMI342", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI343", "source": "llm_query", "confidence": 0.3, "anchor_text": "차동증폭기와 필터 회로를 심화로 배우는 반도체 전자회로 과목 있어요?", "positive_course": "SEMI343", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI343", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체 전자회로 I에 이어 신호생성회로를 배우고 싶어요", "positive_course": "SEMI343", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI344", "source": "llm_query", "confidence": 0.3, "anchor_text": "EDA 툴로 초집적회로를 설계하는 VLSI 과목 있나요?", "positive_course": "SEMI344", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI344", "source": "llm_query", "confidence": 0.3, "anchor_text": "로직 합성부터 physical 설계까지 실습해보고 싶어요", "positive_course": "SEMI344", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI362", "source": "llm_query", "confidence": 0.3, "anchor_text": "회절, 현미경, 분광학 원리로 반도체 소재를 분석하는 과목 있어요?", "positive_course": "SEMI362", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI362", "source": "llm_query", "confidence": 0.3, "anchor_text": "재료 특성분석 기기의 원리를 배우고 싶어요", "positive_course": "SEMI362", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI363", "source": "llm_query", "confidence": 0.3, "anchor_text": "반도체 후공정과 전자패키징 기술을 배우는 과목 있나요?", "positive_course": "SEMI363", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI363", "source": "llm_query", "confidence": 0.3, "anchor_text": "3D 이종집적 기술 같은 첨단 패키징을 배우고 싶어요", "positive_course": "SEMI363", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI412", "source": "llm_query", "confidence": 0.3, "anchor_text": "국내 반도체 산업 현장에서 실무를 경험하는 연수 과목 있어요?", "positive_course": "SEMI412", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI412", "source": "llm_query", "confidence": 0.3, "anchor_text": "강의실에서 배운 이론을 실제 기업 현장에 적용해보고 싶어요", "positive_course": "SEMI412", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI421", "source": "llm_query", "confidence": 0.3, "anchor_text": "실리콘 기반 소자의 한계를 넘는 나노 전자소자를 배우는 과목 있나요?", "positive_course": "SEMI421", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI421", "source": "llm_query", "confidence": 0.3, "anchor_text": "새로운 소재와 구조 기반의 미래 반도체 소자 연구를 배우고 싶어요", "positive_course": "SEMI421", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI422", "source": "llm_query", "confidence": 0.3, "anchor_text": "큐비트와 양자논리게이트를 배우는 양자소자 과목 있어요?", "positive_course": "SEMI422", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI422", "source": "llm_query", "confidence": 0.3, "anchor_text": "이온트랩과 초전도 큐비트 하드웨어의 원리를 배우고 싶어요", "positive_course": "SEMI422", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI423", "source": "llm_query", "confidence": 0.3, "anchor_text": "LED와 이미지센서 같은 반도체 광소자를 배우는 과목 있나요?", "positive_course": "SEMI423", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI423", "source": "llm_query", "confidence": 0.3, "anchor_text": "빛과 반도체의 상호작용을 이용한 디스플레이 소자 원리가 궁금해요", "positive_course": "SEMI423", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI442", "source": "llm_query", "confidence": 0.3, "anchor_text": "풀커스텀 방식으로 메모리 반도체 회로를 설계하는 과목 있어요?", "positive_course": "SEMI442", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI442", "source": "llm_query", "confidence": 0.3, "anchor_text": "실제 산업현장과 동등한 환경에서 칩 설계를 경험해보고 싶어요", "positive_course": "SEMI442", "query_type": "indirect"}
+{"pair_id": "llmquery_1_SEMI445", "source": "llm_query", "confidence": 0.3, "anchor_text": "4G/5G 무선통신용 RF 회로 설계를 배우는 반도체공학과 과목 있나요?", "positive_course": "SEMI445", "query_type": "direct"}
+{"pair_id": "llmquery_2_SEMI445", "source": "llm_query", "confidence": 0.3, "anchor_text": "차량용 레이더에 쓰이는 RF-아날로그 회로 설계를 배우고 싶어요", "positive_course": "SEMI445", "query_type": "indirect"}

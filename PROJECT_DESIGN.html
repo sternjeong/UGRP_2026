@@ -419,7 +419,7 @@
     </header>
 
     <div class="kpi-row">
-      <div class="kpi decided"><div class="n">28</div><div class="l">결정된 사항</div></div>
+      <div class="kpi decided"><div class="n">42</div><div class="l">결정된 사항</div></div>
       <div class="kpi open"><div class="n">6</div><div class="l">미정 · 확인 필요</div></div>
       <div class="kpi hold"><div class="n">2</div><div class="l">보류 항목</div></div>
       <div class="kpi"><div class="n">4</div><div class="l">§11 열린 질문</div></div>
@@ -431,8 +431,17 @@
         <li><a href="#s73">연구실 데이터 없이 지금 생성 가능한 축A 소스 확정 — (a)로드맵순서·(b)레벨신호·LLM concept·LLM query는 즉시 가능, (c)어휘중첩만 Lab 프로필 필요해 블로킹</a></li>
         <li><a href="#s73">(a)는 자유서술 선수과목 fuzzy 매칭(<code>_freetext</code>/<code>_needs_review.jsonl</code>) 병합이 아직 미완료라 후순위로 미루고, <strong>(b) 레벨 신호부터 먼저 생성</strong>하기로 결정</a></li>
         <li><a href="#s73">(b) 레벨 신호 페어 규칙 확정 — 이수구분 필드가 데이터에 없어 학년 규칙만 사용(같은 학과 내부로 한정), 신뢰도 0.5~0.7 → 0.4로 하향</a></li>
-        <li><code>UG_2026_curriculum_courses.jsonl</code> 건수 정정 — 08-03 정제로 654건 → <strong>427건</strong>(중복 없음, 실측 확인). 문서 전체 654건 표기 427건으로 수정</li>
+        <li><code>UG_2026_curriculum_courses.jsonl</code> 건수 정정 — 08-03 정제로 654건 → <strong>419건</strong>(중복 없음, 실측 확인). 문서 전체 654건 표기 419건으로 수정</li>
         <li><a href="#s73">최종 코퍼스 언어 방침 확정 — <code>course_name_kr</code> 제외 전부 영어 통일 예정, (b) pair 텍스트는 <code>course_objectives</code> 우선·공백만 <code>content</code> 번역으로 채움</a></li>
+        <li><a href="#s73">축A pair jsonl 공용 스키마 확정 — 텍스트 미포함, course_code 참조만 저장 후 학습 시점 join (번역 재생성 부담 제거)</a></li>
+        <li>(a) 소스 완료 — <code>UG_2026_prerequisites_merged.jsonl</code>(301건, roadmap+freetext 병합) 커밋 완료, 서브에이전트로 pair 변환 착수</li>
+        <li>(a) 페어 생성 완료 — <code>UG_2026_axisA_pairs_a.jsonl</code>(472개) + <code>_skipped.jsonl</code>(131건, 사유별 분류)</li>
+        <li>(b) 규칙 확정 및 생성 완료 — <code>scripts/gen_axisA_pairs_b.py</code>로 <code>UG_2026_axisA_pairs_b.jsonl</code>(2,651개, 신뢰도 0.4) 생성. 전체 생성 이력은 <code>patch.jsonl</code>에 기록 시작</li>
+        <li>LLM query 소스 스펙 확정 후 서브에이전트로 생성 착수 — 과목당 2개(직설+간접), 한국어, conf 0.3. LLM concept 소스는 과목쌍 판별 설계가 무거워 보류</li>
+        <li>볼륨 확장 중 템플릿 슬롯필링 품질 사고 발견 → 전량 폐기, 6개 청크 서브에이전트로 과목별 실저작 재생성(1,257개)</li>
+        <li>LLM concept 소스도 마저 구현 — 개념사전+방향판별 파이프라인으로 524개 생성. 축A 5원 소스 중 4개 완료(총 5,742개), (c)만 Lab 데이터 대기</li>
+        <li>사용자 제안으로 6번째 소스 LLM recommend(지식증류) 신설 — 진로형 질의 40개를 직접 작성하고 근거 키워드를 실제 과목 텍스트에서 grep 검증(드롭 0건), 106개 생성</li>
+        <li>1000개 확장 요청에 규모 vs 근거품질 우선순위 확인 후 400~600개 선에서 품질 유지로 결정 — 419개 과목 전체를 학과별 순회하며 grounded 질의 추가, 429개로 병합해 과목 커버리지 414/419(98.8%) 달성. 축A pair 총 6,171개로 마감, (c)만 남음</li>
       </ol>
     </div>
 
@@ -509,7 +518,7 @@
         <li><code>syllabus_raw.jsonl</code>(353건, EECE/CSED/MATH/IMEN)과 <code>DATA_ANALYSIS.md</code>는 <strong>참고용 프로토타입</strong>일 뿐 — 실제 개발은 재크롤링 데이터(+초기 더미 데이터)로 진행</li>
         <li>재크롤링 시 실라버스뿐 아니라 권장이수체계도·연구실 키워드/논문을 1순위로 확보</li>
         <li>
-          <code>UG_2026_curriculum_courses.jsonl</code>(427건, 08-03 정제 후) <span class="chip decided">신설 · 07-23</span>
+          <code>UG_2026_curriculum_courses.jsonl</code>(419건, 08-03 정제 후) <span class="chip decided">신설 · 07-23</span>
           <p style="margin-top:6px;">공식 커리큘럼북(<em>UG 2026 curriculum v.2.0</em>) 203페이지 전체의 "교과목 개요" 절을 끝까지 파싱한 전학과 텍스트 코퍼스(학수번호·과목명 국영문·학점·개요). <code>syllabus_raw.jsonl</code>과 달리 전학과 스케일이며 축A/D 실제 개발의 1차 원문 데이터로 사용 가능. <strong>"학년/학기별 전공과목 일람표"(표 형식 로드맵)는 의도적으로 제외</strong> — 별도 파싱이 필요한 구조화 데이터.</p>
         </li>
       </ul>
@@ -778,6 +787,121 @@
       <p style="font-size:13px; color: var(--ink-faint);">낮은 신뢰도 소스는 다운샘플링 또는 loss weight 축소로 반영(Snorkel식 확률결합의 실무적 근사).</p>
 
       <div class="card">
+        <div class="card-head"><strong>축A pair jsonl 공용 스키마 확정</strong><span class="chip decided">08-04</span></div>
+        <p>소스별 pair 파일은 텍스트를 직접 담지 않고 <code>{pair_id, source, confidence, anchor_course, positive_course}</code>(course_code 참조)만 저장. 실제 텍스트는 학습 시점에 <code>UG_2026_curriculum_courses.jsonl</code>에서 join(<code>course_objectives</code>→번역된 <code>content</code>).</p>
+        <div class="callout">번역 시점마다 페어 전체를 재생성하지 않도록 텍스트와 관계 구조를 분리 — (a)뿐 아니라 (b)/LLM concept/LLM query 등 향후 모든 소스에 공용 적용.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><strong>(a) 페어 생성 완료</strong><span class="chip decided">08-04</span></div>
+        <p><code>UG_2026_axisA_pairs_a.jsonl</code>(유효 페어 <strong>472개</strong>) + <code>UG_2026_axisA_pairs_a_skipped.jsonl</code>(스킵 131건: anchor 코드매칭 실패 62·positive 코드매칭 실패 36·비-코드 unresolved/inferred 표기 33). anchor로 쓰인 과목 129개, positive로 쓰인 과목 250개. skipped 목록은 추후 사람 검토(재매칭/폐기) 대상으로 보류.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><strong>(b) 페어 생성 완료</strong><span class="chip decided">08-04</span></div>
+        <p><code>scripts/gen_axisA_pairs_b.py</code>로 <code>UG_2026_curriculum_courses.jsonl</code>을 학과(code prefix)별로 묶어, 학년 1·2(low) × 3·4(high) 전 조합을 페어링 → <code>UG_2026_axisA_pairs_b.jsonl</code> <strong>2,651개</strong> 생성(신뢰도 0.4 고정). 학과별: EECE 380·CHEB 312·CSED 300·MATH 260·SEMI 208·PHYS 198·IMEN 216·MECH 175·LIFE 153·AMSE 161·CITE 117·CHEM 126·DISU 40·ENTP 5·CMEF 0.</p>
+        <div class="callout">(a) 472개 대비 약 5.6배 많은 양은 §7.3에서 이미 예견된 "낮은 신뢰도 소스는 다운샘플링/loss weight 축소"로 학습 시 조정 예정 — 지금은 원 페어 전량을 생성해두고 다운샘플링은 학습 파이프라인 단계로 미룸.</div>
+
+        <div class="table-wrap" style="margin-top:12px;">
+          <table>
+            <thead><tr><th>pair_id</th><th>conf</th><th>anchor</th><th>positive</th></tr></thead>
+            <tbody>
+              <tr><td><code>a_SEMI100_SEMI203</code></td><td>1.0</td><td>SEMI100 학과입문(반도체공학) — "반도체를 구성하는 소재, 소자의 특징과 함께, 발전 역사를 이해한다…"</td><td>SEMI203 반도체 소자 I — "반도체 소자에 대한 개론과목으로 반도체 물리, 공정, 소자 구조에 대한 기초지식과…"</td></tr>
+              <tr><td><code>a_EECE320_EECE310</code></td><td>1.0</td><td>EECE320 자동제어공학개론 — "mathematical basic concepts of control theory in the frequency-domain…"</td><td>EECE310 전력시스템 제어 및 운영의 기초 — "introductory subject in the fields of power grid control and operation…"</td></tr>
+              <tr><td><code>b_LIFE216_LIFE420</code></td><td>0.4</td><td>LIFE216(2학년) 생리학 — "Physiology course has aim to provide students broad and basic knowledge…"</td><td>LIFE420(4학년) 면역학 — "숙주의 방어 면역체계와 병원체간의 상호작용에 대한 기초지식을…"</td></tr>
+              <tr><td><code>b_CHEB100_CHEB308</code></td><td>0.4</td><td>CHEB100(1학년) 학과입문(화공) — "화학공학과의 중요 연구분야와 미래를…"</td><td>CHEB308(3학년) 생물공학개론 — "생물공학의 기본원리 및 산업적 응용현황을…"</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:13px; color: var(--ink-faint);">위 텍스트는 <code>course_objectives</code>→<code>content</code> join 결과 원문에서 앞부분만 발췌. 전체 생성 이력(방법·근거·재현 정보)은 저장소 루트 <code>patch.jsonl</code>에 이벤트 로그로 기록 — 브라우저로 보려면 <a href="patch.html">patch.html</a>.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><strong>LLM query 소스 스펙 확정</strong><span class="chip decided">08-04</span></div>
+        <p>과목당 질의 <strong>2개</strong>(직설적 1 + 간접적 1) 생성, 신뢰도 0.3. anchor가 실제 과목이 아니라 생성 텍스트라서 (a)(b)의 "course_code 참조만 저장" 컨벤션 대신 <code>anchor_text</code>를 직접 저장. 스키마: <code>{pair_id, source:"llm_query", confidence:0.3, anchor_text, positive_course, query_type}</code>.</p>
+        <div class="callout"><strong>질의 언어는 한국어로 결정</strong> — 실사용자는 한국 학생이고 과목 텍스트는 추후 영어로 통일되므로, 한국어질의↔영어문서 교차언어 검색이 BGE-m3의 다국어 지원과 맞물려 실제 서비스 시나리오와 일치. LLM concept 소스는 과목쌍 단위 판별이 필요해 설계가 무거워 다른 소스가 모인 뒤 재논의(보류).</div>
+        <p style="margin-top:10px;"><strong>생성 완료</strong>: <code>UG_2026_axisA_pairs_llmquery.jsonl</code> <strong>838개</strong>(직설 419+간접 419, 과목당 정확히 2개 — 코퍼스가 419건임을 재확인). 20개 과목은 <code>course_code</code>가 복합 표기(교차개설/병기)라 원문 그대로 사용.</p>
+        <div class="table-wrap" style="margin-top:8px;">
+          <table>
+            <thead><tr><th>pair_id</th><th>type</th><th>anchor_text</th><th>positive</th></tr></thead>
+            <tbody>
+              <tr><td><code>llmquery_1_AMSE201</code></td><td>direct</td><td>"금속, 세라믹, 고분자 같은 다양한 소재의 기초 물성을 배우는 과목 찾아요"</td><td>AMSE201 신소재과학</td></tr>
+              <tr><td><code>llmquery_2_LIFE420</code></td><td>indirect</td><td>"우리 몸이 병원균과 어떻게 싸우는지 기초부터 배우고 싶어요"</td><td>LIFE420 면역학</td></tr>
+              <tr><td><code>llmquery_1_MECH439</code></td><td>direct</td><td>"로봇의 운동학과 동역학을 배우는 로보틱스 과목 있어요?"</td><td>MECH439</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><strong>볼륨 확장 시도 중 품질 사고</strong><span class="chip decided">08-04</span></div>
+        <p>"2B 모델 학습용 큰 데이터셋 필요" 요청으로 질의 3종(usecase/comparison/level_or_career)을 추가하려 했으나, 1차 서브에이전트가 볼륨을 위해 <strong>템플릿 슬롯필링</strong>으로 전환(실질 템플릿 수 ~15~18개, 과목명만 치환) — 1,257개를 만들었지만 근접중복이 심해 대조학습 신호 왜곡 위험. 사용자 판단으로 <strong>전량 폐기</strong> 후 과목별 실저작으로 재생성.</p>
+        <div class="callout"><strong>교훈</strong>: "볼륨이 필요하다"는 요구를 그대로 위임하면 품질-볼륨 트레이드오프를 에이전트가 나쁜 방향으로 해결할 수 있음 — 위임 시 방법론("과목 내용을 실제로 읽고 개별 작성")을 명시적으로 고정해야 함.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><strong>LLM query 확장 완료(재작업)</strong><span class="chip decided">08-04</span></div>
+        <p>419과목을 70개씩 6개 청크로 나눠 서브에이전트 6개가 각자 과목별로 실제 개요를 읽고 저작 → 병합. <code>UG_2026_axisA_pairs_llmquery2.jsonl</code> <strong>1,257개</strong>(419×3, 과목당 정확히 3개·중복 없음 검증 통과).</p>
+        <div class="table-wrap" style="margin-top:8px;">
+          <table>
+            <thead><tr><th>type</th><th>positive</th><th>anchor_text</th></tr></thead>
+            <tbody>
+              <tr><td>usecase</td><td>CHEB303</td><td>"편미분방정식이랑 고유값 문제를 화학공학 문제 해석에 어떻게 쓰는지 배우고 싶어요"</td></tr>
+              <tr><td>comparison</td><td>CHEM261</td><td>"생화학(CHEM461)이랑 의약생명화학 중에 생명과학 쪽 진로 생각하면 뭘 먼저 들어야 하나요?"</td></tr>
+              <tr><td>level_or_career</td><td>CITE103</td><td>"무학과 1학년인데 디자인 씽킹 경험이 전혀 없어도 들을 수 있나요?"</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><strong>LLM concept 페어 생성 완료</strong><span class="chip decided">08-04</span></div>
+        <p>전체 수작업 대신, 기술 개념 사전(bilingual 정규식 ~95개) 매칭 → concept→과목 인덱스 구축 → 과목번호 레벨/"개론·입문" vs "응용·설계" 단서로 정의/응용 방향 판별(모호하면 스킵)하는 2단계 파이프라인. <code>UG_2026_axisA_pairs_llmconcept.jsonl</code> <strong>524개</strong>, 개념 83종, anchor 과목 147개·positive 과목 158개.</p>
+        <div class="table-wrap" style="margin-top:8px;">
+          <table>
+            <thead><tr><th>concept</th><th>anchor(정의)</th><th>positive(응용)</th></tr></thead>
+            <tbody>
+              <tr><td>chemical equilibrium</td><td>CHEM101 일반화학Ⅰ</td><td>CHEB201 화공물리화학Ⅰ</td></tr>
+              <tr><td>crystal structure</td><td>SEMI206 반도체소재개론</td><td>AMSE321 금속소재개론</td></tr>
+              <tr><td>control theory</td><td>EECE320 자동제어공학개론</td><td>CHEB401 공정제어</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><strong>축A pair 소스 현황</strong><span class="chip decided">08-04</span></div>
+        <p>(a) 472 + (b) 2,651 + LLM query 838 + LLM query 확장 1,257 + LLM concept 524 = <strong>총 5,742개</strong>. 남은 건 (c) 어휘중첩(Lab 데이터 크롤링 대기)뿐 — 축A 5원 소스 중 4개 완료.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><strong>신규 6번째 소스: LLM recommend(지식증류)</strong><span class="chip decided">08-04</span></div>
+        <p>사용자 제안 — Claude가 진로/목표형 질의에 직접 과목을 추천하되, 사전지식(bias)만으로 답하지 않고 <strong>커리큘럼 텍스트를 실제로 검색해 근거가 확인된 추천만 채택</strong>. 스키마: <code>{pair_id, source:"llm_recommend", confidence:0.15, anchor_text, positive_course, rationale}</code>. 기존 LLM query(과목 단위)와 달리 진로/연구관심 등 더 큰 단위 질문에 여러 과목을 함께 추천 가능(질의당 1~3개).</p>
+        <div class="callout">신뢰도 0.15(사용자 제시 범위 0.1~0.15 중 상단) — rationale로 검증 가능한 만큼 순수 환각보다 약간 높게 책정. 예산/시간표 제약형 질의 유형은 LLM query 확장 후보에서 제외(졸업학점 고려 안 함).</div>
+        <p style="margin-top:10px;"><strong>생성 완료</strong>: 진로/연구관심형 질의 40개 직접 작성, 질의당 1~3개 추천(총 106픽) → 근거 키워드가 실제 과목 텍스트에 등장하는지 grep 검증(<strong>드롭 0건</strong>) → <code>UG_2026_axisA_pairs_llmrecommend.jsonl</code> <strong>106개</strong>.</p>
+        <div class="table-wrap" style="margin-top:8px;">
+          <table>
+            <thead><tr><th>query</th><th>추천</th></tr></thead>
+            <tbody>
+              <tr><td>"인공지능 대학원 진학을 준비하려면 학부에서 어떤 과목들을 들어야 하나요?"</td><td>CSED342(인공지능) · CSED343(기계학습을 위한 수학) · MATH442(인공지능수학)</td></tr>
+              <tr><td>"반도체 소자 설계 커리어를 목표로 하는데 뭘 들어야 할까요?"</td><td>SEMI203(반도체 소자 I) · SEMI344(초집적회로 설계) · DISU434(시스템 반도체 설계)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><strong>LLM recommend 커버리지 확장</strong><span class="chip decided">08-04</span></div>
+        <p>"1000개로, 더 다채롭게" 요청에 규모 vs 근거품질 우선순위를 먼저 확인 — <strong>400~600개 선에서 품질 유지</strong>로 확정. 419개 커리큘럼 전체를 학과별로 순회하며 미커버 과목마다 실제 course_objectives/content를 읽고 grounded 질의를 2·3차 배치로 추가.</p>
+        <div class="callout">최종 <strong>429개</strong>로 병합, 과목 커버리지 <strong>414/419(98.8%)</strong> — 미커버 5개는 이미 커버된 과목의 교차개설/Honor 변형뿐.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><strong>축A pair 소스 최종 현황</strong><span class="chip decided">08-04</span></div>
+        <p>(a) 472 + (b) 2,651 + LLM query 838 + LLM query 확장 1,257 + LLM concept 524 + LLM recommend 429 = <strong>총 6,171개</strong>. 6개 소스 중 (c) 어휘중첩만 Lab 데이터 대기로 미착수.</p>
+      </div>
+
+      <div class="card">
         <div class="card-head"><strong>최종 코퍼스 언어 방침</strong><span class="chip decided">08-04</span></div>
         <p><code>course_name_kr</code>을 제외한 모든 텍스트 필드는 최종 jsonl 확정 시 <strong>영어로 통일 번역</strong> 예정(모델 학습 편의). 아직 jsonl 확정 전이라 번역 미착수. Pair anchor/positive 텍스트는 <code>course_objectives</code>(이미 영어) 우선 사용, 비어있는 경우만 <code>content</code>(한국어)를 번역해 채움 — 전량 번역보다 공백만 메우는 쪽이 작업량이 적고 최종 영어 단일 코퍼스 목표와도 일치.</p>
       </div>
@@ -790,7 +914,7 @@
 
       <div class="card">
         <div class="card-head"><strong><code>prerequisites</code> 필드 실사 결과</strong><span class="chip decided">08-03</span></div>
-        <p><code>UG_2026_curriculum_courses.jsonl</code>(427건, 08-03 정제 후 기준) 점검 결과 <code>"없음"</code> 외에 <code>"-"</code> 같은 사실상 결측값도 존재(예: AMSE405/406). <strong>오파싱 사례 발견</strong> — <code>AMSE407</code>은 <code>prerequisites</code> 필드에 강의계획서 전체(주차별 커리큘럼)가 통째로 들어간 컬럼 밀림 버그. (a) 소스로 채택 전 "오파싱 제거 → 자유서술 내 course_code 매칭 → 매칭 성공분만 채택"의 정제 단계가 필요함을 확인. 자유서술 값 중 <code>AMSE201 → General Physics, General Chemistry</code>처럼 코드가 아닌 과목명만 있는 경우도 많아 fuzzy matching 또는 폐기 판단 필요.</p>
+        <p><code>UG_2026_curriculum_courses.jsonl</code>(419건, 08-03 정제 후 기준) 점검 결과 <code>"없음"</code> 외에 <code>"-"</code> 같은 사실상 결측값도 존재(예: AMSE405/406). <strong>오파싱 사례 발견</strong> — <code>AMSE407</code>은 <code>prerequisites</code> 필드에 강의계획서 전체(주차별 커리큘럼)가 통째로 들어간 컬럼 밀림 버그. (a) 소스로 채택 전 "오파싱 제거 → 자유서술 내 course_code 매칭 → 매칭 성공분만 채택"의 정제 단계가 필요함을 확인. 자유서술 값 중 <code>AMSE201 → General Physics, General Chemistry</code>처럼 코드가 아닌 과목명만 있는 경우도 많아 fuzzy matching 또는 폐기 판단 필요.</p>
       </div>
 
       <div class="card">
@@ -831,7 +955,7 @@
 
       <div class="card">
         <div class="card-head"><strong>신규 후보 신호 (f) 교재/강의계획 목차 유사도</strong><span class="chip decided">확인 · 08-03</span></div>
-        <p>당초 "별도 크롤링 필요"로 판단했으나, <code>UG_2026_curriculum_courses.jsonl</code>에 이미 <code>course_references</code>(지정 교재)·<code>course_plan</code>(주차별 강의계획) 필드로 존재함을 확인해 추가 크롤링 없이 바로 활용 가능. 427건 기준 필드 커버리지 실측(08-03 정제 후 재실측 필요 — 아래 표는 정제 전 654건 기준, TODO):</p>
+        <p>당초 "별도 크롤링 필요"로 판단했으나, <code>UG_2026_curriculum_courses.jsonl</code>에 이미 <code>course_references</code>(지정 교재)·<code>course_plan</code>(주차별 강의계획) 필드로 존재함을 확인해 추가 크롤링 없이 바로 활용 가능. 419건 기준 필드 커버리지 실측(08-03 정제 후 재실측 필요 — 아래 표는 정제 전 654건 기준, TODO):</p>
         <div class="table-wrap">
           <table>
             <thead><tr><th>필드</th><th class="num">비어있지 않은 건수</th><th class="num">비율</th></tr></thead>
@@ -870,14 +994,26 @@
       <div class="sec-head"><span class="sec-num">§9</span><h2>결정된 사항 vs 미정 사항</h2></div>
       <div class="status-cols">
         <div>
-          <h3><span class="wp-dot decided"></span> 결정됨 (28)</h3>
+          <h3><span class="wp-dot decided"></span> 결정됨 (42)</h3>
           <ul>
+            <li><a href="#s73">LLM recommend 커버리지 429개로 확장 — 과목 커버리지 414/419(98.8%), 축A 총량 6,171개 (08-04)</a></li>
+            <li><a href="#s73">LLM recommend(지식증류) 소스 신설 및 완료 — 진로형 질의 40개, 106개 그라운딩 페어, conf 0.15 (08-04)</a></li>
+            <li><a href="#s73">축A pair 소스 최종 5,848개 확보 — (a)472+(b)2,651+LLM query 838+확장 1,257+concept 524+recommend 106, (c)만 남음 (08-04)</a></li>
+            <li><a href="#s73">LLM concept 페어 생성 완료 — 524개, 개념 83종 (08-04)</a></li>
+            <li><a href="#s73">LLM query 확장 재작업 완료 — 템플릿 폐기 후 과목별 실저작으로 1,257개 (08-04)</a></li>
+            <li><a href="#s73">LLM query 페어 생성 완료 — <code>UG_2026_axisA_pairs_llmquery.jsonl</code> 838개(직설419+간접419) (08-04)</a></li>
+            <li><a href="#s73">코퍼스 건수 재정정 — 427건이 아니라 <strong>419건</strong>(fuzzy 매칭 중 비학업 과목 8건 추가 제거). 문서 전체 재수정 (08-04)</a></li>
+            <li><a href="#s73">LLM query 소스 스펙 확정 — 과목당 2개(직설/간접), 한국어, conf 0.3, anchor_text 직접 저장 (08-04)</a></li>
+            <li><a href="#s73">(b) 페어 생성 완료 — <code>UG_2026_axisA_pairs_b.jsonl</code> 2,651개, 신뢰도 0.4 (08-04)</a></li>
+            <li><a href="#s73">(a) 페어 생성 완료 — <code>UG_2026_axisA_pairs_a.jsonl</code> 472개(스킵 131건) (08-04)</a></li>
+            <li><a href="#s73">(a) 소스 완료 — <code>UG_2026_prerequisites_merged.jsonl</code>(301건) 커밋, pair 변환 착수 (08-04)</a></li>
+            <li><a href="#s73">축A pair jsonl 공용 스키마 확정 — course_code 참조만 저장, 텍스트는 학습 시점 join (08-04)</a></li>
             <li><a href="#s73">최종 코퍼스 언어 방침 확정 — <code>course_name_kr</code> 제외 전부 영어 통일, (b) pair는 <code>course_objectives</code> 우선·공백만 번역 (08-04)</a></li>
             <li><a href="#s73">연구실 데이터 없이 시작 가능한 축A 소스 확정 — (a)로드맵순서·(b)레벨신호·LLM concept·LLM query는 지금 생성 가능, (c)어휘중첩만 Lab 프로필 필요해 블로킹 (08-04)</a></li>
             <li><a href="#s73">(b) 레벨 신호 페어 생성 규칙 확정 — 이수구분 필드 없어 학년 규칙+같은 학과 한정으로 대체, 신뢰도 0.4로 하향 (08-04)</a></li>
             <li><a href="#s7">축A 백본을 <strong>BGE-m3</strong>로 확정 — multilingual-e5-large/KURE-v1은 비교 baseline (08-03)</a></li>
             <li><a href="#s72"><code>hasSynergyWith</code> 관계 신설, <code>hasPrerequisite</code>와 분리 (07-23)</a></li>
-            <li><a href="#s5"><code>UG_2026_curriculum_courses.jsonl</code>(427건, 08-03 정제 후) 구축 완료 (07-23)</a></li>
+            <li><a href="#s5"><code>UG_2026_curriculum_courses.jsonl</code>(419건, 08-03 정제 후) 구축 완료 (07-23)</a></li>
             <li><a href="#s71">연구실적화 플래그십 축: 축A+축D+축E 병행 확정 (07-23)</a></li>
             <li><a href="#s71">§7.1 문헌 스터디 트래커 신설 — 축A/D/E 논문 상태·활용목적 지속 추적 (07-23)</a></li>
             <li><a href="#s7">축D 근접 선행연구(Abu-Rasheed et al. 2025) 대비 차별점 명시 (07-23)</a></li>
@@ -957,7 +1093,7 @@
       <h3 style="font-size:14px; margin: 18px 0 8px;">12.1 전체 플로우</h3>
       <div class="flow-diagram">
         <div class="flow-row">
-          <span class="fnode">원천 데이터 수집<br><small>커리큘럼북 427건 · Lab 키워드+논문제목 · 로드맵 원문</small></span>
+          <span class="fnode">원천 데이터 수집<br><small>커리큘럼북 419건 · Lab 키워드+논문제목 · 로드맵 원문</small></span>
           <span class="farrow">→</span>
           <span class="fnode">데이터 정제<br><small>오파싱 제거 · 코드/fuzzy 매칭</small></span>
         </div>
@@ -1074,7 +1210,7 @@
         </div>
         <div class="flow-row center"><span class="farrow">↓ 파싱/크롤링</span></div>
         <div class="flow-row center">
-          <span class="fnode"><code>UG_2026_curriculum_courses.jsonl</code><br><small>427건</small></span>
+          <span class="fnode"><code>UG_2026_curriculum_courses.jsonl</code><br><small>419건</small></span>
           <span class="fnode"><code>roadmap_raw.jsonl</code><br><small>3단계 품질</small></span>
           <span class="fnode">Lab 프로필<br><small>키워드+논문제목</small></span>
         </div>

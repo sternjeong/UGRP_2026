@@ -1,0 +1,131 @@
+{"anchor_course": "PHYS101, 102", "positive_course": "AMSE201", "reason": "anchor_unresolved_format"}
+{"anchor_course": "PHYS101, 102", "positive_course": "AMSE205", "reason": "anchor_unresolved_format"}
+{"anchor_course": "AMSE213", "positive_course": "AMSE421", "reason": "positive_not_matched"}
+{"anchor_course": "AMSE205", "positive_course": "AMSE422", "reason": "positive_not_matched"}
+{"anchor_course": "AMSE321", "positive_course": "AMSE422", "reason": "positive_not_matched"}
+{"anchor_course": "CHEB642", "positive_course": "CHEB417", "reason": "anchor_not_matched"}
+{"anchor_course": "CHEB399", "positive_course": "CHEB425", "reason": "anchor_not_matched"}
+{"anchor_course": "CHEB399", "positive_course": "CHEB426", "reason": "anchor_not_matched"}
+{"anchor_course": "MATH110", "positive_course": "CHEB463", "reason": "anchor_not_matched"}
+{"anchor_course": "PHYS101", "positive_course": "CHEB463", "reason": "anchor_not_matched"}
+{"anchor_course": "PHYS105", "positive_course": "CHEB463", "reason": "anchor_not_matched"}
+{"anchor_course": "CHEM101", "positive_course": "CHEM224", "reason": "positive_not_matched"}
+{"anchor_course": "CHEM103", "positive_course": "CHEM224", "reason": "positive_not_matched"}
+{"anchor_course": "CITE102", "positive_course": "CITE303", "reason": "anchor_not_matched"}
+{"anchor_course": "CSED233", "positive_course": "CITE421", "reason": "positive_not_matched"}
+{"anchor_course": "EECE320", "positive_course": "CITE441", "reason": "positive_not_matched"}
+{"anchor_course": "EECE322", "positive_course": "CITE441", "reason": "anchor_not_matched"}
+{"anchor_course": "CITE241", "positive_course": "CITE451", "reason": "anchor_not_matched"}
+{"anchor_course": "CITE241/MECH361", "positive_course": "CITE451/MECH423", "reason": "anchor_unresolved_format"}
+{"anchor_course": "CSED211", "positive_course": "CSED241", "reason": "positive_not_matched"}
+{"anchor_course": "CSED211", "positive_course": "CSED352", "reason": "positive_not_matched"}
+{"anchor_course": "MATH103(unresolved,inferred)", "positive_course": "CSED355", "reason": "anchor_unresolved_format"}
+{"anchor_course": "CSED300", "positive_course": "CSED401", "reason": "anchor_not_matched"}
+{"anchor_course": "CSED241", "positive_course": "CSED405", "reason": "anchor_not_matched"}
+{"anchor_course": "CSED311", "positive_course": "CSED405", "reason": "anchor_not_matched"}
+{"anchor_course": "CSED353", "positive_course": "CSED416", "reason": "positive_not_matched"}
+{"anchor_course": "CSED353", "positive_course": "CSED417", "reason": "positive_not_matched"}
+{"anchor_course": "CSED241", "positive_course": "CSED425", "reason": "anchor_not_matched"}
+{"anchor_course": "CSED233", "positive_course": "CSED426", "reason": "positive_not_matched"}
+{"anchor_course": "CSED331", "positive_course": "CSED426", "reason": "positive_not_matched"}
+{"anchor_course": "MATH120", "positive_course": "CSED441", "reason": "anchor_not_matched"}
+{"anchor_course": "MATH120", "positive_course": "CSED451", "reason": "anchor_not_matched"}
+{"anchor_course": "EECE100/DISU101", "positive_course": "DISU221", "reason": "anchor_unresolved_format"}
+{"anchor_course": "EECE231/DISU231", "positive_course": "DISU232", "reason": "anchor_unresolved_format"}
+{"anchor_course": "EECE273", "positive_course": "DISU301", "reason": "anchor_not_matched"}
+{"anchor_course": "EECE231/DISU231", "positive_course": "DISU402", "reason": "anchor_unresolved_format"}
+{"anchor_course": "EECE231/DISU231", "positive_course": "DISU403", "reason": "anchor_unresolved_format"}
+{"anchor_course": "EECE231", "positive_course": "DISU404", "reason": "anchor_not_matched"}
+{"anchor_course": "PHYS101, 102", "positive_course": "EECE201", "reason": "anchor_unresolved_format"}
+{"anchor_course": "EECE231/DISU231", "positive_course": "EECE276", "reason": "anchor_unresolved_format"}
+{"anchor_course": "EECE233", "positive_course": "EECE301", "reason": "positive_not_matched"}
+{"anchor_course": "EECE231", "positive_course": "EECE305", "reason": "anchor_not_matched"}
+{"anchor_course": "EECE361", "positive_course": "EECE306", "reason": "anchor_not_matched"}
+{"anchor_course": "EECE302", "positive_course": "EECE308", "reason": "anchor_not_matched"}
+{"anchor_course": "EECE322", "positive_course": "EECE309", "reason": "anchor_not_matched"}
+{"anchor_course": "EECE231", "positive_course": "EECE310", "reason": "anchor_not_matched"}
+{"anchor_course": "MATH300", "positive_course": "EECE320", "reason": "anchor_not_matched"}
+{"anchor_course": "MATH310", "positive_course": "EECE320", "reason": "anchor_not_matched"}
+{"anchor_course": "EECE231/DISU231", "positive_course": "EECE331", "reason": "anchor_unresolved_format"}
+{"anchor_course": "EECE231", "positive_course": "EECE336", "reason": "anchor_not_matched"}
+{"anchor_course": "EECE331", "positive_course": "EECE336", "reason": "anchor_not_matched"}
+{"anchor_course": "EECE231", "positive_course": "EECE338", "reason": "anchor_not_matched"}
+{"anchor_course": "EECE231/DISU231", "positive_course": "EECE338", "reason": "anchor_unresolved_format"}
+{"anchor_course": "MATH103", "positive_course": "EECE361", "reason": "positive_not_matched"}
+{"anchor_course": "MATH200", "positive_course": "EECE361", "reason": "positive_not_matched"}
+{"anchor_course": "EECE273", "positive_course": "EECE372", "reason": "anchor_not_matched"}
+{"anchor_course": "EECE411", "positive_course": "EECE412", "reason": "positive_not_matched"}
+{"anchor_course": "CITE241", "positive_course": "EECE415", "reason": "anchor_not_matched"}
+{"anchor_course": "EECE231", "positive_course": "EECE415", "reason": "anchor_not_matched"}
+{"anchor_course": "MATH110", "positive_course": "EECE417", "reason": "anchor_not_matched"}
+{"anchor_course": "PHYS101", "positive_course": "EECE417", "reason": "anchor_not_matched"}
+{"anchor_course": "PHYS105", "positive_course": "EECE417", "reason": "anchor_not_matched"}
+{"anchor_course": "EECE231", "positive_course": "EECE419", "reason": "anchor_not_matched"}
+{"anchor_course": "EECE231/DISU231", "positive_course": "EECE419/DISU404", "reason": "anchor_unresolved_format"}
+{"anchor_course": "EECE331", "positive_course": "EECE419/DISU404", "reason": "anchor_not_matched"}
+{"anchor_course": "전자회로1(unresolved,low-confidence)", "positive_course": "EECE419/DISU404", "reason": "anchor_unresolved_format"}
+{"anchor_course": "CITE441", "positive_course": "EECE422", "reason": "anchor_not_matched"}
+{"anchor_course": "EECE322", "positive_course": "EECE423", "reason": "anchor_not_matched"}
+{"anchor_course": "EECE274", "positive_course": "EECE426", "reason": "positive_not_matched"}
+{"anchor_course": "EECE372", "positive_course": "EECE426", "reason": "positive_not_matched"}
+{"anchor_course": "EECE231/DISU231", "positive_course": "EECE428", "reason": "anchor_unresolved_format"}
+{"anchor_course": "EECE231", "positive_course": "EECE429", "reason": "anchor_not_matched"}
+{"anchor_course": "CSED352", "positive_course": "EECE442", "reason": "anchor_not_matched"}
+{"anchor_course": "CSED353", "positive_course": "EECE442", "reason": "positive_not_matched"}
+{"anchor_course": "EECE302", "positive_course": "EECE442", "reason": "anchor_not_matched"}
+{"anchor_course": "EECE308", "positive_course": "EECE442", "reason": "positive_not_matched"}
+{"anchor_course": "EECE341", "positive_course": "EECE442", "reason": "positive_not_matched"}
+{"anchor_course": "EECE441", "positive_course": "EECE442", "reason": "anchor_not_matched"}
+{"anchor_course": "EECE443", "positive_course": "EECE442", "reason": "anchor_not_matched"}
+{"anchor_course": "EECE451", "positive_course": "EECE442", "reason": "anchor_not_matched"}
+{"anchor_course": "NGCN302", "positive_course": "EECE442", "reason": "anchor_not_matched"}
+{"anchor_course": "EECE361/DISU361", "positive_course": "EECE461", "reason": "anchor_unresolved_format"}
+{"anchor_course": "CSED101", "positive_course": "IMEN400", "reason": "positive_not_matched"}
+{"anchor_course": "IMEN260", "positive_course": "IMEN462", "reason": "positive_not_matched"}
+{"anchor_course": "IMEN272", "positive_course": "IMEN462", "reason": "positive_not_matched"}
+{"anchor_course": "IMEN491", "positive_course": "IMEN472", "reason": "anchor_not_matched"}
+{"anchor_course": "CITE421", "positive_course": "IMEN473", "reason": "anchor_not_matched"}
+{"anchor_course": "정보시스템기술(unresolved,likely CSED101)", "positive_course": "IMEN473", "reason": "anchor_unresolved_format"}
+{"anchor_course": "정보시스템기술(unresolved,likely CSED101)", "positive_course": "IMEN481", "reason": "anchor_unresolved_format"}
+{"anchor_course": "IMEN381", "positive_course": "IMEN485", "reason": "positive_not_matched"}
+{"anchor_course": "LIFE103(H)", "positive_course": "LIFE217", "reason": "anchor_unresolved_format"}
+{"anchor_course": "LIFE103(H)", "positive_course": "LIFE303", "reason": "anchor_unresolved_format"}
+{"anchor_course": "LIFE103(H)", "positive_course": "LIFE323", "reason": "anchor_unresolved_format"}
+{"anchor_course": "LIFE311", "positive_course": "LIFE402", "reason": "anchor_not_matched"}
+{"anchor_course": "LIFE411", "positive_course": "LIFE402", "reason": "anchor_not_matched"}
+{"anchor_course": "LIFE103", "positive_course": "LIFE412A-F", "reason": "positive_not_matched"}
+{"anchor_course": "LIFE103(H)", "positive_course": "LIFE412A-F", "reason": "anchor_unresolved_format"}
+{"anchor_course": "LIFE217", "positive_course": "LIFE417", "reason": "positive_not_matched"}
+{"anchor_course": "MATH301", "positive_course": "MATH301, 302", "reason": "anchor_not_matched"}
+{"anchor_course": "MATH301, 302", "positive_course": "MATH302", "reason": "anchor_unresolved_format"}
+{"anchor_course": "MATH311, 312", "positive_course": "MATH312", "reason": "anchor_unresolved_format"}
+{"anchor_course": "MATH311, 312", "positive_course": "MATH313", "reason": "anchor_unresolved_format"}
+{"anchor_course": "MATH301, 302", "positive_course": "MATH400", "reason": "anchor_unresolved_format"}
+{"anchor_course": "MATH302", "positive_course": "MATH401", "reason": "anchor_not_matched"}
+{"anchor_course": "MATH301, 302", "positive_course": "MATH403", "reason": "anchor_unresolved_format"}
+{"anchor_course": "MATH311, 312", "positive_course": "MATH412", "reason": "anchor_unresolved_format"}
+{"anchor_course": "MATH311", "positive_course": "MATH415", "reason": "anchor_not_matched"}
+{"anchor_course": "MATH311, 312", "positive_course": "MATH415", "reason": "anchor_unresolved_format"}
+{"anchor_course": "MATH301, 302", "positive_course": "MATH428", "reason": "anchor_unresolved_format"}
+{"anchor_course": "MATH230", "positive_course": "MATH430", "reason": "positive_not_matched"}
+{"anchor_course": "MATH230", "positive_course": "MATH434", "reason": "positive_not_matched"}
+{"anchor_course": "PHYS101", "positive_course": "MECH250", "reason": "anchor_not_matched"}
+{"anchor_course": "MATH120", "positive_course": "MECH323", "reason": "anchor_not_matched"}
+{"anchor_course": "MATH130", "positive_course": "MECH370", "reason": "anchor_not_matched"}
+{"anchor_course": "PHYS101", "positive_course": "MECH381", "reason": "anchor_not_matched"}
+{"anchor_course": "MECH330", "positive_course": "MECH401", "reason": "positive_not_matched"}
+{"anchor_course": "MATH110", "positive_course": "MECH403", "reason": "anchor_not_matched"}
+{"anchor_course": "PHYS101", "positive_course": "MECH403", "reason": "anchor_not_matched"}
+{"anchor_course": "PHYS105", "positive_course": "MECH403", "reason": "anchor_not_matched"}
+{"anchor_course": "CITE241", "positive_course": "MECH423", "reason": "anchor_not_matched"}
+{"anchor_course": "MATH120", "positive_course": "MECH439", "reason": "anchor_not_matched"}
+{"anchor_course": "MECH330", "positive_course": "MECH441", "reason": "positive_not_matched"}
+{"anchor_course": "MECH370", "positive_course": "MECH478", "reason": "positive_not_matched"}
+{"anchor_course": "EECE231", "positive_course": "SEMI205", "reason": "anchor_not_matched"}
+{"anchor_course": "EECE231/DISU231", "positive_course": "SEMI205", "reason": "anchor_unresolved_format"}
+{"anchor_course": "SEMI201", "positive_course": "SEMI313", "reason": "positive_not_matched"}
+{"anchor_course": "디지털시스템설계(unresolved,OR)", "positive_course": "SEMI342", "reason": "anchor_unresolved_format"}
+{"anchor_course": "EECE231", "positive_course": "SEMI343", "reason": "anchor_not_matched"}
+{"anchor_course": "디지털시스템설계(unresolved,OR)", "positive_course": "SEMI344", "reason": "anchor_unresolved_format"}
+{"anchor_course": "SEMI203", "positive_course": "SEMI361", "reason": "positive_not_matched"}
+{"anchor_course": "SEMI342", "positive_course": "SEMI443", "reason": "positive_not_matched"}

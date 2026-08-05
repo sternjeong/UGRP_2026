@@ -1,0 +1,524 @@
+{"pair_id": "concept_1_CHEM103_AMSE464", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "AMSE464", "concept": "polymer science"}
+{"pair_id": "concept_2_CHEM103_AMSE463", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "AMSE463", "concept": "polymer science"}
+{"pair_id": "concept_3_CHEM103_PHYS413", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "PHYS413", "concept": "polymer science"}
+{"pair_id": "concept_4_CHEM103_CHEB465", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "CHEB465", "concept": "polymer science"}
+{"pair_id": "concept_1_CHEM103_DISU412", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "DISU412", "concept": "optics and photonics"}
+{"pair_id": "concept_2_CHEM103_MECH427", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "MECH427", "concept": "optics and photonics"}
+{"pair_id": "concept_3_CHEM103_SEMI423", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "SEMI423", "concept": "optics and photonics"}
+{"pair_id": "concept_4_PHYS110, 111_DISU412", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS110, 111", "positive_course": "DISU412", "concept": "optics and photonics"}
+{"pair_id": "concept_5_PHYS110, 111_MECH427", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS110, 111", "positive_course": "MECH427", "concept": "optics and photonics"}
+{"pair_id": "concept_6_CHEM103_AMSE412", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "AMSE412", "concept": "optics and photonics"}
+{"pair_id": "concept_7_CHEM103_EECE412/DISU412", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "EECE412/DISU412", "concept": "optics and photonics"}
+{"pair_id": "concept_8_PHYS101, 102_DISU412", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS101, 102", "positive_course": "DISU412", "concept": "optics and photonics"}
+{"pair_id": "concept_9_PHYS101, 102_MECH427", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS101, 102", "positive_course": "MECH427", "concept": "optics and photonics"}
+{"pair_id": "concept_10_PHYS110, 111_SEMI423", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS110, 111", "positive_course": "SEMI423", "concept": "optics and photonics"}
+{"pair_id": "concept_1_SEMI362_CHEB413", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI362", "positive_course": "CHEB413", "concept": "materials characterization"}
+{"pair_id": "concept_2_SEMI362_AMSE407", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI362", "positive_course": "AMSE407", "concept": "materials characterization"}
+{"pair_id": "concept_3_AMSE407_CHEB413", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE407", "positive_course": "CHEB413", "concept": "materials characterization"}
+{"pair_id": "concept_1_CHEM101_AMSE464", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM101", "positive_course": "AMSE464", "concept": "thermodynamics"}
+{"pair_id": "concept_2_CHEM101_MECH450", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM101", "positive_course": "MECH450", "concept": "thermodynamics"}
+{"pair_id": "concept_3_CHEM101_CHEB403", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM101", "positive_course": "CHEB403", "concept": "thermodynamics"}
+{"pair_id": "concept_4_CHEM101_MECH451", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM101", "positive_course": "MECH451", "concept": "thermodynamics"}
+{"pair_id": "concept_5_CHEM101_MECH496", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM101", "positive_course": "MECH496", "concept": "thermodynamics"}
+{"pair_id": "concept_6_AMSE205_AMSE464", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE205", "positive_course": "AMSE464", "concept": "thermodynamics"}
+{"pair_id": "concept_7_CHEM101_CHEB405", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM101", "positive_course": "CHEB405", "concept": "thermodynamics"}
+{"pair_id": "concept_8_AMSE205_MECH450", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE205", "positive_course": "MECH450", "concept": "thermodynamics"}
+{"pair_id": "concept_9_CHEM213_AMSE464", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM213", "positive_course": "AMSE464", "concept": "thermodynamics"}
+{"pair_id": "concept_10_AMSE205_CHEB403", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE205", "positive_course": "CHEB403", "concept": "thermodynamics"}
+{"pair_id": "concept_1_AMSE205_AMSE315", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE205", "positive_course": "AMSE315", "concept": "phase transformation"}
+{"pair_id": "concept_2_AMSE205_AMSE321", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE205", "positive_course": "AMSE321", "concept": "phase transformation"}
+{"pair_id": "concept_3_CHEB201_AMSE315", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB201", "positive_course": "AMSE315", "concept": "phase transformation"}
+{"pair_id": "concept_4_CHEB201_AMSE321", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB201", "positive_course": "AMSE321", "concept": "phase transformation"}
+{"pair_id": "concept_5_AMSE205_CHEB201", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE205", "positive_course": "CHEB201", "concept": "phase transformation"}
+{"pair_id": "concept_6_AMSE321_AMSE315", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE321", "positive_course": "AMSE315", "concept": "phase transformation"}
+{"pair_id": "concept_1_CHEM103_AMSE414", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "AMSE414", "concept": "electrochemistry"}
+{"pair_id": "concept_2_CHEM103_AMSE313", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "AMSE313", "concept": "electrochemistry"}
+{"pair_id": "concept_3_CHEM103_CHEM342", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "CHEM342", "concept": "electrochemistry"}
+{"pair_id": "concept_4_AMSE205_AMSE414", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE205", "positive_course": "AMSE414", "concept": "electrochemistry"}
+{"pair_id": "concept_5_CHEM243_AMSE414", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM243", "positive_course": "AMSE414", "concept": "electrochemistry"}
+{"pair_id": "concept_6_CHEB201_AMSE414", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB201", "positive_course": "AMSE414", "concept": "electrochemistry"}
+{"pair_id": "concept_7_CHEM103_CHEB201", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "CHEB201", "concept": "electrochemistry"}
+{"pair_id": "concept_8_AMSE205_AMSE313", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE205", "positive_course": "AMSE313", "concept": "electrochemistry"}
+{"pair_id": "concept_9_CHEM243_AMSE313", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM243", "positive_course": "AMSE313", "concept": "electrochemistry"}
+{"pair_id": "concept_10_AMSE205_CHEM342", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE205", "positive_course": "CHEM342", "concept": "electrochemistry"}
+{"pair_id": "concept_1_SEMI206_AMSE412", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI206", "positive_course": "AMSE412", "concept": "nanotechnology"}
+{"pair_id": "concept_2_CHEM231_AMSE412", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM231", "positive_course": "AMSE412", "concept": "nanotechnology"}
+{"pair_id": "concept_3_SEMI206_CHEB461", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI206", "positive_course": "CHEB461", "concept": "nanotechnology"}
+{"pair_id": "concept_4_SEMI206_CHEB463", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI206", "positive_course": "CHEB463", "concept": "nanotechnology"}
+{"pair_id": "concept_5_SEMI206_EECE417", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI206", "positive_course": "EECE417", "concept": "nanotechnology"}
+{"pair_id": "concept_6_SEMI206_MECH403", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI206", "positive_course": "MECH403", "concept": "nanotechnology"}
+{"pair_id": "concept_7_AMSE207_AMSE412", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE207", "positive_course": "AMSE412", "concept": "nanotechnology"}
+{"pair_id": "concept_8_CHEM231_CHEB461", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM231", "positive_course": "CHEB461", "concept": "nanotechnology"}
+{"pair_id": "concept_9_CHEM231_CHEB463", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM231", "positive_course": "CHEB463", "concept": "nanotechnology"}
+{"pair_id": "concept_10_CHEM231_EECE417", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM231", "positive_course": "EECE417", "concept": "nanotechnology"}
+{"pair_id": "concept_1_AMSE207_CHEB413", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE207", "positive_course": "CHEB413", "concept": "energy materials"}
+{"pair_id": "concept_2_CHEB206_CHEB413", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB206", "positive_course": "CHEB413", "concept": "energy materials"}
+{"pair_id": "concept_3_AMSE207_CHEB412", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE207", "positive_course": "CHEB412", "concept": "energy materials"}
+{"pair_id": "concept_4_CHEB206_CHEB412", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB206", "positive_course": "CHEB412", "concept": "energy materials"}
+{"pair_id": "concept_5_AMSE207_AMSE414", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE207", "positive_course": "AMSE414", "concept": "energy materials"}
+{"pair_id": "concept_6_CHEB206_AMSE414", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB206", "positive_course": "AMSE414", "concept": "energy materials"}
+{"pair_id": "concept_7_AMSE207_CHEB405", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE207", "positive_course": "CHEB405", "concept": "energy materials"}
+{"pair_id": "concept_8_CHEB206_CHEB405", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB206", "positive_course": "CHEB405", "concept": "energy materials"}
+{"pair_id": "concept_9_CHEB405_CHEB413", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB405", "positive_course": "CHEB413", "concept": "energy materials"}
+{"pair_id": "concept_10_AMSE414_CHEB413", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE414", "positive_course": "CHEB413", "concept": "energy materials"}
+{"pair_id": "concept_1_AMSE207_CITE451/MECH423", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE207", "positive_course": "CITE451/MECH423", "concept": "biomaterials"}
+{"pair_id": "concept_2_AMSE207_MECH423", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE207", "positive_course": "MECH423", "concept": "biomaterials"}
+{"pair_id": "concept_1_SEMI206_PHYS401", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI206", "positive_course": "PHYS401", "concept": "crystal structure"}
+{"pair_id": "concept_2_AMSE213_PHYS401", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE213", "positive_course": "PHYS401", "concept": "crystal structure"}
+{"pair_id": "concept_3_AMSE208_PHYS401", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE208", "positive_course": "PHYS401", "concept": "crystal structure"}
+{"pair_id": "concept_4_SEMI206_LIFE322", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI206", "positive_course": "LIFE322", "concept": "crystal structure"}
+{"pair_id": "concept_5_AMSE213_LIFE322", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE213", "positive_course": "LIFE322", "concept": "crystal structure"}
+{"pair_id": "concept_6_SEMI206_EECE303", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI206", "positive_course": "EECE303", "concept": "crystal structure"}
+{"pair_id": "concept_7_AMSE208_LIFE322", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE208", "positive_course": "LIFE322", "concept": "crystal structure"}
+{"pair_id": "concept_8_SEMI206_AMSE361", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI206", "positive_course": "AMSE361", "concept": "crystal structure"}
+{"pair_id": "concept_9_AMSE213_EECE303", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE213", "positive_course": "EECE303", "concept": "crystal structure"}
+{"pair_id": "concept_10_SEMI206_AMSE321", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI206", "positive_course": "AMSE321", "concept": "crystal structure"}
+{"pair_id": "concept_1_AMSE213_MECH434", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE213", "positive_course": "MECH434", "concept": "solid mechanics"}
+{"pair_id": "concept_2_MECH240_MECH434", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MECH240", "positive_course": "MECH434", "concept": "solid mechanics"}
+{"pair_id": "concept_3_MECH311_MECH434", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MECH311", "positive_course": "MECH434", "concept": "solid mechanics"}
+{"pair_id": "concept_4_AMSE213_MECH340", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE213", "positive_course": "MECH340", "concept": "solid mechanics"}
+{"pair_id": "concept_5_MECH340_MECH434", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MECH340", "positive_course": "MECH434", "concept": "solid mechanics"}
+{"pair_id": "concept_6_MECH240_MECH340", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MECH240", "positive_course": "MECH340", "concept": "solid mechanics"}
+{"pair_id": "concept_7_AMSE213_MECH311", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE213", "positive_course": "MECH311", "concept": "solid mechanics"}
+{"pair_id": "concept_8_MECH240_MECH311", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MECH240", "positive_course": "MECH311", "concept": "solid mechanics"}
+{"pair_id": "concept_9_MECH311_MECH340", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MECH311", "positive_course": "MECH340", "concept": "solid mechanics"}
+{"pair_id": "concept_1_AMSE213_AMSE464", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE213", "positive_course": "AMSE464", "concept": "mechanical properties of materials"}
+{"pair_id": "concept_2_MECH244_AMSE464", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MECH244", "positive_course": "AMSE464", "concept": "mechanical properties of materials"}
+{"pair_id": "concept_3_MECH250_AMSE464", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MECH250", "positive_course": "AMSE464", "concept": "mechanical properties of materials"}
+{"pair_id": "concept_4_AMSE213_CHEB465", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE213", "positive_course": "CHEB465", "concept": "mechanical properties of materials"}
+{"pair_id": "concept_5_AMSE213_CHEB463", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE213", "positive_course": "CHEB463", "concept": "mechanical properties of materials"}
+{"pair_id": "concept_6_AMSE213_EECE417", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE213", "positive_course": "EECE417", "concept": "mechanical properties of materials"}
+{"pair_id": "concept_7_AMSE213_MECH403", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE213", "positive_course": "MECH403", "concept": "mechanical properties of materials"}
+{"pair_id": "concept_8_CHEB360_AMSE464", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB360", "positive_course": "AMSE464", "concept": "mechanical properties of materials"}
+{"pair_id": "concept_9_MECH244_CHEB465", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MECH244", "positive_course": "CHEB465", "concept": "mechanical properties of materials"}
+{"pair_id": "concept_10_AMSE361_AMSE464", "source": "llm_concept", "confidence": 0.3, "anchor_course": "AMSE361", "positive_course": "AMSE464", "concept": "mechanical properties of materials"}
+{"pair_id": "concept_1_MATH351_CHEB402", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH351", "positive_course": "CHEB402", "concept": "numerical analysis"}
+{"pair_id": "concept_2_MATH351_CHEB301", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH351", "positive_course": "CHEB301", "concept": "numerical analysis"}
+{"pair_id": "concept_3_MATH351_MECH450", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH351", "positive_course": "MECH450", "concept": "numerical analysis"}
+{"pair_id": "concept_4_MATH451_CHEB402", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH451", "positive_course": "CHEB402", "concept": "numerical analysis"}
+{"pair_id": "concept_5_MATH451_CHEB301", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH451", "positive_course": "CHEB301", "concept": "numerical analysis"}
+{"pair_id": "concept_6_MATH451_MECH450", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH451", "positive_course": "MECH450", "concept": "numerical analysis"}
+{"pair_id": "concept_7_MATH351_AMSE318", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH351", "positive_course": "AMSE318", "concept": "numerical analysis"}
+{"pair_id": "concept_8_MATH451_AMSE318", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH451", "positive_course": "AMSE318", "concept": "numerical analysis"}
+{"pair_id": "concept_9_MATH351_MECH305", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH351", "positive_course": "MECH305", "concept": "numerical analysis"}
+{"pair_id": "concept_10_MATH451_MECH305", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH451", "positive_course": "MECH305", "concept": "numerical analysis"}
+{"pair_id": "concept_1_SEMI206_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI206", "positive_course": "DISU431", "concept": "semiconductor devices"}
+{"pair_id": "concept_2_SEMI202_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI202", "positive_course": "DISU431", "concept": "semiconductor devices"}
+{"pair_id": "concept_3_SEMI203_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI203", "positive_course": "DISU431", "concept": "semiconductor devices"}
+{"pair_id": "concept_4_SEMI204_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI204", "positive_course": "DISU431", "concept": "semiconductor devices"}
+{"pair_id": "concept_5_EECE211_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE211", "positive_course": "DISU431", "concept": "semiconductor devices"}
+{"pair_id": "concept_6_SEMI206_EECE419/DISU404", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI206", "positive_course": "EECE419/DISU404", "concept": "semiconductor devices"}
+{"pair_id": "concept_7_DISU221_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "DISU221", "positive_course": "DISU431", "concept": "semiconductor devices"}
+{"pair_id": "concept_8_EECE201_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE201", "positive_course": "DISU431", "concept": "semiconductor devices"}
+{"pair_id": "concept_9_SEMI206_DISU412", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI206", "positive_course": "DISU412", "concept": "semiconductor devices"}
+{"pair_id": "concept_10_SEMI202_EECE419/DISU404", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI202", "positive_course": "EECE419/DISU404", "concept": "semiconductor devices"}
+{"pair_id": "concept_1_CHEM103_AMSE407", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "AMSE407", "concept": "spectroscopy"}
+{"pair_id": "concept_2_CHEM103_CHEM314", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "CHEM314", "concept": "spectroscopy"}
+{"pair_id": "concept_3_CHEM103_CHEM331", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "CHEM331", "concept": "spectroscopy"}
+{"pair_id": "concept_4_CHEM103_CHEB360", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "CHEB360", "concept": "spectroscopy"}
+{"pair_id": "concept_5_CHEM103_SEMI362", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "SEMI362", "concept": "spectroscopy"}
+{"pair_id": "concept_6_CHEM211_AMSE407", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM211", "positive_course": "AMSE407", "concept": "spectroscopy"}
+{"pair_id": "concept_7_CHEM213_AMSE407", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM213", "positive_course": "AMSE407", "concept": "spectroscopy"}
+{"pair_id": "concept_8_CHEM103_CHEM213", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "CHEM213", "concept": "spectroscopy"}
+{"pair_id": "concept_9_CHEM103_CHEM211", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "CHEM211", "concept": "spectroscopy"}
+{"pair_id": "concept_10_CHEM211_CHEM314", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM211", "positive_course": "CHEM314", "concept": "spectroscopy"}
+{"pair_id": "concept_1_PHYS403_EECE201", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS403", "positive_course": "EECE201", "concept": "quantum mechanics"}
+{"pair_id": "concept_2_PHYS403_MATH443", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS403", "positive_course": "MATH443", "concept": "quantum mechanics"}
+{"pair_id": "concept_3_PHYS403_AMSE452", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS403", "positive_course": "AMSE452", "concept": "quantum mechanics"}
+{"pair_id": "concept_4_PHYS403_EECE303", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS403", "positive_course": "EECE303", "concept": "quantum mechanics"}
+{"pair_id": "concept_5_PHYS403_CHEB202", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS403", "positive_course": "CHEB202", "concept": "quantum mechanics"}
+{"pair_id": "concept_6_PHYS403_CHEB463", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS403", "positive_course": "CHEB463", "concept": "quantum mechanics"}
+{"pair_id": "concept_7_PHYS403_EECE417", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS403", "positive_course": "EECE417", "concept": "quantum mechanics"}
+{"pair_id": "concept_8_PHYS403_MECH403", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS403", "positive_course": "MECH403", "concept": "quantum mechanics"}
+{"pair_id": "concept_9_CHEM211_EECE201", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM211", "positive_course": "EECE201", "concept": "quantum mechanics"}
+{"pair_id": "concept_10_PHYS201_EECE201", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS201", "positive_course": "EECE201", "concept": "quantum mechanics"}
+{"pair_id": "concept_1_SEMI212_AMSE452", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI212", "positive_course": "AMSE452", "concept": "electromagnetics wave"}
+{"pair_id": "concept_2_SEMI212_DISU361", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI212", "positive_course": "DISU361", "concept": "electromagnetics wave"}
+{"pair_id": "concept_3_SEMI212_EECE361/DISU361", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI212", "positive_course": "EECE361/DISU361", "concept": "electromagnetics wave"}
+{"pair_id": "concept_4_EECE361/DISU361_AMSE452", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE361/DISU361", "positive_course": "AMSE452", "concept": "electromagnetics wave"}
+{"pair_id": "concept_5_DISU361_AMSE452", "source": "llm_concept", "confidence": 0.3, "anchor_course": "DISU361", "positive_course": "AMSE452", "concept": "electromagnetics wave"}
+{"pair_id": "concept_1_EECE211_SEMI442", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE211", "positive_course": "SEMI442", "concept": "VLSI design"}
+{"pair_id": "concept_2_EECE336_SEMI442", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE336", "positive_course": "SEMI442", "concept": "VLSI design"}
+{"pair_id": "concept_3_EECE211_DISU434", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE211", "positive_course": "DISU434", "concept": "VLSI design"}
+{"pair_id": "concept_4_EECE211_EECE434/DISU434", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE211", "positive_course": "EECE434/DISU434", "concept": "VLSI design"}
+{"pair_id": "concept_1_SEMI204_EECE419/DISU404", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI204", "positive_course": "EECE419/DISU404", "concept": "circuit theory"}
+{"pair_id": "concept_2_SEMI204_DISU404", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI204", "positive_course": "DISU404", "concept": "circuit theory"}
+{"pair_id": "concept_3_SEMI204_EECE413", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI204", "positive_course": "EECE413", "concept": "circuit theory"}
+{"pair_id": "concept_4_EECE276_EECE419/DISU404", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE276", "positive_course": "EECE419/DISU404", "concept": "circuit theory"}
+{"pair_id": "concept_5_SEMI204_DISU403", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI204", "positive_course": "DISU403", "concept": "circuit theory"}
+{"pair_id": "concept_6_EECE276_DISU404", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE276", "positive_course": "DISU404", "concept": "circuit theory"}
+{"pair_id": "concept_7_EECE276_EECE413", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE276", "positive_course": "EECE413", "concept": "circuit theory"}
+{"pair_id": "concept_8_EECE231/DISU231_EECE419/DISU404", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE231/DISU231", "positive_course": "EECE419/DISU404", "concept": "circuit theory"}
+{"pair_id": "concept_9_EECE276_DISU403", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE276", "positive_course": "DISU403", "concept": "circuit theory"}
+{"pair_id": "concept_10_SEMI205_EECE419/DISU404", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI205", "positive_course": "EECE419/DISU404", "concept": "circuit theory"}
+{"pair_id": "concept_1_CHEM101_CHEM311", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM101", "positive_course": "CHEM311", "concept": "chemical equilibrium"}
+{"pair_id": "concept_2_CHEM101_CHEB201", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM101", "positive_course": "CHEB201", "concept": "chemical equilibrium"}
+{"pair_id": "concept_3_CHEM243_CHEM311", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM243", "positive_course": "CHEM311", "concept": "chemical equilibrium"}
+{"pair_id": "concept_4_CHEB201_CHEM311", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB201", "positive_course": "CHEM311", "concept": "chemical equilibrium"}
+{"pair_id": "concept_5_CHEM101_CHEM243", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM101", "positive_course": "CHEM243", "concept": "chemical equilibrium"}
+{"pair_id": "concept_6_CHEM243_CHEB201", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM243", "positive_course": "CHEB201", "concept": "chemical equilibrium"}
+{"pair_id": "concept_1_CHEM103_CHEM325", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "CHEM325", "concept": "organic chemistry reactions"}
+{"pair_id": "concept_2_CHEM103_CHEM331", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "CHEM331", "concept": "organic chemistry reactions"}
+{"pair_id": "concept_3_CHEM103_LIFE319", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "LIFE319", "concept": "organic chemistry reactions"}
+{"pair_id": "concept_4_CHEM103_CHEM222", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "CHEM222", "concept": "organic chemistry reactions"}
+{"pair_id": "concept_5_CHEM103_CHEM226", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "CHEM226", "concept": "organic chemistry reactions"}
+{"pair_id": "concept_6_CHEM103_CHEB206", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "CHEB206", "concept": "organic chemistry reactions"}
+{"pair_id": "concept_7_CHEM103_CHEB207", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "CHEB207", "concept": "organic chemistry reactions"}
+{"pair_id": "concept_8_CHEM103_CHEB211", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "CHEB211", "concept": "organic chemistry reactions"}
+{"pair_id": "concept_9_CHEM103_CHEM221", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "CHEM221", "concept": "organic chemistry reactions"}
+{"pair_id": "concept_10_CHEM103_CHEM292", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "CHEM292", "concept": "organic chemistry reactions"}
+{"pair_id": "concept_1_CHEM103_LIFE415", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "LIFE415", "concept": "biochemistry"}
+{"pair_id": "concept_2_CHEM103_CHEB408", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "CHEB408", "concept": "biochemistry"}
+{"pair_id": "concept_3_CHEM103_CHEB409", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "CHEB409", "concept": "biochemistry"}
+{"pair_id": "concept_4_CHEM103_CHEM461", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "CHEM461", "concept": "biochemistry"}
+{"pair_id": "concept_5_CHEM103_LIFE322", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "LIFE322", "concept": "biochemistry"}
+{"pair_id": "concept_6_CHEM103_LIFE320", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "LIFE320", "concept": "biochemistry"}
+{"pair_id": "concept_7_LIFE218_LIFE415", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE218", "positive_course": "LIFE415", "concept": "biochemistry"}
+{"pair_id": "concept_8_LIFE218_CHEB408", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE218", "positive_course": "CHEB408", "concept": "biochemistry"}
+{"pair_id": "concept_9_LIFE218_CHEB409", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE218", "positive_course": "CHEB409", "concept": "biochemistry"}
+{"pair_id": "concept_10_LIFE218_CHEM461", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE218", "positive_course": "CHEM461", "concept": "biochemistry"}
+{"pair_id": "concept_1_LIFE218_CHEB408", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE218", "positive_course": "CHEB408", "concept": "molecular biology"}
+{"pair_id": "concept_2_LIFE218_CHEB409", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE218", "positive_course": "CHEB409", "concept": "molecular biology"}
+{"pair_id": "concept_3_LIFE218_CHEM461", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE218", "positive_course": "CHEM461", "concept": "molecular biology"}
+{"pair_id": "concept_4_LIFE218_LIFE322", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE218", "positive_course": "LIFE322", "concept": "molecular biology"}
+{"pair_id": "concept_5_CHEB213_CHEB408", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB213", "positive_course": "CHEB408", "concept": "molecular biology"}
+{"pair_id": "concept_6_CHEB213_CHEB409", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB213", "positive_course": "CHEB409", "concept": "molecular biology"}
+{"pair_id": "concept_7_CHEB213_CHEM461", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB213", "positive_course": "CHEM461", "concept": "molecular biology"}
+{"pair_id": "concept_8_CHEB216_CHEB408", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB216", "positive_course": "CHEB408", "concept": "molecular biology"}
+{"pair_id": "concept_9_CHEB216_CHEB409", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB216", "positive_course": "CHEB409", "concept": "molecular biology"}
+{"pair_id": "concept_10_CHEB216_CHEM461", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB216", "positive_course": "CHEM461", "concept": "molecular biology"}
+{"pair_id": "concept_1_LIFE218_LIFE415", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE218", "positive_course": "LIFE415", "concept": "cell biology"}
+{"pair_id": "concept_2_LIFE217_LIFE415", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE217", "positive_course": "LIFE415", "concept": "cell biology"}
+{"pair_id": "concept_3_LIFE218_LIFE322", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE218", "positive_course": "LIFE322", "concept": "cell biology"}
+{"pair_id": "concept_4_LIFE220_LIFE415", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE220", "positive_course": "LIFE415", "concept": "cell biology"}
+{"pair_id": "concept_5_CHEB208_LIFE415", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB208", "positive_course": "LIFE415", "concept": "cell biology"}
+{"pair_id": "concept_6_LIFE209_LIFE415", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE209", "positive_course": "LIFE415", "concept": "cell biology"}
+{"pair_id": "concept_7_LIFE218_LIFE303", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE218", "positive_course": "LIFE303", "concept": "cell biology"}
+{"pair_id": "concept_8_LIFE218_LIFE319", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE218", "positive_course": "LIFE319", "concept": "cell biology"}
+{"pair_id": "concept_9_LIFE218_LIFE327", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE218", "positive_course": "LIFE327", "concept": "cell biology"}
+{"pair_id": "concept_10_LIFE217_LIFE322", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE217", "positive_course": "LIFE322", "concept": "cell biology"}
+{"pair_id": "concept_1_LIFE220_LIFE322", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE220", "positive_course": "LIFE322", "concept": "genetics"}
+{"pair_id": "concept_2_CHEB208_LIFE322", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB208", "positive_course": "LIFE322", "concept": "genetics"}
+{"pair_id": "concept_3_LIFE220_LIFE315", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE220", "positive_course": "LIFE315", "concept": "genetics"}
+{"pair_id": "concept_4_CHEB208_LIFE315", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB208", "positive_course": "LIFE315", "concept": "genetics"}
+{"pair_id": "concept_5_LIFE220_LIFE326", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE220", "positive_course": "LIFE326", "concept": "genetics"}
+{"pair_id": "concept_6_CHEB208_LIFE326", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB208", "positive_course": "LIFE326", "concept": "genetics"}
+{"pair_id": "concept_7_LIFE326_LIFE322", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE326", "positive_course": "LIFE322", "concept": "genetics"}
+{"pair_id": "concept_8_LIFE315_LIFE322", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE315", "positive_course": "LIFE322", "concept": "genetics"}
+{"pair_id": "concept_1_LIFE220_LIFE420", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE220", "positive_course": "LIFE420", "concept": "immunology"}
+{"pair_id": "concept_2_CHEB208_LIFE420", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB208", "positive_course": "LIFE420", "concept": "immunology"}
+{"pair_id": "concept_1_CHEB213_CHEB408", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB213", "positive_course": "CHEB408", "concept": "biochemical engineering"}
+{"pair_id": "concept_2_CHEB213_CHEB308", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB213", "positive_course": "CHEB308", "concept": "biochemical engineering"}
+{"pair_id": "concept_3_CHEB213_LIFE325", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB213", "positive_course": "LIFE325", "concept": "biochemical engineering"}
+{"pair_id": "concept_4_CHEB308_CHEB408", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB308", "positive_course": "CHEB408", "concept": "biochemical engineering"}
+{"pair_id": "concept_5_LIFE325_CHEB408", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE325", "positive_course": "CHEB408", "concept": "biochemical engineering"}
+{"pair_id": "concept_1_MATH400_CHEB301", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH400", "positive_course": "CHEB301", "concept": "linear algebra"}
+{"pair_id": "concept_2_MATH442_CHEB301", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH442", "positive_course": "CHEB301", "concept": "linear algebra"}
+{"pair_id": "concept_3_MATH203_CHEB301", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH203", "positive_course": "CHEB301", "concept": "linear algebra"}
+{"pair_id": "concept_4_MATH400_MECH437", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH400", "positive_course": "MECH437", "concept": "linear algebra"}
+{"pair_id": "concept_5_MATH400_SEMI201", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH400", "positive_course": "SEMI201", "concept": "linear algebra"}
+{"pair_id": "concept_6_MATH442_MECH437", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH442", "positive_course": "MECH437", "concept": "linear algebra"}
+{"pair_id": "concept_7_MATH442_SEMI201", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH442", "positive_course": "SEMI201", "concept": "linear algebra"}
+{"pair_id": "concept_8_MATH203_MECH437", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH203", "positive_course": "MECH437", "concept": "linear algebra"}
+{"pair_id": "concept_9_MATH203_SEMI201", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH203", "positive_course": "SEMI201", "concept": "linear algebra"}
+{"pair_id": "concept_1_MATH313_CHEB301", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH313", "positive_course": "CHEB301", "concept": "differential equations"}
+{"pair_id": "concept_2_MATH101_CHEB301", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH101", "positive_course": "CHEB301", "concept": "differential equations"}
+{"pair_id": "concept_3_MATH200_CHEB301", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH200", "positive_course": "CHEB301", "concept": "differential equations"}
+{"pair_id": "concept_4_MATH313_MECH370", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH313", "positive_course": "MECH370", "concept": "differential equations"}
+{"pair_id": "concept_5_MATH412_CHEB301", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH412", "positive_course": "CHEB301", "concept": "differential equations"}
+{"pair_id": "concept_6_MATH451_CHEB301", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH451", "positive_course": "CHEB301", "concept": "differential equations"}
+{"pair_id": "concept_7_MATH101_MECH370", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH101", "positive_course": "MECH370", "concept": "differential equations"}
+{"pair_id": "concept_8_MATH200_MECH370", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH200", "positive_course": "MECH370", "concept": "differential equations"}
+{"pair_id": "concept_9_MATH203_CHEB301", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH203", "positive_course": "CHEB301", "concept": "differential equations"}
+{"pair_id": "concept_10_MATH313_CHEB303", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH313", "positive_course": "CHEB303", "concept": "differential equations"}
+{"pair_id": "concept_1_CSED403_MATH402", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED403", "positive_course": "MATH402", "concept": "algorithms"}
+{"pair_id": "concept_2_CSED103_MATH402", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED103", "positive_course": "MATH402", "concept": "algorithms"}
+{"pair_id": "concept_3_CSED403_CHEB301", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED403", "positive_course": "CHEB301", "concept": "algorithms"}
+{"pair_id": "concept_4_CSED403_CITE421/CSED357", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED403", "positive_course": "CITE421/CSED357", "concept": "algorithms"}
+{"pair_id": "concept_5_CSED103_CHEB301", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED103", "positive_course": "CHEB301", "concept": "algorithms"}
+{"pair_id": "concept_6_CSED103_CITE421/CSED357", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED103", "positive_course": "CITE421/CSED357", "concept": "algorithms"}
+{"pair_id": "concept_7_CSED341_MATH402", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED341", "positive_course": "MATH402", "concept": "algorithms"}
+{"pair_id": "concept_8_CSED403_IMEN473", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED403", "positive_course": "IMEN473", "concept": "algorithms"}
+{"pair_id": "concept_1_CSED342_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED342", "positive_course": "DISU431", "concept": "machine learning"}
+{"pair_id": "concept_2_CSED343_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED343", "positive_course": "DISU431", "concept": "machine learning"}
+{"pair_id": "concept_3_EECE312_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE312", "positive_course": "DISU431", "concept": "machine learning"}
+{"pair_id": "concept_4_MATH333_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH333", "positive_course": "DISU431", "concept": "machine learning"}
+{"pair_id": "concept_5_EECE376_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE376", "positive_course": "DISU431", "concept": "machine learning"}
+{"pair_id": "concept_6_CHEB301_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB301", "positive_course": "DISU431", "concept": "machine learning"}
+{"pair_id": "concept_7_CSED342_MATH402", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED342", "positive_course": "MATH402", "concept": "machine learning"}
+{"pair_id": "concept_8_CSED343_MATH402", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED343", "positive_course": "MATH402", "concept": "machine learning"}
+{"pair_id": "concept_9_EECE312_MATH402", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE312", "positive_course": "MATH402", "concept": "machine learning"}
+{"pair_id": "concept_10_MATH333_MATH402", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH333", "positive_course": "MATH402", "concept": "machine learning"}
+{"pair_id": "concept_1_EECE312_CSED425", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE312", "positive_course": "CSED425", "concept": "deep learning"}
+{"pair_id": "concept_2_EECE312_CSED404", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE312", "positive_course": "CSED404", "concept": "deep learning"}
+{"pair_id": "concept_3_CHEB301_CSED425", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB301", "positive_course": "CSED425", "concept": "deep learning"}
+{"pair_id": "concept_4_CHEB301_CSED404", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB301", "positive_course": "CSED404", "concept": "deep learning"}
+{"pair_id": "concept_5_EECE312_CHEB301", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE312", "positive_course": "CHEB301", "concept": "deep learning"}
+{"pair_id": "concept_1_CSED105_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED105", "positive_course": "DISU431", "concept": "artificial intelligence"}
+{"pair_id": "concept_2_CSED105_CSED425", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED105", "positive_course": "CSED425", "concept": "artificial intelligence"}
+{"pair_id": "concept_3_CSED105_DISU412", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED105", "positive_course": "DISU412", "concept": "artificial intelligence"}
+{"pair_id": "concept_4_CSED105_MECH427", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED105", "positive_course": "MECH427", "concept": "artificial intelligence"}
+{"pair_id": "concept_5_CSED105_EECE412/DISU412", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED105", "positive_course": "EECE412/DISU412", "concept": "artificial intelligence"}
+{"pair_id": "concept_6_CSED105_CSED405", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED105", "positive_course": "CSED405", "concept": "artificial intelligence"}
+{"pair_id": "concept_7_CSED105_MATH442", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED105", "positive_course": "MATH442", "concept": "artificial intelligence"}
+{"pair_id": "concept_8_CSED105_MECH437", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED105", "positive_course": "MECH437", "concept": "artificial intelligence"}
+{"pair_id": "concept_9_CSED105_MATH432", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED105", "positive_course": "MATH432", "concept": "artificial intelligence"}
+{"pair_id": "concept_1_CSED343_MATH451", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED343", "positive_course": "MATH451", "concept": "neural networks"}
+{"pair_id": "concept_2_CSED343_MECH437", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED343", "positive_course": "MECH437", "concept": "neural networks"}
+{"pair_id": "concept_3_CHEB301_MATH451", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB301", "positive_course": "MATH451", "concept": "neural networks"}
+{"pair_id": "concept_4_CHEB301_MECH437", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB301", "positive_course": "MECH437", "concept": "neural networks"}
+{"pair_id": "concept_5_CSED343_CHEB301", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED343", "positive_course": "CHEB301", "concept": "neural networks"}
+{"pair_id": "concept_1_CSED103_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED103", "positive_course": "DISU431", "concept": "optimization"}
+{"pair_id": "concept_2_CSED103_SEMI342", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED103", "positive_course": "SEMI342", "concept": "optimization"}
+{"pair_id": "concept_3_CSED211_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED211", "positive_course": "DISU431", "concept": "optimization"}
+{"pair_id": "concept_4_IMEN261_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "IMEN261", "positive_course": "DISU431", "concept": "optimization"}
+{"pair_id": "concept_5_IMEN376_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "IMEN376", "positive_course": "DISU431", "concept": "optimization"}
+{"pair_id": "concept_6_CSED103_EECE372", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED103", "positive_course": "EECE372", "concept": "optimization"}
+{"pair_id": "concept_7_CSED103_EECE455", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED103", "positive_course": "EECE455", "concept": "optimization"}
+{"pair_id": "concept_8_IMEN361_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "IMEN361", "positive_course": "DISU431", "concept": "optimization"}
+{"pair_id": "concept_9_CSED103_CHEB402", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED103", "positive_course": "CHEB402", "concept": "optimization"}
+{"pair_id": "concept_10_CSED211_SEMI342", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED211", "positive_course": "SEMI342", "concept": "optimization"}
+{"pair_id": "concept_1_PHYS209_MATH415", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS209", "positive_course": "MATH415", "concept": "fourier transform"}
+{"pair_id": "concept_2_EECE233_MATH415", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE233", "positive_course": "MATH415", "concept": "fourier transform"}
+{"pair_id": "concept_3_MATH200_MATH415", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH200", "positive_course": "MATH415", "concept": "fourier transform"}
+{"pair_id": "concept_4_PHYS209_CITE453", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS209", "positive_course": "CITE453", "concept": "fourier transform"}
+{"pair_id": "concept_5_EECE233_CITE453", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE233", "positive_course": "CITE453", "concept": "fourier transform"}
+{"pair_id": "concept_6_MATH200_CITE453", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH200", "positive_course": "CITE453", "concept": "fourier transform"}
+{"pair_id": "concept_7_CSED355_MATH415", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED355", "positive_course": "MATH415", "concept": "fourier transform"}
+{"pair_id": "concept_8_CHEM342_MATH415", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM342", "positive_course": "MATH415", "concept": "fourier transform"}
+{"pair_id": "concept_9_EECE341_MATH415", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE341", "positive_course": "MATH415", "concept": "fourier transform"}
+{"pair_id": "concept_10_MATH313_MATH415", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH313", "positive_course": "MATH415", "concept": "fourier transform"}
+{"pair_id": "concept_1_CHEM103_CHEB305", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "CHEB305", "concept": "reaction engineering"}
+{"pair_id": "concept_2_CHEM103_CHEB306", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "CHEB306", "concept": "reaction engineering"}
+{"pair_id": "concept_3_CHEM101_CHEB305", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM101", "positive_course": "CHEB305", "concept": "reaction engineering"}
+{"pair_id": "concept_4_CHEM101_CHEB306", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM101", "positive_course": "CHEB306", "concept": "reaction engineering"}
+{"pair_id": "concept_5_CHEM103_CHEM213", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "CHEM213", "concept": "reaction engineering"}
+{"pair_id": "concept_6_CHEM213_CHEB305", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM213", "positive_course": "CHEB305", "concept": "reaction engineering"}
+{"pair_id": "concept_7_CHEM101_CHEM213", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM101", "positive_course": "CHEM213", "concept": "reaction engineering"}
+{"pair_id": "concept_8_CHEM213_CHEB306", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM213", "positive_course": "CHEB306", "concept": "reaction engineering"}
+{"pair_id": "concept_9_CHEM103_CHEM101", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM103", "positive_course": "CHEM101", "concept": "reaction engineering"}
+{"pair_id": "concept_1_MATH102_MECH470", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH102", "positive_course": "MECH470", "concept": "fluid mechanics"}
+{"pair_id": "concept_2_MATH103_MECH470", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH103", "positive_course": "MECH470", "concept": "fluid mechanics"}
+{"pair_id": "concept_3_MATH102_MECH450", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH102", "positive_course": "MECH450", "concept": "fluid mechanics"}
+{"pair_id": "concept_4_MATH103_MECH450", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH103", "positive_course": "MECH450", "concept": "fluid mechanics"}
+{"pair_id": "concept_5_MATH102_MECH496", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH102", "positive_course": "MECH496", "concept": "fluid mechanics"}
+{"pair_id": "concept_6_MATH103_MECH496", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH103", "positive_course": "MECH496", "concept": "fluid mechanics"}
+{"pair_id": "concept_7_MATH102_CHEB305", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH102", "positive_course": "CHEB305", "concept": "fluid mechanics"}
+{"pair_id": "concept_8_MATH102_MECH370", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH102", "positive_course": "MECH370", "concept": "fluid mechanics"}
+{"pair_id": "concept_9_MATH103_CHEB305", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH103", "positive_course": "CHEB305", "concept": "fluid mechanics"}
+{"pair_id": "concept_10_MATH103_MECH370", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH103", "positive_course": "MECH370", "concept": "fluid mechanics"}
+{"pair_id": "concept_1_MECH371_MECH450", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MECH371", "positive_course": "MECH450", "concept": "heat transfer"}
+{"pair_id": "concept_2_CHEB306_MECH450", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB306", "positive_course": "MECH450", "concept": "heat transfer"}
+{"pair_id": "concept_3_CHEB305_MECH450", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB305", "positive_course": "MECH450", "concept": "heat transfer"}
+{"pair_id": "concept_4_MECH371_CHEB305", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MECH371", "positive_course": "CHEB305", "concept": "heat transfer"}
+{"pair_id": "concept_5_MECH371_CHEB306", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MECH371", "positive_course": "CHEB306", "concept": "heat transfer"}
+{"pair_id": "concept_1_CHEB314_CHEB461", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB314", "positive_course": "CHEB461", "concept": "colloid and interfacial phenomena"}
+{"pair_id": "concept_2_CHEB313_CHEB461", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB313", "positive_course": "CHEB461", "concept": "colloid and interfacial phenomena"}
+{"pair_id": "concept_3_CHEB315_CHEB461", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB315", "positive_course": "CHEB461", "concept": "colloid and interfacial phenomena"}
+{"pair_id": "concept_4_CHEB314_CHEB315", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB314", "positive_course": "CHEB315", "concept": "colloid and interfacial phenomena"}
+{"pair_id": "concept_5_CHEB313_CHEB315", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB313", "positive_course": "CHEB315", "concept": "colloid and interfacial phenomena"}
+{"pair_id": "concept_6_CHEB314_CHEB313", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB314", "positive_course": "CHEB313", "concept": "colloid and interfacial phenomena"}
+{"pair_id": "concept_1_EECE320_CITE441/EECE423", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE320", "positive_course": "CITE441/EECE423", "concept": "process control"}
+{"pair_id": "concept_2_CITE341_CITE441/EECE423", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CITE341", "positive_course": "CITE441/EECE423", "concept": "process control"}
+{"pair_id": "concept_3_EECE320_CHEB401", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE320", "positive_course": "CHEB401", "concept": "process control"}
+{"pair_id": "concept_4_EECE320_EECE422", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE320", "positive_course": "EECE422", "concept": "process control"}
+{"pair_id": "concept_5_EECE320_EECE423", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE320", "positive_course": "EECE423", "concept": "process control"}
+{"pair_id": "concept_6_CITE341_CHEB401", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CITE341", "positive_course": "CHEB401", "concept": "process control"}
+{"pair_id": "concept_7_CITE341_EECE422", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CITE341", "positive_course": "EECE422", "concept": "process control"}
+{"pair_id": "concept_8_CITE341_EECE423", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CITE341", "positive_course": "EECE423", "concept": "process control"}
+{"pair_id": "concept_9_EECE309_CHEB401", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE309", "positive_course": "CHEB401", "concept": "process control"}
+{"pair_id": "concept_10_EECE309_EECE422", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE309", "positive_course": "EECE422", "concept": "process control"}
+{"pair_id": "concept_1_EECE320_CITE441/EECE423", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE320", "positive_course": "CITE441/EECE423", "concept": "control theory"}
+{"pair_id": "concept_2_EECE320_CHEB401", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE320", "positive_course": "CHEB401", "concept": "control theory"}
+{"pair_id": "concept_3_EECE320_EECE422", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE320", "positive_course": "EECE422", "concept": "control theory"}
+{"pair_id": "concept_4_EECE320_EECE423", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE320", "positive_course": "EECE423", "concept": "control theory"}
+{"pair_id": "concept_5_EECE309_CHEB401", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE309", "positive_course": "CHEB401", "concept": "control theory"}
+{"pair_id": "concept_6_EECE309_EECE422", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE309", "positive_course": "EECE422", "concept": "control theory"}
+{"pair_id": "concept_1_CHEB461_CHEB402", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB461", "positive_course": "CHEB402", "concept": "process design"}
+{"pair_id": "concept_1_CHEB408_CHEB403", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB408", "positive_course": "CHEB403", "concept": "separation processes"}
+{"pair_id": "concept_1_EECE303_CHEB417", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE303", "positive_course": "CHEB417", "concept": "transport phenomena"}
+{"pair_id": "concept_2_EECE303_CHEB418", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE303", "positive_course": "CHEB418", "concept": "transport phenomena"}
+{"pair_id": "concept_3_CHEB418_CHEB417", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEB418", "positive_course": "CHEB417", "concept": "transport phenomena"}
+{"pair_id": "concept_1_PHYS101, 102_DISU361", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS101, 102", "positive_course": "DISU361", "concept": "electromagnetism"}
+{"pair_id": "concept_2_EECE261_DISU361", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE261", "positive_course": "DISU361", "concept": "electromagnetism"}
+{"pair_id": "concept_3_PHYS101, 102_CHEB463", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS101, 102", "positive_course": "CHEB463", "concept": "electromagnetism"}
+{"pair_id": "concept_4_PHYS101, 102_MECH403", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS101, 102", "positive_course": "MECH403", "concept": "electromagnetism"}
+{"pair_id": "concept_5_PHYS101, 102_SEMI212", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS101, 102", "positive_course": "SEMI212", "concept": "electromagnetism"}
+{"pair_id": "concept_6_PHYS209_DISU361", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS209", "positive_course": "DISU361", "concept": "electromagnetism"}
+{"pair_id": "concept_7_EECE417_DISU361", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE417", "positive_course": "DISU361", "concept": "electromagnetism"}
+{"pair_id": "concept_8_PHYS206_DISU361", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS206", "positive_course": "DISU361", "concept": "electromagnetism"}
+{"pair_id": "concept_9_PHYS352_DISU361", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS352", "positive_course": "DISU361", "concept": "electromagnetism"}
+{"pair_id": "concept_1_SEMI202_CHEB463", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI202", "positive_course": "CHEB463", "concept": "solid state physics"}
+{"pair_id": "concept_2_SEMI202_EECE417", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI202", "positive_course": "EECE417", "concept": "solid state physics"}
+{"pair_id": "concept_3_SEMI202_MECH403", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI202", "positive_course": "MECH403", "concept": "solid state physics"}
+{"pair_id": "concept_4_SEMI202_PHYS401", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI202", "positive_course": "PHYS401", "concept": "solid state physics"}
+{"pair_id": "concept_5_EECE201_CHEB463", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE201", "positive_course": "CHEB463", "concept": "solid state physics"}
+{"pair_id": "concept_6_EECE201_EECE417", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE201", "positive_course": "EECE417", "concept": "solid state physics"}
+{"pair_id": "concept_7_EECE201_MECH403", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE201", "positive_course": "MECH403", "concept": "solid state physics"}
+{"pair_id": "concept_8_EECE201_PHYS401", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE201", "positive_course": "PHYS401", "concept": "solid state physics"}
+{"pair_id": "concept_1_PHYS201_CHEM211", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS201", "positive_course": "CHEM211", "concept": "classical mechanics"}
+{"pair_id": "concept_2_PHYS203_CHEM211", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS203", "positive_course": "CHEM211", "concept": "classical mechanics"}
+{"pair_id": "concept_3_PHYS301_CHEM211", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS301", "positive_course": "CHEM211", "concept": "classical mechanics"}
+{"pair_id": "concept_4_PHYS201_PHYS301", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS201", "positive_course": "PHYS301", "concept": "classical mechanics"}
+{"pair_id": "concept_5_PHYS203_PHYS301", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS203", "positive_course": "PHYS301", "concept": "classical mechanics"}
+{"pair_id": "concept_1_MATH422_EECE201", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH422", "positive_course": "EECE201", "concept": "calculus"}
+{"pair_id": "concept_2_MATH422_CHEM213", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH422", "positive_course": "CHEM213", "concept": "calculus"}
+{"pair_id": "concept_3_MATH422_CSED343", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH422", "positive_course": "CSED343", "concept": "calculus"}
+{"pair_id": "concept_4_MATH422_CSED433", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH422", "positive_course": "CSED433", "concept": "calculus"}
+{"pair_id": "concept_5_MATH101_EECE201", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH101", "positive_course": "EECE201", "concept": "calculus"}
+{"pair_id": "concept_6_MATH102_EECE201", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH102", "positive_course": "EECE201", "concept": "calculus"}
+{"pair_id": "concept_7_MATH103_EECE201", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH103", "positive_course": "EECE201", "concept": "calculus"}
+{"pair_id": "concept_8_MATH311, 312_EECE201", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH311, 312", "positive_course": "EECE201", "concept": "calculus"}
+{"pair_id": "concept_9_MATH422_EECE261", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH422", "positive_course": "EECE261", "concept": "calculus"}
+{"pair_id": "concept_10_MATH422_CSED355", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH422", "positive_course": "CSED355", "concept": "calculus"}
+{"pair_id": "concept_1_IMEN272_MECH280", "source": "llm_concept", "confidence": 0.3, "anchor_course": "IMEN272", "positive_course": "MECH280", "concept": "probability and statistics"}
+{"pair_id": "concept_2_IMEN272_CHEM213", "source": "llm_concept", "confidence": 0.3, "anchor_course": "IMEN272", "positive_course": "CHEM213", "concept": "probability and statistics"}
+{"pair_id": "concept_3_IMEN272_CSED343", "source": "llm_concept", "confidence": 0.3, "anchor_course": "IMEN272", "positive_course": "CSED343", "concept": "probability and statistics"}
+{"pair_id": "concept_4_MATH230_MECH280", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH230", "positive_course": "MECH280", "concept": "probability and statistics"}
+{"pair_id": "concept_5_MATH333_MECH280", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH333", "positive_course": "MECH280", "concept": "probability and statistics"}
+{"pair_id": "concept_6_MATH230_CHEM213", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH230", "positive_course": "CHEM213", "concept": "probability and statistics"}
+{"pair_id": "concept_7_MATH230_CSED343", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH230", "positive_course": "CSED343", "concept": "probability and statistics"}
+{"pair_id": "concept_8_MATH333_CHEM213", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH333", "positive_course": "CHEM213", "concept": "probability and statistics"}
+{"pair_id": "concept_9_MATH333_CSED343", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH333", "positive_course": "CSED343", "concept": "probability and statistics"}
+{"pair_id": "concept_10_MATH231_MECH280", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH231", "positive_course": "MECH280", "concept": "probability and statistics"}
+{"pair_id": "concept_1_SEMI202_CHEM311", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI202", "positive_course": "CHEM311", "concept": "statistical mechanics"}
+{"pair_id": "concept_2_CHEM213_CHEM311", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM213", "positive_course": "CHEM311", "concept": "statistical mechanics"}
+{"pair_id": "concept_3_SEMI202_PHYS304", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI202", "positive_course": "PHYS304", "concept": "statistical mechanics"}
+{"pair_id": "concept_4_CHEM213_PHYS304", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM213", "positive_course": "PHYS304", "concept": "statistical mechanics"}
+{"pair_id": "concept_5_PHYS304_CHEM311", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS304", "positive_course": "CHEM311", "concept": "statistical mechanics"}
+{"pair_id": "concept_6_SEMI202_CHEM213", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI202", "positive_course": "CHEM213", "concept": "statistical mechanics"}
+{"pair_id": "concept_1_CHEM243_CHEM325", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM243", "positive_course": "CHEM325", "concept": "analytical chemistry"}
+{"pair_id": "concept_2_CHEM243_CHEM314", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM243", "positive_course": "CHEM314", "concept": "analytical chemistry"}
+{"pair_id": "concept_3_CHEM243_CHEM331", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM243", "positive_course": "CHEM331", "concept": "analytical chemistry"}
+{"pair_id": "concept_4_CHEM243_CHEM342", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM243", "positive_course": "CHEM342", "concept": "analytical chemistry"}
+{"pair_id": "concept_5_CHEM213_CHEM325", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM213", "positive_course": "CHEM325", "concept": "analytical chemistry"}
+{"pair_id": "concept_6_CHEM213_CHEM314", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM213", "positive_course": "CHEM314", "concept": "analytical chemistry"}
+{"pair_id": "concept_7_CHEM213_CHEM331", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM213", "positive_course": "CHEM331", "concept": "analytical chemistry"}
+{"pair_id": "concept_8_CHEM226_CHEM325", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM226", "positive_course": "CHEM325", "concept": "analytical chemistry"}
+{"pair_id": "concept_9_CHEM226_CHEM314", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM226", "positive_course": "CHEM314", "concept": "analytical chemistry"}
+{"pair_id": "concept_10_CHEM226_CHEM331", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM226", "positive_course": "CHEM331", "concept": "analytical chemistry"}
+{"pair_id": "concept_1_CHEM226_CHEM331", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM226", "positive_course": "CHEM331", "concept": "inorganic chemistry"}
+{"pair_id": "concept_1_MATH403_CHEM331", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH403", "positive_course": "CHEM331", "concept": "abstract algebra"}
+{"pair_id": "concept_2_MATH301, 302_CHEM331", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH301, 302", "positive_course": "CHEM331", "concept": "abstract algebra"}
+{"pair_id": "concept_3_MATH400_CHEM331", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH400", "positive_course": "CHEM331", "concept": "abstract algebra"}
+{"pair_id": "concept_4_MATH403_MECH439", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH403", "positive_course": "MECH439", "concept": "abstract algebra"}
+{"pair_id": "concept_5_MATH301, 302_MECH439", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH301, 302", "positive_course": "MECH439", "concept": "abstract algebra"}
+{"pair_id": "concept_6_MATH400_MECH439", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH400", "positive_course": "MECH439", "concept": "abstract algebra"}
+{"pair_id": "concept_7_MATH301, 302_MATH400", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH301, 302", "positive_course": "MATH400", "concept": "abstract algebra"}
+{"pair_id": "concept_8_MATH301, 302_MATH403", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH301, 302", "positive_course": "MATH403", "concept": "abstract algebra"}
+{"pair_id": "concept_9_CHEM331_MECH439", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CHEM331", "positive_course": "MECH439", "concept": "abstract algebra"}
+{"pair_id": "concept_10_MATH403_MATH400", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH403", "positive_course": "MATH400", "concept": "abstract algebra"}
+{"pair_id": "concept_1_CITE103_CITE405", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CITE103", "positive_course": "CITE405", "concept": "design thinking"}
+{"pair_id": "concept_2_CITE103_CITE306", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CITE103", "positive_course": "CITE306", "concept": "design thinking"}
+{"pair_id": "concept_3_CITE303_CITE405", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CITE303", "positive_course": "CITE405", "concept": "design thinking"}
+{"pair_id": "concept_4_CITE103_CITE303", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CITE103", "positive_course": "CITE303", "concept": "design thinking"}
+{"pair_id": "concept_5_CITE306_CITE405", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CITE306", "positive_course": "CITE405", "concept": "design thinking"}
+{"pair_id": "concept_6_CITE303_CITE306", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CITE303", "positive_course": "CITE306", "concept": "design thinking"}
+{"pair_id": "concept_1_CITE203_CITE405", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CITE203", "positive_course": "CITE405", "concept": "hci and interaction design"}
+{"pair_id": "concept_2_CITE203_CSED356", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CITE203", "positive_course": "CSED356", "concept": "hci and interaction design"}
+{"pair_id": "concept_3_CSED356_CITE405", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED356", "positive_course": "CITE405", "concept": "hci and interaction design"}
+{"pair_id": "concept_1_SEMI204_DISU434", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI204", "positive_course": "DISU434", "concept": "digital circuit design"}
+{"pair_id": "concept_2_SEMI204_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI204", "positive_course": "DISU431", "concept": "digital circuit design"}
+{"pair_id": "concept_3_EECE276_DISU434", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE276", "positive_course": "DISU434", "concept": "digital circuit design"}
+{"pair_id": "concept_4_CITE221_DISU434", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CITE221", "positive_course": "DISU434", "concept": "digital circuit design"}
+{"pair_id": "concept_5_EECE276_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE276", "positive_course": "DISU431", "concept": "digital circuit design"}
+{"pair_id": "concept_6_CITE221_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CITE221", "positive_course": "DISU431", "concept": "digital circuit design"}
+{"pair_id": "concept_7_SEMI204_EECE434/DISU434", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI204", "positive_course": "EECE434/DISU434", "concept": "digital circuit design"}
+{"pair_id": "concept_8_SEMI204_EECE455", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI204", "positive_course": "EECE455", "concept": "digital circuit design"}
+{"pair_id": "concept_9_SEMI209_DISU434", "source": "llm_concept", "confidence": 0.3, "anchor_course": "SEMI209", "positive_course": "DISU434", "concept": "digital circuit design"}
+{"pair_id": "concept_10_CSED273_DISU434", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED273", "positive_course": "DISU434", "concept": "digital circuit design"}
+{"pair_id": "concept_1_IMEN110_CITE411/IMEN412/ENTP301", "source": "llm_concept", "confidence": 0.3, "anchor_course": "IMEN110", "positive_course": "CITE411/IMEN412/ENTP301", "concept": "entrepreneurship"}
+{"pair_id": "concept_2_IMEN110_ENTP492", "source": "llm_concept", "confidence": 0.3, "anchor_course": "IMEN110", "positive_course": "ENTP492", "concept": "entrepreneurship"}
+{"pair_id": "concept_3_IMEN110_IMEN412", "source": "llm_concept", "confidence": 0.3, "anchor_course": "IMEN110", "positive_course": "IMEN412", "concept": "entrepreneurship"}
+{"pair_id": "concept_4_IMEN110_CITE306", "source": "llm_concept", "confidence": 0.3, "anchor_course": "IMEN110", "positive_course": "CITE306", "concept": "entrepreneurship"}
+{"pair_id": "concept_5_IMEN110_IMEN411", "source": "llm_concept", "confidence": 0.3, "anchor_course": "IMEN110", "positive_course": "IMEN411", "concept": "entrepreneurship"}
+{"pair_id": "concept_6_ENTP201_CITE411/IMEN412/ENTP301", "source": "llm_concept", "confidence": 0.3, "anchor_course": "ENTP201", "positive_course": "CITE411/IMEN412/ENTP301", "concept": "entrepreneurship"}
+{"pair_id": "concept_1_EECE320_CITE441/EECE423", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE320", "positive_course": "CITE441/EECE423", "concept": "control systems (mechanical)"}
+{"pair_id": "concept_2_CITE341_CITE441/EECE423", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CITE341", "positive_course": "CITE441/EECE423", "concept": "control systems (mechanical)"}
+{"pair_id": "concept_3_EECE320_EECE422", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE320", "positive_course": "EECE422", "concept": "control systems (mechanical)"}
+{"pair_id": "concept_4_EECE320_EECE423", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE320", "positive_course": "EECE423", "concept": "control systems (mechanical)"}
+{"pair_id": "concept_5_CITE341_EECE422", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CITE341", "positive_course": "EECE422", "concept": "control systems (mechanical)"}
+{"pair_id": "concept_6_CITE341_EECE423", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CITE341", "positive_course": "EECE423", "concept": "control systems (mechanical)"}
+{"pair_id": "concept_7_EECE309_EECE422", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE309", "positive_course": "EECE422", "concept": "control systems (mechanical)"}
+{"pair_id": "concept_8_MECH323_CITE441/EECE423", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MECH323", "positive_course": "CITE441/EECE423", "concept": "control systems (mechanical)"}
+{"pair_id": "concept_9_MECH323_EECE422", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MECH323", "positive_course": "EECE422", "concept": "control systems (mechanical)"}
+{"pair_id": "concept_10_MECH323_EECE423", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MECH323", "positive_course": "EECE423", "concept": "control systems (mechanical)"}
+{"pair_id": "concept_1_IMEN382_CITE421/CSED357", "source": "llm_concept", "confidence": 0.3, "anchor_course": "IMEN382", "positive_course": "CITE421/CSED357", "concept": "database systems"}
+{"pair_id": "concept_2_IMEN382_IMEN473", "source": "llm_concept", "confidence": 0.3, "anchor_course": "IMEN382", "positive_course": "IMEN473", "concept": "database systems"}
+{"pair_id": "concept_3_CSED357_IMEN473", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED357", "positive_course": "IMEN473", "concept": "database systems"}
+{"pair_id": "concept_1_EECE202_EECE455", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE202", "positive_course": "EECE455", "concept": "signal processing"}
+{"pair_id": "concept_2_EECE233_EECE455", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE233", "positive_course": "EECE455", "concept": "signal processing"}
+{"pair_id": "concept_3_MECH280_EECE455", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MECH280", "positive_course": "EECE455", "concept": "signal processing"}
+{"pair_id": "concept_4_EECE202_EECE423", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE202", "positive_course": "EECE423", "concept": "signal processing"}
+{"pair_id": "concept_5_EECE308_EECE455", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE308", "positive_course": "EECE455", "concept": "signal processing"}
+{"pair_id": "concept_6_CSED355_EECE455", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED355", "positive_course": "EECE455", "concept": "signal processing"}
+{"pair_id": "concept_7_EECE202_CITE453", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE202", "positive_course": "CITE453", "concept": "signal processing"}
+{"pair_id": "concept_8_EECE233_EECE423", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE233", "positive_course": "EECE423", "concept": "signal processing"}
+{"pair_id": "concept_9_MECH280_EECE423", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MECH280", "positive_course": "EECE423", "concept": "signal processing"}
+{"pair_id": "concept_10_EECE306_EECE455", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE306", "positive_course": "EECE455", "concept": "signal processing"}
+{"pair_id": "concept_1_EECE308_EECE414", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE308", "positive_course": "EECE414", "concept": "wireless communication"}
+{"pair_id": "concept_2_EECE308_SEMI445", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE308", "positive_course": "SEMI445", "concept": "wireless communication"}
+{"pair_id": "concept_3_EECE341_EECE414", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE341", "positive_course": "EECE414", "concept": "wireless communication"}
+{"pair_id": "concept_4_EECE341_SEMI445", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE341", "positive_course": "SEMI445", "concept": "wireless communication"}
+{"pair_id": "concept_5_EECE308_EECE443/NGCN302", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE308", "positive_course": "EECE443/NGCN302", "concept": "wireless communication"}
+{"pair_id": "concept_6_EECE341_EECE443/NGCN302", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE341", "positive_course": "EECE443/NGCN302", "concept": "wireless communication"}
+{"pair_id": "concept_7_EECE376_EECE414", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE376", "positive_course": "EECE414", "concept": "wireless communication"}
+{"pair_id": "concept_8_EECE376_SEMI445", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE376", "positive_course": "SEMI445", "concept": "wireless communication"}
+{"pair_id": "concept_9_EECE308_CITE453", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE308", "positive_course": "CITE453", "concept": "wireless communication"}
+{"pair_id": "concept_10_EECE341_CITE453", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE341", "positive_course": "CITE453", "concept": "wireless communication"}
+{"pair_id": "concept_1_CMEF302_CMEF407", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CMEF302", "positive_course": "CMEF407", "concept": "microeconomics"}
+{"pair_id": "concept_2_CMEF301_CMEF407", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CMEF301", "positive_course": "CMEF407", "concept": "microeconomics"}
+{"pair_id": "concept_3_CMEF302_CMEF301", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CMEF302", "positive_course": "CMEF301", "concept": "microeconomics"}
+{"pair_id": "concept_1_CMEF303_CMEF301", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CMEF303", "positive_course": "CMEF301", "concept": "macroeconomics"}
+{"pair_id": "concept_1_CMEF305_IMEN388", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CMEF305", "positive_course": "IMEN388", "concept": "financial economics"}
+{"pair_id": "concept_1_IMEN261_CMEF411", "source": "llm_concept", "confidence": 0.3, "anchor_course": "IMEN261", "positive_course": "CMEF411", "concept": "game theory"}
+{"pair_id": "concept_2_IMEN261_CMEF406", "source": "llm_concept", "confidence": 0.3, "anchor_course": "IMEN261", "positive_course": "CMEF406", "concept": "game theory"}
+{"pair_id": "concept_3_CMEF406_CMEF411", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CMEF406", "positive_course": "CMEF411", "concept": "game theory"}
+{"pair_id": "concept_1_CSED103_CSED423", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED103", "positive_course": "CSED423", "concept": "object oriented programming"}
+{"pair_id": "concept_2_CSED103_IMEN483", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED103", "positive_course": "IMEN483", "concept": "object oriented programming"}
+{"pair_id": "concept_3_CSED103_CSED434", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED103", "positive_course": "CSED434", "concept": "object oriented programming"}
+{"pair_id": "concept_4_CSED103_CSED332", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED103", "positive_course": "CSED332", "concept": "object oriented programming"}
+{"pair_id": "concept_5_IMEN281_CSED423", "source": "llm_concept", "confidence": 0.3, "anchor_course": "IMEN281", "positive_course": "CSED423", "concept": "object oriented programming"}
+{"pair_id": "concept_6_CSED103_IMEN382", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED103", "positive_course": "IMEN382", "concept": "object oriented programming"}
+{"pair_id": "concept_7_CSED232_CSED423", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED232", "positive_course": "CSED423", "concept": "object oriented programming"}
+{"pair_id": "concept_8_IMEN281_IMEN483", "source": "llm_concept", "confidence": 0.3, "anchor_course": "IMEN281", "positive_course": "IMEN483", "concept": "object oriented programming"}
+{"pair_id": "concept_9_CSED232_IMEN483", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED232", "positive_course": "IMEN483", "concept": "object oriented programming"}
+{"pair_id": "concept_10_IMEN281_CSED434", "source": "llm_concept", "confidence": 0.3, "anchor_course": "IMEN281", "positive_course": "CSED434", "concept": "object oriented programming"}
+{"pair_id": "concept_1_CSED211_CSED425", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED211", "positive_course": "CSED425", "concept": "operating systems"}
+{"pair_id": "concept_2_CSED211_CSED312", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED211", "positive_course": "CSED312", "concept": "operating systems"}
+{"pair_id": "concept_3_CSED312_CSED425", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED312", "positive_course": "CSED425", "concept": "operating systems"}
+{"pair_id": "concept_1_CSED211_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED211", "positive_course": "DISU431", "concept": "computer architecture"}
+{"pair_id": "concept_2_CSED211_EECE455", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED211", "positive_course": "EECE455", "concept": "computer architecture"}
+{"pair_id": "concept_3_CSED211_CSED425", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED211", "positive_course": "CSED425", "concept": "computer architecture"}
+{"pair_id": "concept_4_CSED273_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED273", "positive_course": "DISU431", "concept": "computer architecture"}
+{"pair_id": "concept_5_CSED211_CSED405", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED211", "positive_course": "CSED405", "concept": "computer architecture"}
+{"pair_id": "concept_6_CSED211_SEMI342", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED211", "positive_course": "SEMI342", "concept": "computer architecture"}
+{"pair_id": "concept_7_CSED273_EECE455", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED273", "positive_course": "EECE455", "concept": "computer architecture"}
+{"pair_id": "concept_8_CSED273_CSED425", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED273", "positive_course": "CSED425", "concept": "computer architecture"}
+{"pair_id": "concept_9_CSED273_CSED405", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED273", "positive_course": "CSED405", "concept": "computer architecture"}
+{"pair_id": "concept_10_CSED273_SEMI342", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED273", "positive_course": "SEMI342", "concept": "computer architecture"}
+{"pair_id": "concept_1_CSED233_IMEN281", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED233", "positive_course": "IMEN281", "concept": "data structures"}
+{"pair_id": "concept_2_CSED312_IMEN281", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED312", "positive_course": "IMEN281", "concept": "data structures"}
+{"pair_id": "concept_3_CSED233_CSED312", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED233", "positive_course": "CSED312", "concept": "data structures"}
+{"pair_id": "concept_1_CSED342_MATH402", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED342", "positive_course": "MATH402", "concept": "computer vision"}
+{"pair_id": "concept_2_CSED342_CSED441", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED342", "positive_course": "CSED441", "concept": "computer vision"}
+{"pair_id": "concept_3_CSED441_MATH402", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED441", "positive_course": "MATH402", "concept": "computer vision"}
+{"pair_id": "concept_1_CSED342_DISU431", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED342", "positive_course": "DISU431", "concept": "natural language processing"}
+{"pair_id": "concept_1_CSED353_CSED403", "source": "llm_concept", "confidence": 0.3, "anchor_course": "CSED353", "positive_course": "CSED403", "concept": "computer networks"}
+{"pair_id": "concept_1_EECE310_EECE425", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE310", "positive_course": "EECE425", "concept": "power electronics"}
+{"pair_id": "concept_2_EECE305_EECE429", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE305", "positive_course": "EECE429", "concept": "power electronics"}
+{"pair_id": "concept_3_EECE310_EECE305", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE310", "positive_course": "EECE305", "concept": "power electronics"}
+{"pair_id": "concept_4_EECE429_EECE425", "source": "llm_concept", "confidence": 0.3, "anchor_course": "EECE429", "positive_course": "EECE425", "concept": "power electronics"}
+{"pair_id": "concept_1_LIFE220_LIFE419", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE220", "positive_course": "LIFE419", "concept": "neuroscience"}
+{"pair_id": "concept_1_LIFE220_LIFE303", "source": "llm_concept", "confidence": 0.3, "anchor_course": "LIFE220", "positive_course": "LIFE303", "concept": "microbiology"}
+{"pair_id": "concept_1_MATH261_MATH461", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH261", "positive_course": "MATH461", "concept": "graph theory"}
+{"pair_id": "concept_2_MATH261_MATH464", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH261", "positive_course": "MATH464", "concept": "graph theory"}
+{"pair_id": "concept_3_MATH461_MATH464", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH461", "positive_course": "MATH464", "concept": "graph theory"}
+{"pair_id": "concept_1_MATH261_MATH461", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH261", "positive_course": "MATH461", "concept": "combinatorics"}
+{"pair_id": "concept_1_MATH311, 312_MATH422", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH311, 312", "positive_course": "MATH422", "concept": "topology"}
+{"pair_id": "concept_2_MATH321_MATH422", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH321", "positive_course": "MATH422", "concept": "topology"}
+{"pair_id": "concept_3_MATH321_MATH311, 312", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MATH321", "positive_course": "MATH311, 312", "concept": "topology"}
+{"pair_id": "concept_1_MECH323_MECH439", "source": "llm_concept", "confidence": 0.3, "anchor_course": "MECH323", "positive_course": "MECH439", "concept": "robotics"}
+{"pair_id": "concept_1_PHYS201_MECH465", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS201", "positive_course": "MECH465", "concept": "evolutionary biology"}
+{"pair_id": "concept_1_PHYS353_PHYS413", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS353", "positive_course": "PHYS413", "concept": "biophysics"}
+{"pair_id": "concept_1_PHYS353_PHYS401", "source": "llm_concept", "confidence": 0.3, "anchor_course": "PHYS353", "positive_course": "PHYS401", "concept": "condensed matter physics"}
