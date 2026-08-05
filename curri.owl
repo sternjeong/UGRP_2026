@@ -1,0 +1,3534 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://3min-curri.postech.ac.kr/onto.owl"
+         xmlns="http://3min-curri.postech.ac.kr/onto.owl#">
+
+<owl:Ontology rdf:about="http://3min-curri.postech.ac.kr/onto.owl"/>
+
+<owl:ObjectProperty rdf:about="#hasPrerequisite">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  <rdfs:domain rdf:resource="#Course"/>
+  <rdfs:range rdf:resource="#Course"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isSubfieldOf">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  <rdfs:domain rdf:resource="#ResearchTopic"/>
+  <rdfs:range rdf:resource="#ResearchTopic"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#partOfDepartment">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Course"/>
+  <rdfs:range rdf:resource="#Department"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#coversTopic">
+  <rdfs:domain rdf:resource="#Lab"/>
+  <rdfs:range rdf:resource="#ResearchTopic"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#requiresSkill">
+  <rdfs:domain rdf:resource="#Lab"/>
+  <rdfs:range rdf:resource="#Skill"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#providesSkill">
+  <rdfs:domain rdf:resource="#Course"/>
+  <rdfs:range rdf:resource="#Skill"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasSynergyWith">
+  <rdfs:domain rdf:resource="#Course"/>
+  <rdfs:range rdf:resource="#Course"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#specializesIn"/>
+
+<owl:DatatypeProperty rdf:about="#courseNameKr">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Course"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Course">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ResearchTopic">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Department">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Lab">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Skill">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Professor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#AMSE">
+  <rdf:type rdf:resource="#Department"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#CHEB">
+  <rdf:type rdf:resource="#Department"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#CHEM">
+  <rdf:type rdf:resource="#Department"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#CITE">
+  <rdf:type rdf:resource="#Department"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#CMEF">
+  <rdf:type rdf:resource="#Department"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#CSED">
+  <rdf:type rdf:resource="#Department"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#DISU">
+  <rdf:type rdf:resource="#Department"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#EECE">
+  <rdf:type rdf:resource="#Department"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ENTP">
+  <rdf:type rdf:resource="#Department"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#IMEN">
+  <rdf:type rdf:resource="#Department"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#LIFE">
+  <rdf:type rdf:resource="#Department"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#MATH">
+  <rdf:type rdf:resource="#Department"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#MECH">
+  <rdf:type rdf:resource="#Department"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#PHYS">
+  <rdf:type rdf:resource="#Department"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#SEMI">
+  <rdf:type rdf:resource="#Department"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE100">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">학과입문(신소재)</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE201">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <hasPrerequisite rdf:resource="#C_CHEM101"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">신소재과학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEM101">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEM"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">일반화학 I</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE205">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <hasPrerequisite rdf:resource="#C_CHEM101"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">소재열역학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE207">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <hasPrerequisite rdf:resource="#C_AMSE100"/>
+  <hasPrerequisite rdf:resource="#C_AMSE201"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">소재화학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE208">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">소재구조론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE211">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">소재디자인</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE213">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">소재의 기계적 성질</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE301">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">신소재공학실험</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE313">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">소재 물리</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE315">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <hasPrerequisite rdf:resource="#C_AMSE205"/>
+  <hasPrerequisite rdf:resource="#C_MECH250"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">상평형 및 상변화</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH250">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <hasSynergyWith rdf:resource="#C_MECH211"/>
+  <hasSynergyWith rdf:resource="#C_MECH240"/>
+  <hasSynergyWith rdf:resource="#C_MECH280"/>
+  <hasSynergyWith rdf:resource="#C_MECH330"/>
+  <hasSynergyWith rdf:resource="#C_MECH311"/>
+  <hasSynergyWith rdf:resource="#C_MECH381"/>
+  <hasSynergyWith rdf:resource="#C_MECH323"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">열역학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE318">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">소재수치해석</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE321">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <hasPrerequisite rdf:resource="#C_AMSE201"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">금속소재 개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE341">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <hasPrerequisite rdf:resource="#C_AMSE201"/>
+  <hasPrerequisite rdf:resource="#C_AMSE208"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">세라믹소재 개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE344">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">세라믹 설계와 실험</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE361">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <hasSynergyWith rdf:resource="#C_CITE452"/>
+  <hasSynergyWith rdf:resource="#C_CITE453"/>
+  <hasSynergyWith rdf:resource="#C_EECE423"/>
+  <hasSynergyWith rdf:resource="#C_MECH437"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">고분자소재 개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE388">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전자소재 개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE405">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">소재/공정 디자인 종합설계 Ⅲ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE406">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">소재/공정 디자인 종합설계 Ⅳ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE407">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">소재분석기기</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE412">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">나노과학과 기술</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE414">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">에너지 소재</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE416">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <hasPrerequisite rdf:resource="#C_AMSE207"/>
+  <hasPrerequisite rdf:resource="#C_CHEB208"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">바이오의료 소재</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB208">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <hasPrerequisite rdf:resource="#C_CHEM101"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">화학생명공학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE423">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <hasPrerequisite rdf:resource="#C_AMSE321"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">금속공학 실험</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE441">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <hasPrerequisite rdf:resource="#C_AMSE341"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전자 세라믹스</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE452">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <hasPrerequisite rdf:resource="#C_PHYS203"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">광 소자</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS203">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_MATH200"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">역학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE463">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">고분자 설계와 실험</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE464">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <hasPrerequisite rdf:resource="#C_AMSE361"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">고분자 물성과 응용</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE481">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <hasPrerequisite rdf:resource="#C_AMSE388"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전자 소자</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE483">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전자소재 실험</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_AMSE484">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#AMSE"/>
+  <hasPrerequisite rdf:resource="#C_AMSE313"/>
+  <hasPrerequisite rdf:resource="#C_AMSE388"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">신소재 전자공학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB100">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">학과입문(화공)</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB201">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">화공물리화학Ⅰ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB202">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <hasPrerequisite rdf:resource="#C_CHEB201"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">화공물리화학Ⅱ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB204">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <hasPrerequisite rdf:resource="#C_CHEB201"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">화공열역학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB206">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">화공유기화학Ⅰ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB207">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <hasPrerequisite rdf:resource="#C_CHEB206"/>
+  <hasPrerequisite rdf:resource="#C_CHEM101"/>
+  <hasPrerequisite rdf:resource="#C_CHEM221"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">화공유기화학Ⅱ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEM221">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEM"/>
+  <hasPrerequisite rdf:resource="#C_CHEM101"/>
+  <hasPrerequisite rdf:resource="#C_CHEM103"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">유기화학 Ⅰ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB211">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <hasPrerequisite rdf:resource="#C_CHEM102"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">유기화학실험</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEM102">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEM"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">일반화학실험 I</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB212">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <hasPrerequisite rdf:resource="#C_CHEM211"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">물리화학실험</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEM211">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEM"/>
+  <hasPrerequisite rdf:resource="#C_CHEM101"/>
+  <hasPrerequisite rdf:resource="#C_CHEM103"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <hasPrerequisite rdf:resource="#C_PHYS203"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">물리화학Ⅰ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB213">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">화학생명공학실험</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB214">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <hasPrerequisite rdf:resource="#C_CHEM101"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">에너지환경공학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB216">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">화학공학실험</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB301">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <hasPrerequisite rdf:resource="#C_CHEB303"/>
+  <hasPrerequisite rdf:resource="#C_CSED101"/>
+  <hasPrerequisite rdf:resource="#C_MATH101"/>
+  <hasPrerequisite rdf:resource="#C_MATH102"/>
+  <hasPrerequisite rdf:resource="#C_MATH203"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">화공 프로그래밍 및 AI</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB303">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">화공수학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED101">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED103"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">프로그래밍과문제해결</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH101">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">미적분학 I</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH102">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH101"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">미적분학 II</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH203">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasSynergyWith rdf:resource="#C_MECH244"/>
+  <hasSynergyWith rdf:resource="#C_MECH240"/>
+  <hasSynergyWith rdf:resource="#C_MECH250"/>
+  <hasSynergyWith rdf:resource="#C_MECH211"/>
+  <hasSynergyWith rdf:resource="#C_MECH280"/>
+  <hasSynergyWith rdf:resource="#C_MECH370"/>
+  <hasSynergyWith rdf:resource="#C_MECH330"/>
+  <hasSynergyWith rdf:resource="#C_MECH311"/>
+  <hasSynergyWith rdf:resource="#C_MECH381"/>
+  <hasSynergyWith rdf:resource="#C_MECH371"/>
+  <hasSynergyWith rdf:resource="#C_MECH323"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">응용선형대수</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB305">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <hasPrerequisite rdf:resource="#C_MECH211"/>
+  <hasPrerequisite rdf:resource="#C_MECH250"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">반응공학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH211">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <hasPrerequisite rdf:resource="#C_PHYS352"/>
+  <hasSynergyWith rdf:resource="#C_MECH330"/>
+  <hasSynergyWith rdf:resource="#C_MECH381"/>
+  <hasSynergyWith rdf:resource="#C_CITE452"/>
+  <hasSynergyWith rdf:resource="#C_CITE453"/>
+  <hasSynergyWith rdf:resource="#C_EECE423"/>
+  <hasSynergyWith rdf:resource="#C_MECH437"/>
+  <hasSynergyWith rdf:resource="#C_AMSE464"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">동역학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB306">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">촉매공학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB308">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <hasPrerequisite rdf:resource="#C_LIFE325"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">생물공학개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE325">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <hasPrerequisite rdf:resource="#C_CHEM461"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">생물공학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB313">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">콜로이드 및 계면현상개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB314">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <hasPrerequisite rdf:resource="#C_MECH211"/>
+  <hasPrerequisite rdf:resource="#C_MECH250"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">분자 및 표면공학 개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB315">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">스마트 연성재료 공학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB316">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">화공전자소재개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB360">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">재료화학공학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB401">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">공정제어</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH400">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH203"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">선형대수학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB402">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">공정설계</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB403">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">분리공정</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB405">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <hasPrerequisite rdf:resource="#C_CHEB201"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">고분자개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB408">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <hasPrerequisite rdf:resource="#C_CHEB305"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">생물화공</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB409">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <hasPrerequisite rdf:resource="#C_CHEB208"/>
+  <hasPrerequisite rdf:resource="#C_LIFE103"/>
+  <hasPrerequisite rdf:resource="#C_LIFE321"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">합성생물학개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE103">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <hasSynergyWith rdf:resource="#C_SEMI111"/>
+  <hasSynergyWith rdf:resource="#C_SEMI201"/>
+  <hasSynergyWith rdf:resource="#C_SEMI208"/>
+  <hasSynergyWith rdf:resource="#C_SEMI209"/>
+  <hasSynergyWith rdf:resource="#C_SEMI204"/>
+  <hasSynergyWith rdf:resource="#C_SEMI212"/>
+  <hasSynergyWith rdf:resource="#C_SEMI202"/>
+  <hasSynergyWith rdf:resource="#C_SEMI206"/>
+  <hasSynergyWith rdf:resource="#C_SEMI311"/>
+  <hasSynergyWith rdf:resource="#C_SEMI322"/>
+  <hasSynergyWith rdf:resource="#C_SEMI363"/>
+  <hasSynergyWith rdf:resource="#C_SEMI344"/>
+  <hasSynergyWith rdf:resource="#C_SEMI323"/>
+  <hasSynergyWith rdf:resource="#C_SEMI362"/>
+  <hasSynergyWith rdf:resource="#C_SEMI342"/>
+  <hasSynergyWith rdf:resource="#C_SEMI412"/>
+  <hasSynergyWith rdf:resource="#C_SEMI421"/>
+  <hasSynergyWith rdf:resource="#C_SEMI422"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">일반생명과학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE321">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <hasPrerequisite rdf:resource="#C_LIFE218"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">분자생물학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB412">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">이차전지 화학공정</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB413">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">에너지환경 소재 분석 개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB417">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전달현상</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB418">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <hasPrerequisite rdf:resource="#C_CHEB417"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">에너지 및 물질 전달</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB425">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">논문연구Ⅰ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB426">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <hasPrerequisite rdf:resource="#C_CHEB425"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">논문연구Ⅱ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB461">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">나노화학공학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB463">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <hasPrerequisite rdf:resource="#C_EECE261"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_PHYS206"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">나노공학개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE261">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasSynergyWith rdf:resource="#C_CITE451_MECH423"/>
+  <hasSynergyWith rdf:resource="#C_CITE452"/>
+  <hasSynergyWith rdf:resource="#C_CITE453"/>
+  <hasSynergyWith rdf:resource="#C_AMSE416"/>
+  <hasSynergyWith rdf:resource="#C_EECE372"/>
+  <hasSynergyWith rdf:resource="#C_AMSE481"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전자기학개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH103">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH101"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">미적분학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS206">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <hasPrerequisite rdf:resource="#C_MATH200"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전자기학Ⅰ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB465">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">고분자구조 및 물성</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEB471">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEB"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">화공세미나Ⅰ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEM100">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEM"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">학과입문</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEM103">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEM"/>
+  <hasPrerequisite rdf:resource="#C_CHEM101"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">일반화학 II</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEM104">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEM"/>
+  <hasPrerequisite rdf:resource="#C_CHEM102"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">일반화학실험 II</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEM213">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEM"/>
+  <hasPrerequisite rdf:resource="#C_MATH101"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">화학수학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEM222">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEM"/>
+  <hasPrerequisite rdf:resource="#C_CHEM221"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">유기화학 Ⅱ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEM226">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEM"/>
+  <hasPrerequisite rdf:resource="#C_CHEM102"/>
+  <hasPrerequisite rdf:resource="#C_CHEM104"/>
+  <hasPrerequisite rdf:resource="#C_CHEM221"/>
+  <hasPrerequisite rdf:resource="#C_CHEM222"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">화학실험I: 반응 및 합성</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEM231">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEM"/>
+  <hasPrerequisite rdf:resource="#C_CHEM101"/>
+  <hasPrerequisite rdf:resource="#C_CHEM103"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">나노화학개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEM243">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEM"/>
+  <hasPrerequisite rdf:resource="#C_CHEM101"/>
+  <hasPrerequisite rdf:resource="#C_CHEM103"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">화학분석</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEM261">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEM"/>
+  <hasPrerequisite rdf:resource="#C_CHEM101"/>
+  <hasPrerequisite rdf:resource="#C_CHEM103"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">의약생명화학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEM292">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEM"/>
+  <hasPrerequisite rdf:resource="#C_CHEM102"/>
+  <hasPrerequisite rdf:resource="#C_CHEM104"/>
+  <hasPrerequisite rdf:resource="#C_CHEM221"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">유기반응실험</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEM311">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEM"/>
+  <hasPrerequisite rdf:resource="#C_CHEM211"/>
+  <hasPrerequisite rdf:resource="#C_PHYS203"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">물리화학 Ⅱ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEM314">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEM"/>
+  <hasPrerequisite rdf:resource="#C_CHEM102"/>
+  <hasPrerequisite rdf:resource="#C_CHEM104"/>
+  <hasPrerequisite rdf:resource="#C_CHEM211"/>
+  <hasPrerequisite rdf:resource="#C_CHEM243"/>
+  <hasPrerequisite rdf:resource="#C_CHEM311"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">화학실험II: 물리화학 및 기기분석</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEM325">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEM"/>
+  <hasPrerequisite rdf:resource="#C_CHEB211"/>
+  <hasPrerequisite rdf:resource="#C_CHEM102"/>
+  <hasPrerequisite rdf:resource="#C_CHEM104"/>
+  <hasPrerequisite rdf:resource="#C_CHEM221"/>
+  <hasPrerequisite rdf:resource="#C_CHEM226"/>
+  <hasPrerequisite rdf:resource="#C_CHEM331"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">첨단화학실험</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEM331">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEM"/>
+  <hasPrerequisite rdf:resource="#C_CHEM101"/>
+  <hasPrerequisite rdf:resource="#C_CHEM211"/>
+  <hasPrerequisite rdf:resource="#C_CHEM243"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">무기화학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEM342">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEM"/>
+  <hasPrerequisite rdf:resource="#C_CHEM243"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">기기분석</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEM451">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEM"/>
+  <hasPrerequisite rdf:resource="#C_CHEM101"/>
+  <hasPrerequisite rdf:resource="#C_CHEM103"/>
+  <hasPrerequisite rdf:resource="#C_CHEM211"/>
+  <hasPrerequisite rdf:resource="#C_CHEM311"/>
+  <hasPrerequisite rdf:resource="#C_MECH211"/>
+  <hasPrerequisite rdf:resource="#C_MECH250"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">고분자화학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEM461">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEM"/>
+  <hasPrerequisite rdf:resource="#C_CHEM101"/>
+  <hasPrerequisite rdf:resource="#C_CHEM103"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">생화학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEM497">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEM"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">고급화학실험</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CHEM499">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CHEM"/>
+  <hasPrerequisite rdf:resource="#C_CHEM497"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">학사논문연구</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CITE103">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CITE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">가치 디자인 스튜디오</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CITE201">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CITE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IT융합 종합설계Ⅰ: 기초이론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CITE202">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CITE"/>
+  <hasPrerequisite rdf:resource="#C_CITE201"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IT융합 종합설계Ⅱ: 기초설계</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CITE203">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CITE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">인터랙션 디자인 스튜디오</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CITE204">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CITE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">자기주도 성장 디자인 I</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CITE205">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CITE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">인문기술융합개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CITE215">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CITE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">메이커스입문</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CITE221">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CITE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">디지털시스템 및 마이크로프로세서 설계 입문과 실험</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CITE241_MECH361">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CITE"/>
+  <hasSynergyWith rdf:resource="#C_CITE451_MECH423"/>
+  <hasSynergyWith rdf:resource="#C_CITE452"/>
+  <hasSynergyWith rdf:resource="#C_CITE453"/>
+  <hasSynergyWith rdf:resource="#C_AMSE416"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">의공학: 생명과 공학의 만남</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CITE301">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CITE"/>
+  <hasPrerequisite rdf:resource="#C_CITE202"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IT융합 종합설계Ⅲ: 고급설계</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CITE302">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CITE"/>
+  <hasPrerequisite rdf:resource="#C_AMSE405"/>
+  <hasPrerequisite rdf:resource="#C_CITE301"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IT융합 종합설계Ⅳ: 시스템통합</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CITE303">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CITE"/>
+  <hasPrerequisite rdf:resource="#C_CITE205"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">생명 감성&amp;트랜스휴먼 스튜디오</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CITE304">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CITE"/>
+  <hasPrerequisite rdf:resource="#C_CITE205"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">놀이와 게임 설계 스튜디오</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CITE306">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CITE"/>
+  <hasPrerequisite rdf:resource="#C_CITE205"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">비즈니스 모델 스튜디오</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CITE341">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CITE"/>
+  <hasPrerequisite rdf:resource="#C_MATH203"/>
+  <hasSynergyWith rdf:resource="#C_CITE452"/>
+  <hasSynergyWith rdf:resource="#C_CITE453"/>
+  <hasSynergyWith rdf:resource="#C_EECE423"/>
+  <hasSynergyWith rdf:resource="#C_MECH437"/>
+  <hasSynergyWith rdf:resource="#C_AMSE464"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">제어시스템 이론 및 실험</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CITE405">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CITE"/>
+  <hasPrerequisite rdf:resource="#C_CITE205"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">인간중심 디자인 스튜디오</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CITE411_IMEN412_ENTP301">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CITE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">창의적 기업가 정신 응용</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CITE421_CSED357">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CITE"/>
+  <hasPrerequisite rdf:resource="#C_CSED331"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">데이터 베이스 시스템</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED331">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED101"/>
+  <hasPrerequisite rdf:resource="#C_CSED233"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">알고리즘</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CITE441_EECE423">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CITE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">현대제어이론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CITE451_MECH423">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CITE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">생체재료 및 바이오패브리케이션</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CITE452">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CITE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">생체전자기기-진단과 치료를 위한 공학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CITE453">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CITE"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_MATH200"/>
+  <hasPrerequisite rdf:resource="#C_MECH303"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">생체시스템 및 신호처리</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH200">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH101"/>
+  <hasPrerequisite rdf:resource="#C_MATH102"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_MATH203"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <hasSynergyWith rdf:resource="#C_MECH211"/>
+  <hasSynergyWith rdf:resource="#C_MECH240"/>
+  <hasSynergyWith rdf:resource="#C_MECH280"/>
+  <hasSynergyWith rdf:resource="#C_MECH330"/>
+  <hasSynergyWith rdf:resource="#C_MECH311"/>
+  <hasSynergyWith rdf:resource="#C_MECH381"/>
+  <hasSynergyWith rdf:resource="#C_MECH371"/>
+  <hasSynergyWith rdf:resource="#C_MECH323"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">미분방정식</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH303">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">공학수학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CMEF301">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CMEF"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">경제학원론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CMEF302">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CMEF"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">미시경제학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CMEF303">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CMEF"/>
+  <hasPrerequisite rdf:resource="#C_CMEF301"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">거시경제학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CMEF304">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CMEF"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">금융경제학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CMEF305">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CMEF"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">재무관리</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CMEF306">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CMEF"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">지속가능성과 ESG</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CMEF401">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CMEF"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">계량경제학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CMEF402">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CMEF"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">화폐금융론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CMEF405">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CMEF"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">채권시장론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CMEF406">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CMEF"/>
+  <hasPrerequisite rdf:resource="#C_CMEF301"/>
+  <hasPrerequisite rdf:resource="#C_CMEF302"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">게임이론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CMEF407">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CMEF"/>
+  <hasPrerequisite rdf:resource="#C_CMEF301"/>
+  <hasPrerequisite rdf:resource="#C_CMEF302"/>
+  <hasPrerequisite rdf:resource="#C_CMEF406"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">산업조직론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CMEF408">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CMEF"/>
+  <hasPrerequisite rdf:resource="#C_CMEF406"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">정보경제학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CMEF410">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CMEF"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">정치경제학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CMEF411">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CMEF"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">시장설계</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CMEF414">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CMEF"/>
+  <hasPrerequisite rdf:resource="#C_CMEF302"/>
+  <hasPrerequisite rdf:resource="#C_CMEF406"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">행동·실험경제학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CMEF499">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CMEF"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">경제학특강</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED100">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">학과입문(컴퓨터공학)</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED103">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">프로그래밍입문</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED105">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">인공지능기초</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED211">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED101"/>
+  <hasPrerequisite rdf:resource="#C_CSED273"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">컴퓨터 SW시스템 개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED273">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasSynergyWith rdf:resource="#C_CITE452"/>
+  <hasSynergyWith rdf:resource="#C_CITE453"/>
+  <hasSynergyWith rdf:resource="#C_EECE423"/>
+  <hasSynergyWith rdf:resource="#C_MECH437"/>
+  <hasSynergyWith rdf:resource="#C_AMSE464"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">디지털시스템 설계</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED212">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED103"/>
+  <hasPrerequisite rdf:resource="#C_CSED232"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">프로그래밍스튜디오</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED232">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED101"/>
+  <hasSynergyWith rdf:resource="#C_CITE452"/>
+  <hasSynergyWith rdf:resource="#C_CITE453"/>
+  <hasSynergyWith rdf:resource="#C_EECE423"/>
+  <hasSynergyWith rdf:resource="#C_MECH437"/>
+  <hasSynergyWith rdf:resource="#C_AMSE464"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">소프트웨어 작성 원리</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED213">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED101"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">문제해결 실습 및 응용</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED226">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED233"/>
+  <hasPrerequisite rdf:resource="#C_CSED331"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">데이터분석 입문</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED233">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED101"/>
+  <hasPrerequisite rdf:resource="#C_CSED103"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">데이터구조</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED261">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전산수학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED312">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED232"/>
+  <hasPrerequisite rdf:resource="#C_CSED233"/>
+  <hasPrerequisite rdf:resource="#C_CSED331"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">운영체제</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED321">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED233"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">프로그래밍언어</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED332">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED232"/>
+  <hasPrerequisite rdf:resource="#C_CSED233"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">소프트웨어 설계 방법</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED341">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">오토마타 및 형식언어</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED342">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED233"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <hasSynergyWith rdf:resource="#C_CITE451_MECH423"/>
+  <hasSynergyWith rdf:resource="#C_CITE452"/>
+  <hasSynergyWith rdf:resource="#C_CITE453"/>
+  <hasSynergyWith rdf:resource="#C_AMSE416"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">인공지능</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED343">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_IMEN261"/>
+  <hasPrerequisite rdf:resource="#C_MATH203"/>
+  <hasPrerequisite rdf:resource="#C_MATH230"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">기계학습을 위한 수학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN261">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasSynergyWith rdf:resource="#C_IMEN266"/>
+  <hasSynergyWith rdf:resource="#C_IMEN481"/>
+  <hasSynergyWith rdf:resource="#C_IMEN474"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">최적화개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH230">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">확률 및 통계</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED353">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED211"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">컴퓨터네트워크</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED354">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">컴퓨터공학 세부전공 소개</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED355">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_MATH200"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전산신호처리</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED356">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">인간-컴퓨터 상호작용</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED357">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED233"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">데이터베이스시스템</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED401">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED101"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">컴퓨터와사회</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED403">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED233"/>
+  <hasPrerequisite rdf:resource="#C_CSED353"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">블록체인 및 암호화폐</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED404">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">모바일 및 유비쿼터스 컴퓨팅</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED405">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPU 및 가속 컴퓨팅</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED415">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED211"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">컴퓨터보안</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED420">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED341"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">소프트웨어검증</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED423">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED233"/>
+  <hasPrerequisite rdf:resource="#C_CSED341"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">컴파일러 설계</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED425">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED312"/>
+  <hasPrerequisite rdf:resource="#C_CSED331"/>
+  <hasPrerequisite rdf:resource="#C_CSED342"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">임베디드시스템 프로그래밍</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED433">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED321"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전산논리</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED434">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED321"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">고급 프로그래밍</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED441">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED321"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">컴퓨터비전 개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED451">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED233"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">컴퓨터 그래픽스</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_CSED490A">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#CSED"/>
+  <hasPrerequisite rdf:resource="#C_CSED233"/>
+  <hasPrerequisite rdf:resource="#C_CSED331"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Z 컴퓨터공학 특강A-Z</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_DISU101">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#DISU"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전자전기공학개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_DISU221">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#DISU"/>
+  <hasPrerequisite rdf:resource="#C_DISU101"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">반도체공정정비활용실습</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_DISU231">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#DISU"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전기회로</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_DISU232">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#DISU"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전기회로 실험</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_DISU301">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#DISU"/>
+  <hasPrerequisite rdf:resource="#C_CSED273"/>
+  <hasPrerequisite rdf:resource="#C_EECE211"/>
+  <hasPrerequisite rdf:resource="#C_EECE274"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">반도체공정실습</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE211">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">반도체 전자공학Ⅰ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE274">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">디지털 시스템 설계</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_DISU361">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#DISU"/>
+  <hasPrerequisite rdf:resource="#C_EECE261"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">초고주파공학 이론 및 응용</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_DISU402">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#DISU"/>
+  <hasPrerequisite rdf:resource="#C_DISU232"/>
+  <hasPrerequisite rdf:resource="#C_EECE336"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">고속반도체 입출력회로</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE336">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasSynergyWith rdf:resource="#C_CITE451_MECH423"/>
+  <hasSynergyWith rdf:resource="#C_CITE452"/>
+  <hasSynergyWith rdf:resource="#C_CITE453"/>
+  <hasSynergyWith rdf:resource="#C_AMSE416"/>
+  <hasSynergyWith rdf:resource="#C_EECE423"/>
+  <hasSynergyWith rdf:resource="#C_MECH437"/>
+  <hasSynergyWith rdf:resource="#C_AMSE464"/>
+  <hasSynergyWith rdf:resource="#C_EECE372"/>
+  <hasSynergyWith rdf:resource="#C_AMSE481"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전자회로Ⅱ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_DISU403">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#DISU"/>
+  <hasPrerequisite rdf:resource="#C_DISU232"/>
+  <hasPrerequisite rdf:resource="#C_EECE336"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">고속반도체회로측정실습</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_DISU404">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#DISU"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">아날로그 증폭기 해석 및 설계</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_DISU412">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#DISU"/>
+  <hasPrerequisite rdf:resource="#C_EECE411"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DISPLAY용 반도체</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE411">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">디스플레이공학1</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_DISU421">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#DISU"/>
+  <hasPrerequisite rdf:resource="#C_PHYS203"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">기초양자정보</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_DISU431">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#DISU"/>
+  <hasPrerequisite rdf:resource="#C_EECE211"/>
+  <hasPrerequisite rdf:resource="#C_EECE274"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">지능형 반도체 소자</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_DISU434">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#DISU"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">시스템 반도체 설계</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_DISU496A">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#DISU"/>
+  <hasPrerequisite rdf:resource="#C_AMSE481"/>
+  <hasPrerequisite rdf:resource="#C_EECE211"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Z – 차세대반도체: 캡스톤디자인 A-Z</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE100_DISU101">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">학과입문(전자전기공학과)</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE201">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">양자전자공학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE202">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_MATH230"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">확률 및 랜덤프로세스 개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE231_DISU231">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasSynergyWith rdf:resource="#C_CITE451_MECH423"/>
+  <hasSynergyWith rdf:resource="#C_CITE452"/>
+  <hasSynergyWith rdf:resource="#C_CITE453"/>
+  <hasSynergyWith rdf:resource="#C_AMSE416"/>
+  <hasSynergyWith rdf:resource="#C_EECE423"/>
+  <hasSynergyWith rdf:resource="#C_MECH437"/>
+  <hasSynergyWith rdf:resource="#C_AMSE464"/>
+  <hasSynergyWith rdf:resource="#C_EECE372"/>
+  <hasSynergyWith rdf:resource="#C_AMSE481"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">회로이론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE233">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasSynergyWith rdf:resource="#C_CITE452"/>
+  <hasSynergyWith rdf:resource="#C_CITE453"/>
+  <hasSynergyWith rdf:resource="#C_MECH437"/>
+  <hasSynergyWith rdf:resource="#C_AMSE464"/>
+  <hasSynergyWith rdf:resource="#C_EECE372"/>
+  <hasSynergyWith rdf:resource="#C_AMSE481"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">신호 및 시스템</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE236">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MATLAB으로 배우는 전자공학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE276">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전자전기공학실험1</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE303">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_EECE211"/>
+  <hasPrerequisite rdf:resource="#C_PHYS103"/>
+  <hasSynergyWith rdf:resource="#C_EECE372"/>
+  <hasSynergyWith rdf:resource="#C_AMSE481"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">물리전자</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS103">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <hasSynergyWith rdf:resource="#C_MATH203"/>
+  <hasSynergyWith rdf:resource="#C_PHYS104"/>
+  <hasSynergyWith rdf:resource="#C_MATH200"/>
+  <hasSynergyWith rdf:resource="#C_MECH244"/>
+  <hasSynergyWith rdf:resource="#C_MECH240"/>
+  <hasSynergyWith rdf:resource="#C_MECH250"/>
+  <hasSynergyWith rdf:resource="#C_MECH211"/>
+  <hasSynergyWith rdf:resource="#C_MECH280"/>
+  <hasSynergyWith rdf:resource="#C_MECH370"/>
+  <hasSynergyWith rdf:resource="#C_MECH330"/>
+  <hasSynergyWith rdf:resource="#C_MECH311"/>
+  <hasSynergyWith rdf:resource="#C_MECH381"/>
+  <hasSynergyWith rdf:resource="#C_MECH371"/>
+  <hasSynergyWith rdf:resource="#C_MECH323"/>
+  <hasSynergyWith rdf:resource="#C_SEMI111"/>
+  <hasSynergyWith rdf:resource="#C_SEMI201"/>
+  <hasSynergyWith rdf:resource="#C_SEMI208"/>
+  <hasSynergyWith rdf:resource="#C_SEMI209"/>
+  <hasSynergyWith rdf:resource="#C_SEMI204"/>
+  <hasSynergyWith rdf:resource="#C_SEMI212"/>
+  <hasSynergyWith rdf:resource="#C_SEMI202"/>
+  <hasSynergyWith rdf:resource="#C_SEMI206"/>
+  <hasSynergyWith rdf:resource="#C_SEMI311"/>
+  <hasSynergyWith rdf:resource="#C_SEMI322"/>
+  <hasSynergyWith rdf:resource="#C_SEMI363"/>
+  <hasSynergyWith rdf:resource="#C_SEMI344"/>
+  <hasSynergyWith rdf:resource="#C_SEMI323"/>
+  <hasSynergyWith rdf:resource="#C_SEMI362"/>
+  <hasSynergyWith rdf:resource="#C_SEMI342"/>
+  <hasSynergyWith rdf:resource="#C_SEMI412"/>
+  <hasSynergyWith rdf:resource="#C_SEMI421"/>
+  <hasSynergyWith rdf:resource="#C_SEMI422"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">일반물리실험Ⅰ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE304">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전자수학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE305">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전력전자공학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE306">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_EECE233"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">레이다공학개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE308">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_EECE233"/>
+  <hasPrerequisite rdf:resource="#C_EECE304"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">디지털통신개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE309">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_EECE233"/>
+  <hasPrerequisite rdf:resource="#C_EECE320"/>
+  <hasPrerequisite rdf:resource="#C_EECE422"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">현대제어이론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE320">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_EECE233"/>
+  <hasPrerequisite rdf:resource="#C_MATH203"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <hasSynergyWith rdf:resource="#C_CITE452"/>
+  <hasSynergyWith rdf:resource="#C_CITE453"/>
+  <hasSynergyWith rdf:resource="#C_MECH437"/>
+  <hasSynergyWith rdf:resource="#C_AMSE464"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">자동제어공학개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE422">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_EECE309"/>
+  <hasPrerequisite rdf:resource="#C_EECE320"/>
+  <hasPrerequisite rdf:resource="#C_EECE423"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">디지털제어공학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE310">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_EECE320"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전력시스템 제어 및 운영의 기초</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE312">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_EECE233"/>
+  <hasPrerequisite rdf:resource="#C_MATH230"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">기계학습 시스템 개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE338">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_CSED273"/>
+  <hasPrerequisite rdf:resource="#C_EECE233"/>
+  <hasPrerequisite rdf:resource="#C_EECE274"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전자전기공학실험2</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE341">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_EECE233"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">정보통신공학 개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE361_DISU361">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_EECE261"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전자파 응용</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE372">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_CSED273"/>
+  <hasPrerequisite rdf:resource="#C_EECE274"/>
+  <hasSynergyWith rdf:resource="#C_CITE452"/>
+  <hasSynergyWith rdf:resource="#C_CITE453"/>
+  <hasSynergyWith rdf:resource="#C_EECE423"/>
+  <hasSynergyWith rdf:resource="#C_MECH437"/>
+  <hasSynergyWith rdf:resource="#C_AMSE464"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">마이크로프로세서 구조 및 응용</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE375">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_EECE274"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">컴퓨터설계</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE376">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_EECE233"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전자전기공학실험3</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE392">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전자공학세미나</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE401">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_EECE211"/>
+  <hasPrerequisite rdf:resource="#C_EECE303"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">반도체전자공학Ⅱ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE412_DISU412">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">디스플레이공학2</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE413">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전자회로3A: 고속 디지털 전자회로</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE414">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_EECE336"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RF/아날로그 회로 설계 기초</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE415">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_EECE480"/>
+  <hasPrerequisite rdf:resource="#C_MECH361"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">생체전자기기-진단과            치료를     위한     공학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE480">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">의공학:생명과 공학의만남</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH361">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">의공학:생명과 공학의 만남</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE416">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">고주파 소자 해석</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE417">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_EECE261"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_PHYS206"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">나노공학개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE418">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_PHYS203"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">기초양자정보</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE419_DISU404">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">고급전자회로</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE423">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_EECE233"/>
+  <hasPrerequisite rdf:resource="#C_EECE320"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">현대제어이론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE425">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전력전자공학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE429">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_EECE320"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전력시스템 제어 및 운영의 기초</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE434_DISU434">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_EECE274"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VLSI 설계 입문</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE442_NGCN301">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">통신 및 네트워크 개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE443_NGCN302">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">통신 및 네트워크 실험</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE455">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_CSED273"/>
+  <hasPrerequisite rdf:resource="#C_EECE274"/>
+  <hasPrerequisite rdf:resource="#C_EECE375"/>
+  <hasPrerequisite rdf:resource="#C_SEMI342"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">임베디드 시스템-온-칩 설계</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI342">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_SEMI209"/>
+  <hasSynergyWith rdf:resource="#C_SEMI412"/>
+  <hasSynergyWith rdf:resource="#C_SEMI421"/>
+  <hasSynergyWith rdf:resource="#C_SEMI422"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">컴퓨터 구조 설계</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE491">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">종합설계과제Ⅰ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_EECE492">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#EECE"/>
+  <hasPrerequisite rdf:resource="#C_EECE491"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">종합설계과제Ⅱ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_ENTP201">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#ENTP"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">기업가정신 입문</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_ENTP301">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#ENTP"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">비즈니스플래닝</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_ENTP451A">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#ENTP"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">실전창업특강A: Special Topics in Start-up Practice A</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_ENTP451B">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#ENTP"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">실전창업특강B: Special Topics in Start-up Practice B</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_ENTP491">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#ENTP"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">기업가정신 세미나</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_ENTP492">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#ENTP"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">창업의 실제</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN100">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">학과입문(산업경영공학)</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN110">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">기업가정신과 기술혁신</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN203">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">재무회계</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN242">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasPrerequisite rdf:resource="#C_IMEN272"/>
+  <hasPrerequisite rdf:resource="#C_MATH230"/>
+  <hasSynergyWith rdf:resource="#C_IMEN343"/>
+  <hasSynergyWith rdf:resource="#C_IMEN346"/>
+  <hasSynergyWith rdf:resource="#C_IMEN446"/>
+  <hasSynergyWith rdf:resource="#C_IMEN443"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">실험계획개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN272">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasSynergyWith rdf:resource="#C_IMEN281"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">공학기초통계</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN260">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasSynergyWith rdf:resource="#C_IMEN266"/>
+  <hasSynergyWith rdf:resource="#C_IMEN481"/>
+  <hasSynergyWith rdf:resource="#C_IMEN474"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">경영과학I</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN266">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasPrerequisite rdf:resource="#C_IMEN272"/>
+  <hasPrerequisite rdf:resource="#C_MATH230"/>
+  <hasSynergyWith rdf:resource="#C_IMEN481"/>
+  <hasSynergyWith rdf:resource="#C_IMEN361"/>
+  <hasSynergyWith rdf:resource="#C_IMEN474"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">경영과학II</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN281">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasPrerequisite rdf:resource="#C_CSED101"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">산경프로그래밍기초</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN301">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasSynergyWith rdf:resource="#C_IMEN411"/>
+  <hasSynergyWith rdf:resource="#C_IMEN412"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">기술경영 및 전략</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN302">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasSynergyWith rdf:resource="#C_IMEN301"/>
+  <hasSynergyWith rdf:resource="#C_IMEN303"/>
+  <hasSynergyWith rdf:resource="#C_IMEN411"/>
+  <hasSynergyWith rdf:resource="#C_IMEN412"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">경영학원론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN303">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasSynergyWith rdf:resource="#C_IMEN411"/>
+  <hasSynergyWith rdf:resource="#C_IMEN412"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">마케팅</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN343">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasSynergyWith rdf:resource="#C_IMEN346"/>
+  <hasSynergyWith rdf:resource="#C_IMEN446"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">인간공학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN346">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasSynergyWith rdf:resource="#C_IMEN446"/>
+  <hasSynergyWith rdf:resource="#C_IMEN443"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">제품개발공학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN361">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasPrerequisite rdf:resource="#C_IMEN260"/>
+  <hasPrerequisite rdf:resource="#C_IMEN261"/>
+  <hasSynergyWith rdf:resource="#C_IMEN474"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">수리계획</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN371">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasPrerequisite rdf:resource="#C_IMEN272"/>
+  <hasPrerequisite rdf:resource="#C_MATH230"/>
+  <hasSynergyWith rdf:resource="#C_IMEN482"/>
+  <hasSynergyWith rdf:resource="#C_IMEN422"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">품질경영</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN376">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasPrerequisite rdf:resource="#C_IMEN260"/>
+  <hasPrerequisite rdf:resource="#C_IMEN261"/>
+  <hasSynergyWith rdf:resource="#C_IMEN371"/>
+  <hasSynergyWith rdf:resource="#C_IMEN482"/>
+  <hasSynergyWith rdf:resource="#C_IMEN422"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">생산운영관리</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN381">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasSynergyWith rdf:resource="#C_IMEN301"/>
+  <hasSynergyWith rdf:resource="#C_IMEN303"/>
+  <hasSynergyWith rdf:resource="#C_IMEN411"/>
+  <hasSynergyWith rdf:resource="#C_IMEN412"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">경영정보시스템</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN382">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasPrerequisite rdf:resource="#C_CSED233"/>
+  <hasPrerequisite rdf:resource="#C_IMEN381"/>
+  <hasSynergyWith rdf:resource="#C_IMEN472"/>
+  <hasSynergyWith rdf:resource="#C_IMEN483"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">데이터베이스시스템</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN387">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasPrerequisite rdf:resource="#C_IMEN203"/>
+  <hasSynergyWith rdf:resource="#C_IMEN487"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">금융공학개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN388">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasPrerequisite rdf:resource="#C_IMEN203"/>
+  <hasPrerequisite rdf:resource="#C_IMEN272"/>
+  <hasSynergyWith rdf:resource="#C_IMEN387"/>
+  <hasSynergyWith rdf:resource="#C_IMEN487"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">투자론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN411">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasSynergyWith rdf:resource="#C_IMEN412"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">기업가정신 입문</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN412">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">비즈니스플래닝</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN422">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasPrerequisite rdf:resource="#C_IMEN260"/>
+  <hasPrerequisite rdf:resource="#C_IMEN261"/>
+  <hasPrerequisite rdf:resource="#C_IMEN266"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">공급망관리</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN443">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasPrerequisite rdf:resource="#C_IMEN343"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UX디자인개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN446">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasSynergyWith rdf:resource="#C_IMEN443"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">감성공학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN472">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasPrerequisite rdf:resource="#C_IMEN272"/>
+  <hasPrerequisite rdf:resource="#C_MATH203"/>
+  <hasPrerequisite rdf:resource="#C_MATH230"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <hasSynergyWith rdf:resource="#C_IMEN473"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">데이터사이언스방법론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN473">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasPrerequisite rdf:resource="#C_AMSE207"/>
+  <hasPrerequisite rdf:resource="#C_IMEN382"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">비즈니스 애널리틱스</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN474">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasPrerequisite rdf:resource="#C_CSED101"/>
+  <hasPrerequisite rdf:resource="#C_CSED321"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">복잡계</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN481">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasPrerequisite rdf:resource="#C_IMEN272"/>
+  <hasPrerequisite rdf:resource="#C_IMEN281"/>
+  <hasPrerequisite rdf:resource="#C_MATH230"/>
+  <hasSynergyWith rdf:resource="#C_IMEN361"/>
+  <hasSynergyWith rdf:resource="#C_IMEN474"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">시뮬레이션</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN482">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasPrerequisite rdf:resource="#C_IMEN260"/>
+  <hasPrerequisite rdf:resource="#C_IMEN261"/>
+  <hasSynergyWith rdf:resource="#C_IMEN422"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">서비스경영</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN483">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasPrerequisite rdf:resource="#C_IMEN381"/>
+  <hasSynergyWith rdf:resource="#C_IMEN473"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">시스템분석및설계</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_IMEN487">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#IMEN"/>
+  <hasPrerequisite rdf:resource="#C_IMEN203"/>
+  <hasPrerequisite rdf:resource="#C_IMEN272"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">기업재무</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE104">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">일반생명과학실험</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE209">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <hasPrerequisite rdf:resource="#C_LIFE103"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">생명과학실험원리론 및 실습</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE216">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <hasPrerequisite rdf:resource="#C_LIFE103"/>
+  <hasSynergyWith rdf:resource="#C_CITE451_MECH423"/>
+  <hasSynergyWith rdf:resource="#C_CITE452"/>
+  <hasSynergyWith rdf:resource="#C_CITE453"/>
+  <hasSynergyWith rdf:resource="#C_AMSE416"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">생리학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE217">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <hasPrerequisite rdf:resource="#C_LIFE103"/>
+  <hasSynergyWith rdf:resource="#C_CITE451_MECH423"/>
+  <hasSynergyWith rdf:resource="#C_CITE452"/>
+  <hasSynergyWith rdf:resource="#C_CITE453"/>
+  <hasSynergyWith rdf:resource="#C_AMSE416"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">세포생물학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE218">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">생명과학전공입문</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE219">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">융합생명과학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE220">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <hasSynergyWith rdf:resource="#C_CITE451_MECH423"/>
+  <hasSynergyWith rdf:resource="#C_CITE452"/>
+  <hasSynergyWith rdf:resource="#C_CITE453"/>
+  <hasSynergyWith rdf:resource="#C_AMSE416"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">의생명과학개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE221">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">생명과학의 위대한 발견</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE303">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <hasPrerequisite rdf:resource="#C_LIFE103"/>
+  <hasPrerequisite rdf:resource="#C_LIFE217"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">미생물학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE315">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">유전학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE319">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <hasPrerequisite rdf:resource="#C_CHEM221"/>
+  <hasPrerequisite rdf:resource="#C_LIFE217"/>
+  <hasPrerequisite rdf:resource="#C_LIFE218"/>
+  <hasPrerequisite rdf:resource="#C_LIFE219"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">생화학Ⅰ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE320">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <hasPrerequisite rdf:resource="#C_CHEM461"/>
+  <hasPrerequisite rdf:resource="#C_LIFE319"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">생화학Ⅱ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE322">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <hasPrerequisite rdf:resource="#C_LIFE209"/>
+  <hasPrerequisite rdf:resource="#C_LIFE321"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">현대생명과학실험</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE323">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <hasPrerequisite rdf:resource="#C_LIFE103"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">생태학 및 야외실습</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE326">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">기초후성유전학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE327">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <hasPrerequisite rdf:resource="#C_LIFE217"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">줄기세포와 발생생물학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE402">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <hasPrerequisite rdf:resource="#C_LIFE322"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">학사논문연구</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE414">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">시스템생물학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE415">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <hasPrerequisite rdf:resource="#C_LIFE217"/>
+  <hasPrerequisite rdf:resource="#C_LIFE319"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">현대식물학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE419">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">뇌와행동의 이해</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE420">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">면역학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE424">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <hasPrerequisite rdf:resource="#C_LIFE217"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">암생물학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_LIFE451A">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#LIFE"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Z – 생명과학 특강 A-Z</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH100">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">학과입문(수학)</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH210">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH101"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">응용복소함수론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH231">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH101"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">실험통계학(타학과대상)</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH261">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_CSED321"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">이산수학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH301_302">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">현대대수학I, II</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH304">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">정수론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH311_312">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">해석학I, II</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH313">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_MATH200"/>
+  <hasPrerequisite rdf:resource="#C_MATH203"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">편미분방정식개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH321">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">일반위상수학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH333">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH230"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전산통계</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH351">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_MATH203"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">수치해석개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH401">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH210"/>
+  <hasPrerequisite rdf:resource="#C_MATH321"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">대수곡선론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH402">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">계산선형대수와 응용</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH403">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH203"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">군표현론입문</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH409">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">489 특강Ⅰ, Ⅱ, Ⅲ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH410">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_MATH210"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">해석함수론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH412">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_MATH200"/>
+  <hasPrerequisite rdf:resource="#C_MATH203"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">상미분방정식론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH415">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">푸리에급수</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH422">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_MATH321"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">기하위상개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH426">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">미분기하개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH428">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH203"/>
+  <hasPrerequisite rdf:resource="#C_MATH321"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">현대기하학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH431">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH101"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_MATH230"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">확률개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH432">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH200"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">수리데이터사이언스</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH442">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH101"/>
+  <hasPrerequisite rdf:resource="#C_MATH102"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">인공지능수학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH443">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_MATH230"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">수학적 모델</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH451">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_MATH351"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">응용수치해석</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH461">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH409"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">조합개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH464">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_MATH203"/>
+  <hasPrerequisite rdf:resource="#C_MATH261"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">그래프론과 응용</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MATH472">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MATH"/>
+  <hasPrerequisite rdf:resource="#C_IMEN203"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">금융공학개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH100">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">학과입문(기계공학과)</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH203">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CAD및제작</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS352">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <hasPrerequisite rdf:resource="#C_PHYS203"/>
+  <hasPrerequisite rdf:resource="#C_PHYS304"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">물리실험III</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH240">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <hasPrerequisite rdf:resource="#C_PHYS301"/>
+  <hasSynergyWith rdf:resource="#C_MECH211"/>
+  <hasSynergyWith rdf:resource="#C_MECH280"/>
+  <hasSynergyWith rdf:resource="#C_MECH370"/>
+  <hasSynergyWith rdf:resource="#C_MECH381"/>
+  <hasSynergyWith rdf:resource="#C_MECH371"/>
+  <hasSynergyWith rdf:resource="#C_MECH323"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">고체역학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS301">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <hasPrerequisite rdf:resource="#C_PHYS203"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">양자물리Ⅰ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH244">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <hasSynergyWith rdf:resource="#C_MECH211"/>
+  <hasSynergyWith rdf:resource="#C_MECH240"/>
+  <hasSynergyWith rdf:resource="#C_MECH280"/>
+  <hasSynergyWith rdf:resource="#C_MECH370"/>
+  <hasSynergyWith rdf:resource="#C_MECH311"/>
+  <hasSynergyWith rdf:resource="#C_MECH381"/>
+  <hasSynergyWith rdf:resource="#C_MECH371"/>
+  <hasSynergyWith rdf:resource="#C_MECH323"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">기계재료학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH280">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <hasPrerequisite rdf:resource="#C_DISU101"/>
+  <hasSynergyWith rdf:resource="#C_MECH370"/>
+  <hasSynergyWith rdf:resource="#C_MECH330"/>
+  <hasSynergyWith rdf:resource="#C_MECH311"/>
+  <hasSynergyWith rdf:resource="#C_MECH381"/>
+  <hasSynergyWith rdf:resource="#C_MECH371"/>
+  <hasSynergyWith rdf:resource="#C_MECH323"/>
+  <hasSynergyWith rdf:resource="#C_CITE451_MECH423"/>
+  <hasSynergyWith rdf:resource="#C_CITE452"/>
+  <hasSynergyWith rdf:resource="#C_CITE453"/>
+  <hasSynergyWith rdf:resource="#C_AMSE416"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">센서및측정</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH305">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">기계공학 수치해석 개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH311">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <hasPrerequisite rdf:resource="#C_MECH211"/>
+  <hasPrerequisite rdf:resource="#C_MECH240"/>
+  <hasSynergyWith rdf:resource="#C_MECH371"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">기계진동학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH323">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <hasPrerequisite rdf:resource="#C_MECH211"/>
+  <hasPrerequisite rdf:resource="#C_MECH311"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">시스템제어</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH330">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <hasPrerequisite rdf:resource="#C_MECH240"/>
+  <hasPrerequisite rdf:resource="#C_MECH244"/>
+  <hasPrerequisite rdf:resource="#C_PHYS203"/>
+  <hasSynergyWith rdf:resource="#C_MECH371"/>
+  <hasSynergyWith rdf:resource="#C_MECH323"/>
+  <hasSynergyWith rdf:resource="#C_CITE451_MECH423"/>
+  <hasSynergyWith rdf:resource="#C_CITE452"/>
+  <hasSynergyWith rdf:resource="#C_CITE453"/>
+  <hasSynergyWith rdf:resource="#C_AMSE416"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">재료가공</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH340">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <hasPrerequisite rdf:resource="#C_MECH240"/>
+  <hasPrerequisite rdf:resource="#C_PHYS203"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">응용고체역학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH370">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <hasPrerequisite rdf:resource="#C_MATH200"/>
+  <hasPrerequisite rdf:resource="#C_MECH211"/>
+  <hasPrerequisite rdf:resource="#C_MECH250"/>
+  <hasSynergyWith rdf:resource="#C_MECH323"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">유체역학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH371">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <hasPrerequisite rdf:resource="#C_MECH211"/>
+  <hasPrerequisite rdf:resource="#C_MECH250"/>
+  <hasPrerequisite rdf:resource="#C_MECH370"/>
+  <hasPrerequisite rdf:resource="#C_PHYS203"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">열전달</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH381">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <hasSynergyWith rdf:resource="#C_MECH371"/>
+  <hasSynergyWith rdf:resource="#C_MECH323"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">기계전자공학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH403">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <hasPrerequisite rdf:resource="#C_EECE261"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_PHYS206"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">나노공학개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH421">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">초소형기전공학개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH423">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">생체재료 및 바이오패브리케이션</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH424">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">생체전자기기-진단과           치료를      위한    공학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH427">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">광학과 현미경</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH434">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <hasPrerequisite rdf:resource="#C_MECH240"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">시스템설계:캡스톤디자인</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH437">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">기계인공지능</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH439">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <hasPrerequisite rdf:resource="#C_CSED101"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <hasPrerequisite rdf:resource="#C_MECH323"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">로보틱스개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH450">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <hasPrerequisite rdf:resource="#C_MECH211"/>
+  <hasPrerequisite rdf:resource="#C_MECH250"/>
+  <hasPrerequisite rdf:resource="#C_MECH370"/>
+  <hasPrerequisite rdf:resource="#C_MECH371"/>
+  <hasPrerequisite rdf:resource="#C_PHYS203"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">응용열공학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH451">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <hasPrerequisite rdf:resource="#C_MECH211"/>
+  <hasPrerequisite rdf:resource="#C_MECH250"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">에너지시스템</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH465">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">창의설계공학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH467">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <hasPrerequisite rdf:resource="#C_MECH211"/>
+  <hasPrerequisite rdf:resource="#C_MECH240"/>
+  <hasPrerequisite rdf:resource="#C_PHYS203"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">적정기술개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH470">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <hasPrerequisite rdf:resource="#C_MECH370"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">응용유체역학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH471">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <hasPrerequisite rdf:resource="#C_MECH370"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">공기역학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_MECH496">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#MECH"/>
+  <hasPrerequisite rdf:resource="#C_AMSE405"/>
+  <hasPrerequisite rdf:resource="#C_MECH250"/>
+  <hasPrerequisite rdf:resource="#C_MECH370"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">연소와 환경</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS101_102">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <hasSynergyWith rdf:resource="#C_MATH203"/>
+  <hasSynergyWith rdf:resource="#C_PHYS104"/>
+  <hasSynergyWith rdf:resource="#C_MATH200"/>
+  <hasSynergyWith rdf:resource="#C_MECH244"/>
+  <hasSynergyWith rdf:resource="#C_MECH240"/>
+  <hasSynergyWith rdf:resource="#C_MECH250"/>
+  <hasSynergyWith rdf:resource="#C_MECH211"/>
+  <hasSynergyWith rdf:resource="#C_MECH280"/>
+  <hasSynergyWith rdf:resource="#C_MECH370"/>
+  <hasSynergyWith rdf:resource="#C_MECH330"/>
+  <hasSynergyWith rdf:resource="#C_MECH311"/>
+  <hasSynergyWith rdf:resource="#C_MECH381"/>
+  <hasSynergyWith rdf:resource="#C_MECH371"/>
+  <hasSynergyWith rdf:resource="#C_MECH323"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">일반물리: 역학과 파동, 일반물리: 전자기와 빛</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS101H_102H">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">일반물리(H): 역학과 파동, 일반물리(H): 전자기와 빛</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS104">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <hasSynergyWith rdf:resource="#C_MATH200"/>
+  <hasSynergyWith rdf:resource="#C_MECH244"/>
+  <hasSynergyWith rdf:resource="#C_MECH240"/>
+  <hasSynergyWith rdf:resource="#C_MECH250"/>
+  <hasSynergyWith rdf:resource="#C_MECH211"/>
+  <hasSynergyWith rdf:resource="#C_MECH280"/>
+  <hasSynergyWith rdf:resource="#C_MECH370"/>
+  <hasSynergyWith rdf:resource="#C_MECH330"/>
+  <hasSynergyWith rdf:resource="#C_MECH311"/>
+  <hasSynergyWith rdf:resource="#C_MECH381"/>
+  <hasSynergyWith rdf:resource="#C_MECH371"/>
+  <hasSynergyWith rdf:resource="#C_MECH323"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">일반물리실험II: 설계와 제작</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS110_111">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">일반물리연습: 역학과 파동, 일반물리연습: 전자기와 빛</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS201">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">양자물리학입문</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS202">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">상대성이론입문</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS209">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">수리물리</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS250_351">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">물리실험-종합설계Ⅰ,Ⅱ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS302">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <hasPrerequisite rdf:resource="#C_PHYS203"/>
+  <hasPrerequisite rdf:resource="#C_PHYS301"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">양자물리Ⅱ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS304">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_PHYS203"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">열물리</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS307">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <hasPrerequisite rdf:resource="#C_MATH103"/>
+  <hasPrerequisite rdf:resource="#C_MATH200"/>
+  <hasPrerequisite rdf:resource="#C_MATH400"/>
+  <hasPrerequisite rdf:resource="#C_PHYS206"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전자기학Ⅱ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS312">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <hasPrerequisite rdf:resource="#C_PHYS203"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">전산물리</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS353">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">물리실험III (Honor)</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS360">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">물리학의 선구자</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS401">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <hasPrerequisite rdf:resource="#C_PHYS203"/>
+  <hasPrerequisite rdf:resource="#C_PHYS301"/>
+  <hasPrerequisite rdf:resource="#C_PHYS304"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">고체물리</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS403">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <hasPrerequisite rdf:resource="#C_PHYS201"/>
+  <hasPrerequisite rdf:resource="#C_PHYS301"/>
+  <hasPrerequisite rdf:resource="#C_PHYS302"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">핵 및 입자물리</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS406">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <hasPrerequisite rdf:resource="#C_PHYS203"/>
+  <hasPrerequisite rdf:resource="#C_PHYS206"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">플라즈마물리</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS410">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <hasPrerequisite rdf:resource="#C_PHYS206"/>
+  <hasPrerequisite rdf:resource="#C_PHYS301"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">광물리학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS412">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">물리공작실험</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS413">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">생물물리학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS420">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <hasPrerequisite rdf:resource="#C_PHYS401"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">물성물리특강</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS422">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">현대물리특강</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS431_432">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">물리학연구Ⅰ,Ⅱ</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_PHYS460">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#PHYS"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">물리학 연구의 동향</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI100">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">학과입문(반도체공학)</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI111">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_SEMI100"/>
+  <hasSynergyWith rdf:resource="#C_SEMI201"/>
+  <hasSynergyWith rdf:resource="#C_SEMI208"/>
+  <hasSynergyWith rdf:resource="#C_SEMI209"/>
+  <hasSynergyWith rdf:resource="#C_SEMI204"/>
+  <hasSynergyWith rdf:resource="#C_SEMI212"/>
+  <hasSynergyWith rdf:resource="#C_SEMI202"/>
+  <hasSynergyWith rdf:resource="#C_SEMI206"/>
+  <hasSynergyWith rdf:resource="#C_SEMI311"/>
+  <hasSynergyWith rdf:resource="#C_SEMI322"/>
+  <hasSynergyWith rdf:resource="#C_SEMI363"/>
+  <hasSynergyWith rdf:resource="#C_SEMI344"/>
+  <hasSynergyWith rdf:resource="#C_SEMI323"/>
+  <hasSynergyWith rdf:resource="#C_SEMI362"/>
+  <hasSynergyWith rdf:resource="#C_SEMI342"/>
+  <hasSynergyWith rdf:resource="#C_SEMI412"/>
+  <hasSynergyWith rdf:resource="#C_SEMI421"/>
+  <hasSynergyWith rdf:resource="#C_SEMI422"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">반도체 산업 경영 세미나</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI201">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_SEMI100"/>
+  <hasSynergyWith rdf:resource="#C_SEMI212"/>
+  <hasSynergyWith rdf:resource="#C_SEMI202"/>
+  <hasSynergyWith rdf:resource="#C_SEMI206"/>
+  <hasSynergyWith rdf:resource="#C_SEMI208"/>
+  <hasSynergyWith rdf:resource="#C_SEMI209"/>
+  <hasSynergyWith rdf:resource="#C_SEMI311"/>
+  <hasSynergyWith rdf:resource="#C_SEMI322"/>
+  <hasSynergyWith rdf:resource="#C_SEMI363"/>
+  <hasSynergyWith rdf:resource="#C_SEMI344"/>
+  <hasSynergyWith rdf:resource="#C_SEMI323"/>
+  <hasSynergyWith rdf:resource="#C_SEMI362"/>
+  <hasSynergyWith rdf:resource="#C_SEMI342"/>
+  <hasSynergyWith rdf:resource="#C_SEMI412"/>
+  <hasSynergyWith rdf:resource="#C_SEMI421"/>
+  <hasSynergyWith rdf:resource="#C_SEMI422"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">반도체 공업수학</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI202">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_SEMI100"/>
+  <hasSynergyWith rdf:resource="#C_SEMI311"/>
+  <hasSynergyWith rdf:resource="#C_SEMI322"/>
+  <hasSynergyWith rdf:resource="#C_SEMI363"/>
+  <hasSynergyWith rdf:resource="#C_SEMI344"/>
+  <hasSynergyWith rdf:resource="#C_SEMI323"/>
+  <hasSynergyWith rdf:resource="#C_SEMI362"/>
+  <hasSynergyWith rdf:resource="#C_SEMI342"/>
+  <hasSynergyWith rdf:resource="#C_SEMI412"/>
+  <hasSynergyWith rdf:resource="#C_SEMI421"/>
+  <hasSynergyWith rdf:resource="#C_SEMI422"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">반도체를 위한 물리</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI203">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_SEMI100"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">반도체 소자 I</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI204">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_SEMI100"/>
+  <hasSynergyWith rdf:resource="#C_SEMI212"/>
+  <hasSynergyWith rdf:resource="#C_SEMI202"/>
+  <hasSynergyWith rdf:resource="#C_SEMI206"/>
+  <hasSynergyWith rdf:resource="#C_SEMI208"/>
+  <hasSynergyWith rdf:resource="#C_SEMI209"/>
+  <hasSynergyWith rdf:resource="#C_SEMI311"/>
+  <hasSynergyWith rdf:resource="#C_SEMI322"/>
+  <hasSynergyWith rdf:resource="#C_SEMI363"/>
+  <hasSynergyWith rdf:resource="#C_SEMI344"/>
+  <hasSynergyWith rdf:resource="#C_SEMI323"/>
+  <hasSynergyWith rdf:resource="#C_SEMI362"/>
+  <hasSynergyWith rdf:resource="#C_SEMI342"/>
+  <hasSynergyWith rdf:resource="#C_SEMI412"/>
+  <hasSynergyWith rdf:resource="#C_SEMI421"/>
+  <hasSynergyWith rdf:resource="#C_SEMI422"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">반도체 공학 실험</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI205">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_SEMI209"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">반도체 전자회로 I</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI209">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_SEMI100"/>
+  <hasSynergyWith rdf:resource="#C_SEMI212"/>
+  <hasSynergyWith rdf:resource="#C_SEMI202"/>
+  <hasSynergyWith rdf:resource="#C_SEMI206"/>
+  <hasSynergyWith rdf:resource="#C_SEMI208"/>
+  <hasSynergyWith rdf:resource="#C_SEMI311"/>
+  <hasSynergyWith rdf:resource="#C_SEMI322"/>
+  <hasSynergyWith rdf:resource="#C_SEMI363"/>
+  <hasSynergyWith rdf:resource="#C_SEMI323"/>
+  <hasSynergyWith rdf:resource="#C_SEMI362"/>
+  <hasSynergyWith rdf:resource="#C_SEMI412"/>
+  <hasSynergyWith rdf:resource="#C_SEMI421"/>
+  <hasSynergyWith rdf:resource="#C_SEMI422"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">반도체 회로의 이해</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI206">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_SEMI100"/>
+  <hasSynergyWith rdf:resource="#C_SEMI311"/>
+  <hasSynergyWith rdf:resource="#C_SEMI322"/>
+  <hasSynergyWith rdf:resource="#C_SEMI344"/>
+  <hasSynergyWith rdf:resource="#C_SEMI323"/>
+  <hasSynergyWith rdf:resource="#C_SEMI362"/>
+  <hasSynergyWith rdf:resource="#C_SEMI342"/>
+  <hasSynergyWith rdf:resource="#C_SEMI412"/>
+  <hasSynergyWith rdf:resource="#C_SEMI421"/>
+  <hasSynergyWith rdf:resource="#C_SEMI422"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">반도체소재개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI207">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_CHEM100"/>
+  <hasPrerequisite rdf:resource="#C_SEMI100"/>
+  <hasPrerequisite rdf:resource="#C_SEMI111"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">반도체 집적공정개론 I: 캡스톤디자인</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI208">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_SEMI207"/>
+  <hasSynergyWith rdf:resource="#C_SEMI212"/>
+  <hasSynergyWith rdf:resource="#C_SEMI202"/>
+  <hasSynergyWith rdf:resource="#C_SEMI206"/>
+  <hasSynergyWith rdf:resource="#C_SEMI209"/>
+  <hasSynergyWith rdf:resource="#C_SEMI311"/>
+  <hasSynergyWith rdf:resource="#C_SEMI322"/>
+  <hasSynergyWith rdf:resource="#C_SEMI363"/>
+  <hasSynergyWith rdf:resource="#C_SEMI344"/>
+  <hasSynergyWith rdf:resource="#C_SEMI323"/>
+  <hasSynergyWith rdf:resource="#C_SEMI362"/>
+  <hasSynergyWith rdf:resource="#C_SEMI342"/>
+  <hasSynergyWith rdf:resource="#C_SEMI412"/>
+  <hasSynergyWith rdf:resource="#C_SEMI421"/>
+  <hasSynergyWith rdf:resource="#C_SEMI422"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">반도체 집적공정개론 II</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI211">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_SEMI100"/>
+  <hasPrerequisite rdf:resource="#C_SEMI203"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">반도체와 지식재산권</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI212">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_SEMI100"/>
+  <hasSynergyWith rdf:resource="#C_SEMI311"/>
+  <hasSynergyWith rdf:resource="#C_SEMI322"/>
+  <hasSynergyWith rdf:resource="#C_SEMI363"/>
+  <hasSynergyWith rdf:resource="#C_SEMI344"/>
+  <hasSynergyWith rdf:resource="#C_SEMI323"/>
+  <hasSynergyWith rdf:resource="#C_SEMI362"/>
+  <hasSynergyWith rdf:resource="#C_SEMI342"/>
+  <hasSynergyWith rdf:resource="#C_SEMI412"/>
+  <hasSynergyWith rdf:resource="#C_SEMI421"/>
+  <hasSynergyWith rdf:resource="#C_SEMI422"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">반도체     전자기학개론</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI311">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_DISU431"/>
+  <hasPrerequisite rdf:resource="#C_SEMI100"/>
+  <hasPrerequisite rdf:resource="#C_SEMI207"/>
+  <hasSynergyWith rdf:resource="#C_SEMI323"/>
+  <hasSynergyWith rdf:resource="#C_SEMI362"/>
+  <hasSynergyWith rdf:resource="#C_SEMI342"/>
+  <hasSynergyWith rdf:resource="#C_SEMI412"/>
+  <hasSynergyWith rdf:resource="#C_SEMI421"/>
+  <hasSynergyWith rdf:resource="#C_SEMI422"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">글로벌 기술 전문가 강의</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI312">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_SEMI100"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">해외 현장 연수</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI321">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_SEMI203"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">반도체 소자 II</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI322">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_EECE211"/>
+  <hasPrerequisite rdf:resource="#C_SEMI100"/>
+  <hasPrerequisite rdf:resource="#C_SEMI203"/>
+  <hasSynergyWith rdf:resource="#C_SEMI323"/>
+  <hasSynergyWith rdf:resource="#C_SEMI362"/>
+  <hasSynergyWith rdf:resource="#C_SEMI342"/>
+  <hasSynergyWith rdf:resource="#C_SEMI412"/>
+  <hasSynergyWith rdf:resource="#C_SEMI421"/>
+  <hasSynergyWith rdf:resource="#C_SEMI422"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">메모리 소자/공정</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI323">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_AMSE407"/>
+  <hasPrerequisite rdf:resource="#C_SEMI100"/>
+  <hasPrerequisite rdf:resource="#C_SEMI203"/>
+  <hasSynergyWith rdf:resource="#C_SEMI412"/>
+  <hasSynergyWith rdf:resource="#C_SEMI421"/>
+  <hasSynergyWith rdf:resource="#C_SEMI422"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">반도체 테스트 및 신뢰성</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI343">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_SEMI205"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">반도체 전자회로II</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI344">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_SEMI209"/>
+  <hasSynergyWith rdf:resource="#C_SEMI323"/>
+  <hasSynergyWith rdf:resource="#C_SEMI362"/>
+  <hasSynergyWith rdf:resource="#C_SEMI342"/>
+  <hasSynergyWith rdf:resource="#C_SEMI412"/>
+  <hasSynergyWith rdf:resource="#C_SEMI421"/>
+  <hasSynergyWith rdf:resource="#C_SEMI422"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">초집적회로 설계</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI362">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_SEMI100"/>
+  <hasSynergyWith rdf:resource="#C_SEMI412"/>
+  <hasSynergyWith rdf:resource="#C_SEMI421"/>
+  <hasSynergyWith rdf:resource="#C_SEMI422"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">반도체 소재 분석</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI363">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_SEMI206"/>
+  <hasSynergyWith rdf:resource="#C_SEMI323"/>
+  <hasSynergyWith rdf:resource="#C_SEMI362"/>
+  <hasSynergyWith rdf:resource="#C_SEMI342"/>
+  <hasSynergyWith rdf:resource="#C_SEMI412"/>
+  <hasSynergyWith rdf:resource="#C_SEMI421"/>
+  <hasSynergyWith rdf:resource="#C_SEMI422"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BEOL/패키징</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI412">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_SEMI100"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">국내 현장 연수</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI421">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_EECE211"/>
+  <hasPrerequisite rdf:resource="#C_SEMI100"/>
+  <hasPrerequisite rdf:resource="#C_SEMI203"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">나노 전자 소자</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI422">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_PHYS203"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">양자 소자 및 컴퓨팅</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI423">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_DISU431"/>
+  <hasPrerequisite rdf:resource="#C_SEMI207"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">반도체 광소자의 이해</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI442">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_CHEM100"/>
+  <hasPrerequisite rdf:resource="#C_EECE336"/>
+  <hasPrerequisite rdf:resource="#C_SEMI100"/>
+  <hasPrerequisite rdf:resource="#C_SEMI205"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">풀커스텀 집적회로 설계</courseNameKr>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C_SEMI445">
+  <rdf:type rdf:resource="#Course"/>
+  <partOfDepartment rdf:resource="#SEMI"/>
+  <hasPrerequisite rdf:resource="#C_EECE336"/>
+  <courseNameKr rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RF/아날로그 회로 설계 기초</courseNameKr>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>

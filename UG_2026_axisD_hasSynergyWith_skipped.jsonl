@@ -1,0 +1,46 @@
+{"group": "MECH", "raw": "MATH110 미적분학", "reason": "no_match"}
+{"group": "MECH", "raw": "MATH113 미적분학연습", "reason": "no_match"}
+{"group": "MECH", "raw": "MECH101 기계공학개론", "reason": "no_match"}
+{"group": "MECH", "raw": "PHYS102 일반물리II", "reason": "no_match"}
+{"group": "MECH", "raw": "MECH202 전산제도및설계", "reason": "no_match"}
+{"group": "MECH", "raw": "MECH333 시스템설계I", "reason": "no_match"}
+{"group": "MECH", "raw": "MECH390 기계가공실습", "reason": "no_match"}
+{"group": "MECH", "raw": "MECH433 시스템설계II", "reason": "no_match"}
+{"group": "IMEN:공통", "raw": "IMEN431 캡스톤디자인", "reason": "no_match"}
+{"group": "IMEN:공통", "raw": "IMEN431 캡스톤디자인", "reason": "no_match"}
+{"group": "IMEN:UX/Human Factors 경험및인간공학", "raw": "IMEN400 미래기술과혁신", "reason": "no_match"}
+{"group": "IMEN:Manufacturing & Logistics 제조x물류공학", "raw": "IMEN331 스마트제조개론", "reason": "no_match"}
+{"group": "IMEN:Manufacturing & Logistics 제조x물류공학", "raw": "IMEN423 제품라이프사이클공학", "reason": "no_match"}
+{"group": "IMEN:Management Engineering 경영공학", "raw": "IMEN462 수익관리", "reason": "no_match"}
+{"group": "IMEN:Management Engineering 경영공학", "raw": "IMEN485 기술경영", "reason": "no_match"}
+{"group": "semiconductor_track_unspecified_dept", "raw": "기초선택 새내기연구참여(1)", "reason": "no_match"}
+{"group": "semiconductor_track_unspecified_dept", "raw": "기초선택 반도체입문(1)", "reason": "no_match"}
+{"group": "semiconductor_track_unspecified_dept", "raw": "미적분학(3)", "reason": "no_match"}
+{"group": "semiconductor_track_unspecified_dept", "raw": "일반물리(3)", "reason": "no_match"}
+{"group": "semiconductor_track_unspecified_dept", "raw": "기초선택(3)", "reason": "no_match"}
+{"group": "semiconductor_track_unspecified_dept", "raw": "미적분학II(3)", "reason": "no_match"}
+{"group": "semiconductor_track_unspecified_dept", "raw": "일반물리II(3)", "reason": "no_match"}
+{"group": "semiconductor_track_unspecified_dept", "raw": "일반화학실험(3)", "reason": "no_match"}
+{"group": "semiconductor_track_unspecified_dept", "raw": "반도체 소자I(3)", "reason": "no_match"}
+{"group": "semiconductor_track_unspecified_dept", "raw": "반도체 자적재산권(3)", "reason": "no_match"}
+{"group": "semiconductor_track_unspecified_dept", "raw": "연구참여A(1)", "reason": "no_match"}
+{"group": "semiconductor_track_unspecified_dept", "raw": "반도체소자II(3)", "reason": "no_match"}
+{"group": "semiconductor_track_unspecified_dept", "raw": "연구참여B(1)", "reason": "no_match"}
+{"group": "semiconductor_track_unspecified_dept", "raw": "반도체전자회로II(3)", "reason": "no_match"}
+{"group": "semiconductor_track_unspecified_dept", "raw": "HASS선택(3)", "reason": "no_match"}
+{"group": "semiconductor_track_unspecified_dept", "raw": "연구참여(3)", "reason": "no_match"}
+{"group": "semiconductor_track_unspecified_dept", "raw": "RF/아날로그회로설계(3)", "reason": "no_match"}
+{"group": "semiconductor_track_unspecified_dept", "raw": "듀거스템집적회로(3)", "reason": "no_match"}
+{"group": "semiconductor_track_unspecified_dept", "raw": "연구참여D(1)", "reason": "no_match"}
+{"group": "semiconductor_track_unspecified_dept", "raw": "이미지센서(3)", "reason": "no_match"}
+{"group": "semiconductor_track_unspecified_dept", "raw": "반도체계측및검사의기초(3)", "reason": "no_match"}
+{"group": "semiconductor_track_unspecified_dept", "raw": "전력반도체회로(3)", "reason": "no_match"}
+{"group": "CITE:의공학 Biomedical Engineering", "raw": "CITE242 의료영상공학", "reason": "no_match"}
+{"group": "CITE:인간-로봇공학 Human-Robot Engineering", "raw": "EECE273 디지털시스템설계", "reason": "no_match"}
+{"group": "CITE:인간-로봇공학 Human-Robot Engineering", "raw": "MECH202 전산제도및설계", "reason": "no_match"}
+{"group": "CITE:인간-로봇공학 Human-Robot Engineering", "raw": "MECH390 기계가공실습", "reason": "no_match"}
+{"group": "CITE:인간-로봇공학 Human-Robot Engineering", "raw": "EECE451 디지털신호처리", "reason": "no_match"}
+{"group": "CITE:인간-로봇공학 Human-Robot Engineering", "raw": "EECE426 임베디드제어시스템", "reason": "no_match"}
+{"group": "CITE:인간-로봇공학 Human-Robot Engineering", "raw": "MECH438 휴먼로봇인터페이스", "reason": "no_match"}
+{"group": "CITE:인간-로봇공학 Human-Robot Engineering", "raw": "CSED402 인간컴퓨터상호작용", "reason": "no_match"}
+{"group": "CITE:디자인공학 Design Engineering", "raw": "CSED402 인간컴퓨터상호작용", "reason": "no_match"}

@@ -162,6 +162,15 @@
 - **LLM-assisted, reasoner-gated 온톨로지 구축 워크플로우(확정, 2026-08-03)**: Gemini/Claude로 온톨로지 구축을 돕되, 근접 선행연구(Abu-Rasheed et al.) 대비 차별점("LLM 그래프 완성 vs reasoner 검증된 그래프")과 모순되지 않도록 원칙을 하나 둔다 — **LLM은 제안(propose)만 하고, reasoner의 일관성 검증을 통과한 것만 그래프에 커밋된다.** 즉 "LLM을 안 쓴다"가 아니라 "LLM 출력이 검증 없이 최종 사실이 되는 지점이 없다"는 뜻으로 차별화 문구를 해석한다. 그룹 A(하드)는 LLM의 사실 생성 자체를 배제하고, 그룹 B(소프트)는 LLM 제안 + reasoner 일관성 검사만으로 완전 자동화한다.
   - **주의 — 여기서의 "LLM"은 축A/축E와 다른 별개의 용도다**: 축A(BGE-m3)는 서비스 운영 중 실시간으로 도는 임베딩 인코더, 축E(경량 로컬 LLM)는 서비스 운영 중 학생에게 추천 근거를 자연어로 설명하는 생성 모델. 반면 이 워크플로우의 Gemini/Claude는 **개발 단계에서 팀이 온톨로지를 저작할 때 쓰는 도구**일 뿐이며, 산출물(OWL 파일)만 남고 서비스 서빙 시점에는 관여하지 않는다.
 
+- **스키마 구현 + `hasPrerequisite` 인스턴스화 완료(2026-08-05)**: `scripts/build_ontology.py`(owlready2)로 D2(스키마)~D6(그룹A 인스턴스)~D9(reasoner 검증)를 실제로 실행. `curri.owl` 생성 — Department 15개, Course 419개, `hasPrerequisite` 엣지 472개(`UG_2026_axisA_pairs_a.jsonl`을 그대로 재사용, 그룹A 원칙대로 LLM 추론 없이 텍스트 사실만 채택). HermiT reasoner 실행 결과 **논리적으로 일관됨(CONSISTENT)**.
+  - **OWL 2 DL 구조적 제약 발견**: 당초 `hasPrerequisite`를 Transitive+Asymmetric+Irreflexive로 선언해 "순환이 있으면 reasoner가 비일관으로 잡는다"는 방식으로 CQ3(순환 검증)를 풀려 했으나, **OWL 2 DL은 Transitive 프로퍼티에 Asymmetric/Irreflexive를 동시 선언하는 것을 금지**한다(non-simple property 제약, 결정가능성 확보 목적) — HermiT이 구조적 에러로 즉시 거부함을 확인. 스키마는 문서 원안대로 `hasPrerequisite(transitive)`만 유지하고, **CQ3(순환 검증)는 reasoner 비일관성이 아니라 별도 그래프 DFS로 답한다**로 방법을 수정. reasoner(일관성 검증 전반)와 그래프 체크(순환 검출 전용)가 서로 다른 역할을 맡는 구조로 확정.
+  - **CQ3 실증(2026-08-05)**: 위 그래프 체크가 실제 순환을 하나 발견 — `EECE309 → EECE422 → EECE309`(현대제어이론 ↔ 디지털제어공학이 서로를 선수과목으로 요구). (a) 소스 원본에 "함께 수강 권장" 같은 느슨한 표현이 엄격한 선후관계로 잘못 파싱됐을 가능성 — 사람 검토 필요 항목으로 등록(§9 미정 사항 참고).
+  - `specializesIn`(스키마 초안에 있었으나 어떤 CQ에서도 쓰이지 않고 domain/range 미논의)은 클래스/프로퍼티 선언만 하고 인스턴스화하지 않음 — 실제 필요 시점에 정의하기로 보류.
+- **`hasSynergyWith` 1차 소스 구현 완료(2026-08-05)**: `scripts/build_synergy_edges.py`로 `roadmap_raw.jsonl`의 구조화된 학과 로드맵(`courses_by_slot`/`tracks`)을 파싱 — 대상은 **MECH·IMEN·반도체 트랙(학과명 미상)·CITE 4개**뿐(§7.3에서 이미 "다이어그램 수집은 여기서 마무리, 전학과 커버 목표 아님"으로 결정됐던 범위 그대로 따름; PHYS/CHEM은 자유서술 텍스트뿐이라 제외). 로드맵 원문 학수번호가 현재 코퍼스와 버전이 달라(`MATH110`처럼 폐지/개정된 코드, 코드 없이 과목명만 있는 경우) 코드 직접매칭 실패분은 과목명 fuzzy 매칭으로 보강. 같은 학과/트랙 로드맵 내 더 이른 슬롯→더 늦은 슬롯 과목쌍을 후보로 생성, 슬롯 거리에 따라 신뢰도 감쇠(0.7→0.2 사이, distance당 -0.1). `hasPrerequisite`로 이미 확정된 쌍은 제외(중복 표현 방지).
+  - 결과: `UG_2026_axisD_hasSynergyWith.jsonl` **406개**, `hasPrerequisite`와 겹쳐 드롭 26건, 매칭 실패(구버전/폐지 코드로 판단) 46건은 `_skipped.jsonl`에 사유와 함께 보관.
+  - `scripts/add_synergy_to_ontology.py`로 `curri.owl`에 406개 전부 삽입 후 HermiT 재검증 — **CONSISTENT** 유지.
+  - 샘플: `PHYS101,102`(일반물리) → `MATH203`(응용선형대수), distance 1, conf 0.7 — MECH 로드맵상 1학기 뒤에 배치된 과목.
+
 ### 축 E — 생성/설명 계층 & LLM 벤치마크
 
 - "자체 LLM engine이 Gemini API보다 낫다"는 주장은 **범용 성능이 아니라 이 특정 과제(커리큘럼/연구실 추천 + 근거 생성)에서의 우위**로 해석. 온톨로지+검색으로 확정된 사실만 가지고 문장을 다듬는 경량 로컬 모델이 현실적 형태.
@@ -329,6 +338,8 @@
 - **축D CQ 최종 스코프 확정(2026-08-03)** — CQ2(축C 필요)만 제외, 나머지 8개(CQ1,3~9) 전부 유효. CQ5(`requiresSkill`)의 데이터 공백은 Lab 키워드 분류 + `course_objectives` 임베딩 유사도로 신규 수집 없이 해결. `hasPrerequisite`가 신중히 다뤄져야 하는 근거는 축C가 아니라 MVP#2 직접 노출로 정정. 자동화 리스크를 그룹A(하드, LLM 사실생성 배제)/그룹B(소프트, 완전자동화 가능)로 구분(§7 축D).
 - **LLM-assisted, reasoner-gated 온톨로지 구축 원칙 확정(2026-08-03)** — Gemini/Claude는 온톨로지 저작을 돕는 개발 단계 도구(축A/축E와 별개)로 활용하되, 모든 산출물은 reasoner 일관성 검증을 통과해야 커밋된다는 원칙으로 근접 선행연구 대비 차별화를 유지.
 - **전체 개발 워크플로우 문서화(2026-08-03, §12)** — 전체 플로우, 축A/축D 개별 플로우, 데이터셋 생성 파이프라인을 mermaid 다이어그램으로 정리.
+- **축D 스키마 구현 + hasPrerequisite 인스턴스화(2026-08-05)** — `curri.owl`(owlready2) 생성, Department 15·Course 419·hasPrerequisite 472엣지, HermiT reasoner CONSISTENT 확인. CQ3(순환검증)는 OWL 2 DL 구조적 제약으로 reasoner 비일관성이 아니라 별도 그래프 DFS로 처리하기로 방법 수정 — 상세는 §7 축D.
+- **축D hasSynergyWith 1차 소스 구현(2026-08-05)** — MECH·IMEN·반도체트랙·CITE 4개 학과 구조화 로드맵 파싱, 406개 엣지를 `curri.owl`에 삽입 후 CONSISTENT 재확인.
 - **코퍼스 건수 재정정(2026-08-04)**: `UG_2026_curriculum_courses.jsonl`은 427건도 아니고 **419건**이다. 08-03 "curriculum data cleanup"(654→427)에 이어, (a) fuzzy 매칭 작업 중 장기현장실습(AMSE401/EECE495/CITE495)·학과탐색·대학생활과 미래설계(MSUS101 계열) 등 비학업 과목 8건이 사용자 지시로 추가 제거되어 427→419가 됨(커밋 `6229da0`, patch.jsonl 기록됨). 본 문서에 남아있던 "427건" 표기를 전부 419건으로 재수정. **교훈**: 파생 수치(코퍼스 건수 등)를 문서에 박아 넣기 전에 매번 `wc -l`로 재확인할 것 — 이번에도 이전 세션에서 이미 바뀐 값을 놓쳐 잘못된 숫자를 다시 퍼뜨릴 뻔함.
 - **연구실 데이터 없이 시작 가능한 축A 소스 확정(2026-08-04)** — 5원 소스 중 (a)로드맵순서·(b)레벨신호·LLM concept·LLM query는 연구실 데이터(§12.5 S5/S6, 팀원 진행중) 없이 지금 생성 가능, (c)어휘중첩만 정의상 Lab 프로필이 있어야 블로킹됨을 확인.
 - **(a) 로드맵 순서 소스 병합 완료(2026-08-04)** — `UG_2026_prerequisites.jsonl`(로드맵 표 소스, 199건)과 `UG_2026_prerequisites_freetext.jsonl`(강의계획서 자유서술 소스, 사람 검토 완료, 231건)을 과목코드 기준 합집합으로 병합해 `UG_2026_prerequisites_merged.jsonl`(301건) 생성. 두 소스가 겹치는 과목 중 다른 코드를 가리키는 경우("공식 필수" vs "권장 배경지식")도 억지로 하나를 고르지 않고 합집합으로 유지 — 둘 다 §7.3 표의 (a) 신뢰도 1.0("hasPrerequisite 확정 엣지, 텍스트 명시")에 해당하는 유효한 관계이기 때문. 이걸로 축A (a) 소스가 확정되어 pair 생성 가능해짐.
@@ -339,6 +350,8 @@
 - 대시보드/UX 설계
 - Gemini 벤치마크 과제 정의 (보류 상태 유지)
 - 타학과 시너지 신호 보강 방법 최종 채택 여부(§7.4) — 개념 마이닝 외 negative sampling 조정/신규 신호 (e)(f) 반영 여부는 아직 결정 안 됨
+- **`EECE309`↔`EECE422` hasPrerequisite 순환 데이터 수동 검토 필요(2026-08-05)** — reasoner+그래프 체크로 실제 순환 발견(§7 축D). 원본 강의계획서를 재확인해 둘 중 하나를 폐기하거나 `hasSynergyWith`(비-순환, non-transitive)로 강등할지 사람이 결정해야 함
+- `specializesIn` 프로퍼티의 domain/range 및 실제 필요 여부(§7 축D) — 현재 클래스만 선언, 인스턴스화 안 함
 
 ---
 
